@@ -17,7 +17,7 @@ export default function HeroSection() {
   }, [nextSlide]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-charcoal">
+    <section className="relative h-[100svh] w-full overflow-hidden bg-charcoal">
       {/* Carousel Slides */}
       <div className="absolute inset-0 z-0">
         {heroSlides.map((slide, index) => (
@@ -36,13 +36,13 @@ export default function HeroSection() {
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6">
               {slide.handwriting && (
-                <span className="font-[var(--font-handwriting)] text-primary text-3xl mb-6 block opacity-90">
+                <span className="font-[var(--font-handwriting)] text-primary text-xl md:text-3xl mb-4 md:mb-6 block opacity-90">
                   {slide.handwriting}
                 </span>
               )}
-              <h1 className="font-[var(--font-serif)] text-ivory text-5xl md:text-8xl lg:text-9xl font-bold max-w-5xl leading-[1.1] tracking-tight">
+              <h1 className="font-[var(--font-serif)] text-ivory text-3xl sm:text-5xl md:text-8xl lg:text-9xl font-bold max-w-5xl leading-[1.1] tracking-tight">
                 {slide.heading}{" "}
                 <span className="italic text-primary">
                   {slide.headingAccent}
@@ -55,8 +55,8 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom CTA + Indicators */}
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-12">
-        <button className="bg-primary hover:bg-white hover:text-primary text-white font-bold py-6 px-16 rounded-full text-xl shadow-2xl transition-all duration-500 hover:scale-105">
+      <div className="absolute bottom-16 md:bottom-24 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-8 md:gap-12 w-full px-6">
+        <button className="bg-primary hover:bg-white hover:text-primary text-white font-bold py-4 px-10 md:py-6 md:px-16 rounded-full text-base md:text-xl shadow-2xl transition-all duration-500 hover:scale-105">
           {heroCta.label}
         </button>
         <div className="flex gap-4">

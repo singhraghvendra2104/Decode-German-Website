@@ -16,9 +16,9 @@ export const siteConfig = {
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 export const navLinks = [
-  { label: "The Philosophy", href: "#philosophy" },
-  { label: "Transformation", href: "#transformation" },
-  { label: "The Narrative", href: "#narrative" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Courses", href: "/courses" },
 ] as const;
 
 export const ctaButton = {
@@ -273,17 +273,384 @@ export const aboutCta = {
   secondaryButton: { label: "Our Curriculum", href: "#curriculum" },
 };
 
+// ─── Courses Page: Hero Section ──────────────────────────────────────────────
+export const courseHero = {
+  subtitle: "— The Path to Belonging",
+  heading: "A Curated Journey",
+  headingAccent: "Through the Language.",
+  body: "We don't teach grammar in isolation. We teach you how to reclaim your identity, level by level, through the power of emotional storytelling.",
+};
+
+// ─── Courses Page: Course Levels ─────────────────────────────────────────────
+export const courseLevels = [
+  {
+    id: "a1",
+    level: "A1",
+    title: "The Foundation",
+    description:
+      "Begin with the basics of existence. Learn to introduce yourself, navigate daily life, and express your immediate needs with dignity.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAKKCk2_YHw0uHJSHnQ1ZwaJMvA-qYNNiOAilJb_SpjP4wK4QNoW0akcFrcMqzZKr2f-gb2Zw_h3fxPKy6uKStT36XKV-637mrBx0ThlfKjlFFEuv-41hBHM8B5eaKq2Ntg9mgud5bJzNHESJyUqJs2PrHZKdZH6PqAzDRVVLXTRn6uIkPfvUu0z-JOpDh5HsyHfsq0nqlynKSTFFdoI27p1OS3ernmzAWoMYBFsOYixOCSVUpHzA1JXJJedsuUd_7B_ovnvkvjUMk",
+    imageAlt: "The Foundation",
+    imageAspect: "aspect-[16/10]",
+    maskClass: "curated-image-mask",
+    details: [
+      { label: "Duration", value: "3 Months" },
+      { label: "Batch Size", value: "Max 6 Students" },
+      { label: "Materials", value: "Netzwerk Neu" },
+    ],
+    buttonLabel: "Explore A1 Curriculum",
+    buttonStyle: "outline" as const,
+    quote: {
+      text: "\u201CThe moment I ordered my first coffee without panic, the city started to feel like it wanted me there.\u201D",
+      caption: "— A1 Student Reflection",
+      position: "bottom-right" as const,
+      bgClass: "bg-warm-sand",
+    },
+  },
+  {
+    id: "a2",
+    level: "A2",
+    title: "The Expansion",
+    description:
+      "Move beyond survival. Learn to describe your past, share your dreams, and engage in meaningful exchanges with your neighbors.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAG-wEPGW7hntBOjTwlU7x4CJRA87KNpRIcDHVCXNQkdNfXGnjo-NEzM3Dub9KUZjXlNaKNl41cCGAroEyZBwf2hhbaLzFUPYWd0DeqGelPMMbqiRU4XTfOsHXFE-RKOoO84liGeYS2gS-uwIR16hoC_S60bXc3JYBKoMK1smSXNZcXt37o7-8ywTvWv_K2xR37NDEbjAEN4b5Aq-_J1CjHw6k5S5F2fDJLBTxBk-vi8x3o-q6msVMiRNYLVdHPJZGHu-iMnDlbOnw",
+    imageAlt: "The Expansion",
+    imageAspect: "aspect-[16/10]",
+    maskClass: "curated-image-mask-alt",
+    details: [
+      { label: "Duration", value: "2.5 Months" },
+      { label: "Focus", value: "Narrative Past" },
+      { label: "Materials", value: "Netzwerk A2" },
+    ],
+    buttonLabel: "Explore A2 Curriculum",
+    buttonStyle: "outline" as const,
+    reversed: true,
+  },
+  {
+    id: "b1",
+    level: "B1",
+    title: "The Independence",
+    description:
+      "The threshold of fluency. Articulate complex thoughts, debate opinions, and navigate professional environments with nuance and confidence.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC81UHb8cIHz632HnAgMlX1kb-cMIQ8RWX3ycnjMwJgP7GlNsHkSU0AdpTSI21ROZ7YWLLEUYIxoXveMuvLF-d4yKpuuXPw3k9ICx6_cFirV_l6MLXS8QzIuClDRguOnz9vlEWpnNrksEmyJLKy2UlqbZLkiExMARMnvuJxClCd37LOYpGJdudAVQDkEYWLIFbvj6samUHqEXjI4-HVPP_63LboaBm1VNEUURmSyJOj09Y4Yp_Vqb3AaXjne0P_CpbILYMqXp1OuFI",
+    imageAlt: "The Independence",
+    imageAspect: "aspect-[4/5]",
+    maskClass: "curated-image-mask",
+    details: [
+      { label: "Duration", value: "3 Months" },
+      { label: "Intensity", value: "Deep Immersion" },
+      { label: "Materials", value: "Netzwerk B1+" },
+    ],
+    buttonLabel: "Begin the B1 Journey",
+    buttonStyle: "filled" as const,
+    quote: {
+      text: "\u201CB1 isn\u2019t just a level. It\u2019s the moment you stop translating in your head and start living in German.\u201D",
+      caption: "",
+      position: "top-left" as const,
+      bgClass: "bg-charcoal text-ivory",
+    },
+  },
+  {
+    id: "b2",
+    level: "B2",
+    title: "The Mastery",
+    description:
+      "Command the language with precision. Engage in academic discourse, understand subtle humor, and express yourself with the eloquence of a native speaker.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJgzl7b-UKwEQLRFJ9cmgOfmOo16SiLO72ThtJVuaeUw8hvlQDfiznOoy5idT-ndw0rkZSRQ07rQhTjbk_N-uXnJoXISHpWf_7fOcSdgpybGjuETExxbDPJX_LldLKa6NHRYTsh7h3GVf03TPdoXpiViGi8LtWUGEk8nvmD_DWxghJCeDMAAwagoSrb8OU0bS7pbILd3jmTozHlOl1EtZXZ9XTx7ytUNdOLD7sb6H-opbPP8Td4UdTuU-pBueTmhT-BrlWNZoCYA",
+    imageAlt: "The Mastery",
+    imageAspect: "aspect-[16/10]",
+    maskClass: "curated-image-mask-alt",
+    details: [
+      { label: "Duration", value: "4 Months" },
+      { label: "Focus", value: "Academic Fluency" },
+      { label: "Materials", value: "Aspekte Neu B2" },
+    ],
+    buttonLabel: "Begin the B2 Journey",
+    buttonStyle: "filled" as const,
+    reversed: true,
+    quote: {
+      text: "\u201CAt B2, you don\u2019t just speak German \u2014 you think, dream, and argue in it.\u201D",
+      caption: "— B2 Graduate",
+      position: "bottom-right" as const,
+      bgClass: "bg-warm-sand",
+    },
+  },
+];
+
+// ─── Course Detail Pages ─────────────────────────────────────────────────────
+export const courseDetails: Record<
+  string,
+  {
+    level: string;
+    title: string;
+    subtitle: string;
+    heroDescription: string;
+    heroImage: string;
+    heroImageAlt: string;
+    duration: string;
+    batchSize: string;
+    schedule: string;
+    materials: string;
+    price: string;
+    modules: { number: string; title: string; description: string }[];
+    outcomes: string[];
+    testimonial: {
+      quote: string;
+      name: string;
+      role: string;
+    };
+    nextLevel: { id: string; level: string; title: string } | null;
+  }
+> = {
+  a1: {
+    level: "A1",
+    title: "The Foundation",
+    subtitle: "Where your journey begins",
+    heroDescription:
+      "Begin with the basics of existence. Learn to introduce yourself, navigate daily life, and express your immediate needs with dignity. This isn\u2019t a grammar drill \u2014 it\u2019s your first step toward belonging.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAKKCk2_YHw0uHJSHnQ1ZwaJMvA-qYNNiOAilJb_SpjP4wK4QNoW0akcFrcMqzZKr2f-gb2Zw_h3fxPKy6uKStT36XKV-637mrBx0ThlfKjlFFEuv-41hBHM8B5eaKq2Ntg9mgud5bJzNHESJyUqJs2PrHZKdZH6PqAzDRVVLXTRn6uIkPfvUu0z-JOpDh5HsyHfsq0nqlynKSTFFdoI27p1OS3ernmzAWoMYBFsOYixOCSVUpHzA1JXJJedsuUd_7B_ovnvkvjUMk",
+    heroImageAlt: "A1 Course - The Foundation",
+    duration: "3 Months",
+    batchSize: "Max 6 Students",
+    schedule: "3 sessions per week",
+    materials: "Netzwerk Neu A1",
+    price: "On Request",
+    modules: [
+      {
+        number: "01",
+        title: "The First Words",
+        description:
+          "Introductions, greetings, and the art of small talk. Learn to navigate the bakery, the U-Bahn, and the Amt with confidence.",
+      },
+      {
+        number: "02",
+        title: "The Everyday",
+        description:
+          "Numbers, time, shopping, and describing your world. Build the vocabulary that shapes your daily rhythm in Germany.",
+      },
+      {
+        number: "03",
+        title: "The Connection",
+        description:
+          "Family, hobbies, and expressing preferences. Move from transactional exchanges to genuine conversations.",
+      },
+      {
+        number: "04",
+        title: "The Foundation Complete",
+        description:
+          "Past tense basics, writing simple messages, and your first real conversation. You\u2019re no longer a tourist \u2014 you\u2019re a resident.",
+      },
+    ],
+    outcomes: [
+      "Order food and navigate public transport with confidence",
+      "Introduce yourself and talk about your life and interests",
+      "Understand simple written notices, emails, and signs",
+      "Handle basic interactions at offices (Anmeldung, bank, doctor)",
+      "Write short messages, forms, and personal emails",
+    ],
+    testimonial: {
+      quote:
+        "The moment I ordered my first coffee without panic, the city started to feel like it wanted me there.",
+      name: "Priya K.",
+      role: "Software Engineer, Berlin",
+    },
+    nextLevel: { id: "a2", level: "A2", title: "The Expansion" },
+  },
+  a2: {
+    level: "A2",
+    title: "The Expansion",
+    subtitle: "Beyond survival, toward expression",
+    heroDescription:
+      "Move beyond survival. Learn to describe your past, share your dreams, and engage in meaningful exchanges with your neighbors. At A2, you begin to reclaim the complexity of who you are.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAG-wEPGW7hntBOjTwlU7x4CJRA87KNpRIcDHVCXNQkdNfXGnjo-NEzM3Dub9KUZjXlNaKNl41cCGAroEyZBwf2hhbaLzFUPYWd0DeqGelPMMbqiRU4XTfOsHXFE-RKOoO84liGeYS2gS-uwIR16hoC_S60bXc3JYBKoMK1smSXNZcXt37o7-8ywTvWv_K2xR37NDEbjAEN4b5Aq-_J1CjHw6k5S5F2fDJLBTxBk-vi8x3o-q6msVMiRNYLVdHPJZGHu-iMnDlbOnw",
+    heroImageAlt: "A2 Course - The Expansion",
+    duration: "2.5 Months",
+    batchSize: "Max 6 Students",
+    schedule: "3 sessions per week",
+    materials: "Netzwerk Neu A2",
+    price: "On Request",
+    modules: [
+      {
+        number: "01",
+        title: "The Narrative Past",
+        description:
+          "Tell your story. Learn to speak about experiences, childhood memories, and the journey that brought you to Germany.",
+      },
+      {
+        number: "02",
+        title: "The Social Self",
+        description:
+          "Invitations, celebrations, and navigating social norms. Understand the unspoken rules of German friendships.",
+      },
+      {
+        number: "03",
+        title: "The Working World",
+        description:
+          "Job descriptions, workplace communication, and professional emails. Begin to function in a German-speaking office.",
+      },
+      {
+        number: "04",
+        title: "The Expansion Complete",
+        description:
+          "Express opinions, make comparisons, and handle unexpected situations. You now have a voice \u2014 not just a vocabulary.",
+      },
+    ],
+    outcomes: [
+      "Describe past events and tell personal stories fluently",
+      "Navigate social situations: parties, dinners, neighborhood events",
+      "Write semi-formal emails and short professional messages",
+      "Understand and participate in conversations about everyday topics",
+      "Handle basic conflict resolution and express disagreement politely",
+    ],
+    testimonial: {
+      quote:
+        "I stopped being the quiet one at dinner parties. For the first time, I could actually be funny in German.",
+      name: "Carlos M.",
+      role: "Designer, Munich",
+    },
+    nextLevel: { id: "b1", level: "B1", title: "The Independence" },
+  },
+  b1: {
+    level: "B1",
+    title: "The Independence",
+    subtitle: "The threshold of true fluency",
+    heroDescription:
+      "The threshold of fluency. Articulate complex thoughts, debate opinions, and navigate professional environments with nuance and confidence. B1 is where you stop translating and start living.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC81UHb8cIHz632HnAgMlX1kb-cMIQ8RWX3ycnjMwJgP7GlNsHkSU0AdpTSI21ROZ7YWLLEUYIxoXveMuvLF-d4yKpuuXPw3k9ICx6_cFirV_l6MLXS8QzIuClDRguOnz9vlEWpnNrksEmyJLKy2UlqbZLkiExMARMnvuJxClCd37LOYpGJdudAVQDkEYWLIFbvj6samUHqEXjI4-HVPP_63LboaBm1VNEUURmSyJOj09Y4Yp_Vqb3AaXjne0P_CpbILYMqXp1OuFI",
+    heroImageAlt: "B1 Course - The Independence",
+    duration: "3 Months",
+    batchSize: "Max 6 Students",
+    schedule: "4 sessions per week",
+    materials: "Netzwerk Neu B1+",
+    price: "On Request",
+    modules: [
+      {
+        number: "01",
+        title: "The Deep Dive",
+        description:
+          "Complex grammar structures, Konjunktiv II, and passive voice. Master the tools that separate tourists from residents.",
+      },
+      {
+        number: "02",
+        title: "The Debate",
+        description:
+          "Express and defend opinions on politics, culture, and society. Learn to argue with the precision Germans respect.",
+      },
+      {
+        number: "03",
+        title: "The Professional Edge",
+        description:
+          "Presentations, negotiations, and formal correspondence. Command respect in German-speaking professional settings.",
+      },
+      {
+        number: "04",
+        title: "The Independence Complete",
+        description:
+          "Spontaneous conversation, humor, and cultural fluency. You don\u2019t just speak German \u2014 you belong in it.",
+      },
+    ],
+    outcomes: [
+      "Express and defend complex opinions in real-time discussions",
+      "Write formal letters, applications, and professional reports",
+      "Understand news broadcasts, podcasts, and literary texts",
+      "Navigate bureaucracy, legal matters, and healthcare independently",
+      "Prepare for the B1 Zertifikat Deutsch examination",
+    ],
+    testimonial: {
+      quote:
+        "B1 wasn\u2019t just a level. It\u2019s the moment I stopped translating in my head and started living in German.",
+      name: "Amara S.",
+      role: "Product Manager, Frankfurt",
+    },
+    nextLevel: { id: "b2", level: "B2", title: "The Mastery" },
+  },
+  b2: {
+    level: "B2",
+    title: "The Mastery",
+    subtitle: "Where fluency becomes eloquence",
+    heroDescription:
+      "Command the language with precision. Engage in academic discourse, understand subtle humor, and express yourself with the eloquence of a native speaker. B2 is where you become undeniable.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJgzl7b-UKwEQLRFJ9cmgOfmOo16SiLO72ThtJVuaeUw8hvlQDfiznOoy5idT-ndw0rkZSRQ07rQhTjbk_N-uXnJoXISHpWf_7fOcSdgpybGjuETExxbDPJX_LldLKa6NHRYTsh7h3GVf03TPdoXpiViGi8LtWUGEk8nvmD_DWxghJCeDMAAwagoSrb8OU0bS7pbILd3jmTozHlOl1EtZXZ9XTx7ytUNdOLD7sb6H-opbPP8Td4UdTuU-pBueTmhT-BrlWNZoCYA",
+    heroImageAlt: "B2 Course - The Mastery",
+    duration: "4 Months",
+    batchSize: "Max 6 Students",
+    schedule: "4 sessions per week",
+    materials: "Aspekte Neu B2",
+    price: "On Request",
+    modules: [
+      {
+        number: "01",
+        title: "The Nuance",
+        description:
+          "Advanced grammar, idiomatic expressions, and register switching. Speak differently at work, with friends, and in formal settings.",
+      },
+      {
+        number: "02",
+        title: "The Intellectual",
+        description:
+          "Academic writing, structured argumentation, and critical analysis. Engage with German media, research, and literature.",
+      },
+      {
+        number: "03",
+        title: "The Cultural Insider",
+        description:
+          "Humor, sarcasm, and cultural references. Understand what makes Germans laugh, cringe, and connect.",
+      },
+      {
+        number: "04",
+        title: "The Mastery Complete",
+        description:
+          "Spontaneous eloquence across all contexts. You are no longer learning German \u2014 you are living it at its highest level.",
+      },
+    ],
+    outcomes: [
+      "Participate fluently in academic and professional discussions",
+      "Write essays, reports, and formal documents with nuance",
+      "Understand films, literature, and complex media without subtitles",
+      "Navigate any social situation with cultural confidence",
+      "Prepare for the B2 Goethe-Zertifikat examination",
+    ],
+    testimonial: {
+      quote:
+        "At B2, I stopped being \u2018the foreigner who speaks good German\u2019 and became just another voice in the room.",
+      name: "Kenji T.",
+      role: "Researcher, Heidelberg",
+    },
+    nextLevel: null,
+  },
+};
+
+// ─── Courses Page: Quote Divider ─────────────────────────────────────────────
+export const courseQuote =
+  "\u201CTo have another language is to possess a second soul.\u201D";
+
+// ─── Courses Page: CTA Section ───────────────────────────────────────────────
+export const courseCta = {
+  heading: "Where does your\nstory begin?",
+  body: "Whether you\u2019re taking your first breath in a new tongue or polishing your professional edge, we have a place for you.",
+  primaryButton: { label: "Consultation Call", href: "#consultation" },
+  secondaryButton: { label: "Browse All Modules", href: "#modules" },
+};
+
 // ─── Footer ──────────────────────────────────────────────────────────────────
 export const footerLinks = {
   explorer: [
-    { label: "Philosophy", href: "#philosophy" },
-    { label: "The Journey", href: "#journey" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Courses", href: "/courses" },
   ],
   legal: [
-    { label: "Privacy", href: "/privacy" },
-    { label: "Terms", href: "/terms" },
-    { label: "Impressum", href: "/impressum" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Courses", href: "/courses" },
   ],
 };
 

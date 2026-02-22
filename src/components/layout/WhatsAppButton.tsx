@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/constants";
 function WhatsAppIcon() {
   return (
     <svg
-      className="size-8"
+      className="size-6 md:size-8"
       fill="currentColor"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -19,8 +19,8 @@ export default function WhatsAppButton() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber.replace(/[^0-9]/g, "")}`;
 
   return (
-    <div className="fixed bottom-10 right-10 z-[60] flex items-center gap-4 group">
-      <div className="bg-white px-6 py-3 rounded-full shadow-2xl border border-primary/20 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 pointer-events-none">
+    <div className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-[60] flex items-center gap-4 group">
+      <div className="bg-white px-6 py-3 rounded-full shadow-2xl border border-primary/20 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 pointer-events-none hidden md:block">
         <p className="text-xs font-bold tracking-widest uppercase">
           Talk to a human
         </p>
@@ -30,7 +30,7 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact us on WhatsApp"
-        className="size-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center relative hover:scale-110 active:scale-95 transition-all"
+        className="size-12 md:size-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center relative hover:scale-110 active:scale-95 transition-all"
       >
         <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20" />
         <WhatsAppIcon />

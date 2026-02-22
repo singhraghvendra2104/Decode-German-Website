@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 z-[100] w-full backdrop-blur-md bg-background/40 border-b border-black/5">
-        <div className="max-w-[1400px] mx-auto px-10 h-24 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-10 h-16 md:h-24 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
@@ -22,30 +22,32 @@ export default function Header() {
               alt={`${siteConfig.name} logo`}
               width={48}
               height={48}
-              className="h-12 w-auto"
+              className="h-9 md:h-12 w-auto"
               priority
             />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-12">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-xs font-bold tracking-widest uppercase hover:text-primary transition-colors text-stone-gray"
-              >
-                {link.label}
-              </Link>
-            ))}
-            {pathname !== "/about" && (
-              <Link
-                href="/about"
-                className="text-xs font-bold tracking-widest uppercase hover:text-primary transition-colors text-stone-gray"
-              >
-                Our Story
-              </Link>
-            )}
+            {navLinks.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`text-xs font-bold tracking-widest uppercase hover:text-primary transition-colors ${
+                    isActive
+                      ? "text-primary border-b-2 border-primary pb-0.5"
+                      : "text-stone-gray"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA Button */}
@@ -85,23 +87,24 @@ export default function Header() {
         overlayProps={{ backgroundOpacity: 0.3 }}
       >
         <nav className="flex flex-col gap-6 mt-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={close}
-              className="text-sm font-bold tracking-widest uppercase hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/about"
-            onClick={close}
-            className="text-sm font-bold tracking-widest uppercase hover:text-primary transition-colors"
-          >
-            Our Story
-          </Link>
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={close}
+                className={`text-sm font-bold tracking-widest uppercase hover:text-primary transition-colors ${
+                  isActive ? "text-primary" : ""
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href={ctaButton.href}
             onClick={close}

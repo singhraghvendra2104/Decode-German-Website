@@ -96,6 +96,15 @@ body {
   transform: rotate(0deg) translateY(-5px);
 }
 
+/* ─── Curated Image Masks (Courses Page) ──────────────────────────────────── */
+.curated-image-mask {
+  clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
+}
+
+.curated-image-mask-alt {
+  clip-path: polygon(5% 5%, 95% 0, 100% 95%, 0 100%);
+}
+
 /* ─── No Scrollbar Utility ─────────────────────────────────────────────────── */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

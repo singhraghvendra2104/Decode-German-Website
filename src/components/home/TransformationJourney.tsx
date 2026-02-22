@@ -1,13 +1,19 @@
 import { transformationSteps, transformationHeading } from "@/lib/constants";
 
 export default function TransformationJourney() {
-  const offsetClasses = ["", "mt-12", "lg:-mt-6", "mt-12"];
+  // Desktop offsets per the original design
+  const desktopOffsets = [
+    "",
+    "lg:mt-12",
+    "lg:-mt-6",
+    "lg:mt-12",
+  ];
 
   return (
-    <section id="transformation" className="py-32 px-6 bg-white overflow-hidden">
+    <section id="transformation" className="py-20 md:py-32 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
           <div>
             <h2 className="text-5xl md:text-6xl font-[var(--font-serif)] font-bold">
               {transformationHeading.title.split("\n").map((line, i) => (
@@ -26,28 +32,28 @@ export default function TransformationJourney() {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 relative">
           {transformationSteps.map((step, index) => (
             <div
               key={step.number}
-              className={`relative group cursor-default ${offsetClasses[index] || ""}`}
+              className={`relative group cursor-default ${desktopOffsets[index]}`}
             >
               <div
-                className={`${step.shapeClass} w-full aspect-square bg-accent flex flex-col items-center justify-center p-10 group-hover:bg-primary group-hover:text-white transition-all duration-700 shadow-xl group-hover:scale-105`}
+                className={`${step.shapeClass} w-full aspect-square bg-accent flex flex-col items-center justify-center p-4 md:p-10 group-hover:bg-primary group-hover:text-white transition-all duration-700 shadow-xl group-hover:scale-105`}
               >
-                <span className="text-5xl font-[var(--font-serif)] italic mb-4 opacity-40">
+                <span className="text-3xl md:text-5xl font-[var(--font-serif)] italic mb-2 md:mb-4 opacity-40">
                   {step.number}
                 </span>
-                <h3 className="text-2xl font-bold mb-4 uppercase tracking-tighter">
+                <h3 className="text-sm md:text-2xl font-bold mb-2 md:mb-4 uppercase tracking-tighter">
                   {step.title}
                 </h3>
-                <p className="text-center text-sm leading-relaxed opacity-80 group-hover:opacity-100">
+                <p className="text-center text-[10px] md:text-sm leading-relaxed opacity-80 group-hover:opacity-100 hidden sm:block">
                   {step.description}
                 </p>
               </div>
               {step.label && (
                 <div
-                  className={`absolute font-[var(--font-handwriting)] text-primary text-xl pointer-events-none ${
+                  className={`absolute font-[var(--font-handwriting)] text-primary text-xl pointer-events-none hidden md:block ${
                     index === 0
                       ? "-bottom-6 -right-4 rotate-6"
                       : "-top-8 -left-4 -rotate-12"
