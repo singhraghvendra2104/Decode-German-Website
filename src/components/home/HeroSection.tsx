@@ -42,7 +42,7 @@ export default function HeroSection() {
                   {slide.handwriting}
                 </span>
               )}
-              <h1 className="font-[var(--font-serif)] text-ivory text-3xl sm:text-5xl md:text-8xl lg:text-9xl font-bold max-w-5xl leading-[1.1] tracking-tight">
+              <h1 className="font-[var(--font-serif)] text-ivory text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold max-w-4xl leading-[1.2] tracking-tight">
                 {slide.heading}{" "}
                 <span className="italic text-primary">
                   {slide.headingAccent}
@@ -54,11 +54,8 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Bottom CTA + Indicators */}
+      {/* Bottom Indicators */}
       <div className="absolute bottom-16 md:bottom-24 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-8 md:gap-12 w-full px-6">
-        <button className="bg-primary hover:bg-white hover:text-primary text-white font-bold py-4 px-10 md:py-6 md:px-16 rounded-full text-base md:text-xl shadow-2xl transition-all duration-500 hover:scale-105">
-          {heroCta.label}
-        </button>
         <div className="flex gap-4">
           {heroSlides.map((slide, index) => (
             <button

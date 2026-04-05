@@ -30,23 +30,48 @@ export const ctaButton = {
 export const heroSlides = [
   {
     id: 1,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC6v5Ckhr_Lz_ofQnszn1OZee_9F8AlkBPaMRgDvIKWdsLBZvViTPOGzuR_wyax_ssip-MWjxINrA8Re4YiqxeOZEYaHntfRmwJ7ZaOwnsUC1UR8YZg6CZJldod1qlqlKJlvCUIdJNz6TafKBNY91_VjPkwmRuTIwObCSuBW8TNBPjr3SBJrUYtuBQKVN2Px93X5ZiKIzktJB-wqxYriAfHYDAqC3MzhMtyzg64k1SSy9w9bcVIGXuLe8-DtPv36cKIhTLwOYGWyhk",
-    alt: "Life in Germany",
-    handwriting: "The Realization",
+    image: "/home/hero-images/HERO1.png",
+    alt: "German decides your life",
+    handwriting: "",
     heading: "German",
     headingAccent: "decides",
-    headingEnd: "your life.",
+    headingEnd: "your life in Germany.",
   },
   {
     id: 2,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJgzl7b-UKwEQLRFJ9cmgOfmOo16SiLO72ThtJVuaeUw8hvlQDfiznOoy5idT-ndw0rkZSRQ07rQhTjbk_N-uXnJoXISHpWf_7fOcSdgpybGjuETExxbDPJX_LldLKa6NHRYTsh7h3GVf03TPdoXpiViGi8LtWUGEk8nvmD_DWxghJCeDMAAwagoSrb8OU0bS7pbILd3jmTozHlOl1EtZXZ9XTx7ytUNdOLD7sb6H-opbPP8Td4UdTuU-pBueTmhT-BrlWNZoCYA",
-    alt: "Belonging",
+    image: "/home/hero-images/HERO2.png",
+    alt: "We exist for our students",
     handwriting: "",
-    heading: "From",
+    heading: "We exist so our students don't",
+    headingAccent: "beg",
+    headingEnd: ". Don't struggle. Don't get left behind.",
+  },
+  {
+    id: 3,
+    image: "/home/hero-images/HERO3.png",
+    alt: "German is survival",
+    handwriting: "",
+    heading: "German is",
     headingAccent: "survival",
-    headingEnd: "to belonging.",
+    headingEnd: ". It's dignity. It's freedom in Germany.",
+  },
+  {
+    id: 4,
+    image: "/home/hero-images/HERO4.png",
+    alt: "Built from responsibility",
+    handwriting: "",
+    heading: "This platform was",
+    headingAccent: "not built",
+    headingEnd: "for profit. It was built from responsibility.",
+  },
+  {
+    id: 5,
+    image: "/home/hero-images/HERO5.png",
+    alt: "True German fluency",
+    handwriting: "",
+    heading: "When you truly know German, you",
+    headingAccent: "don't struggle",
+    headingEnd: ". You don't suffer. You belong.",
   },
 ];
 
