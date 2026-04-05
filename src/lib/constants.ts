@@ -97,7 +97,7 @@ export const transformationSteps = [
     number: "01",
     title: "Understand",
     description:
-      "Breaking down the linguistic codes and cultural foundations.",
+      "We built this platform with discipline, dedication, and relentless clarity.",
     label: "The Foundation",
     shapeClass: "organic-shape-1",
   },
@@ -105,7 +105,7 @@ export const transformationSteps = [
     number: "02",
     title: "Own",
     description:
-      "Gaining the confidence to express your true self without fear.",
+      "Knowledge becomes communication.",
     label: "",
     shapeClass: "organic-shape-2",
   },
@@ -113,14 +113,14 @@ export const transformationSteps = [
     number: "03",
     title: "Live",
     description:
-      "Applying your skills in real-world scenarios that shape your career.",
+      "If you study here, you don't take classes. You commit. You build confidence. You evolve.",
     label: "",
     shapeClass: "organic-shape-3",
   },
   {
     number: "04",
     title: "Belong",
-    description: "Becoming an integral part of the community.",
+    description: "From understanding to ownership. From survival to belonging. German is not a language. It's a life.",
     label: "The Destination",
     shapeClass: "organic-shape-4",
   },
@@ -203,7 +203,7 @@ export const coreBeliefs = [
     footer: "Personal Responsibility",
     image: "/home/differentiators/DIFF2.png",
     imageAlt: "Founder Teaching",
-    imageOverlayText: "8 Years Experience",
+    imageOverlayText: "12 Years Experience",
     tags: [],
   },
   {
