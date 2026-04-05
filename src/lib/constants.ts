@@ -131,6 +131,56 @@ export const transformationHeading = {
   subtitle: "Four steps to a new life...",
 };
 
+// ─── Home Page: Courses Section ──────────────────────────────────────────────
+export const coursesHeading = {
+  tag: "Educational Roadmap",
+  heading: "Course Progression",
+  accent: "Path",
+  description: "Tailored intensive programs designed to move you from functional survival to professional mastery.",
+};
+
+export const courses = [
+  {
+    id: 1,
+    level: "A1",
+    name: "Beginner",
+    details: [
+      { icon: "calendar_today", text: "2 months" },
+      { icon: "schedule", text: "5 days/week, 1.5 hrs/day" },
+      { icon: "assignment_turned_in", text: "No entrance test required" },
+    ],
+    description: null,
+  },
+  {
+    id: 2,
+    level: "A2",
+    name: "Pre-Intermediate",
+    details: [
+      { icon: "verified", text: "Entrance test required", italic: true },
+    ],
+    description: "Building the foundation for everyday communication and basic social interaction.",
+  },
+  {
+    id: 3,
+    level: "B1",
+    name: "Intermediate",
+    details: [
+      { icon: "schedule", text: "4 days/week, 2 hrs/day" },
+      { icon: "verified", text: "Entrance test required", italic: true },
+    ],
+    description: null,
+  },
+  {
+    id: 4,
+    level: "B2",
+    name: "Professional",
+    details: [
+      { icon: "verified", text: "Entrance test required", italic: true },
+    ],
+    description: "The gateway to the German workforce. Mastering technical discussions and professional etiquette.",
+  },
+];
+
 // ─── Home Page: How We're Different ──────────────────────────────────────────
 export const coreBeliefs = [
   {

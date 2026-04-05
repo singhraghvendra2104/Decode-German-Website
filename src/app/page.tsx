@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import HeroSection from "@/components/home/HeroSection";
 import NarrativeSection from "@/components/home/NarrativeSection";
 import TransformationJourney from "@/components/home/TransformationJourney";
+import CoursesSection from "@/components/home/CoursesSection";
 import CoreBeliefs from "@/components/home/CoreBeliefs";
 import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
@@ -29,6 +30,7 @@ export default function HomePage() {
         <NarrativeSection />
         <TransformationJourney />
         <CoreBeliefs />
+        <CoursesSection />
         <Testimonials />
         <CTASection />
       </main>
