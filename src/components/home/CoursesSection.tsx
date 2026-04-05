@@ -18,12 +18,10 @@ export default function CoursesSection() {
 
         {/* Courses Grid - Artistic Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-24">
-          {courses.map((course, index) => (
+          {courses.map((course) => (
             <div
               key={course.id}
-              className={`relative group transition-all duration-700 ${
-                index % 2 === 0 ? "lg:mt-0" : "lg:mt-12"
-              }`}
+              className="relative group transition-all duration-700"
             >
               {/* Organic Background Shape */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent via-white to-accent/50 rounded-3xl transform group-hover:scale-105 transition-transform duration-700 -z-10" />
