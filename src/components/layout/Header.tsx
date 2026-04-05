@@ -8,7 +8,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { navLinks, ctaButton, siteConfig } from "@/lib/constants";
 
 export default function Header() {
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, { open, close, toggle }] = useDisclosure(false);
   const pathname = usePathname();
 
   return (
@@ -61,9 +61,9 @@ export default function Header() {
           {/* Mobile Burger */}
           <Burger
             opened={opened}
-            onClick={open}
+            onClick={toggle}
             className="md:hidden"
-            aria-label="Open navigation menu"
+            aria-label="Toggle navigation menu"
             color="#e2725b"
           />
         </div>
