@@ -1,8 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import { siteConfig, footerLinks, footerDescription } from "@/lib/constants";
+import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { siteConfig, footerLinks, footerDescription, socialLinks } from "@/lib/constants";
 
 export default function Footer() {
+  const socialIcons: Record<string, React.ReactNode> = {
+    instagram: <FaInstagram size={20} />,
+    facebook: <FaFacebook size={20} />,
+    youtube: <FaYoutube size={20} />,
+    linkedin: <FaLinkedin size={20} />,
+  };
+
   return (
     <footer className="bg-white py-16 md:py-24 px-4 md:px-10 border-t border-accent">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-20">
@@ -17,9 +25,24 @@ export default function Footer() {
               className="h-10 md:h-12 w-auto"
             />
           </div>
-          <p className="text-gray-500 max-w-md text-base md:text-lg leading-relaxed">
+          <p className="text-gray-500 max-w-md text-base md:text-lg leading-relaxed mb-8">
             {footerDescription}
           </p>
+          {/* Social Links */}
+          <div className="flex gap-6">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="text-gray-400 hover:text-primary transition-colors duration-300"
+              >
+                {socialIcons[social.icon]}
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Explorer Links */}
@@ -41,17 +64,34 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Office */}
+        {/* Contact */}
         <div>
           <h4 className="text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
-            Office
+            Contact
           </h4>
-          <address className="text-sm text-gray-500 leading-relaxed not-italic">
-            {siteConfig.address.street}
-            <br />
-            {siteConfig.address.city}
-            <br />
-            {siteConfig.email}
+          <address className="text-sm text-gray-500 leading-relaxed not-italic space-y-3">
+            <div>
+              <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
+                Email
+              </p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="hover:text-primary transition-colors"
+              >
+                {siteConfig.email}
+              </a>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
+                Phone
+              </p>
+              <a
+                href={`tel:${siteConfig.whatsappNumber}`}
+                className="hover:text-primary transition-colors"
+              >
+                {siteConfig.whatsappNumber}
+              </a>
+            </div>
           </address>
         </div>
       </div>

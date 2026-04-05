@@ -11,7 +11,7 @@ export const siteConfig = {
     city: "10119 Berlin, Germany",
   },
   whatsappNumber: "+4915904836675",
-  copyright: `© ${new Date().getFullYear()} Decode German. Editorial Language Learning.`,
+  copyright: `© ${new Date().getFullYear()} Decode German. Teaching is passion, not business.`,
 };
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
@@ -760,4 +760,11 @@ export const footerLinks = {
 };
 
 export const footerDescription =
-  "Bridging the gap between fluency and identity. Premium transformation for the global citizen in Germany.";
+  "Teaching is passion, not business. Premium German language transformation for the global citizen in Germany.";
+
+export const socialLinks = [
+  { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/decodegerman" },
+  { icon: "facebook", label: "Facebook", href: "https://www.facebook.com/decodegerman" },
+  { icon: "youtube", label: "YouTube", href: "https://www.youtube.com/channel/UCrWQrQOWzRSt86XrS6C-D2Q" },
+  { icon: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/company/decode-german/" },
+];
