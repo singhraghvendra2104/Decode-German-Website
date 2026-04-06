@@ -1,56 +1,49 @@
-import { aboutHero } from "@/lib/constants";
-
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[70vh] md:min-h-[90vh] bg-warm-sand/30 flex items-center pt-20 pb-16 md:pb-32">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
-        {/* Text Content */}
-        <div className="lg:col-span-6 relative z-10 lg:pt-20">
-          <span className="inline-block text-primary-alt font-[var(--font-serif-alt)] italic text-lg md:text-xl mb-4 md:mb-6">
-            {aboutHero.subtitle}
+    <section className="max-w-7xl mx-auto px-8 mb-32 pt-32">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <div className="md:col-span-7 space-y-8">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-primary font-bold">
+            The Promise
           </span>
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-[var(--font-serif-alt)] leading-[0.95] tracking-tighter mb-8 md:mb-10 text-charcoal">
-            {aboutHero.heading} <br />
-            <span className="italic font-light opacity-80">
-              {aboutHero.headingAccent}
-            </span>
-            .
+          <h1 className="text-7xl md:text-8xl font-medium leading-[0.95] tracking-tight">
+            Our Story
           </h1>
-          <div className="max-w-md ml-4 sm:ml-12 lg:ml-24">
-            <p className="text-base md:text-lg leading-relaxed text-stone-gray mb-8 md:mb-10">
-              {aboutHero.body}
-            </p>
-            <div className="flex items-center gap-8">
-              <button className="group flex items-center gap-3 text-primary-alt font-bold uppercase tracking-widest text-xs">
-                {aboutHero.ctaLabel}
-                <span className="text-sm group-hover:translate-x-1 transition-transform">
-                  &rarr;
-                </span>
-              </button>
+          <p className="text-2xl md:text-3xl text-primary font-[var(--font-serif)] italic max-w-xl leading-relaxed">
+            We built a promise to students. If you commit, we commit the hardest.
+          </p>
+          <div className="flex gap-12 pt-4">
+            <div>
+              <span className="block text-4xl font-[var(--font-serif)] font-bold">1000+</span>
+              <span className="text-[10px] uppercase tracking-widest opacity-60">
+                Students Taught
+              </span>
+            </div>
+            <div>
+              <span className="block text-4xl font-[var(--font-serif)] font-bold">2020</span>
+              <span className="text-[10px] uppercase tracking-widest opacity-60">
+                Year Founded
+              </span>
             </div>
           </div>
         </div>
-
-        {/* Polaroid Image */}
-        <div className="lg:col-span-6 relative">
-          <div className="relative w-full aspect-[3/4] p-3 md:p-4 bg-white shadow-2xl rotate-0 md:rotate-2">
-            <div
-              className="w-full h-full bg-center bg-cover"
-              style={{ backgroundImage: `url("${aboutHero.image}")` }}
-              role="img"
-              aria-label={aboutHero.imageAlt}
+        <div className="md:col-span-5">
+          <div className="polaroid rotate-3 relative z-10">
+            <img
+              alt="Shalini K Dubey teaching"
+              className="aspect-square object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHxeNoDh26UWvibk_oBP9jeMuaXq4kglaYjB05YTPSeSdkPzj8Uy8w2dsAK2OTQ7-DRCfCEeK4zFqXcJVpzfKi2Cd1Q7H1QamPU8SJnTfc3U1AdD_X5rKY8tgBrWhd1VkjDYgi0sFq3GKzns7h9r00Fm9z3zkIsS3lALL4bripFYD-s-vyFlj5CoRBVqjU394_BVufvyh4mIExx1YpWP3pvvTezctJRX78_9nOCG-kIqw_jxbXof-xnZ0GXVkNCAMryzNB58WyeNQ"
             />
-            {/* Quote Overlay */}
-            <div className="absolute -bottom-4 -left-2 md:-bottom-8 md:-left-12 max-w-[240px] md:max-w-[280px] bg-paper-white p-5 md:p-8 shadow-xl torn-edge torn-edge-bottom -rotate-1 md:-rotate-3 border-x border-warm-sand/30">
-              <p className="font-[var(--font-handwriting)] text-xl md:text-2xl text-primary-alt leading-tight">
-                {aboutHero.quoteText}
-              </p>
-              <p className="text-[10px] uppercase tracking-[0.2em] mt-3 md:mt-4 opacity-40">
-                {aboutHero.quoteCaption}
-              </p>
-            </div>
+            <p className="handwriting text-2xl text-primary absolute -bottom-8 -right-4 bg-background px-4 py-2 rotate-[-4deg]">
+              Shalini K Dubey
+            </p>
           </div>
         </div>
+      </div>
+      <div className="mt-20 max-w-3xl ml-auto md:mr-12">
+        <p className="text-xl leading-relaxed text-on-surface/80">
+          Founded in 2020 by <strong>Shalini K Dubey</strong>. 1000+ students taught across the world. We built this platform with discipline, dedication, and relentless clarity. With teaching that is structured, demanding, and deeply human. <strong>With equal commitment from us and from our students.</strong>
+        </p>
       </div>
     </section>
   );
