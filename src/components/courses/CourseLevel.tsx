@@ -25,6 +25,7 @@ interface CourseLevelProps {
   details: CourseDetail[];
   buttonLabel: string;
   buttonStyle: "outline" | "filled";
+  resources?: string[];
   reversed?: boolean;
   quote?: CourseQuote;
   isLast?: boolean;
@@ -42,6 +43,7 @@ export default function CourseLevel({
   details,
   buttonLabel,
   buttonStyle,
+  resources,
   reversed = false,
   quote,
   isLast = false,
@@ -80,6 +82,27 @@ export default function CourseLevel({
           </li>
         ))}
       </ul>
+      {resources && resources.length > 0 && (
+        <div className="space-y-4">
+          <p className="uppercase text-[10px] font-bold tracking-[0.2em] text-stone-gray">
+            Learning Resources
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {resources.map((resource, index) => (
+              <span
+                key={index}
+                className={`text-xs px-3 py-1.5 rounded-full border ${
+                  index < 2
+                    ? "bg-primary/10 border-primary/30 text-primary font-semibold"
+                    : "bg-charcoal/5 border-charcoal/15 text-charcoal"
+                }`}
+              >
+                {resource}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       <Link href={`/courses/${id}`}>
         {buttonStyle === "outline" ? (
           <button className="w-full py-4 md:py-5 border border-charcoal/20 uppercase text-xs font-bold tracking-widest hover:bg-charcoal hover:text-ivory transition-all mt-4">

@@ -6,16 +6,19 @@ import CourseHero from "@/components/courses/CourseHero";
 import CourseLevel from "@/components/courses/CourseLevel";
 import CourseQuoteDivider from "@/components/courses/CourseQuoteDivider";
 import CourseCTA from "@/components/courses/CourseCTA";
+import CourseTimeline from "@/components/courses/CourseTimeline";
+import SpecializedCourses from "@/components/courses/SpecializedCourses";
+import CourseFeatures from "@/components/courses/CourseFeatures";
 import { courseLevels } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Courses",
   description:
-    "A curated journey through the German language. From A1 foundations to B2 mastery — learn to reclaim your identity through emotional storytelling.",
+    "A structured journey through the German language. Every course is online, intensive, and taught in small batches. Whether you're starting from zero or preparing for an exam — we have a structured path for you.",
   openGraph: {
     title: "Courses | Decode German",
     description:
-      "A curated journey through the German language — level by level, through the power of emotional storytelling.",
+      "A structured journey through the German language — level by level, from A1 to B2.",
   },
 };
 
@@ -30,6 +33,9 @@ export default function CoursesPage() {
         <CourseLevel {...courseLevels[1]} />
         <CourseLevel {...courseLevels[2]} />
         <CourseLevel {...courseLevels[3]} isLast />
+        <CourseTimeline />
+        <SpecializedCourses />
+        <CourseFeatures />
         <CourseCTA />
       </main>
       <Footer />

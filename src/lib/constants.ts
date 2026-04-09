@@ -385,10 +385,10 @@ export const aboutCta = {
 
 // ─── Courses Page: Hero Section ──────────────────────────────────────────────
 export const courseHero = {
-  subtitle: "— The Path to Belonging",
-  heading: "A Curated Journey",
+  subtitle: "Our Courses",
+  heading: "A Structured Journey",
   headingAccent: "Through the Language.",
-  body: "We don't teach grammar in isolation. We teach you how to reclaim your identity, level by level, through the power of emotional storytelling.",
+  body: "Every course is online, intensive, and taught in small batches. Whether you're starting from zero or preparing for an exam, we have a structured path for you.",
 };
 
 // ─── Courses Page: Course Levels ─────────────────────────────────────────────
@@ -398,22 +398,30 @@ export const courseLevels = [
     level: "A1",
     title: "The Foundation",
     description:
-      "Begin with the basics of existence. Learn to introduce yourself, navigate daily life, and express your immediate needs with dignity.",
+      "Start from zero. Learn to introduce yourself, handle everyday situations like ordering food, asking for directions, filling out forms and build the confidence to exist in German.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAKKCk2_YHw0uHJSHnQ1ZwaJMvA-qYNNiOAilJb_SpjP4wK4QNoW0akcFrcMqzZKr2f-gb2Zw_h3fxPKy6uKStT36XKV-637mrBx0ThlfKjlFFEuv-41hBHM8B5eaKq2Ntg9mgud5bJzNHESJyUqJs2PrHZKdZH6PqAzDRVVLXTRn6uIkPfvUu0z-JOpDh5HsyHfsq0nqlynKSTFFdoI27p1OS3ernmzAWoMYBFsOYixOCSVUpHzA1JXJJedsuUd_7B_ovnvkvjUMk",
     imageAlt: "The Foundation",
     imageAspect: "aspect-[16/10]",
     maskClass: "curated-image-mask",
     details: [
-      { label: "Duration", value: "3 Months" },
-      { label: "Batch Size", value: "Max 6 Students" },
-      { label: "Materials", value: "Netzwerk Neu" },
+      { label: "Duration", value: "2.5 Months" },
+      { label: "Batch Size", value: "8–10 Students" },
     ],
-    buttonLabel: "Explore A1 Curriculum",
+    buttonLabel: "Explore A1 Course",
     buttonStyle: "outline" as const,
+    resources: [
+      "Netzwerk A1",
+      "Concrete Guide A1",
+      "NicosWeg",
+      "Podcasts",
+      "FM Series",
+      "YouTube",
+      "1-on-1 Pronunciation",
+    ],
     quote: {
       text: "\u201CThe moment I ordered my first coffee without panic, the city started to feel like it wanted me there.\u201D",
-      caption: "— A1 Student Reflection",
+      caption: "A1 Student Reflection",
       position: "bottom-right" as const,
       bgClass: "bg-warm-sand",
     },
@@ -421,21 +429,29 @@ export const courseLevels = [
   {
     id: "a2",
     level: "A2",
-    title: "The Expansion",
+    title: "The Momentum",
     description:
-      "Move beyond survival. Learn to describe your past, share your dreams, and engage in meaningful exchanges with your neighbors.",
+      "You can survive. Now learn to connect. Talk about your past, describe your routines, hold real conversations with neighbours, understand announcements and simple news.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAG-wEPGW7hntBOjTwlU7x4CJRA87KNpRIcDHVCXNQkdNfXGnjo-NEzM3Dub9KUZjXlNaKNl41cCGAroEyZBwf2hhbaLzFUPYWd0DeqGelPMMbqiRU4XTfOsHXFE-RKOoO84liGeYS2gS-uwIR16hoC_S60bXc3JYBKoMK1smSXNZcXt37o7-8ywTvWv_K2xR37NDEbjAEN4b5Aq-_J1CjHw6k5S5F2fDJLBTxBk-vi8x3o-q6msVMiRNYLVdHPJZGHu-iMnDlbOnw",
-    imageAlt: "The Expansion",
+    imageAlt: "The Momentum",
     imageAspect: "aspect-[16/10]",
     maskClass: "curated-image-mask-alt",
     details: [
       { label: "Duration", value: "2.5 Months" },
-      { label: "Focus", value: "Narrative Past" },
-      { label: "Materials", value: "Netzwerk A2" },
+      { label: "Batch Size", value: "8–10 Students" },
     ],
-    buttonLabel: "Explore A2 Curriculum",
+    buttonLabel: "Explore A2 Course",
     buttonStyle: "outline" as const,
+    resources: [
+      "Netzwerk A2",
+      "Concrete Guide A2",
+      "NicosWeg",
+      "Podcasts",
+      "FM Series",
+      "YouTube",
+      "1-on-1 Pronunciation",
+    ],
     reversed: true,
   },
   {
@@ -443,19 +459,28 @@ export const courseLevels = [
     level: "B1",
     title: "The Independence",
     description:
-      "The threshold of fluency. Articulate complex thoughts, debate opinions, and navigate professional environments with nuance and confidence.",
+      "Stop translating in your head. Express opinions, handle work conversations, understand most of what you hear in daily life, and write structured emails. Native German speaker sessions included.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuC81UHb8cIHz632HnAgMlX1kb-cMIQ8RWX3ycnjMwJgP7GlNsHkSU0AdpTSI21ROZ7YWLLEUYIxoXveMuvLF-d4yKpuuXPw3k9ICx6_cFirV_l6MLXS8QzIuClDRguOnz9vlEWpnNrksEmyJLKy2UlqbZLkiExMARMnvuJxClCd37LOYpGJdudAVQDkEYWLIFbvj6samUHqEXjI4-HVPP_63LboaBm1VNEUURmSyJOj09Y4Yp_Vqb3AaXjne0P_CpbILYMqXp1OuFI",
     imageAlt: "The Independence",
     imageAspect: "aspect-[4/5]",
     maskClass: "curated-image-mask",
     details: [
-      { label: "Duration", value: "3 Months" },
+      { label: "Duration", value: "3.5 Months" },
       { label: "Intensity", value: "Deep Immersion" },
-      { label: "Materials", value: "Netzwerk B1+" },
     ],
     buttonLabel: "Begin the B1 Journey",
     buttonStyle: "filled" as const,
+    resources: [
+      "Netzwerk B1",
+      "Concrete Guide B1",
+      "NicosWeg",
+      "Podcasts",
+      "FM Series",
+      "YouTube",
+      "German Films & Music",
+      "Native Speaker Sessions",
+    ],
     quote: {
       text: "\u201CB1 isn\u2019t just a level. It\u2019s the moment you stop translating in your head and start living in German.\u201D",
       caption: "",
@@ -468,23 +493,31 @@ export const courseLevels = [
     level: "B2",
     title: "The Mastery",
     description:
-      "Command the language with precision. Engage in academic discourse, understand subtle humor, and express yourself with the eloquence of a native speaker.",
+      "Speak with confidence. Follow complex discussions, write professional reports, understand humour and idioms, handle university lectures and workplace meetings entirely in German.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJgzl7b-UKwEQLRFJ9cmgOfmOo16SiLO72ThtJVuaeUw8hvlQDfiznOoy5idT-ndw0rkZSRQ07rQhTjbk_N-uXnJoXISHpWf_7fOcSdgpybGjuETExxbDPJX_LldLKa6NHRYTsh7h3GVf03TPdoXpiViGi8LtWUGEk8nvmD_DWxghJCeDMAAwagoSrb8OU0bS7pbILd3jmTozHlOl1EtZXZ9XTx7ytUNdOLD7sb6H-opbPP8Td4UdTuU-pBueTmhT-BrlWNZoCYA",
     imageAlt: "The Mastery",
     imageAspect: "aspect-[16/10]",
     maskClass: "curated-image-mask-alt",
     details: [
-      { label: "Duration", value: "4 Months" },
-      { label: "Focus", value: "Academic Fluency" },
-      { label: "Materials", value: "Aspekte Neu B2" },
+      { label: "Duration", value: "3.5 Months" },
+      { label: "Focus", value: "Professional Fluency" },
     ],
     buttonLabel: "Begin the B2 Journey",
     buttonStyle: "filled" as const,
+    resources: [
+      "Sicher! Series",
+      "NicosWeg",
+      "Podcasts",
+      "FM Series",
+      "YouTube",
+      "German Films & Music",
+      "Native Speaker Classes",
+    ],
     reversed: true,
     quote: {
       text: "\u201CAt B2, you don\u2019t just speak German \u2014 you think, dream, and argue in it.\u201D",
-      caption: "— B2 Graduate",
+      caption: "B2 Graduate",
       position: "bottom-right" as const,
       bgClass: "bg-warm-sand",
     },
@@ -740,15 +773,141 @@ export const courseDetails: Record<
 
 // ─── Courses Page: Quote Divider ─────────────────────────────────────────────
 export const courseQuote =
-  "\u201CTo have another language is to possess a second soul.\u201D";
+  "Every level is not just grammar. It's a new way of being in the world.";
 
 // ─── Courses Page: CTA Section ───────────────────────────────────────────────
 export const courseCta = {
-  heading: "Where does your\nstory begin?",
-  body: "Whether you\u2019re taking your first breath in a new tongue or polishing your professional edge, we have a place for you.",
-  primaryButton: { label: "Consultation Call", href: "#consultation" },
-  secondaryButton: { label: "Browse All Modules", href: "#modules" },
+  heading: "Not sure where to start?",
+  body: "Request a callback or message us directly on WhatsApp. We'll help you find the right course.",
+  primaryButton: { label: "Request a Callback", href: "#callback" },
+  secondaryButton: { label: "Chat on WhatsApp", href: "https://wa.me/4915904836675" },
 };
+
+// ─── Courses Page: Course Resources ──────────────────────────────────────────
+export const courseResources = {
+  a1: [
+    "Netzwerk A1",
+    "Concrete Guide A1",
+    "NicosWeg",
+    "Podcasts",
+    "FM Series",
+    "YouTube",
+    "1-on-1 Pronunciation",
+  ],
+  a2: [
+    "Netzwerk A2",
+    "Concrete Guide A2",
+    "NicosWeg",
+    "Podcasts",
+    "FM Series",
+    "YouTube",
+    "1-on-1 Pronunciation",
+  ],
+  b1: [
+    "Netzwerk B1",
+    "Concrete Guide B1",
+    "NicosWeg",
+    "Podcasts",
+    "FM Series",
+    "YouTube",
+    "German Films & Music",
+    "Native Speaker Sessions",
+  ],
+  b2: [
+    "Sicher! Series",
+    "NicosWeg",
+    "Podcasts",
+    "FM Series",
+    "YouTube",
+    "German Films & Music",
+    "Native Speaker Classes",
+  ],
+};
+
+// ─── Courses Page: Timeline ──────────────────────────────────────────────────
+export const courseTimeline = {
+  label: "Most Popular Path",
+  heading: "Zero to B1 Exam in ~9 Months",
+  description:
+    "B1 is required for most German university admissions, job applications, and visa processes. This is the route most of our students follow.",
+  steps: [
+    { level: "A1", label: "Foundation", duration: "2.5 mo" },
+    { level: "A2", label: "Momentum", duration: "2.5 mo" },
+    { level: "B1", label: "Independence", duration: "3.5 mo" },
+    { level: "Exam", label: "B1 Prep", duration: "15 days" },
+  ],
+  total: "~9 months",
+  note: "Every student's pace is different.",
+};
+
+// ─── Courses Page: Specialized Courses ───────────────────────────────────────
+export const specializedCourses = [
+  {
+    id: 1,
+    title: "Crash Courses",
+    levels: "A1 · A2 · B1 · B2",
+    description:
+      "You know ~50% of a level already and need structured help to fill the gaps and complete it.",
+    details: [
+      { label: "Duration", value: "15–25 days" },
+      { label: "Intensity", value: "4–5 hrs/day" },
+      { label: "Format", value: "One-to-one" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Revision Courses",
+    levels: "A1 · A2 · B1 · B2",
+    description:
+      "You've completed ~80% and need a quick, focused revision before the next level or an exam.",
+    details: [
+      { label: "Duration", value: "7–10 days" },
+      { label: "Intensity", value: "4–5 hrs/day" },
+      { label: "Format", value: "One-to-one" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Exam Preparation",
+    levels: "Goethe · TELC · ÖSD",
+    description:
+      "You've completed the level and want focused preparation, mock exams, timed practice across all four modules.",
+    details: [
+      { label: "Duration", value: "15 days" },
+      { label: "Intensity", value: "4–5 hrs/day" },
+      { label: "Format", value: "Groups of 2" },
+    ],
+  },
+];
+
+// ─── Courses Page: Features ──────────────────────────────────────────────────
+export const courseFeatures = [
+  {
+    title: "100% Online",
+    description: "Attend from anywhere. All you need is commitment.",
+  },
+  {
+    title: "Small Batches",
+    description: "8–10 students per class. Everyone gets attention.",
+  },
+  {
+    title: "Regular Tests",
+    description: "No one falls behind quietly. Progress is tracked.",
+  },
+  {
+    title: "Personal Guidance",
+    description: "Not sure where to start? Request a callback, we'll help.",
+  },
+  {
+    title: "Entrance Test",
+    description: "For levels above A1. We place you correctly.",
+  },
+  {
+    title: "Beyond Textbooks",
+    description:
+      "NicosWeg, podcasts, films, music, pronunciation practice.",
+  },
+];
 
 // ─── Footer ──────────────────────────────────────────────────────────────────
 export const footerLinks = {

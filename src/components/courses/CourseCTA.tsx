@@ -24,6 +24,8 @@ export default function CourseCTA() {
           </a>
           <a
             href={courseCta.secondaryButton.href}
+            target={courseCta.secondaryButton.href.startsWith("http") ? "_blank" : undefined}
+            rel={courseCta.secondaryButton.href.startsWith("http") ? "noopener noreferrer" : undefined}
             className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 border border-ivory/30 text-ivory font-bold uppercase tracking-[0.2em] text-xs hover:border-primary transition-all duration-300 text-center"
           >
             {courseCta.secondaryButton.label}
