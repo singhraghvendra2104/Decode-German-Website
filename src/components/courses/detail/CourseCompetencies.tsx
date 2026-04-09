@@ -27,7 +27,7 @@ export default function CourseCompetencies({
           <span className="not-italic block md:inline">Able To Do</span>
         </h2>
 
-        <div className="grid grid-cols-12 gap-y-16 md:gap-y-32">
+        <div className="grid grid-cols-12 gap-y-20 md:gap-y-36">
           {/* Row 1 */}
           {c[0] && (
             <div className="col-span-12 md:col-span-5 relative">
@@ -40,7 +40,7 @@ export default function CourseCompetencies({
                 </p>
               </div>
               {c[0].annotation && (
-                <div className="absolute -bottom-8 -left-4 md:-left-8 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary -rotate-6 whitespace-nowrap">
+                <div className="absolute -bottom-8 -left-4 md:-left-8 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary -rotate-6 whitespace-nowrap z-30">
                   {c[0].annotation}
                 </div>
               )}
@@ -69,7 +69,7 @@ export default function CourseCompetencies({
                 </div>
               )}
               {c[1].annotation && (
-                <div className="absolute -top-10 right-4 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary/60 rotate-12">
+                <div className="absolute -top-10 right-4 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary/60 rotate-12 z-30">
                   {c[1].annotation}
                 </div>
               )}
@@ -106,7 +106,7 @@ export default function CourseCompetencies({
               </div>
             )}
             {c[2]?.annotation && (
-              <div className="absolute -bottom-12 right-0 md:right-1/4 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary -rotate-2">
+              <div className="absolute -bottom-10 right-0 md:right-1/4 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary -rotate-2 z-30">
                 {c[2].annotation}
               </div>
             )}
@@ -147,7 +147,7 @@ export default function CourseCompetencies({
                     </p>
                   </div>
                   {c[5].annotation && (
-                    <div className="font-[var(--font-handwriting)] text-xl md:text-2xl text-primary/80 pt-4 px-4 italic">
+                    <div className="font-[var(--font-handwriting)] text-xl md:text-2xl text-primary/80 pt-4 px-4 italic z-30 relative">
                       {c[5].annotation}
                     </div>
                   )}
