@@ -909,6 +909,229 @@ export const courseFeatures = [
   },
 ];
 
+// ─── Course Detail Pages (New Design) ────────────────────────────────────────
+export const courseDetailPages: Record<string, {
+  level: string;
+  title: string;
+  subtitle: string;
+  heroDescription: string;
+  heroImage: string;
+  heroImageAlt: string;
+  imageCaption?: string;
+  stats: { value: string; label: string }[];
+  competencies: { title: string; description: string; annotation?: string; image?: string; imageAlt?: string; scrapbookNote?: string }[];
+  methodSteps: { number: string; title: string; description: string }[];
+  methodBenefits: string[];
+  journeyBlocks: { number: string; weeks: string; title: string; description: string; badge: string; annotation?: string }[];
+  resources: { title: string; description: string; type: "primary" | "watch" | "listen" | "read"; link?: string; linkLabel?: string }[];
+  beforeText: string;
+  afterText: string;
+  nextLevel: { id: string; level: string } | null;
+  closingQuote?: string;
+}> = {
+  a1: {
+    level: "A1",
+    title: "Foundation",
+    subtitle: "Intensive Online German",
+    heroDescription:
+      "Every great story begins with a single word. Our A1 journey is designed for the absolute beginner, weaving together the structural elegance of German grammar with the vibrant reality of life in Berlin. This isn't just about passing a test; it's about finding your voice in a new culture.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBX1iVf5IBO_iq-_sqrsaDqzBLDuG2j7e2TDjha4l4gda3tbP_lwQcR8LkA3t24WGasNAWDABEhLx3ffM2O0wYkugcpJFUwkWOagxAVXXel6pGEUZUWlJ0M-Dlo2VBdKKh4r6Y9bALmLc-rYLNL_r9Dw51Zwsg_L6XeGLsoDKqKn8FcLNa75gAyinrpH9RWrAlsMfsTRMC0Clq0RmX3jBu_LAmRs1HXh7OTpbeQP7TJll3em3pFR1IXao96gPW1VS3bnbZoDEqVROE",
+    heroImageAlt: "Cinematic street view of Berlin",
+    imageCaption: "Beginnings in Berlin...",
+    stats: [
+      { value: "2.5", label: "Months Duration" },
+      { value: "5", label: "Days / Week" },
+      { value: "8-10", label: "Students Batch" },
+      { value: "4+1", label: "Module Tests" },
+    ],
+    competencies: [
+      { title: "Introduce Yourself", description: "Master the art of introductions. Share your origins, your hobbies, and your story with confidence.", annotation: "\"I can say 'My name is...'\"" },
+      { title: "Everyday Situations", description: "Ordering your first 'Kaffee und Kuchen' or navigating the supermarket becomes second nature.", annotation: "No more pointing at menus!", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4FrgcK7geX40q48kD7dqmQ1Q5gNMmMb7S0ZFWLyaZkxO4INFyKPGOs2X5tyEhoXLCGUaTuhhw-e_1uWp7Jyo2ncq_ei276YSqFF7OQ5oYorBVvqbF8OUSu4uZIdwtRqA0g4jcr-q8Zj8HINEDH_e0Ib8dyfzePDbXSMBwTNWwUHyf6yISDZavN1KaLNrAHy4Lh_nRqmFXURCsFWzuh3MACzFpPYDIwHluCrCbG-ALL7eUltiD4JU5ICZbtEgUU-UNkkmxOI2JCiE", imageAlt: "Coffee shop" },
+      { title: "Navigate the City", description: "Reading train maps and asking for directions. The U-Bahn will no longer feel like a maze.", annotation: "\"Excuse me, where is...?\"", scrapbookNote: "From the U-Bahn stations to the Spätis..." },
+      { title: "Describe Your World", description: "Talk about your home, your family, and the people who matter most in simple German." },
+      { title: "Fill Out Forms", description: "Conquer the bureaucracy. Learn to handle registration forms and basic official documents." },
+      { title: "Listen & Understand", description: "Catch the drift of announcements and short conversations in public spaces.", annotation: "\"I'm finally getting it!\"" },
+    ],
+    methodSteps: [
+      { number: "01", title: "Watch Video Lessons", description: "Before the live session, absorb the grammar at your own pace through our cinematic video modules curated by expert linguists." },
+      { number: "02", title: "Attend Live Classes", description: "Interactive Zoom sessions focusing on speaking, active listening, and peer-to-peer storytelling in a safe space." },
+      { number: "03", title: "Review & Practice", description: "Utilize our bespoke A1 'Scrapbook' exercises, digital worksheets that feel more like journaling than homework." },
+      { number: "04", title: "Test & Progress", description: "Frequent low-stakes assessments ensure you are ready for the final A1 certification without the stress." },
+    ],
+    methodBenefits: [
+      "Small Batches (max 10)",
+      "1-on-1 Pronunciation Check",
+      "Digital Journal Access",
+    ],
+    journeyBlocks: [
+      { number: "01", weeks: "Weeks 1-2", title: "Block 1: Genesis", description: "Alphabet, Numbers, Personal Pronouns, Present Tense basics. Introduction to the 'Nominativ'.", badge: "Quiz: Hello World", annotation: "The first \"Hallo!\"" },
+      { number: "02", weeks: "Weeks 3-5", title: "Block 2: Action", description: "Daily routines, Verbs with stem changes, Accusative case, and Time expressions.", badge: "Test: My Day", annotation: "Navigating the menu..." },
+      { number: "03", weeks: "Weeks 6-8", title: "Block 3: Movement", description: "Modal verbs, Prepositions of place, and Navigating city structures.", badge: "Test: The Traveler", annotation: "Finding the U-Bahn!" },
+      { number: "04", weeks: "Weeks 9-10", title: "Block 4: Reflection", description: "The 'Perfekt' tense, talking about the past, and preparing for the final oral exam.", badge: "Final Assessment", annotation: "You made it!" },
+    ],
+    resources: [
+      { title: "Netzwerk Neu A1", description: "The core textbook & workbook series by Klett.", type: "primary" as const, link: "#", linkLabel: "Order on Amazon" },
+      { title: "Nicos Weg", description: "", type: "watch" as const },
+      { title: "Easy German Podcast", description: "", type: "listen" as const },
+    ],
+    beforeText:
+      "No prior knowledge of German is required. Just bring curiosity and a commitment to 10 hours of self-study per week. This is where your journey begins.",
+    afterText:
+      "You will be ready to navigate daily life in Germany, ordering food, asking for directions, and meeting new friends, and transition smoothly into our A2 course.",
+    nextLevel: { id: "a2", level: "A2" },
+    closingQuote:
+      "\"The journey of a thousand miles begins with a single step.\" — Lao Tzu",
+  },
+  a2: {
+    level: "A2",
+    title: "Momentum",
+    subtitle: "Intensive Online German",
+    heroDescription: "You can survive. Now learn to connect. Talk about your past, describe your routines, hold real conversations with neighbours, understand announcements and simple news.",
+    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAG-wEPGW7hntBOjTwlU7x4CJRA87KNpRIcDHVCXNQkdNfXGnjo-NEzM3Dub9KUZjXlNaKNl41cCGAroEyZBwf2hhbaLzFUPYWd0DeqGelPMMbqiRU4XTfOsHXFE-RKOoO84liGeYS2gS-uwIR16hoC_S60bXc3JYBKoMK1smSXNZcXt37o7-8ywTvWv_K2xR37NDEbjAEN4b5Aq-_J1CjHw6k5S5F2fDJLBTxBk-vi8x3o-q6msVMiRNYLVdHPJZGHu-iMnDlbOnw",
+    heroImageAlt: "A2 Course - The Momentum",
+    imageCaption: "Building bridges...",
+    stats: [
+      { value: "2.5", label: "Months Duration" },
+      { value: "5", label: "Days / Week" },
+      { value: "8-10", label: "Students Batch" },
+      { value: "4+1", label: "Module Tests" },
+    ],
+    competencies: [
+      { title: "Talk About Your Past", description: "Narrate stories from your life using the past tense with growing confidence." },
+      { title: "Describe Routines", description: "Share your daily rhythm, habits, and weekend plans with ease." },
+      { title: "Hold Conversations", description: "Engage neighbours and colleagues in real, unscripted exchanges." },
+      { title: "Understand Announcements", description: "Follow public announcements, simple news broadcasts, and short articles." },
+      { title: "Write Messages", description: "Compose semi-formal emails, short letters, and everyday messages." },
+      { title: "Express Opinions", description: "Begin to share your views and preferences on everyday topics." },
+    ],
+    methodSteps: [
+      { number: "01", title: "Watch Video Lessons", description: "Deepen your grammar knowledge through video modules covering past tenses, connectors, and complex sentence structures." },
+      { number: "02", title: "Attend Live Classes", description: "Interactive sessions with more spontaneous speaking, role-plays, and real-world scenario practice." },
+      { number: "03", title: "Review & Practice", description: "A2-level exercises that push you beyond comfort, building fluency through repetition and creative expression." },
+      { number: "04", title: "Test & Progress", description: "Regular assessments tracking your readiness for real-world German interactions and the A2 certification." },
+    ],
+    methodBenefits: [
+      "Small Batches (max 10)",
+      "1-on-1 Pronunciation Check",
+      "Digital Journal Access",
+    ],
+    journeyBlocks: [
+      { number: "01", weeks: "Weeks 1-2", title: "Block 1: Connections", description: "Perfekt tense mastery, daily routines, and describing experiences.", badge: "Quiz: My Story", annotation: "Telling your story..." },
+      { number: "02", weeks: "Weeks 3-5", title: "Block 2: Expression", description: "Dative case, prepositions, comparisons, and expressing preferences.", badge: "Test: Preferences", annotation: "\"I prefer...\"" },
+      { number: "03", weeks: "Weeks 6-8", title: "Block 3: Society", description: "Nebensätze, reflexive verbs, and navigating social situations.", badge: "Test: Social Life", annotation: "Making friends!" },
+      { number: "04", weeks: "Weeks 9-10", title: "Block 4: Integration", description: "Future plans, formal writing, and preparing for the A2 exam.", badge: "Final Assessment", annotation: "Ready for B1!" },
+    ],
+    resources: [
+      { title: "Netzwerk Neu A2", description: "Continuation of the core series by Klett.", type: "primary" as const, link: "#", linkLabel: "Order on Amazon" },
+      { title: "Nicos Weg", description: "", type: "watch" as const },
+      { title: "Easy German Podcast", description: "", type: "listen" as const },
+    ],
+    beforeText: "You should have completed A1 or equivalent. You can introduce yourself and handle very basic interactions. An entrance test ensures correct placement.",
+    afterText: "You will hold real conversations, understand everyday German media, write semi-formal emails, and be fully prepared for the B1 independence level.",
+    nextLevel: { id: "b1", level: "B1" },
+    closingQuote: "\"Language is the road map of a culture.\" — Rita Mae Brown",
+  },
+  b1: {
+    level: "B1",
+    title: "Independence",
+    subtitle: "Intensive Online German",
+    heroDescription: "Stop translating in your head. Express opinions, handle work conversations, understand most of what you hear in daily life, and write structured emails. Native German speaker sessions included.",
+    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuC81UHb8cIHz632HnAgMlX1kb-cMIQ8RWX3ycnjMwJgP7GlNsHkSU0AdpTSI21ROZ7YWLLEUYIxoXveMuvLF-d4yKpuuXPw3k9ICx6_cFirV_l6MLXS8QzIuClDRguOnz9vlEWpnNrksEmyJLKy2UlqbZLkiExMARMnvuJxClCd37LOYpGJdudAVQDkEYWLIFbvj6samUHqEXjI4-HVPP_63LboaBm1VNEUURmSyJOj09Y4Yp_Vqb3AaXjne0P_CpbILYMqXp1OuFI",
+    heroImageAlt: "B1 Course - The Independence",
+    imageCaption: "Thinking in German...",
+    stats: [
+      { value: "3.5", label: "Months Duration" },
+      { value: "5", label: "Days / Week" },
+      { value: "8-10", label: "Students Batch" },
+      { value: "4+1", label: "Module Tests" },
+    ],
+    competencies: [
+      { title: "Express Opinions", description: "Articulate your views on current events, work topics, and social issues with nuance." },
+      { title: "Work Conversations", description: "Navigate professional meetings, interviews, and workplace discussions in German." },
+      { title: "Write Structured Emails", description: "Compose formal and semi-formal emails, complaints, and professional correspondence." },
+      { title: "Understand Daily Life", description: "Follow conversations, radio programs, and news broadcasts with confidence." },
+      { title: "Tell Complex Stories", description: "Narrate experiences, describe dreams and hopes, and give reasons for opinions." },
+      { title: "Handle Bureaucracy", description: "Deal with authorities, doctors, and service providers independently." },
+    ],
+    methodSteps: [
+      { number: "01", title: "Watch Video Lessons", description: "Advanced grammar concepts through immersive video content covering Konjunktiv II, passive voice, and complex clause structures." },
+      { number: "02", title: "Attend Live Classes", description: "Intensive speaking sessions with native German speakers, debates, and real-world scenario simulations." },
+      { number: "03", title: "Review & Practice", description: "B1-level exercises focusing on fluency, essay writing, and listening comprehension with authentic materials." },
+      { number: "04", title: "Test & Progress", description: "Comprehensive assessments mirroring the B1 Goethe-Zertifikat format to ensure exam readiness." },
+    ],
+    methodBenefits: [
+      "Small Batches (max 10)",
+      "Native Speaker Sessions",
+      "Exam Preparation Included",
+    ],
+    journeyBlocks: [
+      { number: "01", weeks: "Weeks 1-3", title: "Block 1: Opinion", description: "Konjunktiv II, expressing wishes, giving advice, and discussing hypothetical situations.", badge: "Quiz: Point of View", annotation: "\"I think that...\"" },
+      { number: "02", weeks: "Weeks 4-7", title: "Block 2: Professional", description: "Passive voice, formal correspondence, job applications, and workplace German.", badge: "Test: The Office", annotation: "Career confidence!" },
+      { number: "03", weeks: "Weeks 8-11", title: "Block 3: Society", description: "Complex subordinate clauses, media literacy, debating skills, and cultural topics.", badge: "Test: The Debate", annotation: "Your voice matters!" },
+      { number: "04", weeks: "Weeks 12-14", title: "Block 4: Mastery", description: "Full exam preparation, timed practice across all four modules, and final mock exam.", badge: "Final Assessment", annotation: "B1 certified!" },
+    ],
+    resources: [
+      { title: "Netzwerk Neu B1", description: "The advanced core textbook & workbook series.", type: "primary" as const, link: "#", linkLabel: "Order on Amazon" },
+      { title: "Deutsche Welle", description: "", type: "watch" as const },
+      { title: "Slow German Podcast", description: "", type: "listen" as const },
+    ],
+    beforeText: "You should have completed A2 or equivalent. You can handle everyday conversations and understand main points of clear standard input. An entrance test ensures correct placement.",
+    afterText: "You will handle most situations while travelling, express yourself on familiar topics, describe experiences, events, hopes, and briefly give reasons for opinions. Ready for B2 or the B1 exam.",
+    nextLevel: { id: "b2", level: "B2" },
+    closingQuote: "\"One language sets you in a corridor for life. Two languages open every door along the way.\" — Frank Smith",
+  },
+  b2: {
+    level: "B2",
+    title: "Mastery",
+    subtitle: "Intensive Online German",
+    heroDescription: "Speak with confidence. Follow complex discussions, write professional reports, understand humour and idioms, handle university lectures and workplace meetings entirely in German.",
+    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJgzl7b-UKwEQLRFJ9cmgOfmOo16SiLO72ThtJVuaeUw8hvlQDfiznOoy5idT-ndw0rkZSRQ07rQhTjbk_N-uXnJoXISHpWf_7fOcSdgpybGjuETExxbDPJX_LldLKa6NHRYTsh7h3GVf03TPdoXpiViGi8LtWUGEk8nvmD_DWxghJCeDMAAwagoSrb8OU0bS7pbILd3jmTozHlOl1EtZXZ9XTx7ytUNdOLD7sb6H-opbPP8Td4UdTuU-pBueTmhT-BrlWNZoCYA",
+    heroImageAlt: "B2 Course - The Mastery",
+    imageCaption: "Belonging...",
+    stats: [
+      { value: "3.5", label: "Months Duration" },
+      { value: "5", label: "Days / Week" },
+      { value: "8-10", label: "Students Batch" },
+      { value: "4+1", label: "Module Tests" },
+    ],
+    competencies: [
+      { title: "Complex Discussions", description: "Follow and contribute to complex arguments on abstract and concrete topics." },
+      { title: "Professional Reports", description: "Write detailed reports, essays, and professional documents with precision." },
+      { title: "Humour & Idioms", description: "Understand cultural references, jokes, and idiomatic expressions naturally." },
+      { title: "University Lectures", description: "Follow extended speech and complex lines of argument in academic settings." },
+      { title: "Workplace Meetings", description: "Participate actively in professional meetings, presentations, and negotiations." },
+      { title: "Cultural Fluency", description: "Navigate German culture with the confidence and ease of a long-term resident." },
+    ],
+    methodSteps: [
+      { number: "01", title: "Watch Video Lessons", description: "Expert-level grammar and stylistic refinement through authentic German media analysis and advanced linguistic structures." },
+      { number: "02", title: "Attend Live Classes", description: "Full immersion sessions with native speakers, academic debates, presentation practice, and spontaneous discussions." },
+      { number: "03", title: "Review & Practice", description: "B2-level materials including literary texts, journalistic articles, and professional writing exercises." },
+      { number: "04", title: "Test & Progress", description: "Intensive exam preparation mirroring Goethe B2 / TELC B2 format with timed mock exams." },
+    ],
+    methodBenefits: [
+      "Small Batches (max 10)",
+      "Native Speaker Classes",
+      "Full Exam Preparation",
+    ],
+    journeyBlocks: [
+      { number: "01", weeks: "Weeks 1-3", title: "Block 1: Depth", description: "Advanced subjunctive, indirect speech, and nuanced expression of complex ideas.", badge: "Quiz: Perspectives", annotation: "\"In my opinion...\"" },
+      { number: "02", weeks: "Weeks 4-7", title: "Block 2: Precision", description: "Academic writing, formal register, participle constructions, and advanced connectors.", badge: "Test: The Essay", annotation: "Writing with style!" },
+      { number: "03", weeks: "Weeks 8-11", title: "Block 3: Fluency", description: "Idiomatic expressions, cultural literacy, media analysis, and spontaneous argumentation.", badge: "Test: The Discussion", annotation: "Thinking in German!" },
+      { number: "04", weeks: "Weeks 12-14", title: "Block 4: Excellence", description: "Comprehensive B2 exam preparation, intensive mock exams, and final oral presentation.", badge: "Final Assessment", annotation: "B2 mastery!" },
+    ],
+    resources: [
+      { title: "Sicher! Aktuell B2", description: "The comprehensive B2 textbook by Hueber.", type: "primary" as const, link: "#", linkLabel: "Order on Amazon" },
+      { title: "ARD Mediathek", description: "", type: "watch" as const },
+      { title: "Deutschlandfunk", description: "", type: "listen" as const },
+    ],
+    beforeText: "You should have completed B1 or equivalent. You can handle most everyday situations and express yourself on familiar topics. An entrance test ensures correct placement.",
+    afterText: "You will interact with native speakers fluently and spontaneously, produce detailed text on a wide range of subjects, and be fully prepared for university studies or professional life in Germany.",
+    nextLevel: null,
+    closingQuote: "\"To have another language is to possess a second soul.\" — Charlemagne",
+  },
+};
+
 // ─── Footer ──────────────────────────────────────────────────────────────────
 export const footerLinks = {
   explorer: [

@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+interface Stat {
+  value: string;
+  label: string;
+}
+
 interface CourseDetailHeroProps {
   level: string;
   title: string;
@@ -7,6 +12,8 @@ interface CourseDetailHeroProps {
   description: string;
   image: string;
   imageAlt: string;
+  imageCaption?: string;
+  stats?: Stat[];
 }
 
 export default function CourseDetailHero({
@@ -16,53 +23,87 @@ export default function CourseDetailHero({
   description,
   image,
   imageAlt,
+  imageCaption,
+  stats = [],
 }: CourseDetailHeroProps) {
   return (
-    <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center pt-20 md:pt-24 pb-20 md:pb-32 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-charcoal/50 md:from-charcoal/90 md:via-charcoal/70 md:to-charcoal/40" />
+    <section className="relative px-4 md:px-12 py-20 md:py-32 flex flex-col md:flex-row items-center gap-16 max-w-[1400px] mx-auto">
+      {/* Text Side */}
+      <div className="md:w-1/2 space-y-10">
+        <div className="inline-block">
+          <p className="uppercase text-[10px] tracking-[0.4em] text-primary font-bold mb-2">
+            {subtitle}
+          </p>
+          <div className="h-0.5 w-12 bg-primary/30" />
+        </div>
+
+        <h1 className="font-[var(--font-serif)] text-6xl md:text-8xl lg:text-9xl text-charcoal leading-[0.95]">
+          {level}: The <br />
+          <span className="italic text-primary">{title}</span>
+        </h1>
+
+        <p className="text-lg leading-relaxed text-stone-gray max-w-xl">
+          {description}
+        </p>
+
+        <div className="flex flex-wrap gap-8 items-center pt-4">
+          <a
+            href="#enroll"
+            className="bg-charcoal text-ivory px-10 py-5 uppercase text-[11px] tracking-[0.3em] font-bold hover:bg-primary transition-colors shadow-lg"
+          >
+            Request a Callback
+          </a>
+          <a
+            href="#journey"
+            className="group flex items-center gap-3 border-b border-transparent hover:border-primary transition-all pb-1"
+          >
+            <span className="uppercase text-[11px] tracking-[0.3em] group-hover:text-primary transition-colors">
+              Download Syllabus
+            </span>
+            <span className="text-primary group-hover:translate-x-1 transition-transform">
+              &rarr;
+            </span>
+          </a>
+        </div>
+
+        {/* Stats Grid */}
+        {stats.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 border-t border-stone-gray/20">
+            {stats.map((stat) => (
+              <div key={stat.label} className="space-y-1">
+                <p className="font-[var(--font-serif)] text-5xl text-charcoal italic">
+                  {stat.value}
+                </p>
+                <p className="uppercase text-[9px] tracking-[0.2em] text-stone-gray">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10 w-full">
-        <div className="max-w-2xl">
-          <span className="inline-block text-primary font-[var(--font-serif-alt)] italic text-base md:text-xl mb-3 md:mb-4">
-            {subtitle}
-          </span>
-          <div className="flex items-baseline gap-4 md:gap-6 mb-6 md:mb-8">
-            <span className="text-6xl md:text-9xl font-[var(--font-serif-alt)] text-ivory/20 leading-none">
-              {level}
-            </span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-[var(--font-serif-alt)] italic text-ivory leading-[0.95]">
-              {title}
-            </h1>
+      {/* Image Side - Polaroid */}
+      <div className="md:w-1/2 relative flex justify-center">
+        <div className="bg-white p-5 pb-24 shadow-2xl rotate-[1.5deg] relative z-10 max-w-md w-full ring-1 ring-black/5">
+          <div className="relative w-full aspect-square overflow-hidden">
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
           </div>
-          <p className="text-base md:text-xl text-ivory/70 leading-relaxed max-w-xl">
-            {description}
-          </p>
-          <div className="mt-8 md:mt-12 flex flex-col sm:flex-row gap-4 md:gap-6">
-            <a
-              href="#enroll"
-              className="px-10 md:px-12 py-4 md:py-5 bg-primary text-ivory font-bold uppercase tracking-[0.2em] text-xs hover:bg-ivory hover:text-charcoal transition-all duration-300 text-center"
-            >
-              Enroll Now
-            </a>
-            <a
-              href="#modules"
-              className="px-10 md:px-12 py-4 md:py-5 border border-ivory/30 text-ivory font-bold uppercase tracking-[0.2em] text-xs hover:border-primary transition-all duration-300 text-center"
-            >
-              View Curriculum
-            </a>
-          </div>
+          {imageCaption && (
+            <p className="font-[var(--font-handwriting)] text-3xl absolute bottom-8 left-10 text-charcoal/70">
+              {imageCaption}
+            </p>
+          )}
         </div>
+        <div className="absolute -top-12 -right-6 w-48 h-48 bg-accent rounded-full mix-blend-multiply opacity-30 blur-2xl z-0" />
+        <div className="absolute bottom-10 -left-10 w-32 h-32 bg-warm-sand rounded-full mix-blend-multiply opacity-40 blur-xl z-0" />
       </div>
     </section>
   );
