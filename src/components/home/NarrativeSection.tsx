@@ -63,7 +63,7 @@ export default function NarrativeSection() {
               </div>
 
               {/* Content */}
-              <div className="mt-12 md:mt-16">
+              <div className="mt-20 md:mt-24">
                 <h3 className="text-lg md:text-2xl font-[var(--font-serif)] font-bold mb-4 uppercase tracking-wide leading-tight text-charcoal">
                   {commitment.title}
                 </h3>
