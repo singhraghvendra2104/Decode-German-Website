@@ -3,6 +3,7 @@ import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { Lexend, Noto_Serif, Playfair_Display, La_Belle_Aurore } from "next/font/google";
 import { mantineTheme } from "@/lib/theme";
 import { siteConfig } from "@/lib/constants";
+import LenisProvider from "@/components/providers/LenisProvider";
 import "./globals.css";
 
 const lexend = Lexend({
@@ -125,7 +126,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <MantineProvider theme={mantineTheme} forceColorScheme="light">
-          {children}
+          <LenisProvider>{children}</LenisProvider>
         </MantineProvider>
       </body>
     </html>
