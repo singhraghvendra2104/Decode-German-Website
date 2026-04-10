@@ -85,7 +85,7 @@ export default function CourseDetailHero({
 
       {/* Image Side - Polaroid */}
       <div className="md:w-1/2 relative flex justify-center">
-        <div className="bg-white p-5 pb-24 shadow-2xl rotate-[1.5deg] relative z-10 max-w-md w-full ring-1 ring-black/5">
+        <div className="bg-white p-4 pb-20 shadow-2xl rotate-[1.5deg] relative z-10 max-w-sm w-full ring-1 ring-black/5">
           <div className="relative w-full aspect-square overflow-hidden">
             <Image
               src={image}
@@ -97,7 +97,7 @@ export default function CourseDetailHero({
             />
           </div>
           {imageCaption && (
-            <p className="font-[var(--font-handwriting)] text-3xl absolute bottom-8 left-10 text-charcoal/70">
+            <p className="font-[var(--font-handwriting)] text-lg absolute bottom-6 left-8 right-8 text-charcoal/70">
               {imageCaption}
             </p>
           )}
