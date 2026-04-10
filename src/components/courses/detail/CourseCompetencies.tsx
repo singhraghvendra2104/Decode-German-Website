@@ -20,18 +20,18 @@ export default function CourseCompetencies({
   const c = competencies;
 
   return (
-    <section className="bg-warm-sand/30 py-24 md:py-32 px-4 md:px-12 relative overflow-hidden">
+    <section className="bg-warm-sand/30 py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto relative z-10">
-        <h2 className="font-[var(--font-serif)] text-5xl md:text-7xl lg:text-8xl mb-20 md:mb-32 text-center italic leading-tight">
+        <h2 className="font-[var(--font-serif)] text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-14 sm:mb-20 md:mb-32 text-center italic leading-tight">
           What You&apos;ll Be{" "}
           <span className="not-italic block md:inline">Able To Do</span>
         </h2>
 
-        <div className="grid grid-cols-12 gap-y-20 md:gap-y-36">
+        <div className="grid grid-cols-12 gap-y-14 sm:gap-y-20 md:gap-y-36">
           {/* Row 1 */}
           {c[0] && (
             <div className="col-span-12 md:col-span-5 relative">
-              <div className="bg-white p-10 md:p-14 shadow-lg border border-stone-gray/10 relative z-10">
+              <div className="bg-white p-6 sm:p-8 md:p-14 shadow-lg border border-stone-gray/10 relative z-10">
                 <h3 className="font-[var(--font-serif)] text-2xl md:text-3xl mb-4">
                   {c[0].title}
                 </h3>
@@ -49,7 +49,7 @@ export default function CourseCompetencies({
 
           {c[1] && (
             <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col md:flex-row items-center gap-8 relative">
-              <div className="w-full md:w-2/3 bg-white p-10 md:p-14 shadow-lg border border-stone-gray/10 order-2 md:order-1">
+              <div className="w-full md:w-2/3 bg-white p-6 sm:p-8 md:p-14 shadow-lg border border-stone-gray/10 order-2 md:order-1">
                 <h3 className="font-[var(--font-serif)] text-2xl md:text-3xl mb-4">
                   {c[1].title}
                 </h3>
@@ -79,7 +79,7 @@ export default function CourseCompetencies({
           {/* Row 2 */}
           <div className="col-span-12 md:col-span-7 md:col-start-2 grid grid-cols-1 md:grid-cols-2 gap-8 relative">
             {c[2] && (
-              <div className="bg-white p-10 md:p-14 shadow-lg border border-stone-gray/10 flex flex-col">
+              <div className="bg-white p-6 sm:p-8 md:p-14 shadow-lg border border-stone-gray/10 flex flex-col">
                 <h3 className="font-[var(--font-serif)] text-2xl md:text-3xl mb-4">
                   {c[2].title}
                 </h3>
@@ -89,14 +89,14 @@ export default function CourseCompetencies({
               </div>
             )}
             {c[2]?.scrapbookNote && (
-              <div className="bg-primary/5 p-10 md:p-14 border-2 border-dashed border-primary/20 flex flex-col justify-center items-center text-center">
+              <div className="bg-primary/5 p-6 sm:p-8 md:p-14 border-2 border-dashed border-primary/20 flex flex-col justify-center items-center text-center">
                 <p className="font-[var(--font-handwriting)] text-xl md:text-2xl text-charcoal/70">
                   {c[2].scrapbookNote}
                 </p>
               </div>
             )}
             {!c[2]?.scrapbookNote && c[3] && (
-              <div className="bg-white p-10 md:p-14 shadow-lg border border-stone-gray/10 flex flex-col">
+              <div className="bg-white p-6 sm:p-8 md:p-14 shadow-lg border border-stone-gray/10 flex flex-col">
                 <h3 className="font-[var(--font-serif)] text-2xl md:text-3xl mb-4">
                   {c[3].title}
                 </h3>
@@ -115,7 +115,7 @@ export default function CourseCompetencies({
           {/* Row 3 */}
           {c[3] && c[2]?.scrapbookNote && (
             <div className="col-span-12 md:col-span-4 md:col-start-1 relative">
-              <div className="bg-white p-10 md:p-14 shadow-lg border border-stone-gray/10">
+              <div className="bg-white p-6 sm:p-8 md:p-14 shadow-lg border border-stone-gray/10">
                 <h3 className="font-[var(--font-serif)] text-2xl md:text-3xl mb-4">
                   {c[3].title}
                 </h3>
@@ -129,7 +129,7 @@ export default function CourseCompetencies({
           {c[4] && c[5] && (
             <div className="col-span-12 md:col-span-6 md:col-start-6 relative">
               <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="w-full md:w-1/2 bg-white p-10 md:p-14 shadow-lg border border-stone-gray/10 md:-mt-24 z-20">
+                <div className="w-full md:w-1/2 bg-white p-6 sm:p-8 md:p-14 shadow-lg border border-stone-gray/10 md:-mt-24 z-20">
                   <h3 className="font-[var(--font-serif)] text-2xl md:text-3xl mb-4">
                     {c[4].title}
                   </h3>

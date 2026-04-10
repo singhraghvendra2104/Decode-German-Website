@@ -12,21 +12,21 @@ interface CourseResourcesProps {
 
 export default function CourseResources({ resources }: CourseResourcesProps) {
   return (
-    <section className="py-24 md:py-40 px-4 md:px-12 max-w-[1400px] mx-auto">
-      <h2 className="font-[var(--font-serif)] text-5xl md:text-7xl mb-16 md:mb-20 italic">
+    <section className="py-16 sm:py-20 md:py-40 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
+      <h2 className="font-[var(--font-serif)] text-4xl sm:text-5xl md:text-7xl mb-12 sm:mb-16 md:mb-20 italic">
         Curated <span className="not-italic">Resources</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         {resources.map((resource, index) => {
           if (resource.type === "primary") {
             return (
               <div
                 key={index}
-                className="md:col-span-2 bg-warm-sand/20 p-12 flex items-center justify-between border border-stone-gray/10 group hover:bg-white transition-colors duration-500"
+                className="sm:col-span-2 bg-warm-sand/20 p-6 sm:p-8 md:p-12 flex items-center justify-between border border-stone-gray/10 group hover:bg-white transition-colors duration-500"
               >
                 <div className="space-y-4">
-                  <h4 className="font-[var(--font-serif)] text-3xl md:text-4xl">
+                  <h4 className="font-[var(--font-serif)] text-2xl sm:text-3xl md:text-4xl">
                     {resource.title}
                   </h4>
                   <p className="text-stone-gray">{resource.description}</p>
@@ -53,7 +53,7 @@ export default function CourseResources({ resources }: CourseResourcesProps) {
           return (
             <div
               key={index}
-              className={`${bgClass} p-10 flex flex-col justify-between aspect-square group hover:shadow-xl transition-all duration-500 border border-stone-gray/10`}
+              className={`${bgClass} p-6 sm:p-8 md:p-10 flex flex-col justify-between aspect-square group hover:shadow-xl transition-all duration-500 border border-stone-gray/10`}
             >
               <p className="uppercase text-[9px] tracking-[0.3em] font-bold text-charcoal/50">
                 {resource.type === "watch"
@@ -63,7 +63,7 @@ export default function CourseResources({ resources }: CourseResourcesProps) {
                   : "Read"}
               </p>
               <div>
-                <p className="font-[var(--font-serif)] text-2xl md:text-3xl">
+                <p className="font-[var(--font-serif)] text-xl sm:text-2xl md:text-3xl">
                   {resource.title}
                 </p>
               </div>
