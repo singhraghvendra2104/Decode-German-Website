@@ -27,7 +27,7 @@ export default function CourseDetailHero({
   stats = [],
 }: CourseDetailHeroProps) {
   return (
-    <section className="relative px-4 md:px-12 py-20 md:py-32 flex flex-col md:flex-row items-center gap-16 max-w-[1400px] mx-auto">
+    <section className="relative px-4 md:px-12 py-20 md:py-32 flex flex-col md:flex-row items-center gap-16 md:gap-56 lg:gap-80 max-w-[1400px] mx-auto">
       {/* Text Side */}
       <div className="md:w-1/2 space-y-10">
         <div className="inline-block">
