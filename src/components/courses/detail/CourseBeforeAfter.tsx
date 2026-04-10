@@ -12,21 +12,21 @@ export default function CourseBeforeAfter({
   nextLevel,
 }: CourseBeforeAfterProps) {
   return (
-    <section className="bg-warm-sand/20 py-20 md:py-32 px-4 md:px-12 border-y border-stone-gray/10">
+    <section className="bg-warm-sand/20 py-14 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 border-y border-stone-gray/10">
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-stone-gray/20">
-        <div className="md:w-1/2 p-8 lg:p-20 space-y-8">
-          <h3 className="font-[var(--font-serif)] text-3xl md:text-4xl italic">
+        <div className="md:w-1/2 p-6 sm:p-8 lg:p-20 space-y-6 sm:space-y-8">
+          <h3 className="font-[var(--font-serif)] text-2xl sm:text-3xl md:text-4xl italic">
             Before You Join
           </h3>
-          <p className="text-stone-gray leading-relaxed text-base md:text-lg">
+          <p className="text-stone-gray leading-relaxed text-sm sm:text-base md:text-lg">
             {beforeText}
           </p>
         </div>
-        <div className="md:w-1/2 p-8 lg:p-20 space-y-8">
-          <h3 className="font-[var(--font-serif)] text-3xl md:text-4xl italic">
+        <div className="md:w-1/2 p-6 sm:p-8 lg:p-20 space-y-6 sm:space-y-8">
+          <h3 className="font-[var(--font-serif)] text-2xl sm:text-3xl md:text-4xl italic">
             After This Course
           </h3>
-          <p className="text-stone-gray leading-relaxed text-base md:text-lg mb-10">
+          <p className="text-stone-gray leading-relaxed text-sm sm:text-base md:text-lg mb-8 sm:mb-10">
             {afterText}
           </p>
           {nextLevel && (
