@@ -80,7 +80,7 @@ export default function TheTeam() {
             <img
               alt="Founder Portrait"
               className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDplb2v7C0_y00dAsj2XCpaPVeT2yuzKj4aUsSHVUnmfBx0toS-B7ehO32SXC-KtoREEv5Tb0dtBRHpIZrCErxvE3Fk9t_Br5IhR9chcKkDt9L5ssghZBeblraFRBlpQcRG7ijxqIyTCsA3yQcqwTvYlF-Cq75C_BNZiih8AURNbVBqH9-NI50fYvB6Gxqq7b5Zjuw0sfAjg3tjfCVuVZ5OeU1b5fmvEHSje5RPqN179u5ns7smhro9ZetjWuaMlxUrmvLzT4JsShk"
+              src="/about/team/Founder2.png"
             />
           </div>
           <div className="space-y-6 px-4">

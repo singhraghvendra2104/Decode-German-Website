@@ -31,8 +31,8 @@ export default function AboutHero() {
           <div className="polaroid rotate-3 relative z-10">
             <img
               alt="Shalini K Dubey teaching"
-              className="aspect-square object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHxeNoDh26UWvibk_oBP9jeMuaXq4kglaYjB05YTPSeSdkPzj8Uy8w2dsAK2OTQ7-DRCfCEeK4zFqXcJVpzfKi2Cd1Q7H1QamPU8SJnTfc3U1AdD_X5rKY8tgBrWhd1VkjDYgi0sFq3GKzns7h9r00Fm9z3zkIsS3lALL4bripFYD-s-vyFlj5CoRBVqjU394_BVufvyh4mIExx1YpWP3pvvTezctJRX78_9nOCG-kIqw_jxbXof-xnZ0GXVkNCAMryzNB58WyeNQ"
+              className="aspect-square object-cover w-full"
+              src="/about/team/Founder1.png"
             />
             <p className="handwriting text-2xl text-primary absolute -bottom-8 -right-4 bg-background px-4 py-2 rotate-[-4deg]">
               Shalini K Dubey
