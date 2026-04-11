@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useDisclosure } from "@mantine/hooks";
+import ContactFormModal from "@/components/layout/ContactFormModal";
 
 interface Stat {
   value: string;
@@ -26,6 +30,9 @@ export default function CourseDetailHero({
   imageCaption,
   stats = [],
 }: CourseDetailHeroProps) {
+  const [modalOpened, { open: openModal, close: closeModal }] =
+    useDisclosure(false);
+
   return (
     <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-32 flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-56 lg:gap-80 max-w-[1400px] mx-auto">
       {/* Text Side */}
@@ -47,23 +54,12 @@ export default function CourseDetailHero({
         </p>
 
         <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 items-center pt-2 sm:pt-4">
-          <a
-            href="#enroll"
-            className="bg-charcoal text-ivory px-6 sm:px-8 md:px-10 py-4 md:py-5 uppercase text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] font-bold hover:bg-primary transition-colors shadow-lg"
+          <button
+            onClick={openModal}
+            className="bg-charcoal text-ivory px-6 sm:px-8 md:px-10 py-4 md:py-5 uppercase text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] font-bold hover:bg-primary transition-colors shadow-lg cursor-pointer"
           >
-            Request a Callback
-          </a>
-          <a
-            href="#journey"
-            className="group flex items-center gap-3 border-b border-transparent hover:border-primary transition-all pb-1"
-          >
-            <span className="uppercase text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] group-hover:text-primary transition-colors">
-              Download Syllabus
-            </span>
-            <span className="text-primary group-hover:translate-x-1 transition-transform">
-              &rarr;
-            </span>
-          </a>
+            Get in Touch
+          </button>
         </div>
 
         {/* Stats Grid */}
@@ -105,6 +101,8 @@ export default function CourseDetailHero({
         <div className="absolute -top-12 -right-6 w-32 sm:w-48 h-32 sm:h-48 bg-accent rounded-full mix-blend-multiply opacity-30 blur-2xl z-0" />
         <div className="absolute bottom-10 -left-10 w-24 sm:w-32 h-24 sm:h-32 bg-warm-sand rounded-full mix-blend-multiply opacity-40 blur-xl z-0" />
       </div>
+
+      <ContactFormModal opened={modalOpened} onClose={closeModal} />
     </section>
   );
 }

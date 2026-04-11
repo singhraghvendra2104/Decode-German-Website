@@ -22,7 +22,7 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-[60] flex items-center gap-4 group">
       <div className="bg-white px-6 py-3 rounded-full shadow-2xl border border-primary/20 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 pointer-events-none hidden md:block">
         <p className="text-xs font-bold tracking-widest uppercase">
-          Talk to a human
+          Chat on WhatsApp
         </p>
       </div>
       <a

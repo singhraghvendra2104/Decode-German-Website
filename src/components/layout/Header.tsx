@@ -6,9 +6,13 @@ import { usePathname } from "next/navigation";
 import { Drawer, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { navLinks, ctaButton, siteConfig } from "@/lib/constants";
+import ContactFormModal from "./ContactFormModal";
 
 export default function Header() {
-  const [opened, { open, close, toggle }] = useDisclosure(false);
+  const [drawerOpened, { open: openDrawer, close: closeDrawer, toggle: toggleDrawer }] =
+    useDisclosure(false);
+  const [modalOpened, { open: openModal, close: closeModal }] =
+    useDisclosure(false);
   const pathname = usePathname();
 
   return (
@@ -51,17 +55,17 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <Link
-            href={ctaButton.href}
-            className="hidden md:block bg-primary text-white border border-primary px-8 py-3 text-xs font-bold tracking-widest uppercase hover:bg-transparent hover:text-primary transition-all"
+          <button
+            onClick={openModal}
+            className="hidden md:block bg-primary text-white border border-primary px-8 py-3 text-xs font-bold tracking-widest uppercase hover:bg-transparent hover:text-primary transition-all cursor-pointer"
           >
             {ctaButton.label}
-          </Link>
+          </button>
 
           {/* Mobile Burger */}
           <Burger
-            opened={opened}
-            onClick={toggle}
+            opened={drawerOpened}
+            onClick={toggleDrawer}
             className="md:hidden"
             aria-label="Toggle navigation menu"
             color="#e2725b"
@@ -71,8 +75,8 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <Drawer
-        opened={opened}
-        onClose={close}
+        opened={drawerOpened}
+        onClose={closeDrawer}
         position="right"
         size="xs"
         title={
@@ -96,7 +100,7 @@ export default function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={close}
+                onClick={closeDrawer}
                 className={`text-sm font-bold tracking-widest uppercase hover:text-primary transition-colors ${
                   isActive ? "text-primary" : ""
                 }`}
@@ -105,15 +109,20 @@ export default function Header() {
               </Link>
             );
           })}
-          <Link
-            href={ctaButton.href}
-            onClick={close}
-            className="mt-4 bg-primary text-white border border-primary px-8 py-3 text-xs font-bold tracking-widest uppercase text-center hover:bg-transparent hover:text-primary transition-all"
+          <button
+            onClick={() => {
+              closeDrawer();
+              openModal();
+            }}
+            className="mt-4 bg-primary text-white border border-primary px-8 py-3 text-xs font-bold tracking-widest uppercase text-center hover:bg-transparent hover:text-primary transition-all cursor-pointer"
           >
             {ctaButton.label}
-          </Link>
+          </button>
         </nav>
       </Drawer>
+
+      {/* Contact Form Modal */}
+      <ContactFormModal opened={modalOpened} onClose={closeModal} />
     </>
   );
 }

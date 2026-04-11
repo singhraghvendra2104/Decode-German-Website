@@ -11,6 +11,8 @@ export const siteConfig = {
     city: "10119 Berlin, Germany",
   },
   whatsappNumber: "+4915904836675",
+  phoneIndia: "+919871205947",
+  whatsappIndia: "+919871205947",
   copyright: `© ${new Date().getFullYear()} Decode German. Teaching is passion, not business.`,
 };
 
@@ -22,8 +24,7 @@ export const navLinks = [
 ] as const;
 
 export const ctaButton = {
-  label: "Join the Cohort",
-  href: "#enroll",
+  label: "Get in Touch",
 };
 
 // ─── Home Page: Hero Section ─────────────────────────────────────────────────
@@ -31,47 +32,47 @@ export const heroSlides = [
   {
     id: 1,
     image: "/home/hero-images/HERO1.png",
-    alt: "German decides your life",
+    alt: "Your life in Germany starts with German",
     handwriting: "",
-    heading: "German",
-    headingAccent: "decides",
-    headingEnd: "your life in Germany.",
+    heading: "Your Life in Germany Starts with",
+    headingAccent: "German.",
+    headingEnd: "",
   },
   {
     id: 2,
     image: "/home/hero-images/HERO2.png",
-    alt: "We exist for our students",
+    alt: "German is your power in Germany",
     handwriting: "",
-    heading: "We exist so our students don't",
-    headingAccent: "beg",
-    headingEnd: ". Don't struggle. Don't get left behind.",
+    heading: "German is confidence. It's pride. It's your",
+    headingAccent: "power",
+    headingEnd: "in Germany.",
   },
   {
     id: 3,
     image: "/home/hero-images/HERO3.png",
-    alt: "German is survival",
+    alt: "When you truly know German you belong",
     handwriting: "",
-    heading: "German is",
-    headingAccent: "survival",
-    headingEnd: ". It's dignity. It's freedom in Germany.",
+    heading: "When you truly know German, you lead, you",
+    headingAccent: "thrive,",
+    headingEnd: "you belong.",
   },
   {
     id: 4,
     image: "/home/hero-images/HERO4.png",
-    alt: "Built from responsibility",
+    alt: "Building confident German speakers",
     handwriting: "",
-    heading: "This platform was",
-    headingAccent: "not built",
-    headingEnd: "for profit. It was built from responsibility.",
+    heading: "We exist to build confident, fluent,",
+    headingAccent: "unstoppable",
+    headingEnd: "German speakers.",
   },
   {
     id: 5,
     image: "/home/hero-images/HERO5.png",
-    alt: "True German fluency",
+    alt: "Built on purpose driven by responsibility",
     handwriting: "",
-    heading: "When you truly know German, you",
-    headingAccent: "don't struggle",
-    headingEnd: ". You don't suffer. You belong.",
+    heading: "Built on purpose. Driven by responsibility.",
+    headingAccent: "Committed",
+    headingEnd: "for your success.",
   },
 ];
 
@@ -284,8 +285,7 @@ export const homeCta = {
   heading: "Ready to start\nyour",
   headingAccent: "new life",
   body: "Join the elite platform for professionals who refuse to settle for 'just getting by'.",
-  primaryButton: { label: "Enroll Today", href: "#enroll" },
-  secondaryButton: { label: "The Syllabus", href: "#syllabus" },
+  primaryButton: { label: "Get in Touch" },
 };
 
 // ─── About Page: Hero Section ────────────────────────────────────────────────
@@ -469,8 +469,8 @@ export const courseLevels = [
       { label: "Duration", value: "3.5 Months" },
       { label: "Intensity", value: "Deep Immersion" },
     ],
-    buttonLabel: "Begin the B1 Journey",
-    buttonStyle: "filled" as const,
+    buttonLabel: "Explore B1 Course",
+    buttonStyle: "outline" as const,
     resources: [
       "Netzwerk B1",
       "Concrete Guide B1",
@@ -503,8 +503,8 @@ export const courseLevels = [
       { label: "Duration", value: "3.5 Months" },
       { label: "Focus", value: "Professional Fluency" },
     ],
-    buttonLabel: "Begin the B2 Journey",
-    buttonStyle: "filled" as const,
+    buttonLabel: "Explore B2 Course",
+    buttonStyle: "outline" as const,
     resources: [
       "Sicher! Series",
       "NicosWeg",
@@ -778,8 +778,8 @@ export const courseQuote =
 // ─── Courses Page: CTA Section ───────────────────────────────────────────────
 export const courseCta = {
   heading: "Not sure where to start?",
-  body: "Request a callback or message us directly on WhatsApp. We'll help you find the right course.",
-  primaryButton: { label: "Request a Callback", href: "#callback" },
+  body: "Get in touch or message us directly on WhatsApp. We'll help you find the right course.",
+  primaryButton: { label: "Get in Touch" },
   secondaryButton: { label: "Chat on WhatsApp", href: "https://wa.me/4915904836675" },
 };
 
@@ -896,7 +896,7 @@ export const courseFeatures = [
   },
   {
     title: "Personal Guidance",
-    description: "Not sure where to start? Request a callback, we'll help.",
+    description: "Not sure where to start? Get in touch, we'll help.",
   },
   {
     title: "Entrance Test",

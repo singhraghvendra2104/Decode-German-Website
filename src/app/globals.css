@@ -51,6 +51,36 @@ body::-webkit-scrollbar,
   -ms-overflow-style: none;
 }
 
+/* ─── Restore Scrollbar Inside Modals / Overlays ─────────────────────────── */
+[data-lenis-prevent],
+[data-lenis-prevent] * {
+  scrollbar-width: thin !important;
+  -ms-overflow-style: auto !important;
+}
+
+[data-lenis-prevent]::-webkit-scrollbar,
+[data-lenis-prevent] *::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+  display: block !important;
+}
+
+[data-lenis-prevent]::-webkit-scrollbar-track,
+[data-lenis-prevent] *::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+[data-lenis-prevent]::-webkit-scrollbar-thumb,
+[data-lenis-prevent] *::-webkit-scrollbar-thumb {
+  background: #e2725b44 !important;
+  border-radius: 4px !important;
+}
+
+[data-lenis-prevent]::-webkit-scrollbar-thumb:hover,
+[data-lenis-prevent] *::-webkit-scrollbar-thumb:hover {
+  background: #e2725b88 !important;
+}
+
 /* ─── Lenis Smooth Scroll ─────────────────────────────────────────────────── */
 html.lenis,
 html.lenis body {
@@ -178,11 +208,40 @@ html.lenis body {
   }
 }
 
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .marquee-track {
   animation: marquee-scroll 40s linear infinite;
   width: max-content;
 }
 
 .marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Testimonials 3-row marquee ──────────────────────────────────────────── */
+.testimonial-marquee {
+  width: max-content;
+  display: flex;
+  gap: 1.5rem;
+  will-change: transform;
+}
+
+.testimonial-marquee-left {
+  animation: marquee-scroll 90s linear infinite;
+}
+
+.testimonial-marquee-right {
+  animation: marquee-scroll-reverse 90s linear infinite;
+}
+
+.testimonial-marquee-row:hover .testimonial-marquee {
   animation-play-state: paused;
 }
