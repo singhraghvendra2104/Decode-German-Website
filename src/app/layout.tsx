@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { Lexend, Noto_Serif, Playfair_Display, La_Belle_Aurore } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { mantineTheme } from "@/lib/theme";
 import { siteConfig } from "@/lib/constants";
 import LenisProvider from "@/components/providers/LenisProvider";
@@ -130,6 +131,7 @@ export default function RootLayout({
         <MantineProvider theme={mantineTheme} forceColorScheme="light">
           <LenisProvider>{children}</LenisProvider>
         </MantineProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
