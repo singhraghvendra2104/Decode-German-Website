@@ -25,7 +25,7 @@ export default function TransformationJourney() {
             </h2>
           </div>
           <div className="max-w-xs text-right hidden md:block">
-            <p className="font-[var(--font-handwriting)] text-2xl text-gray-500">
+            <p className="font-handwriting text-2xl text-gray-500">
               {transformationHeading.subtitle}
             </p>
           </div>
@@ -53,9 +53,9 @@ export default function TransformationJourney() {
               </div>
               {step.label && (
                 <div
-                  className={`absolute font-[var(--font-handwriting)] text-primary text-xl pointer-events-none hidden md:block ${
+                  className={`absolute font-handwriting text-primary text-xl pointer-events-none hidden md:block ${
                     index === 0
-                      ? "-bottom-6 -right-4 rotate-6"
+                      ? "bottom-6 -left-2 rotate-6"
                       : "-top-8 -left-4 -rotate-12"
                   }`}
                 >

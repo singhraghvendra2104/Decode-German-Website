@@ -40,7 +40,7 @@ export default function CourseCompetencies({
                 </p>
               </div>
               {c[0].annotation && (
-                <div className="absolute -bottom-8 -left-4 md:-left-8 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary -rotate-6 whitespace-nowrap z-30">
+                <div className="absolute -bottom-8 -left-4 md:-left-8 font-handwriting text-xl md:text-2xl text-primary -rotate-6 whitespace-nowrap z-30">
                   {c[0].annotation}
                 </div>
               )}
@@ -69,7 +69,7 @@ export default function CourseCompetencies({
                 </div>
               )}
               {c[1].annotation && (
-                <div className="absolute -top-10 right-4 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary/60 rotate-12 z-30">
+                <div className="absolute -top-10 right-4 font-handwriting text-xl md:text-2xl text-primary/60 rotate-12 z-30">
                   {c[1].annotation}
                 </div>
               )}
@@ -90,7 +90,7 @@ export default function CourseCompetencies({
             )}
             {c[2]?.scrapbookNote && (
               <div className="bg-primary/5 p-6 sm:p-8 md:p-14 border-2 border-dashed border-primary/20 flex flex-col justify-center items-center text-center">
-                <p className="font-[var(--font-handwriting)] text-xl md:text-2xl text-charcoal/70">
+                <p className="font-handwriting text-xl md:text-2xl text-charcoal/70">
                   {c[2].scrapbookNote}
                 </p>
               </div>
@@ -106,7 +106,7 @@ export default function CourseCompetencies({
               </div>
             )}
             {c[2]?.annotation && (
-              <div className="absolute -bottom-10 right-0 md:right-1/4 font-[var(--font-handwriting)] text-xl md:text-2xl text-primary -rotate-2 z-30">
+              <div className="absolute -bottom-10 right-0 md:right-1/4 font-handwriting text-xl md:text-2xl text-primary -rotate-2 z-30">
                 {c[2].annotation}
               </div>
             )}
@@ -147,7 +147,7 @@ export default function CourseCompetencies({
                     </p>
                   </div>
                   {c[5].annotation && (
-                    <div className="font-[var(--font-handwriting)] text-xl md:text-2xl text-primary/80 pt-4 px-4 italic z-30 relative">
+                    <div className="font-handwriting text-xl md:text-2xl text-primary/80 pt-4 px-4 italic z-30 relative">
                       {c[5].annotation}
                     </div>
                   )}

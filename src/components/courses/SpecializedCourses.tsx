@@ -6,7 +6,7 @@ export default function SpecializedCourses() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
-          <span className="inline-block text-primary font-[var(--font-handwriting)] text-lg md:text-2xl mb-4">
+          <span className="inline-block text-primary font-handwriting text-lg md:text-2xl mb-4">
             Already Know Some German?
           </span>
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] font-bold">

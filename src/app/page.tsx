@@ -7,6 +7,7 @@ import NarrativeSection from "@/components/home/NarrativeSection";
 import TransformationJourney from "@/components/home/TransformationJourney";
 import CoursesSection from "@/components/home/CoursesSection";
 import CoreBeliefs from "@/components/home/CoreBeliefs";
+import WallOfAchievement from "@/components/home/WallOfAchievement";
 import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
 
@@ -31,6 +32,7 @@ export default function HomePage() {
         <TransformationJourney />
         <CoreBeliefs />
         <CoursesSection />
+        <WallOfAchievement />
         <Testimonials />
         <CTASection />
       </main>

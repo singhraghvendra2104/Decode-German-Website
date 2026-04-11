@@ -63,11 +63,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
+    images: [{ url: "/new-logo.svg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
+    images: ["/new-logo.svg"],
   },
   icons: {
     icon: [

@@ -1,7 +1,13 @@
-import Link from "next/link";
+"use client";
+
 import { aboutCta } from "@/lib/constants";
+import { useDisclosure } from "@mantine/hooks";
+import ContactFormModal from "@/components/layout/ContactFormModal";
 
 export default function AboutCTA() {
+  const [modalOpened, { open: openModal, close: closeModal }] =
+    useDisclosure(false);
+
   return (
     <section className="bg-charcoal text-paper-white py-24 md:py-40 relative overflow-hidden">
       <div className="max-w-[800px] mx-auto text-center relative z-10 px-4 md:px-8">
@@ -16,21 +22,16 @@ export default function AboutCTA() {
         <p className="text-base md:text-xl font-light opacity-60 mb-10 md:mb-16 max-w-xl mx-auto leading-relaxed">
           {aboutCta.body}
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-10">
-          <Link
-            href={aboutCta.primaryButton.href}
-            className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 bg-primary text-paper-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-paper-white hover:text-charcoal transition-all duration-300 text-center"
+        <div className="flex justify-center">
+          <button
+            onClick={openModal}
+            className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 bg-primary text-paper-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-paper-white hover:text-charcoal transition-all duration-300 text-center cursor-pointer"
           >
             {aboutCta.primaryButton.label}
-          </Link>
-          <Link
-            href={aboutCta.secondaryButton.href}
-            className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 border border-paper-white/30 text-paper-white font-bold uppercase tracking-[0.2em] text-xs hover:border-primary transition-all duration-300 text-center"
-          >
-            {aboutCta.secondaryButton.label}
-          </Link>
+          </button>
         </div>
       </div>
+      <ContactFormModal opened={modalOpened} onClose={closeModal} />
     </section>
   );
 }

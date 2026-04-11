@@ -8,25 +8,11 @@ export default function TheTeam() {
       objectPosition: "center 25%",
     },
     {
-      name: "Gurneesh Singh",
-      role: "Language Support Specialist",
+      name: "Isabelle Das",
+      role: "Native Speaker & German Language Teacher",
       description:
-        "Ensuring class quality through content development and after-class support.",
-      image: "/about/team/gurneesh-singh.png",
-    },
-    {
-      name: "Tanya Wadhwa",
-      role: "German Language Teacher",
-      description:
-        "Helping students speak German with clarity, confidence, and ease.",
-      image: "/about/team/tanya-wadhwa.png",
-    },
-    {
-      name: "Aditya Mohan Ray",
-      role: "German Language Teacher",
-      description:
-        "Fostering care, camaraderie, and a collective learning experience across diverse backgrounds.",
-      image: "/about/team/aditya-mohan-ray.png",
+        "Helping international students master the German flow of speech and achieve real fluency.",
+      image: "/about/team/isabelle-das.png",
     },
     {
       name: "Srishty Arora",
@@ -36,11 +22,25 @@ export default function TheTeam() {
       image: "/about/team/srishty-arora.png",
     },
     {
-      name: "Isabelle Das",
-      role: "Native Speaker & German Language Teacher",
+      name: "Aditya Mohan Ray",
+      role: "German Language Teacher",
       description:
-        "Helping international students master the German flow of speech and achieve real fluency.",
-      image: "/about/team/isabelle-das.png",
+        "Fostering care, camaraderie, and a collective learning experience across diverse backgrounds.",
+      image: "/about/team/aditya-mohan-ray.png",
+    },
+    {
+      name: "Tanya Wadhwa",
+      role: "German Language Teacher",
+      description:
+        "Helping students speak German with clarity, confidence, and ease.",
+      image: "/about/team/tanya-wadhwa.png",
+    },
+    {
+      name: "Gurneesh Singh",
+      role: "Language Support Specialist",
+      description:
+        "Ensuring class quality through content development and after-class support.",
+      image: "/about/team/gurneesh-singh.png",
     },
     {
       name: "Ashutosh Dubey",
@@ -104,6 +104,51 @@ export default function TheTeam() {
             </div>
           </div>
         </div>
+        {/* Academic Advisor Feature */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+          <div className="space-y-6 px-4 order-2 md:order-1">
+            <h3 className="text-4xl font-[var(--font-serif)]">
+              Prof. Dr. Vridhagiri<br />Ganeshan
+            </h3>
+            <p className="text-primary uppercase tracking-[0.2em] font-bold text-xs">
+              Academic Advisor
+            </p>
+            <p className="text-lg leading-relaxed opacity-80">
+              Over 50 years teaching, researching, and writing about German language and culture — from Universität München to CIEFL Hyderabad to Emory University. Prof. Dr. Ganeshan earned his doctorate in Germanistik in 1975 and spent 32 years as Professor of German at CIEFL, training generations of language teachers across India. He served twice as Vice-Chancellor, taught at leading American universities, and was awarded the Jakob-und-Wilhelm-Grimm-Preis by Germany in 1990 — one of the highest honours in German philology.
+            </p>
+            <p className="text-lg leading-relaxed opacity-80">
+              His life&apos;s work — bridging the gap between Indian learners and genuine German fluency — is exactly the challenge Decode German is built around.
+            </p>
+            <blockquote className="font-[var(--font-serif)] italic text-base leading-relaxed opacity-80 border-l-2 border-primary pl-4 py-2">
+              &ldquo;Language is never just grammar. It is the bridge between who you are and who you are becoming in another culture.&rdquo;
+            </blockquote>
+            <div className="flex flex-wrap gap-3">
+              <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
+                Atlanta, USA
+              </span>
+              <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
+                Dr. Phil. — München 1975
+              </span>
+              <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
+                Grimm-Preis 1990
+              </span>
+              <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
+                DAAD &amp; Humboldt Fellow
+              </span>
+              <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
+                50+ Years in Germanistik
+              </span>
+            </div>
+          </div>
+          <div className="aspect-[4/5] bg-white overflow-hidden polaroid rotate-1 order-1 md:order-2">
+            <img
+              alt="Prof. Dr. Vridhagiri Ganeshan"
+              className="w-full h-full object-cover"
+              src="/about/team/Founder3.jpeg"
+            />
+          </div>
+        </div>
+
         {/* Team Grid - Desktop */}
         <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-16">
           {teamMembers.map((member) => (

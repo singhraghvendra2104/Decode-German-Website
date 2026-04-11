@@ -93,7 +93,7 @@ export default function CourseDetailHero({
             />
           </div>
           {imageCaption && (
-            <p className="font-[var(--font-handwriting)] text-base sm:text-lg absolute bottom-5 sm:bottom-6 left-6 sm:left-8 right-6 sm:right-8 text-charcoal/70">
+            <p className="font-handwriting text-base sm:text-lg absolute bottom-5 sm:bottom-6 left-6 sm:left-8 right-6 sm:right-8 text-charcoal/70">
               {imageCaption}
             </p>
           )}

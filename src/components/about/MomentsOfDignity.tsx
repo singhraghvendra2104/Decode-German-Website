@@ -74,7 +74,7 @@ export default function MomentsOfDignity() {
                 <p className="text-stone-gray text-sm leading-relaxed italic">
                   {card.quote}
                 </p>
-                <p className="font-[var(--font-handwriting)] text-xl md:text-2xl text-primary-alt mt-4 md:mt-6">
+                <p className="font-handwriting text-xl md:text-2xl text-primary-alt mt-4 md:mt-6">
                   &mdash; {card.author}
                 </p>
               </div>

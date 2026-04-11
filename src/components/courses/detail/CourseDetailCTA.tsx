@@ -24,7 +24,7 @@ export default function CourseDetailCTA({
 
   return (
     <section id="enroll" className="py-20 sm:py-28 md:py-48 px-4 sm:px-6 text-center max-w-5xl mx-auto relative">
-      <p className="font-[var(--font-handwriting)] text-3xl sm:text-4xl md:text-5xl text-primary mb-6 sm:mb-8">
+      <p className="font-handwriting text-3xl sm:text-4xl md:text-5xl text-primary mb-6 sm:mb-8">
         Bis bald!
       </p>
       <h2 className="font-[var(--font-serif)] text-4xl sm:text-5xl md:text-7xl lg:text-9xl leading-tight mb-8 sm:mb-12 md:mb-16">

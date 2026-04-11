@@ -171,7 +171,7 @@ export default function ContactFormModal({
         {/* Journal-style form card */}
         <div className="bg-white shadow-2xl relative">
           {/* Handwriting accent */}
-          <div className="absolute -top-5 -left-3 md:-left-5 font-[var(--font-handwriting)] text-primary text-xl md:text-2xl bg-warm-sand px-4 py-2 rotate-[-4deg] shadow-sm z-20">
+          <div className="absolute -top-5 -left-3 md:-left-5 font-handwriting text-primary text-xl md:text-2xl bg-warm-sand px-4 py-2 rotate-[-4deg] shadow-sm z-20">
             Get in Touch...
           </div>
 
