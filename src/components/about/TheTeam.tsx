@@ -43,19 +43,19 @@ export default function TheTeam() {
       image: "/about/team/sakshi-tripathi.png",
     },
     {
+      name: "Gurneesh Singh",
+      role: "Language Support Specialist",
+      description:
+        "Ensuring class quality through content development and after-class support.",
+      image: "/about/team/gurneesh-singh.png",
+    },
+    {
       name: "Ashutosh Dubey",
       role: "Program & Operations Manager",
       description:
         "Keeping everything structured, seamless, and on track.",
       image: "/about/team/ashutosh-dubey.png",
       objectPosition: "center 25%",
-    },
-    {
-      name: "Gurneesh Singh",
-      role: "Language Support Specialist",
-      description:
-        "Ensuring class quality through content development and after-class support.",
-      image: "/about/team/gurneesh-singh.png",
     },
     {
       name: "Afroj Ansari",
@@ -87,9 +87,8 @@ export default function TheTeam() {
             <h3 className="text-4xl font-[var(--font-serif)]">Shalini K Dubey</h3>
             <p className="text-primary uppercase tracking-[0.2em] font-bold text-xs">
               Founder &amp; Lead Instructor
-            </p>
-            <p className="text-base leading-relaxed opacity-80">
-              Based in Dresden, Germany
+              <br />
+                Based in Dresden, Germany
             </p>
             <p className="text-lg leading-relaxed opacity-80">
               Personally teaches, designs the curriculum, and works closely with every student their patterns, their gaps, their journey.
