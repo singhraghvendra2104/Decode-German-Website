@@ -1,7 +1,13 @@
-import Link from "next/link";
+"use client";
+
 import { homeCta } from "@/lib/constants";
+import { useDisclosure } from "@mantine/hooks";
+import ContactFormModal from "@/components/layout/ContactFormModal";
 
 export default function CTASection() {
+  const [modalOpened, { open: openModal, close: closeModal }] =
+    useDisclosure(false);
+
   return (
     <section className="py-24 md:py-40 px-4 md:px-6 overflow-hidden relative">
       <div className="absolute inset-0 terracotta-gradient opacity-10 -z-10" />
@@ -26,22 +32,18 @@ export default function CTASection() {
           {homeCta.body}
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-          <Link
-            href={homeCta.primaryButton.href}
-            className="bg-charcoal text-white font-bold py-4 px-10 md:py-5 md:px-14 rounded-full text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all text-center"
+        {/* Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={openModal}
+            className="bg-charcoal text-white font-bold py-4 px-10 md:py-5 md:px-14 rounded-full text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all cursor-pointer"
           >
             {homeCta.primaryButton.label}
-          </Link>
-          <Link
-            href={homeCta.secondaryButton.href}
-            className="bg-transparent border-2 border-charcoal text-charcoal font-bold py-4 px-10 md:py-5 md:px-14 rounded-full text-base md:text-lg hover:bg-charcoal hover:text-white transition-all text-center"
-          >
-            {homeCta.secondaryButton.label}
-          </Link>
+          </button>
         </div>
       </div>
+
+      <ContactFormModal opened={modalOpened} onClose={closeModal} />
     </section>
   );
 }

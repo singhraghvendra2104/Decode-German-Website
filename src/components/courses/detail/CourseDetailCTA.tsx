@@ -1,4 +1,8 @@
+"use client";
+
 import { siteConfig } from "@/lib/constants";
+import { useDisclosure } from "@mantine/hooks";
+import ContactFormModal from "@/components/layout/ContactFormModal";
 
 interface CourseDetailCTAProps {
   level: string;
@@ -11,6 +15,9 @@ export default function CourseDetailCTA({
   title,
   closingQuote,
 }: CourseDetailCTAProps) {
+  const [modalOpened, { open: openModal, close: closeModal }] =
+    useDisclosure(false);
+
   const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber.replace(/\+/g, "")}?text=${encodeURIComponent(
     `Hi, I'm interested in the ${level} course at Decode German.`
   )}`;
@@ -27,12 +34,12 @@ export default function CourseDetailCTA({
         </span>
       </h2>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8">
-        <a
-          href="#callback"
-          className="bg-charcoal text-ivory px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.4em] font-bold hover:bg-primary transition-all shadow-xl w-full sm:w-auto text-center"
+        <button
+          onClick={openModal}
+          className="bg-charcoal text-ivory px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.4em] font-bold hover:bg-primary transition-all shadow-xl w-full sm:w-auto text-center cursor-pointer"
         >
-          Request Callback
-        </a>
+          Get in Touch
+        </button>
         <a
           href={whatsappUrl}
           target="_blank"
@@ -47,6 +54,8 @@ export default function CourseDetailCTA({
           {closingQuote}
         </p>
       )}
+
+      <ContactFormModal opened={modalOpened} onClose={closeModal} />
     </section>
   );
 }

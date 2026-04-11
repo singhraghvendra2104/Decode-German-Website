@@ -69,7 +69,7 @@ export default function Footer() {
           <h4 className="text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
             Contact
           </h4>
-          <address className="text-sm text-gray-500 leading-relaxed not-italic space-y-3">
+          <address className="text-sm text-gray-500 leading-relaxed not-italic space-y-4">
             <div>
               <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
                 Email
@@ -87,9 +87,36 @@ export default function Footer() {
               </p>
               <a
                 href={`tel:${siteConfig.whatsappNumber}`}
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors block"
               >
-                {siteConfig.whatsappNumber}
+                +49 15900 4836675
+              </a>
+              <a
+                href={`tel:${siteConfig.phoneIndia}`}
+                className="hover:text-primary transition-colors block mt-1"
+              >
+                +91 98712 05947
+              </a>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
+                WhatsApp
+              </p>
+              <a
+                href={`https://wa.me/${siteConfig.whatsappNumber.replace(/\+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors block"
+              >
+                +49 15900 4836675
+              </a>
+              <a
+                href={`https://wa.me/${siteConfig.whatsappIndia.replace(/\+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors block mt-1"
+              >
+                +91 98712 05947 <span className="text-xs text-gray-400">(India)</span>
               </a>
             </div>
           </address>
