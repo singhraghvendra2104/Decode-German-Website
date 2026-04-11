@@ -13,7 +13,7 @@ export const siteConfig = {
   whatsappNumber: "+4915904836675",
   phoneIndia: "+919871205947",
   whatsappIndia: "+919871205947",
-  copyright: `© ${new Date().getFullYear()} Decode German. Teaching is passion, not business.`,
+  copyright: `© ${new Date().getFullYear()} Decode German. SPEAK.BELONG.THRIVE`,
 };
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
@@ -1220,7 +1220,7 @@ export const footerLinks = {
 };
 
 export const footerDescription =
-  "Teaching is passion, not business. Premium German language transformation for the global citizen in Germany.";
+  "A brand of SkiD Decode Deutsch Language Institute Private Limited.";
 
 export const socialLinks = [
   { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/decodegerman" },
