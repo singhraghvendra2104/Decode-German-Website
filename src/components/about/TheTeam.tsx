@@ -121,10 +121,10 @@ export default function TheTeam() {
               Academic Advisor
             </p>
             <p className="text-lg leading-relaxed opacity-80">
-              Over 50 years teaching, researching, and writing about German language and culture — from Universität München to CIEFL Hyderabad to Emory University. Prof. Dr. Ganeshan earned his doctorate in Germanistik in 1975 and spent 32 years as Professor of German at CIEFL, training generations of language teachers across India. He served twice as Vice-Chancellor, taught at leading American universities, and was awarded the Jakob-und-Wilhelm-Grimm-Preis by Germany in 1990 — one of the highest honours in German philology.
+              Over 50 years teaching, researching, and writing about German language and culture, from Universität München to CIEFL Hyderabad to Emory University. Prof. Dr. Ganeshan earned his doctorate in Germanistik in 1975 and spent 32 years as Professor of German at CIEFL, training generations of language teachers across India. He served twice as Vice-Chancellor, taught at leading American universities, and was awarded the Jakob-und-Wilhelm-Grimm-Preis by Germany in 1990, one of the highest honours in German philology.
             </p>
             <p className="text-lg leading-relaxed opacity-80">
-              His life&apos;s work — bridging the gap between Indian learners and genuine German fluency — is exactly the challenge Decode German is built around.
+              His life&apos;s work, bridging the gap between Indian learners and genuine German fluency, is exactly the challenge Decode German is built around.
             </p>
             <blockquote className="font-[var(--font-serif)] italic text-base leading-relaxed opacity-80 border-l-2 border-primary pl-4 py-2">
               &ldquo;Language is never just grammar. It is the bridge between who you are and who you are becoming in another culture.&rdquo;
@@ -134,7 +134,7 @@ export default function TheTeam() {
                 Atlanta, USA
               </span>
               <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
-                Dr. Phil. — München 1975
+                Dr. Phil., München 1975
               </span>
               <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
                 Grimm-Preis 1990

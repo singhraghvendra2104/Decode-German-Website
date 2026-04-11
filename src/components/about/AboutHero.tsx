@@ -42,7 +42,7 @@ export default function AboutHero() {
       </div>
       <div className="mt-20 max-w-3xl ml-auto md:mr-12">
         <p className="text-xl leading-relaxed text-on-surface/80">
-          Founded in 2020 by <strong>Shalini K Dubey</strong>. 1000+ students taught across the world. We built this platform with discipline, dedication, and relentless clarity. With teaching that is structured, demanding, and deeply human. <strong>With equal commitment from us and from YOU students.</strong>
+          Founded in 2020 by <strong>Shalini K Dubey</strong>. 1000+ students taught across the world. We built this platform with discipline, dedication, and relentless clarity. With teaching that is structured, demanding, and deeply human. <strong>With equal commitment from us and from YOU.</strong>
         </p>
       </div>
     </section>
