@@ -53,7 +53,7 @@ export default function TransformationJourney() {
               </div>
               {step.label && (
                 <div
-                  className={`absolute font-handwriting text-primary text-xl pointer-events-none hidden md:block ${
+                  className={`absolute font-handwriting text-primary text-xl md:text-3xl pointer-events-none hidden md:block ${
                     index === 0
                       ? "bottom-6 -left-2 rotate-6"
                       : "-top-8 -left-4 -rotate-12"

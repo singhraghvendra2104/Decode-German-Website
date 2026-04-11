@@ -3,7 +3,7 @@ export default function TheTeam() {
     {
       name: "Atalbihari Sharma",
       role: "Co-Founder & Director",
-      description: "Business strategy and growth.",
+      description: "Growth & Strategic Direction",
       image: "/about/team/atalbihari-sharma.png",
       objectPosition: "center 25%",
     },
@@ -36,26 +36,26 @@ export default function TheTeam() {
       image: "/about/team/tanya-wadhwa.png",
     },
     {
+      name: "Sakshi Tripathi",
+      role: "Student Support & Doubt Resolution Lead",
+      description:
+        "Ensuring clarity at every step of the journey.",
+      image: "/about/team/sakshi-tripathi.png",
+    },
+    {
+      name: "Ashutosh Dubey",
+      role: "Program & Operations Manager",
+      description:
+        "Keeping everything structured, seamless, and on track.",
+      image: "/about/team/ashutosh-dubey.png",
+      objectPosition: "center 25%",
+    },
+    {
       name: "Gurneesh Singh",
       role: "Language Support Specialist",
       description:
         "Ensuring class quality through content development and after-class support.",
       image: "/about/team/gurneesh-singh.png",
-    },
-    {
-      name: "Ashutosh Dubey",
-      role: "Legal Advisor",
-      description:
-        "Handling legal and compliance matters behind the scenes.",
-      image: "/about/team/ashutosh-dubey.png",
-      objectPosition: "center 25%",
-    },
-    {
-      name: "Sakshi Tripathi",
-      role: "Digital Marketing Lead",
-      description:
-        "Leading digital strategy to reach learners across the world.",
-      image: "/about/team/sakshi-tripathi.png",
     },
     {
       name: "Afroj Ansari",
@@ -88,18 +88,25 @@ export default function TheTeam() {
             <p className="text-primary uppercase tracking-[0.2em] font-bold text-xs">
               Founder &amp; Lead Instructor
             </p>
+            <p className="text-base leading-relaxed opacity-80">
+              Based in Dresden, Germany
+            </p>
             <p className="text-lg leading-relaxed opacity-80">
-              12 years of teaching experience. Based in Dresden, Germany. Personally teaches, designs the curriculum, and knows every student by name. Moved to Germany for post-graduate studies, learned German from scratch, and built the system that gets results where bulk teaching fails.
+              Personally teaches, designs the curriculum, and works closely with every student their patterns, their gaps, their journey.
+            </p>
+            <p className="text-lg leading-relaxed opacity-80">
+              Built from scratch after moving to Germany for post-graduate studies.<br />
+              12+ years of teaching experience shaped through real students, not systems.
             </p>
             <blockquote className="font-[var(--font-serif)] italic text-base leading-relaxed opacity-80 border-l-2 border-primary pl-4 py-2">
-              "When you study here, you don't 'take classes.' You commit. You build confidence. You evolve. You transform."
+              &ldquo;This is not a place where you take classes. This is a place where you commit. Where you build confidence, evolve, and transform.&rdquo;
             </blockquote>
             <div className="flex gap-4">
               <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
                 Dresden Based
               </span>
               <span className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
-                12 Years Exp
+                12+ Years Exp
               </span>
             </div>
           </div>

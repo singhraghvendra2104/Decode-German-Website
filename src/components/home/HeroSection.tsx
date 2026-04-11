@@ -17,7 +17,7 @@ export default function HeroSection() {
   }, [nextSlide]);
 
   return (
-    <section className="relative h-[100svh] w-full overflow-hidden bg-charcoal">
+    <section className="relative h-[85svh] w-full overflow-hidden bg-charcoal">
       {/* Carousel Slides */}
       <div className="absolute inset-0 z-0">
         {heroSlides.map((slide, index) => (
