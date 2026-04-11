@@ -178,11 +178,40 @@ html.lenis body {
   }
 }
 
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .marquee-track {
   animation: marquee-scroll 40s linear infinite;
   width: max-content;
 }
 
 .marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Testimonials 3-row marquee ──────────────────────────────────────────── */
+.testimonial-marquee {
+  width: max-content;
+  display: flex;
+  gap: 1.5rem;
+  will-change: transform;
+}
+
+.testimonial-marquee-left {
+  animation: marquee-scroll 90s linear infinite;
+}
+
+.testimonial-marquee-right {
+  animation: marquee-scroll-reverse 90s linear infinite;
+}
+
+.testimonial-marquee-row:hover .testimonial-marquee {
   animation-play-state: paused;
 }
