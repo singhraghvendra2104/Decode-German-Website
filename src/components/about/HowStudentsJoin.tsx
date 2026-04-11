@@ -5,7 +5,7 @@ export default function HowStudentsJoin() {
         <div className="space-y-4">
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">How Students Join</h2>
           <p className="text-base md:text-lg text-gray-500 max-w-xl">
-            We take enrollment seriously — because your learning depends on it.
+            We take enrollment seriously, because your learning depends on it.
           </p>
         </div>
 
@@ -14,7 +14,7 @@ export default function HowStudentsJoin() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h4 className="text-2xl font-[var(--font-serif)] text-primary">
-                A1 — Beginners
+                A1: Beginners
               </h4>
               <ol className="space-y-4 text-charcoal/80">
                 <li className="flex gap-4 items-start">
@@ -32,7 +32,7 @@ export default function HowStudentsJoin() {
           {/* A2, B1, B2 - Higher Levels */}
           <div className="space-y-6">
             <h4 className="text-2xl font-[var(--font-serif)] text-primary">
-              A2, B1, B2 — Higher Levels
+              A2, B1, B2: Higher Levels
             </h4>
             <ol className="space-y-4 text-charcoal/80">
               <li className="flex gap-4 items-start">
@@ -53,7 +53,7 @@ export default function HowStudentsJoin() {
                 Don&apos;t pass yet? →
               </p>
               <p className="text-sm leading-relaxed text-charcoal/70">
-                Crash course — fast-paced, individual sessions with flexible scheduling. Keep studying until you pass.{" "}
+                Crash course: fast-paced, individual sessions with flexible scheduling. Keep studying until you pass.{" "}
                 <strong>When you&apos;re ready, you get enrolled.</strong>
               </p>
             </div>
