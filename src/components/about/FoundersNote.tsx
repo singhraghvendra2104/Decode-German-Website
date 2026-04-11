@@ -58,7 +58,7 @@ export default function FoundersNote() {
             Dear students, I am grateful for each of you for your trust, your love, and your support.
           </p>
           <p className="text-base leading-normal text-on-surface/90 font-semibold">
-            Today and always I live for my students.
+            Today and always,I live for my students.
           </p>
           <p className="text-sm tracking-widest text-on-surface/60 pt-1">
             Shalini K Dubey
