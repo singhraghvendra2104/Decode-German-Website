@@ -4,7 +4,7 @@ export default function NarrativeSection() {
       number: 1,
       title: "Know Each Student Personally",
       description:
-        "We maintain a personal profile of every student: career goals, learning pace, grammar weak points. This is not a database. This is a relationship.",
+        "We maintain a personal profile of every student: career goals, learning pace, challenges. This is not a database. This is a relationship.",
     },
     {
       number: 2,

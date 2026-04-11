@@ -13,7 +13,7 @@ export default function CTASection() {
       <div className="absolute inset-0 terracotta-gradient opacity-10 -z-10" />
       <div className="max-w-4xl mx-auto text-center relative">
         {/* Handwriting */}
-        <div className="hidden md:block absolute -top-20 left-1/2 -translate-x-1/2 font-[var(--font-handwriting)] text-5xl text-primary opacity-40 -rotate-6 whitespace-nowrap">
+        <div className="hidden md:block absolute -top-20 left-1/2 -translate-x-1/2 font-handwriting text-5xl text-primary opacity-40 -rotate-6 whitespace-nowrap">
           {homeCta.handwriting}
         </div>
 
@@ -25,7 +25,7 @@ export default function CTASection() {
               {line}{" "}
             </span>
           ))}
-          <span className="text-primary italic">{homeCta.headingAccent}</span>?
+          <span className="text-primary italic">{homeCta.headingAccent}</span>
         </h2>
 
         <p className="text-base md:text-xl mb-10 md:mb-12 text-gray-600 max-w-xl mx-auto">

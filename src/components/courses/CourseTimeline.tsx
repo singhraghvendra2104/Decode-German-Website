@@ -6,7 +6,7 @@ export default function CourseTimeline() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
-          <span className="inline-block font-[var(--font-handwriting)] text-lg md:text-2xl text-primary mb-4">
+          <span className="inline-block font-handwriting text-lg md:text-2xl text-primary mb-4">
             {courseTimeline.label}
           </span>
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] font-bold mb-6">

@@ -18,7 +18,7 @@ export default function WeightOfSilence() {
               ))}
             </h2>
             <div className="h-0.5 w-16 bg-primary-alt/30" />
-            <p className="mt-6 md:mt-8 font-[var(--font-handwriting)] text-xl md:text-2xl text-stone-gray/60 leading-relaxed">
+            <p className="mt-6 md:mt-8 font-handwriting text-xl md:text-2xl text-stone-gray/60 leading-relaxed">
               {weightOfSilence.sidebar}
             </p>
           </div>

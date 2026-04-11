@@ -7,11 +7,11 @@ export default function NotFound() {
       {/* Logo */}
       <Link href="/" className="mb-12">
         <Image
-          src="/logo.png"
+          src="/new-logo.svg"
           alt="Decode German logo"
-          width={64}
-          height={64}
-          className="h-14 md:h-16 w-auto"
+          width={200}
+          height={100}
+          className="h-18 md:h-20 w-auto mix-blend-multiply"
         />
       </Link>
 

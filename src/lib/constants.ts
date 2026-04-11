@@ -98,7 +98,7 @@ export const transformationSteps = [
     number: "01",
     title: "Understand",
     description:
-      "We built this platform with discipline, dedication, and relentless clarity.",
+      "German finally starts making sense.",
     label: "The Foundation",
     shapeClass: "organic-shape-1",
   },
@@ -114,7 +114,7 @@ export const transformationSteps = [
     number: "03",
     title: "Live",
     description:
-      "If you study here, you don't take classes. You commit. You build confidence. You evolve.",
+      "German becomes part of your daily life. Not a subject.",
     label: "",
     shapeClass: "organic-shape-3",
   },
@@ -146,8 +146,8 @@ export const courses = [
     level: "A1",
     name: "Beginner",
     details: [
-      { text: "2 months" },
-      { text: "5 days/week, 1.5 hrs/day" },
+      { text: "2.5 months" },
+      { text: "4 days/week, 2 hrs/day" },
       { text: "No entrance test required" },
     ],
     description: "Your first step. Build a strong foundation in grammar, vocabulary, and everyday communication from scratch.",
@@ -157,8 +157,8 @@ export const courses = [
     level: "A2",
     name: "Pre-Intermediate",
     details: [
-      { text: "2 months" },
-      { text: "5 days/week, 1.5 hrs/day" },
+      { text: "2.5 months" },
+      { text: "4 days/week, 2 hrs/day" },
       { text: "Entrance test required", italic: true },
     ],
     description: "Expand into everyday conversations and social interaction. Start expressing opinions and handling routine situations.",
@@ -168,8 +168,8 @@ export const courses = [
     level: "B1",
     name: "Intermediate",
     details: [
-      { text: "3 months" },
-      { text: "4 days/week, 2 hrs/day" },
+      { text: "3.5 months" },
+      { text: "4 days/week, 2.5 hrs/day" },
       { text: "Entrance test required", italic: true },
     ],
     description: "Handle real-life situations independently. Discuss work, travel, and personal topics with growing fluency and confidence.",
@@ -179,8 +179,8 @@ export const courses = [
     level: "B2",
     name: "Professional",
     details: [
-      { text: "3 months" },
-      { text: "4 days/week, 2 hrs/day" },
+      { text: "3.5 months" },
+      { text: "4 days/week, 2.5 hrs/day" },
       { text: "Entrance test required", italic: true },
     ],
     description: "The gateway to the German workforce. Master technical discussions, professional communication, and cultural fluency.",
@@ -194,7 +194,7 @@ export const coreBeliefs = [
     handwriting: "",
     heading: "100% Word-of-Mouth",
     headingAccent: "Growth Since 2020",
-    body: "No marketing. No ads. Every single student came through recommendations. Built on love and trust, driven by student success. Powered by student success, never by marketing.",
+    body: "Students don't just learn here — they recommend us. Because when someone truly progresses, they don't stay silent. Every student you see came through trust, not ads. Built on care. Proven by results. Sustained by trust.",
     footer: "Trust-Earned",
     image: "/home/differentiators/DIFF1.png",
     imageAlt: "Community and Trust",
@@ -205,7 +205,7 @@ export const coreBeliefs = [
     handwriting: "",
     heading: "Founder-Led",
     headingAccent: "Teaching",
-    body: "Shalini personally teaches, designs curriculum, and leads every batch. 8 years of experience. Based in Germany. This isn't a platform, it's a person who chose students over career.",
+    body: "You are not handed over. You are guided directly. Shalini designs, teaches, and leads every batch — herself. Not as a name behind the system, but as someone responsible for your progress. Because your future should never feel outsourced. Here, responsibility is real.",
     footer: "Personal Responsibility",
     image: "/home/differentiators/DIFF2.png",
     imageAlt: "Founder Teaching",
@@ -217,7 +217,7 @@ export const coreBeliefs = [
     handwriting: "",
     heading: "Entrance Tests +",
     headingAccent: "Progress Tracking",
-    body: "Every student must pass an entrance test before joining any level above A1. Progress is tracked individually. Regular tests ensure real learning, not just attendance. You can't hide here.",
+    body: "Structured Entry. Real Progress. Every student starts at the right level — and moves forward with clarity. We stay involved in your progress. You always know where you stand — and your next step. No guesswork. No false confidence. Only real progress.",
     footer: "Accountability",
     image: "/home/differentiators/DIFF3.png",
     imageAlt: "Progress Tracking",
@@ -226,9 +226,9 @@ export const coreBeliefs = [
   {
     id: 4,
     handwriting: "",
-    heading: "Native German",
-    headingAccent: "Speakers on Team",
-    body: "Native speakers, real conversations, real feedback, real German. Not chatbot practice. Not recorded videos. Living, breathing interaction.",
+    heading: "Learn with Native",
+    headingAccent: "German Speakers",
+    body: "Native German. Real Conversations. You don't practice German. You speak. No scripts. No shortcuts. The moment you stop translating — you start thinking in German.",
     footer: "Authentic Communication",
     image: "/home/differentiators/DIFF4.png",
     imageAlt: "Native Speakers",
@@ -238,9 +238,9 @@ export const coreBeliefs = [
   {
     id: 5,
     handwriting: "",
-    heading: "Small Batches,",
-    headingAccent: "Personal Attention",
-    body: "Not a factory. Small class sizes so every student gets attention. Every class carries responsibility. Every student matters.",
+    heading: "Small Batches.",
+    headingAccent: "Real Attention.",
+    body: "You are not one of many. You are known. Your progress is seen. Your gaps are closed. Nothing is missed. Everything is addressed.",
     footer: "Individual Focus",
     image: "/home/differentiators/DIFF5.png",
     imageAlt: "Small Class Sizes",
@@ -279,12 +279,50 @@ export const testimonials = [
   },
 ];
 
+// ─── Home Page: Wall of Achievement ─────────────────────────────────────────
+export const wallOfAchievement = {
+  handwriting: "Our Wall of Achievement",
+  heading: "Evidence of",
+  headingAccent: "Belonging",
+  description:
+    "More than just grades, these are the moments our students claimed their place in Germany.",
+  polaroids: [
+    {
+      id: 1,
+      image: "/home/hero-images/HERO1.png",
+      alt: "Student Result",
+      caption: "B2 Passed with Honors!",
+      location: "Munich, May 2024",
+      rotation: "-rotate-3",
+      offsetY: "",
+    },
+    {
+      id: 2,
+      image: "/home/hero-images/HERO2.png",
+      alt: "Success Moment",
+      caption: "The First Job Offer in DE",
+      location: "Berlin, June 2024",
+      rotation: "rotate-2",
+      offsetY: "lg:translate-y-12",
+    },
+    {
+      id: 3,
+      image: "/home/hero-images/HERO3.png",
+      alt: "Student Certificate",
+      caption: "I can finally speak!",
+      location: "Hamburg, July 2024",
+      rotation: "-rotate-1",
+      offsetY: "",
+    },
+  ],
+};
+
 // ─── Home Page: CTA Section ──────────────────────────────────────────────────
 export const homeCta = {
   handwriting: "Your story continues here...",
-  heading: "Ready to start\nyour",
-  headingAccent: "new life",
-  body: "Join the elite platform for professionals who refuse to settle for 'just getting by'.",
+  heading: "Ready to",
+  headingAccent: "Decode German?",
+  body: "Take the very first step to begin!",
   primaryButton: { label: "Get in Touch" },
 };
 
@@ -379,8 +417,7 @@ export const foundersNote = {
 export const aboutCta = {
   heading: "Your story is waiting\nto be told.",
   body: "Step away from the apps and into the narrative. Join a collective of learners finding their voice in the heart of Europe.",
-  primaryButton: { label: "Join the Collective", href: "#enroll" },
-  secondaryButton: { label: "Our Curriculum", href: "#curriculum" },
+  primaryButton: { label: "Get in Touch" },
 };
 
 // ─── Courses Page: Hero Section ──────────────────────────────────────────────

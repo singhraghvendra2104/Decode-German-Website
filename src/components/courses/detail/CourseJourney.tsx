@@ -69,7 +69,7 @@ export default function CourseJourney({ level, blocks }: CourseJourneyProps) {
                         {block.description}
                       </p>
                       {block.annotation && (
-                        <div className="mt-8 font-[var(--font-handwriting)] text-2xl md:text-3xl text-primary rotate-2">
+                        <div className="mt-8 font-handwriting text-2xl md:text-3xl text-primary rotate-2">
                           {block.annotation}
                         </div>
                       )}
@@ -116,7 +116,7 @@ export default function CourseJourney({ level, blocks }: CourseJourneyProps) {
                         {block.description}
                       </p>
                       {block.annotation && (
-                        <div className="mt-8 font-[var(--font-handwriting)] text-2xl text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="mt-8 font-handwriting text-2xl text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity">
                           {block.annotation}
                         </div>
                       )}

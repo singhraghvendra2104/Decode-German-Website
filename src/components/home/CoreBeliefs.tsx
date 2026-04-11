@@ -40,7 +40,7 @@ export default function CoreBeliefs() {
                 />
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                 {belief.imageOverlayText && (
-                  <div className="absolute top-6 left-6 font-[var(--font-handwriting)] text-2xl text-white drop-shadow-lg">
+                  <div className="absolute top-6 left-6 font-handwriting text-2xl text-white drop-shadow-lg">
                     {belief.imageOverlayText}
                   </div>
                 )}
@@ -49,7 +49,7 @@ export default function CoreBeliefs() {
               {/* Text Card - Mobile Bottom / Desktop Left */}
               <div className="w-full md:w-3/5 relative z-10 h-2/3 md:h-auto flex items-center">
                 <div className="bg-white p-6 md:p-12 lg:p-20 shadow-2xl relative w-full h-full md:h-auto flex flex-col justify-center">
-                  <div className="font-[var(--font-handwriting)] text-xl md:text-2xl lg:text-3xl text-primary mb-3 md:mb-4 lg:mb-6">
+                  <div className="font-handwriting text-xl md:text-2xl lg:text-3xl text-primary mb-3 md:mb-4 lg:mb-6">
                     {belief.handwriting}
                   </div>
                   <h3 className="font-[var(--font-serif)] text-2xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 lg:mb-8 leading-tight">
@@ -84,7 +84,7 @@ export default function CoreBeliefs() {
                 />
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                 {belief.imageOverlayText && (
-                  <div className="absolute top-6 left-6 md:top-10 md:left-10 font-[var(--font-handwriting)] text-2xl md:text-4xl text-white drop-shadow-lg">
+                  <div className="absolute top-6 left-6 md:top-10 md:left-10 font-handwriting text-2xl md:text-4xl text-white drop-shadow-lg">
                     {belief.imageOverlayText}
                   </div>
                 )}

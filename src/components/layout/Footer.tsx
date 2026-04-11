@@ -18,11 +18,11 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-3 mb-6 md:mb-8">
             <Image
-              src="/logo.png"
+              src="/new-logo.svg"
               alt={`${siteConfig.name} logo`}
-              width={48}
-              height={48}
-              className="h-10 md:h-12 w-auto"
+              width={200}
+              height={100}
+              className="h-14 md:h-16 w-auto mix-blend-multiply"
             />
           </div>
           <p className="text-gray-500 max-w-md text-base md:text-lg leading-relaxed mb-8">
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
-                Phone
+                Phone / WhatsApp
               </p>
               <a
                 href={`tel:${siteConfig.whatsappNumber}`}
@@ -100,24 +100,9 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
-                WhatsApp
+                Address
               </p>
-              <a
-                href={`https://wa.me/${siteConfig.whatsappNumber.replace(/\+/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors block"
-              >
-                +49 15900 4836675
-              </a>
-              <a
-                href={`https://wa.me/${siteConfig.whatsappIndia.replace(/\+/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors block mt-1"
-              >
-                +91 98712 05947 <span className="text-xs text-gray-400">(India)</span>
-              </a>
+              <p>Village Tharet, Madhya Pradesh, India, 475673</p>
             </div>
           </address>
         </div>

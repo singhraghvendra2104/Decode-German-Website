@@ -22,11 +22,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/new-logo.svg"
               alt={`${siteConfig.name} logo`}
-              width={48}
-              height={48}
-              className="h-9 md:h-12 w-auto"
+              width={200}
+              height={100}
+              className="h-12 md:h-16 w-auto mix-blend-multiply"
               priority
             />
           </Link>
@@ -81,11 +81,11 @@ export default function Header() {
         size="xs"
         title={
           <Image
-            src="/logo.png"
+            src="/new-logo.svg"
             alt={`${siteConfig.name} logo`}
-            width={40}
-            height={40}
-            className="h-10 w-auto"
+            width={160}
+            height={80}
+            className="h-14 w-auto mix-blend-multiply"
           />
         }
         overlayProps={{ backgroundOpacity: 0.3 }}

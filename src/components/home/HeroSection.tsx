@@ -38,7 +38,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
             <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6">
               {slide.handwriting && (
-                <span className="font-[var(--font-handwriting)] text-primary text-xl md:text-3xl mb-4 md:mb-6 block opacity-90">
+                <span className="font-handwriting text-primary text-xl md:text-3xl mb-4 md:mb-6 block opacity-90">
                   {slide.handwriting}
                 </span>
               )}
