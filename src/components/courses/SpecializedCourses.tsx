@@ -1,6 +1,13 @@
+"use client";
+
 import { specializedCourses } from "@/lib/constants";
+import { useDisclosure } from "@mantine/hooks";
+import ContactFormModal from "@/components/layout/ContactFormModal";
 
 export default function SpecializedCourses() {
+  const [modalOpened, { open: openModal, close: closeModal }] =
+    useDisclosure(false);
+
   return (
     <section className="py-14 md:py-20 lg:py-32 px-4 md:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -46,16 +53,18 @@ export default function SpecializedCourses() {
               </div>
 
               {/* CTA */}
-              <a
-                href="#enquire"
-                className="inline-flex items-center gap-2 mt-8 text-primary hover:text-primary/80 font-medium text-sm md:text-base transition-colors"
+              <button
+                onClick={openModal}
+                className="inline-flex items-center gap-2 mt-8 text-primary hover:text-primary/80 font-medium text-sm md:text-base transition-colors cursor-pointer"
               >
                 Enquire <span>→</span>
-              </a>
+              </button>
             </div>
           ))}
         </div>
       </div>
+
+      <ContactFormModal opened={modalOpened} onClose={closeModal} />
     </section>
   );
 }

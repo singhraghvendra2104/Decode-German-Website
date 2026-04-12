@@ -2,31 +2,31 @@ export default function WhyWeExist() {
   const reasons = [
     {
       number: "01",
-      title: "No Accountability",
-      description1: "Large institutes teach in bulk - students are on their own once class ends.",
-      description2: "We follow up before class, after class, and between batches. If you fall behind, we reach out first.",
+      title: "German That Works",
+      description1: "Built for how you actually use German in real situations.",
+      description2: "In conversations, at work, and in everyday life, with clarity and confidence.",
       bgClass: "bg-accent",
     },
     {
       number: "02",
-      title: "No Outcome Focus",
-      description1: "Students pass levels but can't speak or write confidently in real situations.",
-      description2: "We don't measure success by certificates. We measure it by whether you can function in Germany.",
+      title: "Individual Understanding",
+      description1: "Every student learns differently, and that is at the core of how we teach.",
+      description2: "Your patterns, your pace, and the way you learn are understood and shaped around you.",
       bgClass: "bg-accent/60",
       offsetY: true,
     },
     {
       number: "03",
-      title: "No Individual Tracking",
-      description1: "Teachers have no visibility into where each student is actually struggling.",
-      description2: "We maintain a personal profile for every student - goals, weak points, learning pace. This is not a database. This is a relationship.",
+      title: "Every Step Matters",
+      description1: "Learning continues beyond the classroom.",
+      description2: "Through regular follow-ups, focused check-ins, and constant attention to how you are learning and where you need to go next.",
       bgClass: "bg-accent",
     },
     {
       number: "04",
-      title: "No Quality at Enrollment",
-      description1: "Most institutes let anyone join any level as long as they pay - regardless of proficiency.",
-      description2: "Every student above A1 must pass an entrance test. No one enters a batch unprepared. No batch is held back.",
+      title: "Right Level, From the Start",
+      description1: "Every student begins at a level that fits where they are.",
+      description2: "This creates a focused pace, clear direction, and a group that stays aligned as it moves forward.",
       bgClass: "bg-accent/60",
       offsetY: true,
     },
@@ -35,12 +35,9 @@ export default function WhyWeExist() {
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-20 lg:py-32">
       <div className="mb-8 md:mb-12 lg:mb-16">
-        <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-4">Why We Exist</h2>
-        <p className="text-lg md:text-xl text-gray-500 max-w-xl">
-          Language learning requires more than <em>just teaching.</em>
-        </p>
-        <p className="text-base md:text-lg text-gray-500 max-w-2xl mt-4">
-          Motivated students invest time and money, hit a wall of impersonal bulk teaching, and either drop out or fail - not because they lacked willingness, but because no one was guiding them personally.
+        <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-4">What Makes Us Unique</h2>
+        <p className="text-lg md:text-xl text-gray-500 max-w-2xl">
+          Students come with hope, believing this is where everything finally comes together, with the right guidance and a structured approach.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">

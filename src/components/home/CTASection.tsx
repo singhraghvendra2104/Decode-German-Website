@@ -19,13 +19,13 @@ export default function CTASection() {
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-5xl md:text-7xl font-[var(--font-serif)] font-bold mb-8 md:mb-10">
-          {homeCta.heading.split("\n").map((line, i) => (
-            <span key={i}>
-              {i > 0 && <br />}
-              {line}{" "}
+          <span className="whitespace-nowrap">
+            {homeCta.heading}{" "}
+            <br /><span className="italic">
+              <span className="text-primary">D</span>ecode{" "}
+              G<span className="text-primary">erman?</span>
             </span>
-          ))}
-          <span className="text-primary italic">{homeCta.headingAccent}</span>
+          </span>
         </h2>
 
         <p className="text-base md:text-xl mb-10 md:mb-12 text-gray-600 max-w-xl mx-auto">

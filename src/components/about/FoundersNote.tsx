@@ -20,7 +20,7 @@ export default function FoundersNote() {
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Message from the Founder</p>
           <p className="text-base leading-normal text-on-surface/90">
             This is not a place for passive learning.<br />
-            This is where you show up - <em>with consistency and intent.</em>
+            This is where you<em>show up - with consistency and intent.</em>
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch,only students and their trust.

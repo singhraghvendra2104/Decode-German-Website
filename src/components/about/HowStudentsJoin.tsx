@@ -3,9 +3,10 @@ export default function HowStudentsJoin() {
     <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 lg:py-32 border-t border-black/5">
       <div className="space-y-8 md:space-y-12 lg:space-y-16">
         <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">How Students Join</h2>
+          <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">How You Begin</h2>
           <p className="text-base md:text-lg text-gray-500 max-w-xl">
-            We take enrollment seriously, because your learning depends on it.
+            Where you start matters it shapes everything ahead.<br />
+            When the foundation is strong, learning becomes smoother, faster, and stable.
           </p>
         </div>
 
@@ -19,7 +20,7 @@ export default function HowStudentsJoin() {
               <ol className="space-y-4 text-charcoal/80">
                 <li className="flex gap-4 items-start">
                   <span className="font-bold text-primary text-lg">1</span>
-                  <span>Contact us for your batch</span>
+                  <span>Contact us to join</span>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="font-bold text-primary text-lg">2</span>
@@ -41,7 +42,7 @@ export default function HowStudentsJoin() {
               </li>
               <li className="flex gap-4 items-start">
                 <span className="font-bold text-primary text-lg">2</span>
-                <span>Take the entrance test</span>
+                <span>Take the entrance test (short assessment)</span>
               </li>
               <li className="flex gap-4 items-start">
                 <span className="font-bold text-primary text-lg">3</span>
@@ -50,7 +51,7 @@ export default function HowStudentsJoin() {
             </ol>
             <div className="bg-accent p-6 border-l-2 border-primary mt-4">
               <p className="text-sm font-bold text-primary mb-2">
-                Don&apos;t pass yet? →
+                Else prepare first →
               </p>
               <p className="text-sm leading-relaxed text-charcoal/70">
                 Crash course: fast-paced, individual sessions with flexible scheduling. Keep studying until you pass.{" "}
