@@ -11,7 +11,7 @@ export default function WhyWeExist() {
       number: "02",
       title: "Individual Understanding",
       description1: "Every student learns differently, and that is at the core of how we teach.",
-      description2: "Your patterns, your pace, and the way you learn are understood and shaped around you.",
+      description2: "Your patterns, your pace, and the way you learn are understood and shaped into a method that works for you.",
       bgClass: "bg-accent/60",
       offsetY: true,
     },
@@ -44,17 +44,17 @@ export default function WhyWeExist() {
         {reasons.map((reason) => (
           <div
             key={reason.number}
-            className={`${reason.bgClass} ${reason.offsetY ? "md:translate-y-6" : ""} p-8 md:p-10 flex flex-col justify-between min-h-[300px] md:min-h-[380px]`}
+            className={`${reason.bgClass} ${reason.offsetY ? "md:translate-y-6" : ""} p-6 sm:p-8 md:p-10 flex flex-col min-h-[240px] sm:min-h-[280px] md:min-h-[380px]`}
           >
-            <span className="text-3xl md:text-4xl font-[var(--font-serif)] text-primary">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-serif)] text-primary">
               {reason.number}
             </span>
-            <div>
-              <h3 className="text-xl md:text-2xl font-[var(--font-serif)] mb-3">
+            <div className="mt-3 sm:mt-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-[var(--font-serif)] mb-2 sm:mb-3 leading-snug">
                 {reason.title}
               </h3>
-              <p className="text-sm leading-relaxed opacity-70">{reason.description1}</p>
-              <p className="text-sm leading-relaxed opacity-70 mt-2">{reason.description2}</p>
+              <p className="text-xs sm:text-sm leading-relaxed opacity-70">{reason.description1}</p>
+              <p className="text-xs sm:text-sm leading-relaxed opacity-70 mt-1.5 sm:mt-2">{reason.description2}</p>
             </div>
           </div>
         ))}
