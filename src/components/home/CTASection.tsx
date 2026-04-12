@@ -9,7 +9,7 @@ export default function CTASection() {
     useDisclosure(false);
 
   return (
-    <section className="py-24 md:py-40 px-4 md:px-6 overflow-hidden relative">
+    <section className="py-14 md:py-24 lg:py-40 px-4 md:px-6 overflow-hidden relative">
       <div className="absolute inset-0 terracotta-gradient opacity-10 -z-10" />
       <div className="max-w-4xl mx-auto text-center relative">
         {/* Handwriting */}

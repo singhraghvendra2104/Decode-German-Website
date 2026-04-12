@@ -1,9 +1,9 @@
 // ─── Site Metadata ───────────────────────────────────────────────────────────
 export const siteConfig = {
   name: "Decode German",
-  tagline: "Emotional Journey",
+  tagline: "Student focused language learning",
   description:
-    "Premium German language platform bridging the gap between fluency and identity. Boutique transformation for the global citizen in Germany.",
+    "Learn German A1-B2 with small batches, native speakers and teachers who cares.",
   url: "https://decodegerman.com",
   email: "decodegerman@gmail.com",
   address: {
@@ -194,7 +194,7 @@ export const coreBeliefs = [
     handwriting: "",
     heading: "100% Word-of-Mouth",
     headingAccent: "Growth Since 2020",
-    body: "Students don't just learn here — they recommend us. Because when someone truly progresses, they don't stay silent. Every student you see came through trust, not ads. Built on care. Proven by results. Sustained by trust.",
+    body: "Students don't just learn here - they recommend us. Because when someone truly progresses, they don't stay silent. Every student you see came through trust, not ads. Built on care. Proven by results. Sustained by trust.",
     footer: "Trust-Earned",
     image: "/home/differentiators/DIFF1.png",
     imageAlt: "Community and Trust",
@@ -205,7 +205,7 @@ export const coreBeliefs = [
     handwriting: "",
     heading: "Founder-Led",
     headingAccent: "Teaching",
-    body: "You are not handed over. You are guided directly. Shalini designs, teaches, and leads every batch — herself. Not as a name behind the system, but as someone responsible for your progress. Because your future should never feel outsourced. Here, responsibility is real.",
+    body: "You are not handed over. You are guided directly. Shalini designs, teaches, and leads every batch - herself. Not as a name behind the system, but as someone responsible for your progress. Because your future should never feel outsourced. Here, responsibility is real.",
     footer: "Personal Responsibility",
     image: "/home/differentiators/DIFF2.png",
     imageAlt: "Founder Teaching",
@@ -217,7 +217,7 @@ export const coreBeliefs = [
     handwriting: "",
     heading: "Entrance Tests +",
     headingAccent: "Progress Tracking",
-    body: "Structured Entry. Real Progress. Every student starts at the right level — and moves forward with clarity. We stay involved in your progress. You always know where you stand — and your next step. No guesswork. No false confidence. Only real progress.",
+    body: "Structured Entry. Real Progress. Every student starts at the right level - and moves forward with clarity. We stay involved in your progress. You always know where you stand - and your next step. No guesswork. No false confidence. Only real progress.",
     footer: "Accountability",
     image: "/home/differentiators/DIFF3.png",
     imageAlt: "Progress Tracking",
@@ -228,7 +228,7 @@ export const coreBeliefs = [
     handwriting: "",
     heading: "Learn with Native",
     headingAccent: "German Speakers",
-    body: "Native German. Real Conversations. You don't practice German. You speak. No scripts. No shortcuts. The moment you stop translating — you start thinking in German.",
+    body: "Native German. Real Conversations. You don't practice German. You speak. No scripts. No shortcuts. The moment you stop translating - you start thinking in German.",
     footer: "Authentic Communication",
     image: "/home/differentiators/DIFF4.png",
     imageAlt: "Native Speakers",
@@ -282,39 +282,11 @@ export const testimonials = [
 // ─── Home Page: Wall of Achievement ─────────────────────────────────────────
 export const wallOfAchievement = {
   handwriting: "Our Wall of Achievement",
-  heading: "Evidence of",
-  headingAccent: "Belonging",
-  description:
-    "More than just grades, these are the moments our students claimed their place in Germany.",
-  polaroids: [
-    {
-      id: 1,
-      image: "/home/hero-images/HERO1.png",
-      alt: "Student Result",
-      caption: "B2 Passed with Honors!",
-      location: "Munich, May 2024",
-      rotation: "-rotate-3",
-      offsetY: "",
-    },
-    {
-      id: 2,
-      image: "/home/hero-images/HERO2.png",
-      alt: "Success Moment",
-      caption: "The First Job Offer in DE",
-      location: "Berlin, June 2024",
-      rotation: "rotate-2",
-      offsetY: "lg:translate-y-12",
-    },
-    {
-      id: 3,
-      image: "/home/hero-images/HERO3.png",
-      alt: "Student Certificate",
-      caption: "I can finally speak!",
-      location: "Hamburg, July 2024",
-      rotation: "-rotate-1",
-      offsetY: "",
-    },
-  ],
+  polaroids: Array.from({ length: 23 }, (_, i) => ({
+    id: i + 1,
+    image: `/home/results/${i + 1}.png`,
+    alt: `Student Result ${i + 1}`,
+  })),
 };
 
 // ─── Home Page: CTA Section ──────────────────────────────────────────────────
@@ -328,7 +300,7 @@ export const homeCta = {
 
 // ─── About Page: Hero Section ────────────────────────────────────────────────
 export const aboutHero = {
-  subtitle: "— The Story of Belonging",
+  subtitle: "- The Story of Belonging",
   heading: "Language is the",
   headingAccent: "seat at the table",
   body: "A boutique German language platform crafted for the seekers, the thinkers, and those brave enough to rebuild their lives in a new tongue.",
@@ -354,7 +326,7 @@ export const weightOfSilence = {
   imageQuote:
     '"Language is not about tables; it\'s about the dignity of being seen."',
   bodySecond:
-    "We focus on the nuance of expression—teaching you how to share your fears, your ambitions, and your humor. Because belonging isn't just about understanding others; it's about making sure others can understand you.",
+    "We focus on the nuance of expression-teaching you how to share your fears, your ambitions, and your humor. Because belonging isn't just about understanding others; it's about making sure others can understand you.",
   nuanceHighlight: "nuance of expression",
 };
 
@@ -971,7 +943,7 @@ export const courseDetailPages: Record<string, {
     title: "Foundation",
     subtitle: "Online German A1 Intensive Course",
     heroDescription:
-      "A structured blend of video lessons and live classes takes you from knowing nothing to handling everyday life in German — introducing yourself, shopping, navigating public transport, filling out forms, and understanding simple conversations.",
+      "A structured blend of video lessons and live classes takes you from knowing nothing to handling everyday life in German - introducing yourself, shopping, navigating public transport, filling out forms, and understanding simple conversations.",
     heroImage:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBX1iVf5IBO_iq-_sqrsaDqzBLDuG2j7e2TDjha4l4gda3tbP_lwQcR8LkA3t24WGasNAWDABEhLx3ffM2O0wYkugcpJFUwkWOagxAVXXel6pGEUZUWlJ0M-Dlo2VBdKKh4r6Y9bALmLc-rYLNL_r9Dw51Zwsg_L6XeGLsoDKqKn8FcLNa75gAyinrpH9RWrAlsMfsTRMC0Clq0RmX3jBu_LAmRs1HXh7OTpbeQP7TJll3em3pFR1IXao96gPW1VS3bnbZoDEqVROE",
     heroImageAlt: "Cinematic street view of Berlin",
@@ -992,7 +964,7 @@ export const courseDetailPages: Record<string, {
     ],
     methodSteps: [
       { number: "01", title: "Watch Video Lessons", description: "27 structured video lessons covering grammar, vocabulary, and real-world usage. Watch at your own pace before each live session." },
-      { number: "02", title: "Attend Live Classes", description: "Interactive Zoom sessions to practice what you've watched — speaking, exercises, Q&A. This is where grammar becomes communication." },
+      { number: "02", title: "Attend Live Classes", description: "Interactive Zoom sessions to practice what you've watched - speaking, exercises, Q&A. This is where grammar becomes communication." },
       { number: "03", title: "Review & Practice", description: "Built-in catch-up days, homework, and self-study with NicosWeg, podcasts, and curated content to reinforce what you've learned." },
       { number: "04", title: "Test & Progress", description: "4 block tests + 1 full Goethe-style A1 exam at the end. You always know where you stand. Weak spots are identified and addressed before moving on." },
     ],
@@ -1003,7 +975,7 @@ export const courseDetailPages: Record<string, {
     ],
     journeyBlocks: [
       { number: "01", weeks: "Videos 1–11", title: "Block 1: The Building Blocks", description: "Alphabet and numbers, articles, personal pronouns, sein, demonstrative and possessive pronouns, verb conjugation and sentence structure, Imperativ and introductions. Kapitel 1, 2 & 3 (Netzwerk A1).", badge: "Test 1" },
-      { number: "02", weeks: "Videos 12–19", title: "Block 2: Grammar in Action", description: "Cases (Kasus) — Nominativ, Akkusativ, Wechselpräpositionen, time and dates, modal verbs, separable verbs, Präteritum, writing emails in German, Es constructions, personal pronouns. Kapitel 4, 5 & 6 (Netzwerk A1).", badge: "Test 2" },
+      { number: "02", weeks: "Videos 12–19", title: "Block 2: Grammar in Action", description: "Cases (Kasus) - Nominativ, Akkusativ, Wechselpräpositionen, time and dates, modal verbs, separable verbs, Präteritum, writing emails in German, Es constructions, personal pronouns. Kapitel 4, 5 & 6 (Netzwerk A1).", badge: "Test 2" },
       { number: "03", weeks: "Videos 20–24", title: "Block 3: Connecting Ideas", description: "Prepositions, welcher, man, Perfekt tense and OSUDA rule, extended vocabulary (Wortschatz). Kapitel 7, 8 & 9 (Netzwerk A1).", badge: "Test 3" },
       { number: "04", weeks: "Videos 25–27", title: "Block 4: Completing the Picture", description: "Kapitel 10, 11 & 12 (Netzwerk A1), full textbook completion, comprehensive revision.", badge: "Test 4" },
     ],
@@ -1017,9 +989,9 @@ export const courseDetailPages: Record<string, {
       { title: "1-on-1 Pronunciation Practice", description: "Individual sessions with personal feedback", type: "primary" as const },
     ],
     beforeText:
-      "No prior German knowledge needed. A1 is the absolute beginner level. You start from zero — no entrance test required. All you need is the commitment to show up consistently for 2.5 months. Whether you're a student planning to move to Germany, a professional already here, or someone starting fresh — this is where your journey begins.",
+      "No prior German knowledge needed. A1 is the absolute beginner level. You start from zero - no entrance test required. All you need is the commitment to show up consistently for 2.5 months. Whether you're a student planning to move to Germany, a professional already here, or someone starting fresh - this is where your journey begins.",
     afterText:
-      "You've built the foundation. Now learn to connect — talk about your past, describe routines, hold real conversations. A2 picks up exactly where A1 leaves off.",
+      "You've built the foundation. Now learn to connect - talk about your past, describe routines, hold real conversations. A2 picks up exactly where A1 leaves off.",
     nextLevel: { id: "a2", level: "A2" },
     closingQuote:
       "Ready to start your A1 journey?",

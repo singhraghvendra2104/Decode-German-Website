@@ -52,9 +52,9 @@ export default function OurJourney() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-8 py-32">
-      <h2 className="text-5xl font-[var(--font-serif)] mb-20 text-center">Our Journey</h2>
-      <p className="text-lg text-on-surface/60 text-center mb-16 max-w-2xl mx-auto">Six years of growing - one student at a time.</p>
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-20 lg:py-32">
+      <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-6 md:mb-10 text-center">Our Journey</h2>
+      <p className="text-base md:text-lg text-on-surface/60 text-center mb-10 md:mb-16 max-w-2xl mx-auto px-2">Six years of growing - one student at a time.</p>
 
       {/* Desktop Timeline */}
       <div className="hidden md:block relative space-y-12 before:content-[''] before:absolute before:left-1/2 before:top-0 before:bottom-0 before:w-px before:bg-on-surface/10 before:-translate-x-1/2">

@@ -33,8 +33,8 @@ export default function WhyWeExist() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-32">
-      <div className="mb-12 md:mb-16">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-20 lg:py-32">
+      <div className="mb-8 md:mb-12 lg:mb-16">
         <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-4">Why We Exist</h2>
         <p className="text-lg md:text-xl text-gray-500 max-w-xl">
           Language learning requires more than <em>just teaching.</em>

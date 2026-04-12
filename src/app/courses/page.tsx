@@ -14,11 +14,11 @@ import { courseLevels } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Courses",
   description:
-    "A structured journey through the German language. Every course is online, intensive, and taught in small batches. Whether you're starting from zero or preparing for an exam — we have a structured path for you.",
+    "A structured journey through the German language. Every course is online, intensive, and taught in small batches. Whether you're starting from zero or preparing for an exam - we have a structured path for you.",
   openGraph: {
     title: "Courses | Decode German",
     description:
-      "A structured journey through the German language — level by level, from A1 to B2.",
+      "A structured journey through the German language - level by level, from A1 to B2.",
   },
 };
 

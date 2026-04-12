@@ -2,10 +2,10 @@ import { courseTimeline } from "@/lib/constants";
 
 export default function CourseTimeline() {
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6 bg-charcoal text-ivory">
+    <section className="py-14 md:py-20 lg:py-32 px-4 md:px-6 bg-charcoal text-ivory">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-16 lg:mb-20">
           <span className="inline-block font-handwriting text-lg md:text-2xl text-primary mb-4">
             {courseTimeline.label}
           </span>

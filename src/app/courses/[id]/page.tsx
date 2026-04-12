@@ -52,7 +52,7 @@ export default async function CourseDetailPage({
   return (
     <>
       <Header />
-      <main className="pt-20 md:pt-24">
+      <main className="pt-16 md:pt-20 lg:pt-24">
         <CourseDetailHero
           level={course.level}
           title={course.title}

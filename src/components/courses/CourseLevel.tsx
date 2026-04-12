@@ -57,7 +57,7 @@ export default function CourseLevel({
       }`}
     >
       <div>
-        <h2 className="text-5xl md:text-6xl font-[var(--font-serif-alt)] mb-2">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-[var(--font-serif-alt)] mb-2">
           {level}
         </h2>
         <h3 className="text-xl md:text-2xl font-[var(--font-serif-alt)] italic text-primary-alt">
@@ -167,7 +167,7 @@ export default function CourseLevel({
   );
 
   return (
-    <section className={`py-16 md:py-32 relative ${isLast ? "md:mb-20" : ""} overflow-hidden`}>
+    <section className={`py-10 md:py-20 lg:py-32 relative ${isLast ? "md:mb-20" : ""} overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
         {reversed ? (
           <>

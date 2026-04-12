@@ -10,12 +10,12 @@ export default function TransformationJourney() {
   ];
 
   return (
-    <section id="transformation" className="py-20 md:py-32 px-4 md:px-6 bg-white overflow-hidden">
+    <section id="transformation" className="py-12 md:py-20 lg:py-32 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 lg:mb-24 gap-6 md:gap-8">
           <div>
-            <h2 className="text-5xl md:text-6xl font-[var(--font-serif)] font-bold">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-[var(--font-serif)] font-bold">
               {transformationHeading.title.split("\n").map((line, i) => (
                 <span key={i}>
                   {i > 0 && <br />}

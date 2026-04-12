@@ -1,14 +1,14 @@
 export default function FoundersNote() {
   return (
-    <section className="bg-surface-container py-20 relative overflow-hidden">
-      <div className="max-w-[90rem] mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-8">
+    <section className="bg-surface-container py-12 md:py-20 relative overflow-hidden">
+      <div className="max-w-[90rem] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="md:col-span-3 flex flex-col justify-start">
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             <div className="w-16 h-[2px] bg-primary"></div>
-            <h2 className="text-3xl font-[var(--font-serif-alt)] italic leading-snug">
+            <h2 className="text-2xl md:text-3xl font-[var(--font-serif-alt)] italic leading-snug">
               "I didn't leave my career to teach German. I left it to change what German changes."
             </h2>
-            <div className="pt-4">
+            <div className="pt-2 md:pt-4">
               <p className="font-bold text-sm uppercase tracking-widest">Shalini K Dubey</p>
               <p className="text-[11px] opacity-60 uppercase tracking-widest">
                 Founder · Dresden, Germany
@@ -16,11 +16,11 @@ export default function FoundersNote() {
             </div>
           </div>
         </div>
-        <div className="md:col-span-9 space-y-3 bg-white p-8 relative">
+        <div className="md:col-span-9 space-y-3 bg-white p-6 md:p-8 relative">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Message from the Founder</p>
           <p className="text-base leading-normal text-on-surface/90">
             This is not a place for passive learning.<br />
-            This is a place for <em>presence, effort, and responsibility.</em>
+            This is where you show up - <em>with consistency and intent.</em>
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch,only students and their trust.
@@ -40,13 +40,10 @@ export default function FoundersNote() {
             This is where I invest my life.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Some came with struggles beyond language, and through this journey, found their confidence again.
+          This is not just work for me - it is a responsibility I carry with complete honesty, discipline, and a sense of purpose every single day.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             Today, we have students from more than 30 countries, growing through trust and real impact. This has only been possible because of the love and trust my students have placed in me. Every student here has come through recommendation, not marketing. That, more than anything, reflects the impact they carry forward.
-          </p>
-          <p className="text-base leading-normal text-on-surface/90">
-            German is a beautiful and deeply interesting language, but it demands your time and dedication. And anything that has the power to shape your life deserves exactly that.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             I came to Germany in 2020, completed my master's, and worked as a Team Lead for more than three years. Then I made a decision to leave that path and dedicate myself fully to my students. My heart chose this over everything else.
@@ -58,7 +55,7 @@ export default function FoundersNote() {
             Dear students, I am grateful for each of you for your trust, your love, and your support.
           </p>
           <p className="text-base leading-normal text-on-surface/90 font-semibold">
-            Today and always,I live for my students.
+            Today and always, I live for my students.
           </p>
           <p className="text-sm tracking-widest text-on-surface/60 pt-1">
             Shalini K Dubey

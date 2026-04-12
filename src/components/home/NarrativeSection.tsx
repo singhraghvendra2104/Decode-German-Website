@@ -21,10 +21,10 @@ export default function NarrativeSection() {
   ];
 
   return (
-    <section className="py-24 md:py-40 px-4 md:px-6 bg-white overflow-hidden">
+    <section className="py-14 md:py-24 lg:py-40 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-20 md:mb-24 relative">
+        <div className="text-center mb-10 md:mb-16 lg:mb-24 relative">
           <div className="font-handwriting text-3xl text-primary mb-4">
             Our Promise
           </div>
@@ -35,7 +35,7 @@ export default function NarrativeSection() {
         </div>
 
         {/* Overlapping Circles */}
-        <div className="relative flex flex-col lg:flex-row items-center justify-center lg:-space-x-12 xl:-space-x-20 space-y-12 lg:space-y-0 max-w-6xl mx-auto mb-12">
+        <div className="relative flex flex-col lg:flex-row items-center justify-center lg:-space-x-12 xl:-space-x-20 space-y-8 lg:space-y-0 max-w-6xl mx-auto mb-12">
           {commitments.map((commitment, index) => (
             <div
               key={commitment.number}
@@ -63,7 +63,7 @@ export default function NarrativeSection() {
               </div>
 
               {/* Content */}
-              <div className="mt-20 md:mt-24">
+              <div className="mt-10 md:mt-16 lg:mt-24">
                 <h3 className="text-lg md:text-2xl font-[var(--font-serif)] font-bold mb-4 uppercase tracking-wide leading-tight text-charcoal">
                   {commitment.title}
                 </h3>
@@ -76,7 +76,7 @@ export default function NarrativeSection() {
         </div>
 
         {/* Divider */}
-        <div className="mt-16 md:mt-20 flex justify-center">
+        <div className="mt-10 md:mt-16 lg:mt-20 flex justify-center">
           <div className="w-24 h-1 bg-primary/30" />
         </div>
       </div>

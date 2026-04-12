@@ -9,7 +9,7 @@ export default function AboutCTA() {
     useDisclosure(false);
 
   return (
-    <section className="bg-charcoal text-paper-white py-24 md:py-40 relative overflow-hidden">
+    <section className="bg-charcoal text-paper-white py-14 md:py-24 lg:py-40 relative overflow-hidden">
       <div className="max-w-[800px] mx-auto text-center relative z-10 px-4 md:px-8">
         <h2 className="text-3xl sm:text-5xl md:text-7xl font-[var(--font-serif-alt)] italic mb-8 md:mb-12 leading-tight">
           {aboutCta.heading.split("\n").map((line, i) => (

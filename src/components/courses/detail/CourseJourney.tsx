@@ -14,11 +14,11 @@ interface CourseJourneyProps {
 
 export default function CourseJourney({ level, blocks }: CourseJourneyProps) {
   return (
-    <section id="journey" className="bg-ivory py-16 sm:py-20 md:py-40 relative overflow-hidden">
+    <section id="journey" className="bg-ivory py-10 sm:py-14 md:py-24 lg:py-40 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-14 sm:mb-20 md:mb-32">
-          <h2 className="font-[var(--font-serif)] text-4xl sm:text-5xl md:text-7xl lg:text-8xl italic leading-none mb-4 sm:mb-6">
+        <div className="text-center mb-8 md:mb-14 lg:mb-24">
+          <h2 className="font-[var(--font-serif)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl italic leading-none mb-4 sm:mb-6">
             The <span className="not-italic">{level} Journey</span>
           </h2>
           <p className="text-sm sm:text-base text-stone-gray max-w-md mx-auto px-4">
@@ -31,7 +31,7 @@ export default function CourseJourney({ level, blocks }: CourseJourneyProps) {
           {/* Center Line */}
           <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px border-l-2 border-dashed border-primary/30 z-0 hidden md:block" />
 
-          <div className="space-y-16 sm:space-y-24 md:space-y-40">
+          <div className="space-y-12 sm:space-y-16 md:space-y-24 lg:space-y-40">
             {blocks.map((block, index) => {
               const isEven = index % 2 === 0;
               const isLast = index === blocks.length - 1;

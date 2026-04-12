@@ -2,10 +2,10 @@ import { courseFeatures } from "@/lib/constants";
 
 export default function CourseFeatures() {
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6 bg-white">
+    <section className="py-14 md:py-20 lg:py-32 px-4 md:px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] font-bold text-center mb-20 text-charcoal">
+        <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] font-bold text-center mb-10 md:mb-16 lg:mb-20 text-charcoal">
           What Every Course Includes
         </h2>
 

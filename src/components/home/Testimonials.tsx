@@ -78,8 +78,8 @@ function ReviewCard({
     ? "absolute top-4 left-4 w-8 h-8 text-white opacity-30"
     : "absolute top-4 left-4 w-8 h-8 text-primary opacity-20";
   const messageClass = isPrimary
-    ? "text-sm md:text-base text-white/95 italic mb-6 relative z-10 line-clamp-6"
-    : "text-sm md:text-base text-gray-700 italic mb-6 relative z-10 line-clamp-6";
+    ? "text-sm md:text-base text-white/95 italic mb-6 relative z-10 max-h-[9rem] overflow-y-auto scrollbar-thin"
+    : "text-sm md:text-base text-gray-700 italic mb-6 relative z-10 max-h-[9rem] overflow-y-auto scrollbar-thin";
   const dividerClass = isPrimary ? "border-white/20" : "border-gray-100";
   const avatarClass = isPrimary
     ? "bg-white text-primary"
@@ -108,7 +108,17 @@ function ReviewCard({
             {formatMonthYear(review.created_at)}
           </span>
         </div>
-        <p className={messageClass}>&ldquo;{review.message}&rdquo;</p>
+        <div
+          className={messageClass}
+          onWheel={(e) => {
+            const el = e.currentTarget;
+            if (el.scrollHeight > el.clientHeight) {
+              e.stopPropagation();
+            }
+          }}
+        >
+          &ldquo;{review.message}&rdquo;
+        </div>
       </div>
       <div className={`flex items-center gap-3 mt-auto pt-4 border-t ${dividerClass}`}>
         <div
@@ -233,10 +243,10 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-20 md:py-32 bg-accent overflow-hidden">
+    <section className="py-12 md:py-20 lg:py-32 bg-accent overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20 relative px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-16 lg:mb-20 relative px-4 md:px-6">
           <h2 className="text-5xl md:text-7xl font-[var(--font-serif)] font-bold opacity-10 absolute left-0 right-0 -translate-y-8 md:-translate-y-12 select-none pointer-events-none hidden md:block">
             TESTIMONIALS
           </h2>
