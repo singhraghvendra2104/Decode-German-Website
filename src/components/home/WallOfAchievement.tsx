@@ -51,11 +51,6 @@ function PolaroidCard({
             sizes="280px"
           />
         </div>
-        <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
-          <div className="font-handwriting text-sm md:text-base text-charcoal/50 truncate">
-            Result #{polaroid.id}
-          </div>
-        </div>
         {hasCornerFold && (
           <div className="absolute bottom-0 right-0 w-8 h-8 md:w-10 md:h-10">
             <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[32px] md:border-l-[40px] border-l-transparent border-b-[32px] md:border-b-[40px] border-b-accent/60" />
@@ -63,27 +58,6 @@ function PolaroidCard({
         )}
       </div>
 
-      {!hasTape && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-          <div className={`w-5 h-5 md:w-6 md:h-6 rounded-full ${pinColor} shadow-[0_2px_6px_rgba(0,0,0,0.3)] border-2 border-white/50`}>
-            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white/60 absolute top-0.5 left-0.5 md:top-1 md:left-1" />
-          </div>
-          <div className="w-0.5 h-2 bg-gray-400/50 mx-auto -mt-0.5" />
-        </div>
-      )}
-
-      {hasTape && (
-        <>
-          <div
-            className="absolute -top-3 left-4 md:left-6 w-16 md:w-20 h-5 md:h-7 bg-yellow-200/60 backdrop-blur-[1px] shadow-sm z-10"
-            style={{ transform: `rotate(${-rotation * 0.5 + 3}deg)` }}
-          />
-          <div
-            className="absolute -top-2 right-3 md:right-5 w-14 md:w-16 h-4 md:h-6 bg-yellow-100/50 backdrop-blur-[1px] shadow-sm z-10"
-            style={{ transform: `rotate(${rotation * 0.3 - 5}deg)` }}
-          />
-        </>
-      )}
     </button>
   );
 }
