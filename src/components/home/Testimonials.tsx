@@ -233,10 +233,10 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-20 md:py-32 bg-accent overflow-hidden">
+    <section className="py-12 md:py-20 lg:py-32 bg-accent overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20 relative px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-16 lg:mb-20 relative px-4 md:px-6">
           <h2 className="text-5xl md:text-7xl font-[var(--font-serif)] font-bold opacity-10 absolute left-0 right-0 -translate-y-8 md:-translate-y-12 select-none pointer-events-none hidden md:block">
             TESTIMONIALS
           </h2>

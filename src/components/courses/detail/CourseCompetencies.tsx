@@ -20,14 +20,14 @@ export default function CourseCompetencies({
   const c = competencies;
 
   return (
-    <section className="bg-warm-sand/30 py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-warm-sand/30 py-10 sm:py-14 md:py-20 lg:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto relative z-10">
-        <h2 className="font-[var(--font-serif)] text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-14 sm:mb-20 md:mb-32 text-center italic leading-tight">
+        <h2 className="font-[var(--font-serif)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl mb-8 md:mb-14 lg:mb-24 text-center italic leading-tight">
           What You&apos;ll Be{" "}
           <span className="not-italic block md:inline">Able To Do</span>
         </h2>
 
-        <div className="grid grid-cols-12 gap-y-14 sm:gap-y-20 md:gap-y-36">
+        <div className="grid grid-cols-12 gap-y-10 sm:gap-y-14 md:gap-y-20 lg:gap-y-36">
           {/* Row 1 */}
           {c[0] && (
             <div className="col-span-12 md:col-span-5 relative">

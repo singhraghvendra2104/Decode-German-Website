@@ -10,7 +10,7 @@ export default function CourseTestimonial({
   testimonial,
 }: CourseTestimonialProps) {
   return (
-    <section className="py-20 md:py-32 bg-warm-sand/30">
+    <section className="py-12 md:py-20 lg:py-32 bg-warm-sand/30">
       <div className="max-w-3xl mx-auto text-center px-4 md:px-8">
         <div className="mb-6 md:mb-8">
           <span className="font-[var(--font-serif-alt)] italic text-5xl md:text-6xl text-primary-alt/20">

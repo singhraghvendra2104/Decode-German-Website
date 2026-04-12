@@ -17,8 +17,8 @@ export default function CoreBeliefs() {
   }, [nextSlide]);
 
   return (
-    <section id="philosophy" className="py-20 md:py-32 px-4 md:px-6 bg-white overflow-hidden">
-      <div className="max-w-[1300px] mx-auto space-y-16 md:space-y-24">
+    <section id="philosophy" className="py-12 md:py-20 lg:py-32 px-4 md:px-6 bg-white overflow-hidden">
+      <div className="max-w-[1300px] mx-auto space-y-10 md:space-y-16 lg:space-y-24">
         {/* Carousel Slides */}
         <div className="relative min-h-[800px] md:min-h-[550px] lg:min-h-[650px]">
           {coreBeliefs.map((belief, index) => (

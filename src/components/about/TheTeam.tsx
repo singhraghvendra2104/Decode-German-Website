@@ -67,15 +67,15 @@ export default function TheTeam() {
   ];
 
   return (
-    <section className="bg-surface-container py-32">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="mb-20 text-center">
-          <h2 className="text-5xl font-[var(--font-serif)] mb-4">The Team</h2>
-          <p className="text-lg opacity-60">The people behind Decode German.</p>
-          <p className="text-lg opacity-60">A team of teachers, strategists, and specialists. Every one personally invested in student success.</p>
+    <section className="bg-surface-container py-14 md:py-20 lg:py-32">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="mb-10 md:mb-16 lg:mb-20 text-center">
+          <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-4">The Team</h2>
+          <p className="text-base md:text-lg opacity-60">The people behind Decode German.</p>
+          <p className="text-base md:text-lg opacity-60 mt-1">A team of teachers, strategists, and specialists. Every one personally invested in student success.</p>
         </div>
         {/* Main Feature */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12 md:mb-16 lg:mb-24">
           <div className="aspect-[4/5] bg-white overflow-hidden polaroid -rotate-1">
             <img
               alt="Founder Portrait"
@@ -111,7 +111,7 @@ export default function TheTeam() {
           </div>
         </div>
         {/* Academic Advisor Feature */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12 md:mb-16 lg:mb-24">
           <div className="space-y-6 px-4 order-2 md:order-1">
             <h3 className="text-4xl font-[var(--font-serif)]">
               Prof. Dr. Vridhagiri<br />Ganeshan
@@ -156,7 +156,7 @@ export default function TheTeam() {
         </div>
 
         {/* Team Grid - Desktop */}
-        <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10 md:gap-y-16">
           {teamMembers.map((member) => (
             <div key={member.name} className="text-center group">
               <div className="aspect-square bg-white mb-6 p-4 md:grayscale md:group-hover:grayscale-0 transition-all duration-500">

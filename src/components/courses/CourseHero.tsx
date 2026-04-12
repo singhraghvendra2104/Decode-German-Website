@@ -2,7 +2,7 @@ import { courseHero } from "@/lib/constants";
 
 export default function CourseHero() {
   return (
-    <section className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 max-w-[1400px] mx-auto">
+    <section className="pt-20 md:pt-28 lg:pt-32 pb-10 md:pb-16 lg:pb-24 px-4 md:px-8 max-w-[1400px] mx-auto">
       <div className="max-w-4xl">
         <span className="inline-block text-primary-alt font-[var(--font-serif-alt)] italic text-lg md:text-2xl mb-4 md:mb-6">
           {courseHero.subtitle}

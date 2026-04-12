@@ -11,11 +11,11 @@ interface CourseModulesProps {
 
 export default function CourseModules({ modules, level }: CourseModulesProps) {
   return (
-    <section id="modules" className="py-20 md:py-32 px-4 md:px-8">
+    <section id="modules" className="py-12 md:py-20 lg:py-32 px-4 md:px-8">
       <div className="max-w-[1400px] mx-auto">
-        <div className="max-w-2xl mb-12 md:mb-20">
+        <div className="max-w-2xl mb-8 md:mb-12 lg:mb-20">
           <span className="inline-block text-primary-alt font-[var(--font-serif-alt)] italic text-base md:text-xl mb-3 md:mb-4">
-            — The {level} Curriculum
+            - The {level} Curriculum
           </span>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-[var(--font-serif-alt)] leading-tight tracking-tighter">
             What you will{" "}
@@ -23,7 +23,7 @@ export default function CourseModules({ modules, level }: CourseModulesProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-12 md:gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-8 md:gap-y-12 lg:gap-y-20">
           {modules.map((module) => (
             <div key={module.number} className="group">
               <div className="flex items-baseline gap-4 md:gap-6 mb-4 md:mb-6">

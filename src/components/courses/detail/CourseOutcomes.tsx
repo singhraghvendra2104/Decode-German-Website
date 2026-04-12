@@ -8,12 +8,12 @@ export default function CourseOutcomes({
   level,
 }: CourseOutcomesProps) {
   return (
-    <section className="py-20 md:py-32 bg-charcoal text-ivory">
+    <section className="py-12 md:py-20 lg:py-32 bg-charcoal text-ivory">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
           <div className="lg:col-span-4">
             <span className="inline-block text-primary font-[var(--font-serif-alt)] italic text-base md:text-xl mb-3 md:mb-4">
-              — After {level}
+              - After {level}
             </span>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-[var(--font-serif-alt)] italic leading-tight">
               What you will

@@ -11,7 +11,7 @@ interface CourseMethodProps {
 
 export default function CourseMethod({ steps, benefits = [] }: CourseMethodProps) {
   return (
-    <section className="py-16 sm:py-20 md:py-40 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
+    <section className="py-10 sm:py-14 md:py-24 lg:py-40 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
       <div className="flex flex-col md:flex-row gap-12 sm:gap-16 md:gap-24">
         {/* Sticky Sidebar */}
         <div className="md:w-1/3">
@@ -40,7 +40,7 @@ export default function CourseMethod({ steps, benefits = [] }: CourseMethodProps
         </div>
 
         {/* Steps */}
-        <div className="md:w-2/3 space-y-14 sm:space-y-20 md:space-y-32">
+        <div className="md:w-2/3 space-y-10 sm:space-y-14 md:space-y-20 lg:space-y-32">
           {steps.map((step) => (
             <div key={step.number} className="flex flex-col sm:flex-row gap-4 sm:gap-10 group">
               <span className="font-[var(--font-serif)] text-[5rem] sm:text-[7rem] md:text-[10rem] leading-none text-warm-sand group-hover:text-primary/10 transition-colors duration-700 select-none">

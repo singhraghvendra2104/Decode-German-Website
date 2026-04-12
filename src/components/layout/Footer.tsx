@@ -12,7 +12,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white py-16 md:py-24 px-4 md:px-10 border-t border-accent">
+    <footer className="bg-white py-10 md:py-16 lg:py-24 px-4 md:px-10 border-t border-accent">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-20">
         {/* Brand */}
         <div className="col-span-1 md:col-span-2">

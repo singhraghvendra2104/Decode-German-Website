@@ -1,7 +1,7 @@
 export default function HowStudentsJoin() {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-32 border-t border-black/5">
-      <div className="space-y-12 md:space-y-16">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 lg:py-32 border-t border-black/5">
+      <div className="space-y-8 md:space-y-12 lg:space-y-16">
         <div className="space-y-4">
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">How Students Join</h2>
           <p className="text-base md:text-lg text-gray-500 max-w-xl">

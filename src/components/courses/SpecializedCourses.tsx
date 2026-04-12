@@ -2,10 +2,10 @@ import { specializedCourses } from "@/lib/constants";
 
 export default function SpecializedCourses() {
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6 bg-white">
+    <section className="py-14 md:py-20 lg:py-32 px-4 md:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-16 lg:mb-20">
           <span className="inline-block text-primary font-handwriting text-lg md:text-2xl mb-4">
             Already Know Some German?
           </span>

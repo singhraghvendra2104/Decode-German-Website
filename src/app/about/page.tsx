@@ -13,11 +13,11 @@ import AboutCTA from "@/components/about/AboutCTA";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "The story of Decode German — a boutique German language platform crafted for seekers, thinkers, and those brave enough to rebuild their lives in a new tongue.",
+    "The story of Decode German - a boutique German language platform crafted for seekers, thinkers, and those brave enough to rebuild their lives in a new tongue.",
   openGraph: {
     title: "Our Story | Decode German",
     description:
-      "The story of Decode German — bridging the gap between grammar rules and genuine emotional connection.",
+      "The story of Decode German - bridging the gap between grammar rules and genuine emotional connection.",
   },
 };
 
