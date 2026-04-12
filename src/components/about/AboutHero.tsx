@@ -9,8 +9,10 @@ export default function AboutHero() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[0.95] tracking-tight">
             Our Story
           </h1>
-          <p className="text-xl md:text-3xl text-primary font-[var(--font-serif)] italic max-w-xl leading-relaxed">
-            We built a promise to students. You commit, we commit the hardest.
+          <p className="text-xl md:text-2xl text-primary font-[var(--font-serif)] italic max-w-xl leading-relaxed">
+            We built a promise to students.
+            <br />
+            <span className="uppercase text-base md:text-xl font-bold">You commit, we commit the hardest.</span>
           </p>
           <div className="flex gap-8 md:gap-12 pt-2 md:pt-4">
             <div>
@@ -42,7 +44,7 @@ export default function AboutHero() {
       </div>
       <div className="mt-12 md:mt-16 lg:mt-20 max-w-3xl ml-auto md:mr-12">
         <p className="text-xl leading-relaxed text-on-surface/80">
-          Founded in 2020 by <strong>Shalini K Dubey</strong>. 1000+ students taught across the world. We built this platform with discipline, dedication, and relentless clarity. With teaching that is structured, demanding, and deeply human. <strong>With equal commitment from us and from YOU.</strong>
+          Founded in 2020 by <strong>Shalini K Dubey</strong>. 1000+ students taught across the world. We built this platform with discipline, dedication, and relentless clarity. With teaching that is structured, demanding, and deeply human. <strong> <br />With equal commitment from us and from YOU.</strong>
         </p>
       </div>
     </section>

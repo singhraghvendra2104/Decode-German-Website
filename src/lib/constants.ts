@@ -1,9 +1,9 @@
 // ─── Site Metadata ───────────────────────────────────────────────────────────
 export const siteConfig = {
   name: "Decode German",
-  tagline: "Emotional Journey",
+  tagline: "Student focused language learning",
   description:
-    "Premium German language platform bridging the gap between fluency and identity. Boutique transformation for the global citizen in Germany.",
+    "Learn German A1-B2 with small batches, native speakers and teachers who cares.",
   url: "https://decodegerman.com",
   email: "decodegerman@gmail.com",
   address: {

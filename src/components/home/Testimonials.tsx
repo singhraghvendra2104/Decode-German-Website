@@ -78,8 +78,8 @@ function ReviewCard({
     ? "absolute top-4 left-4 w-8 h-8 text-white opacity-30"
     : "absolute top-4 left-4 w-8 h-8 text-primary opacity-20";
   const messageClass = isPrimary
-    ? "text-sm md:text-base text-white/95 italic mb-6 relative z-10 line-clamp-6"
-    : "text-sm md:text-base text-gray-700 italic mb-6 relative z-10 line-clamp-6";
+    ? "text-sm md:text-base text-white/95 italic mb-6 relative z-10 max-h-[9rem] overflow-y-auto scrollbar-thin"
+    : "text-sm md:text-base text-gray-700 italic mb-6 relative z-10 max-h-[9rem] overflow-y-auto scrollbar-thin";
   const dividerClass = isPrimary ? "border-white/20" : "border-gray-100";
   const avatarClass = isPrimary
     ? "bg-white text-primary"
@@ -108,7 +108,17 @@ function ReviewCard({
             {formatMonthYear(review.created_at)}
           </span>
         </div>
-        <p className={messageClass}>&ldquo;{review.message}&rdquo;</p>
+        <div
+          className={messageClass}
+          onWheel={(e) => {
+            const el = e.currentTarget;
+            if (el.scrollHeight > el.clientHeight) {
+              e.stopPropagation();
+            }
+          }}
+        >
+          &ldquo;{review.message}&rdquo;
+        </div>
       </div>
       <div className={`flex items-center gap-3 mt-auto pt-4 border-t ${dividerClass}`}>
         <div

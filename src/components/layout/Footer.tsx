@@ -18,14 +18,14 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-3 mb-6 md:mb-8">
             <Image
-              src="/new-logo.svg"
+              src="/final-logo.svg"
               alt={`${siteConfig.name} logo`}
               width={200}
               height={100}
               className="h-14 md:h-16 w-auto mix-blend-multiply"
             />
           </div>
-          <p className="text-gray-500 max-w-md text-base md:text-lg leading-relaxed mb-8">
+          <p className="text-gray-500 max-w-md text-base md:text-lg mt-[-30px] leading-relaxed mb-4">
             {footerDescription}
           </p>
           {/* Social Links */}
