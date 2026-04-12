@@ -105,11 +105,11 @@ export default function CourseLevel({
       )}
       <Link href={`/courses/${id}`}>
         {buttonStyle === "outline" ? (
-          <button className="w-full py-4 md:py-5 border border-charcoal/20 uppercase text-xs font-bold tracking-widest hover:bg-charcoal hover:text-ivory transition-all mt-4">
+          <button className="w-full py-5 md:py-6 border border-charcoal/20 uppercase text-base md:text-lg font-bold tracking-widest hover:bg-charcoal hover:text-ivory transition-all mt-4">
             {buttonLabel}
           </button>
         ) : (
-          <button className="w-full py-4 md:py-5 bg-primary text-ivory uppercase text-xs font-bold tracking-widest hover:bg-charcoal transition-all shadow-lg mt-4">
+          <button className="w-full py-5 md:py-6 bg-primary text-ivory uppercase text-base md:text-lg font-bold tracking-widest hover:bg-charcoal transition-all shadow-lg mt-4">
             {buttonLabel}
           </button>
         )}

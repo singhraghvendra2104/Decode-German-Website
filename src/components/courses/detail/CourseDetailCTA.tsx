@@ -36,7 +36,7 @@ export default function CourseDetailCTA({
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8">
         <button
           onClick={openModal}
-          className="bg-charcoal text-ivory px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.4em] font-bold hover:bg-primary transition-all shadow-xl w-full sm:w-auto text-center cursor-pointer"
+          className="bg-charcoal text-ivory px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] font-bold hover:bg-primary transition-all shadow-xl w-full sm:w-auto text-center cursor-pointer"
         >
           Get in Touch
         </button>
@@ -44,7 +44,7 @@ export default function CourseDetailCTA({
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-charcoal/20 bg-white px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.4em] font-bold flex items-center justify-center gap-4 hover:bg-charcoal hover:text-ivory transition-all w-full sm:w-auto"
+          className="border border-charcoal/20 bg-white px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] font-bold flex items-center justify-center gap-4 hover:bg-charcoal hover:text-ivory transition-all w-full sm:w-auto"
         >
           WhatsApp Us
         </a>

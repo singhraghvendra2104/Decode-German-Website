@@ -16,7 +16,7 @@ export default function OurJourney() {
     },
     {
       year: "2022",
-      title: "500+ students milestone",
+      title: "100+ students milestone",
       description: "Exam preparation courses launched - Goethe-Zertifikat, TestDaF, and TELC. Still growing entirely through student recommendations.",
       isLeft: true,
       isPrimary: true,
@@ -24,28 +24,28 @@ export default function OurJourney() {
     {
       year: "2023",
       title: "B2 level and revision courses",
-      description: "B2 added to complete the A1–B2 journey. Revision courses introduced. Team grows to 7.",
+      description: "B2 added to complete the A1–B2 journey. Revision courses introduced. Team grows to 4.",
       isLeft: false,
       isPrimary: false,
     },
     {
       year: "2024",
-      title: "1000+ students - company registered",
+      title: "400+ students - company registered",
       description: "SKiD Decode Deutsch Language Institute Pvt Ltd formally registered. Entrance test system implemented for all levels above A1.",
       isLeft: true,
       isPrimary: true,
     },
     {
       year: "2025",
-      title: "Scaling excellence",
+      title: "800+ students - Scaling excellence",
       description: "Expanded team, advanced curriculum, and personalized learning technology. Commitment to maintaining quality while reaching more students.",
       isLeft: false,
       isPrimary: false,
     },
     {
       year: "2026",
-      title: "The future",
-      description: "New AI-driven tracking systems, same educational soul. Building the next generation of confident German speakers.",
+      title: " Speaking courses launched",
+      description: "New tracking systems, same educational soul. Building the next generation of confident German speakers.",
       isLeft: true,
       isPrimary: true,
     },
@@ -53,8 +53,7 @@ export default function OurJourney() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-20 lg:py-32">
-      <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-6 md:mb-10 text-center">Our Journey</h2>
-      <p className="text-base md:text-lg text-on-surface/60 text-center mb-10 md:mb-16 max-w-2xl mx-auto px-2">Six years of growing - one student at a time.</p>
+      <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-6 md:mb-8 text-center">Our Journey</h2>
 
       {/* Desktop Timeline */}
       <div className="hidden md:block relative space-y-12 before:content-[''] before:absolute before:left-1/2 before:top-0 before:bottom-0 before:w-px before:bg-on-surface/10 before:-translate-x-1/2">

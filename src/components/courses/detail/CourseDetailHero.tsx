@@ -56,7 +56,7 @@ export default function CourseDetailHero({
         <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 items-center pt-2 sm:pt-4">
           <button
             onClick={openModal}
-            className="bg-charcoal text-ivory px-6 sm:px-8 md:px-10 py-4 md:py-5 uppercase text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] font-bold hover:bg-primary transition-colors shadow-lg cursor-pointer"
+            className="bg-charcoal text-ivory px-6 sm:px-8 md:px-10 py-4 md:py-5 uppercase text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] font-bold hover:bg-primary transition-colors shadow-lg cursor-pointer"
           >
             Get in Touch
           </button>

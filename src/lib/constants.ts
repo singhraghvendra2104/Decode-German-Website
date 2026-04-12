@@ -284,7 +284,7 @@ export const wallOfAchievement = {
   handwriting: "Our Wall of Achievement",
   polaroids: Array.from({ length: 23 }, (_, i) => ({
     id: i + 1,
-    image: `/home/results/${i + 1}.png`,
+    image: `/home/results/${i + 1}.svg`,
     alt: `Student Result ${i + 1}`,
   })),
 };
@@ -387,8 +387,8 @@ export const foundersNote = {
 
 // ─── About Page: CTA ─────────────────────────────────────────────────────────
 export const aboutCta = {
-  heading: "Your story is waiting\nto be told.",
-  body: "Step away from the apps and into the narrative. Join a collective of learners finding their voice in the heart of Europe.",
+  heading: "Your German shapes your life in Germany.",
+  body: "Walk confidently through your work, daily life, and more. Join a collective of learners finding their voice in the heart of Europe.",
   primaryButton: { label: "Get in Touch" },
 };
 
@@ -859,7 +859,7 @@ export const specializedCourses = [
       "You know ~50% of a level already and need structured help to fill the gaps and complete it.",
     details: [
       { label: "Duration", value: "15–25 days" },
-      { label: "Intensity", value: "4–5 hrs/day" },
+      { label: "Intensity", value: "3-4 hrs/day" },
       { label: "Format", value: "One-to-one" },
     ],
   },
@@ -871,7 +871,7 @@ export const specializedCourses = [
       "You've completed ~80% and need a quick, focused revision before the next level or an exam.",
     details: [
       { label: "Duration", value: "7–10 days" },
-      { label: "Intensity", value: "4–5 hrs/day" },
+      { label: "Intensity", value: "3-4 hrs/day" },
       { label: "Format", value: "One-to-one" },
     ],
   },
@@ -966,7 +966,7 @@ export const courseDetailPages: Record<string, {
       { number: "01", title: "Watch Video Lessons", description: "27 structured video lessons covering grammar, vocabulary, and real-world usage. Watch at your own pace before each live session." },
       { number: "02", title: "Attend Live Classes", description: "Interactive Zoom sessions to practice what you've watched - speaking, exercises, Q&A. This is where grammar becomes communication." },
       { number: "03", title: "Review & Practice", description: "Built-in catch-up days, homework, and self-study with NicosWeg, podcasts, and curated content to reinforce what you've learned." },
-      { number: "04", title: "Test & Progress", description: "4 block tests + 1 full Goethe-style A1 exam at the end. You always know where you stand. Weak spots are identified and addressed before moving on." },
+      { number: "04", title: "Test & Progress", description: "4 block tests + 1 full Goethe-style A1 exam at the end. You always know where you stand. Challenging spots are identified and addressed before moving on." },
     ],
     methodBenefits: [
       "Small Batches (8–10 students)",
@@ -1047,7 +1047,7 @@ export const courseDetailPages: Record<string, {
       { title: "1-on-1 Pronunciation Practice", description: "Continuing from A1 with expanded vocabulary", type: "primary" as const },
     ],
     beforeText:
-      "A1 completion or entrance test required. A2 picks up where A1 ends. If you completed A1 with Decode German, you're ready. If you learned A1 elsewhere, through another school, self-study, or living in Germany, you'll take an entrance test so we can confirm you're at the right level. This ensures everyone in the batch can move at the same pace.",
+      "Whether you completed A1 with Decode German or elsewhere through another school, self-study, or living in Germany you'll take a short entrance test before joining. This helps us confirm you're at the right level and ensures everyone in the batch moves at the same pace.",
     afterText:
       "Stop translating in your head. B1 is where fluency begins. Express opinions, handle work conversations, and navigate daily life without hesitation. Native German speaker sessions start here.",
     nextLevel: { id: "b1", level: "B1" },
@@ -1086,7 +1086,7 @@ export const courseDetailPages: Record<string, {
     ],
     methodBenefits: [
       "Small Batches (8–10 students)",
-      "Native Speaker Sessions (Justine & Simon)",
+      "Native Speaker Sessions ",
       "1-on-1 Pronunciation",
       "Deeper Live-Class Rhythm",
     ],
@@ -1104,11 +1104,11 @@ export const courseDetailPages: Record<string, {
       { title: "FM Series", description: "Real German radio content", type: "listen" as const },
       { title: "YouTube Videos", description: "Handpicked by the team", type: "watch" as const },
       { title: "German Films & Music", description: "New at B1, immersive cultural content", type: "watch" as const },
-      { title: "Speaking with Native Germans", description: "Sessions with Justine & Simon, new at B1", type: "primary" as const },
+      { title: "Speaking with Native Germans", description: '', type: "primary" as const },
       { title: "1-on-1 Pronunciation Practice", description: "Continuing with B1-level vocabulary", type: "primary" as const },
     ],
     beforeText:
-      "A2 completion or entrance test required. B1 builds directly on A2. If you completed A2 with Decode German, you're ready. If you learned A2 elsewhere, through another school, self-study, or living in Germany, you'll take an entrance test so we can confirm you're at the right level. B1 moves faster and expects solid A2 foundations.",
+      "Whether you completed A2 with Decode German or elsewhere through another school, self-study, or living in Germany you'll take a short entrance test before joining. B1 moves faster and expects solid A2 foundations, so we confirm everyone is at the right level before the batch begins..",
     afterText:
       "Speak with the confidence and precision of someone who truly belongs. B2 is where you handle university lectures, professional debates, and cultural nuance, entirely in German.",
     nextLevel: { id: "b2", level: "B2" },
@@ -1147,7 +1147,7 @@ export const courseDetailPages: Record<string, {
     ],
     methodBenefits: [
       "Small Batches (8–10 students)",
-      "Native Speaker Sessions (Justine & Simon)",
+      "Classes by Native German Teachers ",
       "Exam-Integrated Practice",
       "1-on-1 Pronunciation",
     ],
@@ -1164,11 +1164,11 @@ export const courseDetailPages: Record<string, {
       { title: "FM Series", description: "Real German radio", type: "listen" as const },
       { title: "YouTube Videos", description: "Handpicked by the team", type: "watch" as const },
       { title: "German Films & Music", description: "Full immersion content", type: "watch" as const },
-      { title: "Native German Speaker Classes", description: "Sessions with Justine & Simon at full B2 pace", type: "primary" as const },
+      { title: "Native German Teachers Classes", description: "", type: "primary" as const },
       { title: "1-on-1 Pronunciation Practice", description: "Precision at B2 level", type: "primary" as const },
     ],
     beforeText:
-      "B1 completion or entrance test required. B2 demands solid B1 foundations. If you completed B1 with Decode German, you're ready. If you learned B1 elsewhere, through another school, self-study, or living in Germany, you'll take an entrance test. B2 moves at a significantly faster pace with complex grammar and abstract topics from day one.",
+      "Whether you completed B1 with Decode German or elsewhere, through another school, self-study, or living in Germany, you'll take a short entrance test before joining. B2 demands solid B1 foundations and moves at a significantly faster pace, with complex grammar and abstract topics from day one",
     afterText:
       "The language is yours. B2 is where most journeys reach their destination. You can study, work, and live in Germany with full confidence. For those who want to go further, C1 preparation and exam-specific courses are available on request.",
     nextLevel: null,

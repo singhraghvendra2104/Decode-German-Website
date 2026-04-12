@@ -32,7 +32,7 @@ export default function CourseBeforeAfter({
           {nextLevel && (
             <Link
               href={`/courses/${nextLevel.id}`}
-              className="group inline-flex items-center gap-4 uppercase text-[11px] tracking-[0.3em] text-primary font-bold transition-all"
+              className="group inline-flex items-center gap-4 uppercase text-sm sm:text-base md:text-lg tracking-[0.2em] text-primary font-bold transition-all"
             >
               Explore {nextLevel.level} Course
               <span className="group-hover:translate-x-2 transition-transform">
