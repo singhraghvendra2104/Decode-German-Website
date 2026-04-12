@@ -63,7 +63,7 @@ export default function CourseCompetencies({
                     src={c[1].image}
                     alt={c[1].imageAlt || ""}
                     fill
-                    className="object-cover rounded-sm grayscale shadow-md rotate-3"
+                    className="object-cover rounded-sm md:grayscale shadow-md rotate-3"
                     sizes="200px"
                   />
                 </div>

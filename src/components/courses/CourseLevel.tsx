@@ -50,10 +50,10 @@ export default function CourseLevel({
 }: CourseLevelProps) {
   const textBlock = (
     <div
-      className={`space-y-8 md:space-y-12 ${
+      className={`space-y-8 md:space-y-12 order-2 ${
         reversed
           ? "lg:col-span-4 lg:order-1"
-          : "lg:col-span-4 lg:col-start-9"
+          : "lg:col-span-4 lg:col-start-9 lg:order-none"
       }`}
     >
       <div>
@@ -119,11 +119,11 @@ export default function CourseLevel({
 
   const imageBlock = (
     <div
-      className={
+      className={`order-1 ${
         reversed
           ? "lg:col-span-7 lg:col-start-6 lg:order-2"
-          : "lg:col-span-7"
-      }
+          : "lg:col-span-7 lg:order-none"
+      }`}
     >
       <div className="relative group">
         <div
@@ -135,7 +135,7 @@ export default function CourseLevel({
             src={image}
             alt={imageAlt}
             fill
-            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+            className="object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-1000"
             sizes="(max-width: 1024px) 100vw, 60vw"
           />
         </div>

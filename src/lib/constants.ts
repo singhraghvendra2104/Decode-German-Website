@@ -408,8 +408,7 @@ export const courseLevels = [
     title: "The Foundation",
     description:
       "Start from zero. Learn to introduce yourself, handle everyday situations like ordering food, asking for directions, filling out forms and build the confidence to exist in German.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAKKCk2_YHw0uHJSHnQ1ZwaJMvA-qYNNiOAilJb_SpjP4wK4QNoW0akcFrcMqzZKr2f-gb2Zw_h3fxPKy6uKStT36XKV-637mrBx0ThlfKjlFFEuv-41hBHM8B5eaKq2Ntg9mgud5bJzNHESJyUqJs2PrHZKdZH6PqAzDRVVLXTRn6uIkPfvUu0z-JOpDh5HsyHfsq0nqlynKSTFFdoI27p1OS3ernmzAWoMYBFsOYixOCSVUpHzA1JXJJedsuUd_7B_ovnvkvjUMk",
+    image: "/courses/1.svg",
     imageAlt: "The Foundation",
     imageAspect: "aspect-[16/10]",
     maskClass: "curated-image-mask",
@@ -441,8 +440,7 @@ export const courseLevels = [
     title: "The Momentum",
     description:
       "You can survive. Now learn to connect. Talk about your past, describe your routines, hold real conversations with neighbours, understand announcements and simple news.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAG-wEPGW7hntBOjTwlU7x4CJRA87KNpRIcDHVCXNQkdNfXGnjo-NEzM3Dub9KUZjXlNaKNl41cCGAroEyZBwf2hhbaLzFUPYWd0DeqGelPMMbqiRU4XTfOsHXFE-RKOoO84liGeYS2gS-uwIR16hoC_S60bXc3JYBKoMK1smSXNZcXt37o7-8ywTvWv_K2xR37NDEbjAEN4b5Aq-_J1CjHw6k5S5F2fDJLBTxBk-vi8x3o-q6msVMiRNYLVdHPJZGHu-iMnDlbOnw",
+    image: "/courses/2.svg",
     imageAlt: "The Momentum",
     imageAspect: "aspect-[16/10]",
     maskClass: "curated-image-mask-alt",
@@ -469,8 +467,7 @@ export const courseLevels = [
     title: "The Independence",
     description:
       "Stop translating in your head. Express opinions, handle work conversations, understand most of what you hear in daily life, and write structured emails. Native German speaker sessions included.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC81UHb8cIHz632HnAgMlX1kb-cMIQ8RWX3ycnjMwJgP7GlNsHkSU0AdpTSI21ROZ7YWLLEUYIxoXveMuvLF-d4yKpuuXPw3k9ICx6_cFirV_l6MLXS8QzIuClDRguOnz9vlEWpnNrksEmyJLKy2UlqbZLkiExMARMnvuJxClCd37LOYpGJdudAVQDkEYWLIFbvj6samUHqEXjI4-HVPP_63LboaBm1VNEUURmSyJOj09Y4Yp_Vqb3AaXjne0P_CpbILYMqXp1OuFI",
+    image: "/courses/3.svg",
     imageAlt: "The Independence",
     imageAspect: "aspect-[4/5]",
     maskClass: "curated-image-mask",
@@ -503,8 +500,7 @@ export const courseLevels = [
     title: "The Mastery",
     description:
       "Speak with confidence. Follow complex discussions, write professional reports, understand humour and idioms, handle university lectures and workplace meetings entirely in German.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJgzl7b-UKwEQLRFJ9cmgOfmOo16SiLO72ThtJVuaeUw8hvlQDfiznOoy5idT-ndw0rkZSRQ07rQhTjbk_N-uXnJoXISHpWf_7fOcSdgpybGjuETExxbDPJX_LldLKa6NHRYTsh7h3GVf03TPdoXpiViGi8LtWUGEk8nvmD_DWxghJCeDMAAwagoSrb8OU0bS7pbILd3jmTozHlOl1EtZXZ9XTx7ytUNdOLD7sb6H-opbPP8Td4UdTuU-pBueTmhT-BrlWNZoCYA",
+    image: "/courses/4.svg",
     imageAlt: "The Mastery",
     imageAspect: "aspect-[16/10]",
     maskClass: "curated-image-mask-alt",
@@ -564,8 +560,7 @@ export const courseDetails: Record<
     subtitle: "Where your journey begins",
     heroDescription:
       "Begin with the basics of existence. Learn to introduce yourself, navigate daily life, and express your immediate needs with dignity. This isn\u2019t a grammar drill \u2014 it\u2019s your first step toward belonging.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAKKCk2_YHw0uHJSHnQ1ZwaJMvA-qYNNiOAilJb_SpjP4wK4QNoW0akcFrcMqzZKr2f-gb2Zw_h3fxPKy6uKStT36XKV-637mrBx0ThlfKjlFFEuv-41hBHM8B5eaKq2Ntg9mgud5bJzNHESJyUqJs2PrHZKdZH6PqAzDRVVLXTRn6uIkPfvUu0z-JOpDh5HsyHfsq0nqlynKSTFFdoI27p1OS3ernmzAWoMYBFsOYixOCSVUpHzA1JXJJedsuUd_7B_ovnvkvjUMk",
+    heroImage: "/courses/1.svg",
     heroImageAlt: "A1 Course - The Foundation",
     duration: "3 Months",
     batchSize: "Max 6 Students",
@@ -619,8 +614,7 @@ export const courseDetails: Record<
     subtitle: "Beyond survival, toward expression",
     heroDescription:
       "Move beyond survival. Learn to describe your past, share your dreams, and engage in meaningful exchanges with your neighbors. At A2, you begin to reclaim the complexity of who you are.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAG-wEPGW7hntBOjTwlU7x4CJRA87KNpRIcDHVCXNQkdNfXGnjo-NEzM3Dub9KUZjXlNaKNl41cCGAroEyZBwf2hhbaLzFUPYWd0DeqGelPMMbqiRU4XTfOsHXFE-RKOoO84liGeYS2gS-uwIR16hoC_S60bXc3JYBKoMK1smSXNZcXt37o7-8ywTvWv_K2xR37NDEbjAEN4b5Aq-_J1CjHw6k5S5F2fDJLBTxBk-vi8x3o-q6msVMiRNYLVdHPJZGHu-iMnDlbOnw",
+    heroImage: "/courses/2.svg",
     heroImageAlt: "A2 Course - The Expansion",
     duration: "2.5 Months",
     batchSize: "Max 6 Students",
@@ -674,8 +668,7 @@ export const courseDetails: Record<
     subtitle: "The threshold of true fluency",
     heroDescription:
       "The threshold of fluency. Articulate complex thoughts, debate opinions, and navigate professional environments with nuance and confidence. B1 is where you stop translating and start living.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC81UHb8cIHz632HnAgMlX1kb-cMIQ8RWX3ycnjMwJgP7GlNsHkSU0AdpTSI21ROZ7YWLLEUYIxoXveMuvLF-d4yKpuuXPw3k9ICx6_cFirV_l6MLXS8QzIuClDRguOnz9vlEWpnNrksEmyJLKy2UlqbZLkiExMARMnvuJxClCd37LOYpGJdudAVQDkEYWLIFbvj6samUHqEXjI4-HVPP_63LboaBm1VNEUURmSyJOj09Y4Yp_Vqb3AaXjne0P_CpbILYMqXp1OuFI",
+    heroImage: "/courses/3.svg",
     heroImageAlt: "B1 Course - The Independence",
     duration: "3 Months",
     batchSize: "Max 6 Students",
@@ -729,8 +722,7 @@ export const courseDetails: Record<
     subtitle: "Where fluency becomes eloquence",
     heroDescription:
       "Command the language with precision. Engage in academic discourse, understand subtle humor, and express yourself with the eloquence of a native speaker. B2 is where you become undeniable.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJgzl7b-UKwEQLRFJ9cmgOfmOo16SiLO72ThtJVuaeUw8hvlQDfiznOoy5idT-ndw0rkZSRQ07rQhTjbk_N-uXnJoXISHpWf_7fOcSdgpybGjuETExxbDPJX_LldLKa6NHRYTsh7h3GVf03TPdoXpiViGi8LtWUGEk8nvmD_DWxghJCeDMAAwagoSrb8OU0bS7pbILd3jmTozHlOl1EtZXZ9XTx7ytUNdOLD7sb6H-opbPP8Td4UdTuU-pBueTmhT-BrlWNZoCYA",
+    heroImage: "/courses/4.svg",
     heroImageAlt: "B2 Course - The Mastery",
     duration: "4 Months",
     batchSize: "Max 6 Students",
@@ -944,8 +936,7 @@ export const courseDetailPages: Record<string, {
     subtitle: "Online German A1 Intensive Course",
     heroDescription:
       "A structured blend of video lessons and live classes takes you from knowing nothing to handling everyday life in German - introducing yourself, shopping, navigating public transport, filling out forms, and understanding simple conversations.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBX1iVf5IBO_iq-_sqrsaDqzBLDuG2j7e2TDjha4l4gda3tbP_lwQcR8LkA3t24WGasNAWDABEhLx3ffM2O0wYkugcpJFUwkWOagxAVXXel6pGEUZUWlJ0M-Dlo2VBdKKh4r6Y9bALmLc-rYLNL_r9Dw51Zwsg_L6XeGLsoDKqKn8FcLNa75gAyinrpH9RWrAlsMfsTRMC0Clq0RmX3jBu_LAmRs1HXh7OTpbeQP7TJll3em3pFR1IXao96gPW1VS3bnbZoDEqVROE",
+    heroImage: "/courses/1.svg",
     heroImageAlt: "Cinematic street view of Berlin",
     imageCaption: "Start from zero. Build the basics to survive, then thrive.",
     stats: [
@@ -956,7 +947,7 @@ export const courseDetailPages: Record<string, {
     ],
     competencies: [
       { title: "Introduce Yourself", description: "Say your name, where you're from, what you do, and ask others the same. Handle greetings and goodbyes naturally.", annotation: "\"Ich heiße... and the world opens up\"" },
-      { title: "Handle Everyday Situations", description: "Order food, buy groceries, ask for prices, navigate a bakery or supermarket without pointing and hoping.", annotation: "No more pointing at menus!", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4FrgcK7geX40q48kD7dqmQ1Q5gNMmMb7S0ZFWLyaZkxO4INFyKPGOs2X5tyEhoXLCGUaTuhhw-e_1uWp7Jyo2ncq_ei276YSqFF7OQ5oYorBVvqbF8OUSu4uZIdwtRqA0g4jcr-q8Zj8HINEDH_e0Ib8dyfzePDbXSMBwTNWwUHyf6yISDZavN1KaLNrAHy4Lh_nRqmFXURCsFWzuh3MACzFpPYDIwHluCrCbG-ALL7eUltiD4JU5ICZbtEgUU-UNkkmxOI2JCiE", imageAlt: "German café scene" },
+      { title: "Handle Everyday Situations", description: "Order food, buy groceries, ask for prices, navigate a bakery or supermarket without pointing and hoping.", annotation: "No more pointing at menus!", image: "/courses/5.svg", imageAlt: "German café scene" },
       { title: "Describe Your World", description: "Talk about your home, family, daily routine. Answer questions about where you live and what you like.", annotation: "\"Meine Familie ist...\"", scrapbookNote: "From the Bäckerei to the Wohnzimmer..." },
       { title: "Fill Out Forms", description: "Complete registration forms, understand simple official letters, write your personal details correctly in German." },
       { title: "Navigate the City", description: "Ask for and understand directions, buy train tickets, read signs and timetables, handle basic conversations with strangers." },
@@ -1002,8 +993,7 @@ export const courseDetailPages: Record<string, {
     subtitle: "Online German A2 Intensive Course",
     heroDescription:
       "A2 takes you beyond basic survival. You'll learn to talk about your past, describe your routines, hold real conversations with neighbours, understand announcements, and express opinions on everyday topics, all through a structured blend of video lessons and live interactive classes.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAG-wEPGW7hntBOjTwlU7x4CJRA87KNpRIcDHVCXNQkdNfXGnjo-NEzM3Dub9KUZjXlNaKNl41cCGAroEyZBwf2hhbaLzFUPYWd0DeqGelPMMbqiRU4XTfOsHXFE-RKOoO84liGeYS2gS-uwIR16hoC_S60bXc3JYBKoMK1smSXNZcXt37o7-8ywTvWv_K2xR37NDEbjAEN4b5Aq-_J1CjHw6k5S5F2fDJLBTxBk-vi8x3o-q6msVMiRNYLVdHPJZGHu-iMnDlbOnw",
+    heroImage: "/courses/2.svg",
     heroImageAlt: "A2 Course, The Momentum",
     imageCaption: "You can survive. Now learn to connect.",
     stats: [
@@ -1014,7 +1004,7 @@ export const courseDetailPages: Record<string, {
     ],
     competencies: [
       { title: "Hold Real Conversations", description: "Go beyond single sentences. Exchange information about familiar topics, ask follow-up questions, and keep a conversation going with neighbours and colleagues.", annotation: "\"Endlich, a real chat!\"" },
-      { title: "Talk About Your Past", description: "Describe what happened yesterday, last week, or last year. Use past tenses to share experiences, tell stories, and explain what you did and why.", annotation: "Gestern war ich...", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4FrgcK7geX40q48kD7dqmQ1Q5gNMmMb7S0ZFWLyaZkxO4INFyKPGOs2X5tyEhoXLCGUaTuhhw-e_1uWp7Jyo2ncq_ei276YSqFF7OQ5oYorBVvqbF8OUSu4uZIdwtRqA0g4jcr-q8Zj8HINEDH_e0Ib8dyfzePDbXSMBwTNWwUHyf6yISDZavN1KaLNrAHy4Lh_nRqmFXURCsFWzuh3MACzFpPYDIwHluCrCbG-ALL7eUltiD4JU5ICZbtEgUU-UNkkmxOI2JCiE", imageAlt: "German café conversation" },
+      { title: "Talk About Your Past", description: "Describe what happened yesterday, last week, or last year. Use past tenses to share experiences, tell stories, and explain what you did and why.", annotation: "Gestern war ich...", image: "/courses/5.svg", imageAlt: "German café conversation" },
       { title: "Handle Routine Situations", description: "Make appointments, deal with service providers, handle phone calls, navigate bureaucracy at the Bürgeramt, and manage basic workplace interactions.", annotation: "Bürgeramt, kein Problem!", scrapbookNote: "From Termine to Telefonate, you're ready." },
       { title: "Write Messages & Short Emails", description: "Compose personal messages, write short emails to landlords or offices, respond to invitations, and fill out more complex forms." },
       { title: "Understand Everyday Media", description: "Follow the main points in simple news, understand announcements at train stations, read short articles, and grasp the gist of everyday written German." },
@@ -1060,8 +1050,7 @@ export const courseDetailPages: Record<string, {
     subtitle: "Online German B1 Intensive Course",
     heroDescription:
       "B1 is the threshold of real fluency. You'll learn to express opinions, handle work and social conversations, understand most of what you hear in daily life, and write structured texts, with dedicated speaking topic sessions and classes led by native German speakers.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC81UHb8cIHz632HnAgMlX1kb-cMIQ8RWX3ycnjMwJgP7GlNsHkSU0AdpTSI21ROZ7YWLLEUYIxoXveMuvLF-d4yKpuuXPw3k9ICx6_cFirV_l6MLXS8QzIuClDRguOnz9vlEWpnNrksEmyJLKy2UlqbZLkiExMARMnvuJxClCd37LOYpGJdudAVQDkEYWLIFbvj6samUHqEXjI4-HVPP_63LboaBm1VNEUURmSyJOj09Y4Yp_Vqb3AaXjne0P_CpbILYMqXp1OuFI",
+    heroImage: "/courses/3.svg",
     heroImageAlt: "B1 Course, The Independence",
     imageCaption: "Stop translating. Start thinking in German.",
     stats: [
@@ -1072,7 +1061,7 @@ export const courseDetailPages: Record<string, {
     ],
     competencies: [
       { title: "Express Opinions Fluently", description: "Agree, disagree, explain your reasoning, and participate actively in discussions on familiar topics, without constantly pausing to think.", annotation: "\"Ich bin der Meinung...\"" },
-      { title: "Handle Work Conversations", description: "Participate in meetings, explain processes, handle phone calls, write professional emails, and deal with workplace interactions confidently.", annotation: "Meeting ready!", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4FrgcK7geX40q48kD7dqmQ1Q5gNMmMb7S0ZFWLyaZkxO4INFyKPGOs2X5tyEhoXLCGUaTuhhw-e_1uWp7Jyo2ncq_ei276YSqFF7OQ5oYorBVvqbF8OUSu4uZIdwtRqA0g4jcr-q8Zj8HINEDH_e0Ib8dyfzePDbXSMBwTNWwUHyf6yISDZavN1KaLNrAHy4Lh_nRqmFXURCsFWzuh3MACzFpPYDIwHluCrCbG-ALL7eUltiD4JU5ICZbtEgUU-UNkkmxOI2JCiE", imageAlt: "German workplace meeting" },
+      { title: "Handle Work Conversations", description: "Participate in meetings, explain processes, handle phone calls, write professional emails, and deal with workplace interactions confidently.", annotation: "Meeting ready!", image: "/courses/5.svg", imageAlt: "German workplace meeting" },
       { title: "Write Structured Texts", description: "Compose formal and informal letters, write complaints, applications, and detailed messages with correct grammar and appropriate tone.", annotation: "Sehr geehrte Damen und Herren...", scrapbookNote: "From Beschwerden to Bewerbungen, with confidence." },
       { title: "Understand Everyday German", description: "Follow news broadcasts, understand most conversations around you, read newspaper articles, and grasp the main points of complex texts." },
       { title: "Think in German", description: "Stop the constant mental translation. React naturally, form sentences without building them word-by-word in your head first." },
@@ -1121,8 +1110,7 @@ export const courseDetailPages: Record<string, {
     subtitle: "Online German B2 Intensive Course",
     heroDescription:
       "B2 is where the language becomes truly yours. You'll handle university lectures, professional debates, subtle humour, and complex written texts, with a heavy live-class rhythm and native speaker sessions that push you to think, react, and express yourself entirely in German.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuB_QaI_aAaHY86AyJv0GZ-NEDLaoMqdQsk57Z1kSncs1WAXEaopYX8zs_R8cBIS-j20JWF6IxyXyl3Y9bpswgETsUA6SmNsOWN16X5ySvzkgYtCOc8qYEUiGdaoXox5TuIpHKtJue-O7OTxggKhvyi106keJXEXnB0f-gFp5A_8M_U-D900iCoBzpkC3fMNWEVhZ6KvPHDdVXAsyEXQw3HbUWH-lSZZuBvdWpsaK14aFOnzhRm-kT9fwrMatBbAWD3z2Kutk4WnNqE",
+    heroImage: "/courses/4.svg",
     heroImageAlt: "B2 Course, The Mastery",
     imageCaption: "Speak with confidence. Belong.",
     stats: [
@@ -1133,7 +1121,7 @@ export const courseDetailPages: Record<string, {
     ],
     competencies: [
       { title: "Debate & Argue Fluently", description: "Present and defend your position on complex topics. Engage in discussions about politics, culture, and abstract ideas with nuance and conviction.", annotation: "\"Ich bin überzeugt, dass...\"" },
-      { title: "Handle Academic German", description: "Follow university lectures, read academic texts, write structured essays and reports, and participate in seminars, entirely in German.", annotation: "Uni ready!", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4FrgcK7geX40q48kD7dqmQ1Q5gNMmMb7S0ZFWLyaZkxO4INFyKPGOs2X5tyEhoXLCGUaTuhhw-e_1uWp7Jyo2ncq_ei276YSqFF7OQ5oYorBVvqbF8OUSu4uZIdwtRqA0g4jcr-q8Zj8HINEDH_e0Ib8dyfzePDbXSMBwTNWwUHyf6yISDZavN1KaLNrAHy4Lh_nRqmFXURCsFWzuh3MACzFpPYDIwHluCrCbG-ALL7eUltiD4JU5ICZbtEgUU-UNkkmxOI2JCiE", imageAlt: "University lecture hall" },
+      { title: "Handle Academic German", description: "Follow university lectures, read academic texts, write structured essays and reports, and participate in seminars, entirely in German.", annotation: "Uni ready!", image: "/courses/5.svg", imageAlt: "University lecture hall" },
       { title: "Work Professionally in German", description: "Lead meetings, write formal reports, negotiate with clients, handle complex phone calls, and navigate German workplace culture with confidence.", annotation: "Chef-level German!", scrapbookNote: "From Sitzungen to Verhandlungen, you own the room." },
       { title: "Write with Precision", description: "Compose detailed formal letters, argumentative essays, professional emails, and reports with correct grammar, register, and style." },
       { title: "Understand Humour & Idioms", description: "Get the joke. Understand sarcasm, cultural references, idiomatic expressions, and the subtle things that make German feel like home." },
