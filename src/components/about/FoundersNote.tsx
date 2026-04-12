@@ -23,54 +23,45 @@ export default function FoundersNote() {
             This is a place for <em>presence, effort, and responsibility.</em>
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Teaching was never a choice for me; it was always who I am. I started teaching in 2015 while I was still in 12th class, building everything from scratch with no system and no backing — only students and their trust.
+            Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch,only students and their trust.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Since that day, there hasn't been a single day I haven't taught or thought about my students — their progress, their struggles, and their growth.
+            Since that day, there hasn't been a single day I haven't taught or thought about my students, their progress, their struggles, and their growth.
           </p>
           <p className="text-base leading-normal text-on-surface/90 font-semibold italic">
             My life is my students.<br />
             I don't separate it. I don't balance it. I live for them.<br />
-            There is no other goal — and there never has been.
+            There is no other goal, and there never has been.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Over the years, I have seen students repeat levels again and again — going through A1 three or four times before reaching me, or returning to A1 even after B1 or B2 — because their foundation was never truly built.
-            Living in Germany without enough German means paying a price every single day — in every queue, every workplace, every conversation that slips away.
+            Over the years, I have seen students repeat levels again and again, going through A1 three or four times before reaching me, or returning to A1 even after B1 or B2, because their foundation was never truly built.
+            Living in Germany without enough German means paying a price every single day, in every queue, every workplace, every conversation that slips away.
             Every time I see that, it stays with me.
             This is where I invest my life.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Some came with struggles beyond language — and through this journey, found their confidence again.
+            Some came with struggles beyond language, and through this journey, found their confidence again.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            I am grateful to each one of them for making me who I am.
-          </p>
-          <p className="text-base leading-normal text-on-surface/90">
-            Today, we have students from more than 30 countries, growing through trust and real impact. This has only been possible because of the love and trust my students have placed in me. Every student here has come through recommendation — not marketing. That, more than anything, reflects the impact they carry forward.
-          </p>
-          <p className="text-base leading-normal text-on-surface/90">
-            I don't just teach — I stay with you through every step of your journey. The trust my students place in me keeps me going — their belief drives everything I do.
+            Today, we have students from more than 30 countries, growing through trust and real impact. This has only been possible because of the love and trust my students have placed in me. Every student here has come through recommendation, not marketing. That, more than anything, reflects the impact they carry forward.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             German is a beautiful and deeply interesting language, but it demands your time and dedication. And anything that has the power to shape your life deserves exactly that.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            I came to Germany in 2020, completed my master's, and worked as a Team Lead for more than three years. Then I made a decision to leave that path and dedicate myself fully to my students — not for a better opportunity, but for something that mattered more.
-          </p>
-          <p className="text-base leading-normal text-on-surface/90 italic">
-            My heart chose this over everything else.
+            I came to Germany in 2020, completed my master's, and worked as a Team Lead for more than three years. Then I made a decision to leave that path and dedicate myself fully to my students. My heart chose this over everything else.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             If you are here, this is not just a course for you. This is a turning point in your journey.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Dear students, I am grateful for each of you — for your trust, your love, and your support.
+            Dear students, I am grateful for each of you for your trust, your love, and your support.
           </p>
           <p className="text-base leading-normal text-on-surface/90 font-semibold">
-            Today and always — I live for my students.
+            Today and always,I live for my students.
           </p>
           <p className="text-sm tracking-widest text-on-surface/60 pt-1">
-            — Shalini K Dubey
+            Shalini K Dubey
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-on-surface/10">
             <div className="space-y-1">
