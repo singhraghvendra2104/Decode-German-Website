@@ -6,7 +6,7 @@ export default function HowStudentsJoin() {
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">How You Begin</h2>
           <p className="text-base md:text-lg text-gray-500 max-w-xl">
             Where you start matters it shapes everything ahead.<br />
-            When the foundation is strong, learning becomes smoother, faster, and stable.
+            <strong className="text-charcoal">When the foundation is strong, learning becomes smoother, faster, and stable.</strong>
           </p>
         </div>
 

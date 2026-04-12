@@ -2,21 +2,21 @@ export default function NarrativeSection() {
   const commitments = [
     {
       number: 1,
-      title: "Know Each Student Personally",
+      title: "You Are Not Just Another Student",
       description:
-        "We maintain a personal profile of every student: career goals, learning pace, challenges. This is not a database. This is a relationship.",
+        "We take the time to know you, your goals, your pace, your challenges. This journey defines what comes next, and we stay fully focused on it.",
     },
     {
       number: 2,
-      title: "Structured Follow-Up",
+      title: "Structured Follow-up",
       description:
-        "Regular check-ins before class, after class, and between batches. If a student falls behind, the teacher reaches out proactively to ensure continuity.",
+        "Regular check-ins before class, after class, and between batches.If your pace changes, we respond immediately. If something needs attention, we step in right away.",
     },
     {
       number: 3,
-      title: "Targeted Gap Filling",
+      title: "We Target Exactly What You Need",
       description:
-        "Struggling with Akkusativ? You get a targeted micro-session, not a repeat lecture. Real solutions, tailored to your specific friction points.",
+        "Working on a specific topic? You get a targeted micro-session. Only what you need, exactly where you need it. Real solutions, focused on your exact friction points.",
     },
   ];
 
@@ -56,18 +56,18 @@ export default function NarrativeSection() {
               }}
             >
               {/* Number Badge */}
-              <div className="absolute top-12 md:top-16 bg-white w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-md mb-6">
-                <span className="text-2xl md:text-3xl font-[var(--font-serif)] font-bold text-charcoal">
+              <div className="bg-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-md shrink-0">
+                <span className="text-xl md:text-2xl font-[var(--font-serif)] font-bold text-charcoal">
                   {commitment.number}
                 </span>
               </div>
 
               {/* Content */}
-              <div className="mt-10 md:mt-16 lg:mt-24">
-                <h3 className="text-lg md:text-2xl font-[var(--font-serif)] font-bold mb-4 uppercase tracking-wide leading-tight text-charcoal">
+              <div className="mt-3 md:mt-4">
+                <h3 className="text-sm md:text-base font-[var(--font-serif)] font-bold mb-2 md:mb-3 uppercase tracking-wide leading-tight text-charcoal">
                   {commitment.title}
                 </h3>
-                <p className="text-xs md:text-sm text-gray-600 leading-relaxed font-light px-2">
+                <p className="text-[11px] md:text-xs text-gray-600 leading-relaxed font-light">
                   {commitment.description}
                 </p>
               </div>
@@ -75,9 +75,11 @@ export default function NarrativeSection() {
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="mt-10 md:mt-16 lg:mt-20 flex justify-center">
-          <div className="w-24 h-1 bg-primary/30" />
+        {/* Handwriting line */}
+        <div className="mt-10 md:mt-16 lg:mt-20 text-center">
+          <p className="font-handwriting text-2xl md:text-4xl text-primary">
+            &ldquo;Your goals are our top priority.&rdquo;
+          </p>
         </div>
       </div>
     </section>

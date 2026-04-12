@@ -34,7 +34,7 @@ export default function CourseDetailHero({
     useDisclosure(false);
 
   return (
-    <section className="relative px-4 sm:px-6 md:px-12 py-8 sm:py-12 md:py-20 lg:py-32 flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-56 lg:gap-80 max-w-[1400px] mx-auto">
+    <section className="relative px-4 sm:px-6 md:px-12 py-8 sm:py-12 md:py-20 lg:py-32 flex flex-col md:flex-row items-center md:items-start gap-8 sm:gap-12 md:gap-20 lg:gap-32 max-w-[1400px] mx-auto">
       {/* Text Side */}
       <div className="w-full md:w-1/2 space-y-6 sm:space-y-8 md:space-y-10">
         <div className="inline-block">
@@ -80,14 +80,14 @@ export default function CourseDetailHero({
       </div>
 
       {/* Image Side - Polaroid */}
-      <div className="w-full md:w-1/2 relative flex justify-center md:mt-20">
-        <div className="bg-white p-3 sm:p-4 pb-16 sm:pb-20 shadow-2xl rotate-[1.5deg] relative z-10 max-w-xs sm:max-w-sm w-full ring-1 ring-black/5">
+      <div className="hidden md:flex w-full md:w-1/2 relative justify-center md:mt-20">
+        <div className="bg-white p-2.5 sm:p-4 pb-12 sm:pb-20 shadow-2xl rotate-[1.5deg] relative z-10 max-w-[240px] sm:max-w-sm w-full ring-1 ring-black/5">
           <div className="relative w-full aspect-square overflow-hidden">
             <Image
               src={image}
               alt={imageAlt}
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+              className="object-cover md:grayscale md:hover:grayscale-0 transition-all duration-1000"
               sizes="(max-width: 768px) 90vw, 50vw"
               priority
             />
