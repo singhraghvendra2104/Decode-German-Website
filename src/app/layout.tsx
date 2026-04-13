@@ -65,13 +65,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: "/final-logo.svg" }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Decode German - SPEAK, BELONG, THRIVE",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ["/final-logo.svg"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [
