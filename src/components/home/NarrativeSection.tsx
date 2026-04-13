@@ -10,7 +10,7 @@ export default function NarrativeSection() {
       number: 2,
       title: "Structured Follow-up",
       description:
-        "Regular check-ins before class, after class, and between batches.If your pace changes, we respond immediately. If something needs attention, we step in right away.",
+        "Regular check-ins before class, after class, and between batches. If your pace changes, we respond immediately. If something needs attention, we step in right away.",
     },
     {
       number: 3,
