@@ -12,13 +12,13 @@ import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
-  title: "Decode German - Premium German Language Transformation",
+  title: "Decode German - SPEAK, BELONG, THRIVE",
   description:
-    "Premium German language platform bridging the gap between fluency and identity. Boutique transformation for the global citizen in Germany.",
+    "German language platform bridging the gap between fluency and identity. Transformation for the global citizens.",
   openGraph: {
-    title: "Decode German - Premium German Language Transformation",
+    title: "Decode German - SPEAK, BELONG, THRIVE",
     description:
-      "Premium German language platform bridging the gap between fluency and identity.",
+      "German language platform bridging the gap between fluency and identity.",
   },
 };
 

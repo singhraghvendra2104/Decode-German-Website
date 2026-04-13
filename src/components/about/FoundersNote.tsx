@@ -23,7 +23,7 @@ export default function FoundersNote() {
             This is where you<em> show up - with consistency and intent.</em>
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch,only students and their trust.
+            Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch, only students and their trust.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             Since that day, there hasn't been a single day I haven't taught or thought about my students, their progress, their struggles, and their growth.
@@ -43,7 +43,7 @@ export default function FoundersNote() {
           This is not just work for me - it is a responsibility I carry with complete honesty, discipline, and a sense of purpose every single day.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
-            Today, we have students from more than 30 countries, growing through trust and real impact. This has only been possible because of the love and trust my students have placed in me. Every student here has come through recommendation, not marketing. That, more than anything, reflects the impact they carry forward.
+            Today, our students come from across the globe, growing through trust and real impact. This has only been possible because of the love and trust my students have placed in me. Every student here has come through recommendation, not marketing. That, more than anything, reflects the impact they carry forward.
           </p>
           <p className="text-base leading-normal text-on-surface/90">
             I came to Germany in 2020, completed my master's, and worked as a Team Lead for more than three years. Then I made a decision to leave that path and dedicate myself fully to my students. My heart chose this over everything else.
