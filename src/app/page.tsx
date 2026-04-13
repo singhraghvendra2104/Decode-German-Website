@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     title: "Decode German - SPEAK, BELONG, THRIVE",
     description:
       "German language platform bridging the gap between fluency and identity.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Decode German - SPEAK, BELONG, THRIVE",
+      },
+    ],
   },
 };
 

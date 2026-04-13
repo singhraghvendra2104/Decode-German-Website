@@ -63,8 +63,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} - ${siteConfig.tagline}`,
-    description: siteConfig.description,
+    title: "Decode German - SPEAK, BELONG, THRIVE",
+    description:
+      "German language platform bridging the gap between fluency and identity.",
     images: [
       {
         url: "/og-image.png",
@@ -75,9 +76,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: `${siteConfig.name} - ${siteConfig.tagline}`,
-    description: siteConfig.description,
+    card: "summary",
+    title: "Decode German - SPEAK, BELONG, THRIVE",
+    description:
+      "German language platform bridging the gap between fluency and identity.",
     images: ["/og-image.png"],
   },
   icons: {
