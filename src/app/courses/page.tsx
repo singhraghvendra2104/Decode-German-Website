@@ -16,9 +16,10 @@ export const metadata: Metadata = {
   description:
     "A structured journey through the German language. Every course is online, intensive, and taught in small batches. Whether you're starting from zero or preparing for an exam - we have a structured path for you.",
   openGraph: {
-    title: "Courses | Decode German",
+    title: "Decode German - SPEAK, BELONG, THRIVE",
     description:
-      "A structured journey through the German language - level by level, from A1 to B2.",
+      "German language platform bridging the gap between fluency and identity.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Decode German - SPEAK, BELONG, THRIVE" }],
   },
 };
 

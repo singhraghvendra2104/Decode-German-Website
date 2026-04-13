@@ -15,9 +15,10 @@ export const metadata: Metadata = {
   description:
     "The story of Decode German - a boutique German language platform crafted for seekers, thinkers, and those brave enough to rebuild their lives in a new tongue.",
   openGraph: {
-    title: "Our Story | Decode German",
+    title: "Decode German - SPEAK, BELONG, THRIVE",
     description:
-      "The story of Decode German - bridging the gap between grammar rules and genuine emotional connection.",
+      "German language platform bridging the gap between fluency and identity.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Decode German - SPEAK, BELONG, THRIVE" }],
   },
 };
 

@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: "Student focused language learning",
   description:
     "Learn German A1-B2 with small batches, native speakers and teachers who cares.",
-  url: "https://decodegerman.com",
+  url: "https://www.decodegerman.com",
   email: "decodegerman@gmail.com",
   address: {
     street: "Torstraße 124",
