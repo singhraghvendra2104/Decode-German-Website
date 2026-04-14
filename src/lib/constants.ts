@@ -1188,3 +1188,549 @@ export const socialLinks = [
   { icon: "youtube", label: "YouTube", href: "https://www.youtube.com/channel/UCrWQrQOWzRSt86XrS6C-D2Q" },
   { icon: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/company/decode-german/" },
 ];
+
+// ─── Footer Content ──────────────────────────────────────────────────────────
+export const footerContent = {
+  sections: {
+    explorer: "Explorer",
+    contact: "Contact",
+  },
+  contact: {
+    emailLabel: "Email",
+    phoneLabel: "Phone / WhatsApp",
+    addressLabel: "Address",
+    phoneGermanyDisplay: "+49 15900 4836675",
+    phoneIndiaDisplay: "+91 98712 05947",
+    // NOTE: This address differs from siteConfig.address (Berlin). Confirm which is correct.
+    displayAddress: "Village Tharet, Madhya Pradesh, India, 475673",
+  },
+};
+
+// ─── Header Content ──────────────────────────────────────────────────────────
+export const headerContent = {
+  mobileMenuAriaLabel: "Toggle navigation menu",
+  logoAltSuffix: "logo",
+};
+
+// ─── WhatsApp Floating Button ────────────────────────────────────────────────
+export const whatsappButton = {
+  tooltip: "Chat on WhatsApp",
+  ariaLabel: "Contact us on WhatsApp",
+};
+
+// ─── 404 / Not Found Page ────────────────────────────────────────────────────
+export const notFoundPage = {
+  bigNumber: "404",
+  tag: "Page Not Found",
+  heading: "Seite nicht",
+  headingAccent: "gefunden",
+  body: "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+  backButtonLabel: "Back to Home",
+  logoAlt: "Decode German logo",
+};
+
+// ─── About Page: Hero (current design) ───────────────────────────────────────
+export const aboutHeroContent = {
+  tag: "The Promise",
+  heading: "Our Story",
+  subheading: "We built a promise to students.",
+  subheadingBold: "You commit, we commit the hardest.",
+  stats: [
+    { value: "1000+", label: "Students Taught" },
+    { value: "2020", label: "Year Founded" },
+  ],
+  founderImageAlt: "Shalini K Dubey teaching",
+  founderImage: "/about/team/Founder1.png",
+  founderCaption: "Shalini K Dubey",
+  introParagraph:
+    'Founded in 2020 by <strong>Shalini K Dubey</strong>. 1000+ students taught across the world. We built this platform with discipline, dedication, and relentless clarity. With teaching that is structured, demanding, and deeply human. <strong> <br />With equal commitment from us and from YOU.</strong>',
+};
+
+// ─── About Page: Why We Exist ────────────────────────────────────────────────
+export const whyWeExistContent = {
+  heading: "What Makes Us Unique",
+  description:
+    "Students come with hope, believing this is where everything finally comes together, with the right guidance and a structured approach.",
+  reasons: [
+    {
+      number: "01",
+      title: "German That Works",
+      description1: "Built for how you actually use German in real situations.",
+      description2: "In conversations, at work, and in everyday life, with clarity and confidence.",
+      bgClass: "bg-accent",
+    },
+    {
+      number: "02",
+      title: "Individual Understanding",
+      description1: "Every student learns differently, and that is at the core of how we teach.",
+      description2: "Your patterns, your pace, and the way you learn are understood and shaped into a method that works for you.",
+      bgClass: "bg-accent/60",
+      offsetY: true,
+    },
+    {
+      number: "03",
+      title: "Every Step Matters",
+      description1: "Learning continues beyond the classroom.",
+      description2: "Through regular follow-ups, focused check-ins, and constant attention to how you are learning and where you need to go next.",
+      bgClass: "bg-accent",
+    },
+    {
+      number: "04",
+      title: "Right Level, From the Start",
+      description1: "Every student begins at a level that fits where they are.",
+      description2: "This creates a focused pace, clear direction, and a group that stays aligned as it moves forward.",
+      bgClass: "bg-accent/60",
+      offsetY: true,
+    },
+  ],
+};
+
+// ─── About Page: How Students Join ───────────────────────────────────────────
+export const howStudentsJoinContent = {
+  heading: "How You Begin",
+  description: "Where you start matters it shapes everything ahead.",
+  descriptionBold: "When the foundation is strong, learning becomes smoother, faster, and stable.",
+  beginners: {
+    title: "A1: Beginners",
+    steps: [
+      "Contact us to join",
+      "We confirm your enrollment and you begin your journey",
+    ],
+  },
+  higherLevels: {
+    title: "A2, B1, B2: Higher Levels",
+    steps: [
+      "Contact us for your target level",
+      "Take the entrance test (short assessment)",
+      "Pass → Enrolled",
+    ],
+    callout: {
+      title: "Else prepare first →",
+      body: "Crash course: fast-paced, individual sessions with flexible scheduling. Keep studying until you pass.",
+      bodyBold: "When you're ready, you get enrolled.",
+    },
+  },
+  blockquote:
+    "Every batch has students who earned their place. No one is holding the class back. No one is lost.",
+};
+
+// ─── About Page: The Team ────────────────────────────────────────────────────
+export const theTeamContent = {
+  heading: "The Team",
+  description: "The people at Decode German, behind every student's progress - accountable & precise.",
+  founder: {
+    name: "Shalini K Dubey",
+    role: "Founder & Lead Instructor",
+    location: "Dresden, Germany",
+    image: "/about/team/Founder2.png",
+    imageAlt: "Founder Portrait",
+    bio1: "Personally teaches, designs the curriculum, and works closely with every student their patterns, their gaps, their journey.",
+    bio2: "Built from scratch after moving to Germany for post-graduate studies.\n12+ years of teaching experience shaped through real students, not systems.",
+    quote: "This is not a place where you take classes. This is a place where you commit. Where you build confidence, evolve, and transform.",
+    badges: ["12+ Years Exp"],
+  },
+  academicAdvisor: {
+    name: "Prof. Dr. Vridhagiri Ganeshan",
+    nameDisplay: "Prof. Dr. Vridhagiri\nGaneshan",
+    role: "Academic Advisor",
+    image: "/about/team/Founder3.jpeg",
+    imageAlt: "Prof. Dr. Vridhagiri Ganeshan",
+    bio1: "Over 50 years teaching, researching, and writing about German language and culture, from Universität München to CIEFL Hyderabad to Emory University. Prof. Dr. Ganeshan earned his doctorate in Germanistik in 1975 and spent 32 years as Professor of German at CIEFL, training generations of language teachers across India. He served twice as Vice-Chancellor, taught at leading American universities, and was awarded the Jakob-und-Wilhelm-Grimm-Preis by Germany in 1990, one of the highest honours in German philology.",
+    bio2: "His life's work, bridging the gap between the learners and genuine German fluency, is exactly the challenge Decode German is built around.",
+    quote: "Language is never just grammar. It is the bridge between who you are and who you are becoming in another culture.",
+    badges: [
+      "Atlanta, USA",
+      "Dr. Phil., München 1975",
+      "Grimm-Preis 1990",
+      "DAAD & Humboldt Fellow",
+      "50+ Years in Germanistik",
+    ],
+  },
+  members: [
+    {
+      name: "Atalbihari Sharma",
+      role: "Co-Founder & Director",
+      description: "Growth & Strategic Direction",
+      image: "/about/team/atalbihari-sharma.png",
+      objectPosition: "center 25%",
+    },
+    {
+      name: "Isabelle Das",
+      role: "Native Speaker & German Language Teacher",
+      description: "Helping international students master the German flow of speech and achieve real fluency.",
+      image: "/about/team/isabelle-das.png",
+    },
+    {
+      name: "Srishty Arora",
+      role: "German Language Teacher",
+      description: "Shaping confident communicators who can connect beyond borders.",
+      image: "/about/team/srishty-arora.png",
+    },
+    {
+      name: "Aditya Mohan Ray",
+      role: "German Language Teacher",
+      description: "Fostering care, camaraderie, and a collective learning experience across diverse backgrounds.",
+      image: "/about/team/aditya-mohan-ray.png",
+    },
+    {
+      name: "Tanya Wadhwa",
+      role: "German Language Teacher",
+      description: "Helping students speak German with clarity, confidence, and ease.",
+      image: "/about/team/tanya-wadhwa.png",
+    },
+    {
+      name: "Sakshi Tripathi",
+      role: "Student Support & Doubt Resolution Lead",
+      description: "Ensuring clarity at every step of the journey.",
+      image: "/about/team/sakshi-tripathi.png",
+    },
+    {
+      name: "Gurneesh Singh",
+      role: "Language Support Specialist",
+      description: "Ensuring class quality through content development and after-class support.",
+      image: "/about/team/gurneesh-singh.png",
+    },
+    {
+      name: "Ashutosh Dubey",
+      role: "Program & Operations Manager",
+      description: "Keeping everything structured, seamless, and on track.",
+      image: "/about/team/ashutosh-dubey.png",
+      objectPosition: "center 25%",
+    },
+    {
+      name: "Afroj Ansari",
+      role: "Social Media Strategist",
+      description: "Making German language learning accessible through structured, easy-to-understand content.",
+      image: "/about/team/afroj-ansari.png",
+    },
+  ],
+};
+
+// ─── About Page: Our Journey Timeline ────────────────────────────────────────
+export const ourJourneyContent = {
+  heading: "Our Journey",
+  timeline: [
+    {
+      year: "2020",
+      title: "The beginning",
+      description: "Decode German founded. First A1 batch starts online. One teacher, a small group of students, and a commitment to do things differently.",
+      isLeft: true,
+      isPrimary: true,
+    },
+    {
+      year: "2021",
+      title: "Expanding levels",
+      description: "A2 and B1 courses launched. First native German speakers join the teaching team.",
+      isLeft: false,
+      isPrimary: false,
+    },
+    {
+      year: "2022",
+      title: "100+ students milestone",
+      description: "Exam preparation courses launched - Goethe-Zertifikat, TestDaF, and TELC. Still growing entirely through student recommendations.",
+      isLeft: true,
+      isPrimary: true,
+    },
+    {
+      year: "2023",
+      title: "B2 level and revision courses",
+      description: "B2 added to complete the A1–B2 journey. Revision courses introduced. Team grows to 4.",
+      isLeft: false,
+      isPrimary: false,
+    },
+    {
+      year: "2024",
+      title: "400+ students - company registered",
+      description: "SKiD Decode Deutsch Language Institute Pvt Ltd formally registered. Entrance test system implemented for all levels above A1.",
+      isLeft: true,
+      isPrimary: true,
+    },
+    {
+      year: "2025",
+      title: "800+ students - Scaling excellence",
+      description: "Expanded team, advanced curriculum, and personalized learning technology. Commitment to maintaining quality while reaching more students.",
+      isLeft: false,
+      isPrimary: false,
+    },
+    {
+      year: "2026",
+      title: " Speaking courses launched",
+      description: "New tracking systems, same educational soul. Building the next generation of confident German speakers.",
+      isLeft: true,
+      isPrimary: true,
+    },
+  ],
+};
+
+// ─── About Page: Founder's Note (current design) ────────────────────────────
+export const foundersNoteContent = {
+  sidebarQuote: "I didn't leave my career to teach German. I left it to change what German changes.",
+  founderName: "Shalini K Dubey",
+  founderTitle: "Founder · Dresden, Germany",
+  sectionTitle: "Message from the Founder",
+  paragraphs: [
+    { text: 'This is not a place for passive learning.<br />This is where you<em> show up - with consistency and intent.</em>' },
+    { text: "Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch, only students and their trust." },
+    { text: "Since that day, there hasn't been a single day I haven't taught or thought about my students, their progress, their struggles, and their growth." },
+    { text: "My life is my students.<br />I don't separate it. I don't balance it. I live for them.<br />There is no other goal, and there never has been.", bold: true },
+    { text: "Over the years, I have seen students repeat levels again and again, going through A1 three or four times before reaching me, or returning to A1 even after B1 or B2, because their foundation was never truly built. Living in Germany without enough German means paying a price every single day, in every queue, every workplace, every conversation that slips away. Every time I see that, it stays with me. This is where I invest my life." },
+    { text: "This is not just work for me - it is a responsibility I carry with complete honesty, discipline, and a sense of purpose every single day." },
+    { text: "Today, our students come from across the globe, growing through trust and real impact. This has only been possible because of the love and trust my students have placed in me. Every student here has come through recommendation, not marketing. That, more than anything, reflects the impact they carry forward." },
+    { text: "I came to Germany in 2020, completed my master's, and worked as a Team Lead for more than three years. Then I made a decision to leave that path and dedicate myself fully to my students. My heart chose this over everything else." },
+    { text: "If you are here, this is not just a course for you. This is a turning point in your journey." },
+    { text: "Dear students, I am grateful for each of you for your trust, your love, and your support." },
+    { text: "Today and always, I live for my students.", bold: true },
+  ],
+  signoff: "Shalini K Dubey",
+  stats: [
+    { value: "30+", label: "Enroll Monthly" },
+    { value: "A1–B2", label: "Course Levels" },
+    { value: "100%", label: "Word of Mouth" },
+  ],
+};
+
+// ─── Course Components UI Strings ────────────────────────────────────────────
+export const courseComponentStrings = {
+  features: {
+    heading: "What Every Course Includes",
+  },
+  level: {
+    resourcesLabel: "Learning Resources",
+  },
+  specialized: {
+    handwriting: "Already Know Some German?",
+    heading: "Pick Up Where You Left Off",
+    enquireButton: "Enquire",
+  },
+  beforeAfter: {
+    beforeHeading: "Before You Join",
+    afterHeading: "After This Course",
+    exploreCoursePrefix: "Explore",
+    exploreCourseSuffix: "Course",
+  },
+  competencies: {
+    headingStart: "What You'll Be",
+    headingEnd: "Able To Do",
+  },
+  detailCTA: {
+    handwriting: "Bis bald!",
+    headingPrefix: "Ready to start your",
+    headingSuffix: "journey?",
+    primaryButton: "Get in Touch",
+    whatsappButton: "WhatsApp Us",
+  },
+  journey: {
+    description: "A curated path through the fundamentals of German life and language.",
+  },
+  method: {
+    headingLine1: "The",
+    headingLine2: "Blended",
+    headingLine3: "Method",
+    benefitsLabel: "Key Benefits",
+  },
+  resources: {
+    headingItalic: "Curated",
+    headingNormal: "Resources",
+    learnMore: "Learn More",
+    typeLabels: {
+      watch: "Watch",
+      listen: "Listen",
+      read: "Read",
+    } as Record<string, string>,
+  },
+};
+
+// ─── Home: Narrative Section ─────────────────────────────────────────────────
+export const narrativeSectionContent = {
+  handwriting: "Our Promise",
+  heading: "The Decode",
+  headingAccent: "Commitment",
+  commitments: [
+    {
+      number: 1,
+      title: "You Are Not Just Another Student",
+      description:
+        "We take the time to know you, your goals, your pace, your challenges. This journey defines what comes next, and we stay fully focused on it.",
+    },
+    {
+      number: 2,
+      title: "Structured Follow-up",
+      description:
+        "Regular check-ins before class, after class, and between batches. If your pace changes, we respond immediately. If something needs attention, we step in right away.",
+    },
+    {
+      number: 3,
+      title: "We Target Exactly What You Need",
+      description:
+        "Working on a specific topic? You get a targeted micro-session. Only what you need, exactly where you need it. Real solutions, focused on your exact friction points.",
+    },
+  ],
+  closingQuote: "Your goals are our top priority.",
+};
+
+// ─── Home: Testimonials Section ──────────────────────────────────────────────
+export const testimonialsContent = {
+  backgroundHeading: "TESTIMONIALS",
+  heading: "Voices of Transformation",
+  addReviewButton: "+ Add Your Review",
+  loading: "Loading reviews\u2026",
+  errorPrefix: "Failed to load reviews:",
+  empty: "No reviews yet. Be the first to share your story.",
+  verifiedLabel: "Verified Student",
+  modal: {
+    title: "Share your experience",
+    nameLabel: "Your name",
+    namePlaceholder: "Jane Doe",
+    emailLabel: "Email (optional)",
+    emailPlaceholder: "jane@example.com",
+    ratingLabel: "Rating",
+    reviewLabel: "Your review",
+    reviewPlaceholder: "Tell us about your experience with Decode German\u2026",
+    cancelButton: "Cancel",
+    submitButton: "Submit Review",
+    successTitle: "Thank you!",
+    successBody: "Your review has been submitted and will appear after approval.",
+    genericError: "Something went wrong",
+    networkError: "Network error. Please try again.",
+  },
+};
+
+// ─── Home: Courses Section ───────────────────────────────────────────────────
+export const coursesSectionContent = {
+  levelLabel: "Level",
+  ctaButton: "Explore All Courses",
+  ctaHref: "/courses",
+};
+
+// ─── Home: Hero Section ──────────────────────────────────────────────────────
+export const heroSectionContent = {
+  scrollHint: "Scroll for the Journey",
+};
+
+// ─── Contact Form Modal ──────────────────────────────────────────────────────
+export const contactFormContent = {
+  handwritingAccent: "Get in Touch...",
+  closeAriaLabel: "Close",
+  header: {
+    tag: "Start Your Journey",
+    heading: "Start Your Journey",
+    description: "Fill in the form below and we'll get back to you personally. No automated replies.",
+  },
+  fields: {
+    firstName: { label: "First Name (required)", placeholder: "e.g. Johannes" },
+    lastName: { label: "Last Name", placeholder: "e.g. Müller" },
+    email: { label: "Email Address (required)", placeholder: "hello@example.de" },
+    countryCode: { label: "Country Code" },
+    phone: { label: "Phone / WhatsApp", placeholder: "171 1234567" },
+    level: { label: "Current German Level", placeholder: "Select level" },
+    interest: { label: "I'm interested in", placeholder: "Select course" },
+    message: { label: "Your Message", placeholder: "Tell us about your goals..." },
+  },
+  submit: {
+    sending: "Sending...",
+    default: "Send Message",
+  },
+  success: {
+    heading: "Message sent.",
+    body: "We've received your message and will get back to you personally within a few hours.",
+  },
+  networkError: "Network error. Please try again.",
+  genericError: "Something went wrong",
+  whatsapp: {
+    heading: "Want a faster reply?",
+    body: "Message us on WhatsApp. We typically respond within minutes.",
+    linkLabel: "Open WhatsApp",
+    href: "https://wa.me/4915904836675",
+  },
+  bottomContact: {
+    email: "decodegerman@gmail.com",
+    languages: "We speak: Deutsch, English, Hindi",
+  },
+  germanLevels: [
+    "Complete Beginner",
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "Not sure",
+  ],
+  interests: [
+    "A1 Course",
+    "A2 Course",
+    "B1 Course",
+    "B2 Course",
+    "Exam Preparation",
+    "Revision Course",
+    "Crash Course",
+    "Just exploring",
+  ],
+  countryCodes: [
+    { value: "+49", label: "\u{1F1E9}\u{1F1EA} +49 (DE)" },
+    { value: "+91", label: "\u{1F1EE}\u{1F1F3} +91 (IN)" },
+    { value: "+1", label: "\u{1F1FA}\u{1F1F8} +1 (US)" },
+    { value: "+44", label: "\u{1F1EC}\u{1F1E7} +44 (GB)" },
+    { value: "+43", label: "\u{1F1E6}\u{1F1F9} +43 (AT)" },
+    { value: "+41", label: "\u{1F1E8}\u{1F1ED} +41 (CH)" },
+    { value: "+33", label: "\u{1F1EB}\u{1F1F7} +33 (FR)" },
+    { value: "+31", label: "\u{1F1F3}\u{1F1F1} +31 (NL)" },
+    { value: "+39", label: "\u{1F1EE}\u{1F1F9} +39 (IT)" },
+    { value: "+34", label: "\u{1F1EA}\u{1F1F8} +34 (ES)" },
+    { value: "+48", label: "\u{1F1F5}\u{1F1F1} +48 (PL)" },
+    { value: "+90", label: "\u{1F1F9}\u{1F1F7} +90 (TR)" },
+    { value: "+86", label: "\u{1F1E8}\u{1F1F3} +86 (CN)" },
+    { value: "+81", label: "\u{1F1EF}\u{1F1F5} +81 (JP)" },
+    { value: "+82", label: "\u{1F1F0}\u{1F1F7} +82 (KR)" },
+    { value: "+55", label: "\u{1F1E7}\u{1F1F7} +55 (BR)" },
+    { value: "+61", label: "\u{1F1E6}\u{1F1FA} +61 (AU)" },
+    { value: "+971", label: "\u{1F1E6}\u{1F1EA} +971 (AE)" },
+    { value: "+966", label: "\u{1F1F8}\u{1F1E6} +966 (SA)" },
+    { value: "+92", label: "\u{1F1F5}\u{1F1F0} +92 (PK)" },
+    { value: "+880", label: "\u{1F1E7}\u{1F1E9} +880 (BD)" },
+    { value: "+94", label: "\u{1F1F1}\u{1F1F0} +94 (LK)" },
+    { value: "+977", label: "\u{1F1F3}\u{1F1F5} +977 (NP)" },
+    { value: "+234", label: "\u{1F1F3}\u{1F1EC} +234 (NG)" },
+    { value: "+254", label: "\u{1F1F0}\u{1F1EA} +254 (KE)" },
+    { value: "+27", label: "\u{1F1FF}\u{1F1E6} +27 (ZA)" },
+  ],
+};
+
+// ─── Page Metadata ───────────────────────────────────────────────────────────
+export const pageMetadata = {
+  home: {
+    title: "Decode German - SPEAK, BELONG, THRIVE",
+    description:
+      "German language platform bridging the gap between fluency and identity. Transformation for the global citizens.",
+    ogTitle: "Decode German - SPEAK, BELONG, THRIVE",
+    ogDescription:
+      "German language platform bridging the gap between fluency and identity.",
+    ogImage: "/og-image.png",
+    ogImageAlt: "Decode German - SPEAK, BELONG, THRIVE",
+  },
+  about: {
+    title: "Our Story",
+    description:
+      "The story of Decode German - a boutique German language platform crafted for seekers, thinkers, and those brave enough to rebuild their lives in a new tongue.",
+    ogTitle: "Decode German - SPEAK, BELONG, THRIVE",
+    ogDescription:
+      "German language platform bridging the gap between fluency and identity.",
+    ogImage: "/og-image.png",
+    ogImageAlt: "Decode German - SPEAK, BELONG, THRIVE",
+  },
+  courses: {
+    title: "Courses",
+    description:
+      "A structured journey through the German language. Every course is online, intensive, and taught in small batches. Whether you're starting from zero or preparing for an exam - we have a structured path for you.",
+    ogTitle: "Decode German - SPEAK, BELONG, THRIVE",
+    ogDescription:
+      "German language platform bridging the gap between fluency and identity.",
+    ogImage: "/og-image.png",
+    ogImageAlt: "Decode German - SPEAK, BELONG, THRIVE",
+  },
+  courseDetail: {
+    ogTitle: "Decode German - SPEAK, BELONG, THRIVE",
+    ogDescription:
+      "German language platform bridging the gap between fluency and identity.",
+    ogImage: "/og-image.png",
+    ogImageAlt: "Decode German - SPEAK, BELONG, THRIVE",
+  },
+};

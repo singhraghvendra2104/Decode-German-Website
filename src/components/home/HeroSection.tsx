@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { heroSlides, heroCta } from "@/lib/constants";
+import { heroSlides, heroCta, heroSectionContent } from "@/lib/constants";
 
 export default function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -73,7 +73,7 @@ export default function HeroSection() {
       {/* Scroll Hint */}
       <div className="absolute bottom-10 right-10 z-20 hidden lg:flex items-center gap-4 text-ivory/60">
         <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
-          Scroll for the Journey
+          {heroSectionContent.scrollHint}
         </span>
         <div className="w-12 h-[1px] bg-ivory/30" />
       </div>

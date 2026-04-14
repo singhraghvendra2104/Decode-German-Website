@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { courseComponentStrings } from "@/lib/constants";
 
 interface CourseBeforeAfterProps {
   beforeText: string;
@@ -16,7 +17,7 @@ export default function CourseBeforeAfter({
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-stone-gray/20">
         <div className="md:w-1/2 p-6 sm:p-8 lg:p-20 space-y-6 sm:space-y-8">
           <h3 className="font-[var(--font-serif)] text-2xl sm:text-3xl md:text-4xl italic">
-            Before You Join
+            {courseComponentStrings.beforeAfter.beforeHeading}
           </h3>
           <p className="text-stone-gray leading-relaxed text-sm sm:text-base md:text-lg">
             {beforeText}
@@ -24,7 +25,7 @@ export default function CourseBeforeAfter({
         </div>
         <div className="md:w-1/2 p-6 sm:p-8 lg:p-20 space-y-6 sm:space-y-8">
           <h3 className="font-[var(--font-serif)] text-2xl sm:text-3xl md:text-4xl italic">
-            After This Course
+            {courseComponentStrings.beforeAfter.afterHeading}
           </h3>
           <p className="text-stone-gray leading-relaxed text-sm sm:text-base md:text-lg mb-8 sm:mb-10">
             {afterText}
@@ -34,7 +35,7 @@ export default function CourseBeforeAfter({
               href={`/courses/${nextLevel.id}`}
               className="group inline-flex items-center gap-4 uppercase text-sm sm:text-base md:text-lg tracking-[0.2em] text-primary font-bold transition-all"
             >
-              Explore {nextLevel.level} Course
+              {courseComponentStrings.beforeAfter.exploreCoursePrefix} {nextLevel.level} {courseComponentStrings.beforeAfter.exploreCourseSuffix}
               <span className="group-hover:translate-x-2 transition-transform">
                 &rarr;
               </span>

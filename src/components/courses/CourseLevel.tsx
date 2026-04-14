@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { courseComponentStrings } from "@/lib/constants";
 
 interface CourseDetail {
   label: string;
@@ -85,7 +86,7 @@ export default function CourseLevel({
       {resources && resources.length > 0 && (
         <div className="space-y-4">
           <p className="uppercase text-[10px] font-bold tracking-[0.2em] text-stone-gray">
-            Learning Resources
+            {courseComponentStrings.level.resourcesLabel}
           </p>
           <div className="flex flex-wrap gap-2">
             {resources.map((resource, index) => (

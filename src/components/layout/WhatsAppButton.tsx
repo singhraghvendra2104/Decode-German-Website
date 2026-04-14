@@ -1,6 +1,6 @@
 "use client";
 
-import { siteConfig } from "@/lib/constants";
+import { siteConfig, whatsappButton } from "@/lib/constants";
 
 function WhatsAppIcon() {
   return (
@@ -22,14 +22,14 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-[60] flex items-center gap-4 group">
       <div className="bg-white px-6 py-3 rounded-full shadow-2xl border border-primary/20 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 pointer-events-none hidden md:block">
         <p className="text-xs font-bold tracking-widest uppercase">
-          Chat on WhatsApp
+          {whatsappButton.tooltip}
         </p>
       </div>
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contact us on WhatsApp"
+        aria-label={whatsappButton.ariaLabel}
         className="size-12 md:size-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center relative hover:scale-110 active:scale-95 transition-all"
       >
         <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20" />

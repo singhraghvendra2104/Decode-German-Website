@@ -9,17 +9,16 @@ import CourseCTA from "@/components/courses/CourseCTA";
 import CourseTimeline from "@/components/courses/CourseTimeline";
 import SpecializedCourses from "@/components/courses/SpecializedCourses";
 import CourseFeatures from "@/components/courses/CourseFeatures";
-import { courseLevels } from "@/lib/constants";
+import { courseLevels, pageMetadata } from "@/lib/constants";
 
+const meta = pageMetadata.courses;
 export const metadata: Metadata = {
-  title: "Courses",
-  description:
-    "A structured journey through the German language. Every course is online, intensive, and taught in small batches. Whether you're starting from zero or preparing for an exam - we have a structured path for you.",
+  title: meta.title,
+  description: meta.description,
   openGraph: {
-    title: "Decode German - SPEAK, BELONG, THRIVE",
-    description:
-      "German language platform bridging the gap between fluency and identity.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Decode German - SPEAK, BELONG, THRIVE" }],
+    title: meta.ogTitle,
+    description: meta.ogDescription,
+    images: [{ url: meta.ogImage, width: 1200, height: 630, alt: meta.ogImageAlt }],
   },
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { siteConfig } from "@/lib/constants";
+import { siteConfig, courseComponentStrings } from "@/lib/constants";
 import { useDisclosure } from "@mantine/hooks";
 import ContactFormModal from "@/components/layout/ContactFormModal";
 
@@ -25,12 +25,12 @@ export default function CourseDetailCTA({
   return (
     <section id="enroll" className="py-12 sm:py-20 md:py-32 lg:py-48 px-4 sm:px-6 text-center max-w-5xl mx-auto relative">
       <p className="font-handwriting text-3xl sm:text-4xl md:text-5xl text-primary mb-6 sm:mb-8">
-        Bis bald!
+        {courseComponentStrings.detailCTA.handwriting}
       </p>
       <h2 className="font-[var(--font-serif)] text-3xl sm:text-5xl md:text-7xl lg:text-9xl leading-tight mb-8 md:mb-12 lg:mb-16">
-        Ready to start your <br />
+        {courseComponentStrings.detailCTA.headingPrefix} <br />
         <span className="italic font-normal">
-          {level} journey?
+          {level} {courseComponentStrings.detailCTA.headingSuffix}
         </span>
       </h2>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8">
@@ -38,7 +38,7 @@ export default function CourseDetailCTA({
           onClick={openModal}
           className="bg-charcoal text-ivory px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] font-bold hover:bg-primary transition-all shadow-xl w-full sm:w-auto text-center cursor-pointer"
         >
-          Get in Touch
+          {courseComponentStrings.detailCTA.primaryButton}
         </button>
         <a
           href={whatsappUrl}
@@ -46,7 +46,7 @@ export default function CourseDetailCTA({
           rel="noopener noreferrer"
           className="border border-charcoal/20 bg-white px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-7 uppercase text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] font-bold flex items-center justify-center gap-4 hover:bg-charcoal hover:text-ivory transition-all w-full sm:w-auto"
         >
-          WhatsApp Us
+          {courseComponentStrings.detailCTA.whatsappButton}
         </a>
       </div>
       {closingQuote && (

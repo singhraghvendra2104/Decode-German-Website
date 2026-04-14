@@ -1,3 +1,5 @@
+import { courseComponentStrings } from "@/lib/constants";
+
 interface MethodStep {
   number: string;
   title: string;
@@ -17,14 +19,14 @@ export default function CourseMethod({ steps, benefits = [] }: CourseMethodProps
         <div className="md:w-1/3">
           <div className="md:sticky md:top-32">
             <h2 className="font-[var(--font-serif)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 sm:mb-12 leading-[0.9]">
-              The <br />
-              <span className="italic text-primary">Blended</span> <br />
-              Method
+              {courseComponentStrings.method.headingLine1} <br />
+              <span className="italic text-primary">{courseComponentStrings.method.headingLine2}</span> <br />
+              {courseComponentStrings.method.headingLine3}
             </h2>
             {benefits.length > 0 && (
               <div className="space-y-4 sm:space-y-6">
                 <p className="uppercase text-[10px] tracking-[0.3em] font-bold text-charcoal/60">
-                  Key Benefits
+                  {courseComponentStrings.method.benefitsLabel}
                 </p>
                 <ul className="space-y-3 sm:space-y-4 text-sm">
                   {benefits.map((benefit, index) => (

@@ -1,3 +1,5 @@
+import { courseComponentStrings } from "@/lib/constants";
+
 interface JourneyBlock {
   number: string;
   weeks: string;
@@ -22,7 +24,7 @@ export default function CourseJourney({ level, blocks }: CourseJourneyProps) {
             The <span className="not-italic">{level} Journey</span>
           </h2>
           <p className="text-sm sm:text-base text-stone-gray max-w-md mx-auto px-4">
-            A curated path through the fundamentals of German life and language.
+            {courseComponentStrings.journey.description}
           </p>
         </div>
 

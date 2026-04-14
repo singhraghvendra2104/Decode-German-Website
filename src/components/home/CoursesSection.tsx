@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { courses, coursesHeading } from "@/lib/constants";
+import { courses, coursesHeading, coursesSectionContent } from "@/lib/constants";
 
 export default function CoursesSection() {
   return (
@@ -25,7 +25,7 @@ export default function CoursesSection() {
             >
               {/* Level Label */}
               <div className="text-[11px] uppercase tracking-[0.2em] text-on-surface/60 font-bold mb-4">
-                Level
+                {coursesSectionContent.levelLabel}
               </div>
 
               {/* Large Level */}
@@ -73,11 +73,11 @@ export default function CoursesSection() {
         {/* CTA Button */}
         <div className="flex justify-center">
           <Link
-            href="/courses"
+            href={coursesSectionContent.ctaHref}
             className="relative group inline-block"
           >
             <button className="bg-primary hover:bg-primary/90 text-white font-[var(--font-serif)] font-bold py-4 px-10 sm:py-5 sm:px-16 md:py-6 md:px-24 text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase tracking-wider">
-              Explore All Courses
+              {coursesSectionContent.ctaButton}
             </button>
           </Link>
         </div>

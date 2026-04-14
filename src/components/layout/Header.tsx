@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Drawer, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { navLinks, ctaButton, siteConfig } from "@/lib/constants";
+import { navLinks, ctaButton, siteConfig, headerContent } from "@/lib/constants";
 import ContactFormModal from "./ContactFormModal";
 
 export default function Header() {
@@ -67,7 +67,7 @@ export default function Header() {
             opened={drawerOpened}
             onClick={toggleDrawer}
             className="md:hidden"
-            aria-label="Toggle navigation menu"
+            aria-label={headerContent.mobileMenuAriaLabel}
             color="#e2725b"
           />
         </div>

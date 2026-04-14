@@ -1,4 +1,4 @@
-import { courseFeatures } from "@/lib/constants";
+import { courseFeatures, courseComponentStrings } from "@/lib/constants";
 
 export default function CourseFeatures() {
   return (
@@ -6,7 +6,7 @@ export default function CourseFeatures() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] font-bold text-center mb-10 md:mb-16 lg:mb-20 text-charcoal">
-          What Every Course Includes
+          {courseComponentStrings.features.heading}
         </h2>
 
         {/* Features Grid */}

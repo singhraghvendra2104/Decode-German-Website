@@ -1,12 +1,16 @@
+import { howStudentsJoinContent } from "@/lib/constants";
+
 export default function HowStudentsJoin() {
+  const { beginners, higherLevels } = howStudentsJoinContent;
+
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 lg:py-32 border-t border-black/5">
       <div className="space-y-8 md:space-y-12 lg:space-y-16">
         <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">How You Begin</h2>
+          <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">{howStudentsJoinContent.heading}</h2>
           <p className="text-base md:text-lg text-gray-500 max-w-xl">
-            Where you start matters it shapes everything ahead.<br />
-            <strong className="text-charcoal">When the foundation is strong, learning becomes smoother, faster, and stable.</strong>
+            {howStudentsJoinContent.description}<br />
+            <strong className="text-charcoal">{howStudentsJoinContent.descriptionBold}</strong>
           </p>
         </div>
 
@@ -15,17 +19,15 @@ export default function HowStudentsJoin() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h4 className="text-2xl font-[var(--font-serif)] text-primary">
-                A1: Beginners
+                {beginners.title}
               </h4>
               <ol className="space-y-4 text-charcoal/80">
-                <li className="flex gap-4 items-start">
-                  <span className="font-bold text-primary text-lg">1</span>
-                  <span>Contact us to join</span>
-                </li>
-                <li className="flex gap-4 items-start">
-                  <span className="font-bold text-primary text-lg">2</span>
-                  <span>We confirm your enrollment and you begin your journey</span>
-                </li>
+                {beginners.steps.map((step, i) => (
+                  <li key={i} className="flex gap-4 items-start">
+                    <span className="font-bold text-primary text-lg">{i + 1}</span>
+                    <span>{step}</span>
+                  </li>
+                ))}
               </ol>
             </div>
           </div>
@@ -33,29 +35,23 @@ export default function HowStudentsJoin() {
           {/* A2, B1, B2 - Higher Levels */}
           <div className="space-y-6">
             <h4 className="text-2xl font-[var(--font-serif)] text-primary">
-              A2, B1, B2: Higher Levels
+              {higherLevels.title}
             </h4>
             <ol className="space-y-4 text-charcoal/80">
-              <li className="flex gap-4 items-start">
-                <span className="font-bold text-primary text-lg">1</span>
-                <span>Contact us for your target level</span>
-              </li>
-              <li className="flex gap-4 items-start">
-                <span className="font-bold text-primary text-lg">2</span>
-                <span>Take the entrance test (short assessment)</span>
-              </li>
-              <li className="flex gap-4 items-start">
-                <span className="font-bold text-primary text-lg">3</span>
-                <span>Pass → Enrolled</span>
-              </li>
+              {higherLevels.steps.map((step, i) => (
+                <li key={i} className="flex gap-4 items-start">
+                  <span className="font-bold text-primary text-lg">{i + 1}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
             </ol>
             <div className="bg-accent p-6 border-l-2 border-primary mt-4">
               <p className="text-sm font-bold text-primary mb-2">
-                Else prepare first →
+                {higherLevels.callout.title}
               </p>
               <p className="text-sm leading-relaxed text-charcoal/70">
-                Crash course: fast-paced, individual sessions with flexible scheduling. Keep studying until you pass.{" "}
-                <strong>When you&apos;re ready, you get enrolled.</strong>
+                {higherLevels.callout.body}{" "}
+                <strong>{higherLevels.callout.bodyBold}</strong>
               </p>
             </div>
           </div>
@@ -63,7 +59,7 @@ export default function HowStudentsJoin() {
 
         <div className="pt-8 md:pt-12 border-t border-primary/20">
           <blockquote className="font-handwriting text-2xl md:text-3xl text-primary leading-relaxed italic text-center max-w-4xl mx-auto">
-            &ldquo;Every batch has students who earned their place. No one is holding the class back. No one is lost.&rdquo;
+            &ldquo;{howStudentsJoinContent.blockquote}&rdquo;
           </blockquote>
         </div>
       </div>
