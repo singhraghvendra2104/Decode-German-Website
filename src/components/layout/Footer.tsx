@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
-import { siteConfig, footerLinks, footerDescription, socialLinks } from "@/lib/constants";
+import { siteConfig, footerLinks, footerDescription, socialLinks, footerContent } from "@/lib/constants";
 
 export default function Footer() {
   const socialIcons: Record<string, React.ReactNode> = {
@@ -48,7 +48,7 @@ export default function Footer() {
         {/* Explorer Links */}
         <div>
           <h4 className="text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
-            Explorer
+            {footerContent.sections.explorer}
           </h4>
           <ul className="space-y-3 md:space-y-4 text-sm font-medium">
             {footerLinks.explorer.map((link) => (
@@ -67,12 +67,12 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h4 className="text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
-            Contact
+            {footerContent.sections.contact}
           </h4>
           <address className="text-sm text-gray-500 leading-relaxed not-italic space-y-4">
             <div>
               <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
-                Email
+                {footerContent.contact.emailLabel}
               </p>
               <a
                 href={`mailto:${siteConfig.email}`}
@@ -83,26 +83,26 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
-                Phone / WhatsApp
+                {footerContent.contact.phoneLabel}
               </p>
               <a
                 href={`tel:${siteConfig.whatsappNumber}`}
                 className="hover:text-primary transition-colors block"
               >
-                +49 15900 4836675
+                {footerContent.contact.phoneGermanyDisplay}
               </a>
               <a
                 href={`tel:${siteConfig.phoneIndia}`}
                 className="hover:text-primary transition-colors block mt-1"
               >
-                +91 98712 05947
+                {footerContent.contact.phoneIndiaDisplay}
               </a>
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest font-semibold text-charcoal mb-1">
-                Address
+                {footerContent.contact.addressLabel}
               </p>
-              <p>Village Tharet, Madhya Pradesh, India, 475673</p>
+              <p>{footerContent.contact.displayAddress}</p>
             </div>
           </address>
         </div>

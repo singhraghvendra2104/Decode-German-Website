@@ -10,23 +10,16 @@ import CoreBeliefs from "@/components/home/CoreBeliefs";
 import WallOfAchievement from "@/components/home/WallOfAchievement";
 import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
+import { pageMetadata } from "@/lib/constants";
 
+const meta = pageMetadata.home;
 export const metadata: Metadata = {
-  title: "Decode German - SPEAK, BELONG, THRIVE",
-  description:
-    "German language platform bridging the gap between fluency and identity. Transformation for the global citizens.",
+  title: meta.title,
+  description: meta.description,
   openGraph: {
-    title: "Decode German - SPEAK, BELONG, THRIVE",
-    description:
-      "German language platform bridging the gap between fluency and identity.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Decode German - SPEAK, BELONG, THRIVE",
-      },
-    ],
+    title: meta.ogTitle,
+    description: meta.ogDescription,
+    images: [{ url: meta.ogImage, width: 1200, height: 630, alt: meta.ogImageAlt }],
   },
 };
 

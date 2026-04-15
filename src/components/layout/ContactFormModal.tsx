@@ -2,60 +2,14 @@
 
 import { useState } from "react";
 import { Modal } from "@mantine/core";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+import { contactFormContent } from "@/lib/constants";
 
 interface ContactFormModalProps {
   opened: boolean;
   onClose: () => void;
 }
-
-const germanLevels = [
-  "Complete Beginner",
-  "A1",
-  "A2",
-  "B1",
-  "B2",
-  "Not sure",
-];
-
-const interests = [
-  "A1 Course",
-  "A2 Course",
-  "B1 Course",
-  "B2 Course",
-  "Exam Preparation",
-  "Revision Course",
-  "Crash Course",
-  "Just exploring",
-];
-
-const countryCodes = [
-  { value: "+49", label: "\u{1F1E9}\u{1F1EA} +49 (DE)" },
-  { value: "+91", label: "\u{1F1EE}\u{1F1F3} +91 (IN)" },
-  { value: "+1", label: "\u{1F1FA}\u{1F1F8} +1 (US)" },
-  { value: "+44", label: "\u{1F1EC}\u{1F1E7} +44 (GB)" },
-  { value: "+43", label: "\u{1F1E6}\u{1F1F9} +43 (AT)" },
-  { value: "+41", label: "\u{1F1E8}\u{1F1ED} +41 (CH)" },
-  { value: "+33", label: "\u{1F1EB}\u{1F1F7} +33 (FR)" },
-  { value: "+31", label: "\u{1F1F3}\u{1F1F1} +31 (NL)" },
-  { value: "+39", label: "\u{1F1EE}\u{1F1F9} +39 (IT)" },
-  { value: "+34", label: "\u{1F1EA}\u{1F1F8} +34 (ES)" },
-  { value: "+48", label: "\u{1F1F5}\u{1F1F1} +48 (PL)" },
-  { value: "+90", label: "\u{1F1F9}\u{1F1F7} +90 (TR)" },
-  { value: "+86", label: "\u{1F1E8}\u{1F1F3} +86 (CN)" },
-  { value: "+81", label: "\u{1F1EF}\u{1F1F5} +81 (JP)" },
-  { value: "+82", label: "\u{1F1F0}\u{1F1F7} +82 (KR)" },
-  { value: "+55", label: "\u{1F1E7}\u{1F1F7} +55 (BR)" },
-  { value: "+61", label: "\u{1F1E6}\u{1F1FA} +61 (AU)" },
-  { value: "+971", label: "\u{1F1E6}\u{1F1EA} +971 (AE)" },
-  { value: "+966", label: "\u{1F1F8}\u{1F1E6} +966 (SA)" },
-  { value: "+92", label: "\u{1F1F5}\u{1F1F0} +92 (PK)" },
-  { value: "+880", label: "\u{1F1E7}\u{1F1E9} +880 (BD)" },
-  { value: "+94", label: "\u{1F1F1}\u{1F1F0} +94 (LK)" },
-  { value: "+977", label: "\u{1F1F3}\u{1F1F5} +977 (NP)" },
-  { value: "+234", label: "\u{1F1F3}\u{1F1EC} +234 (NG)" },
-  { value: "+254", label: "\u{1F1F0}\u{1F1EA} +254 (KE)" },
-  { value: "+27", label: "\u{1F1FF}\u{1F1E6} +27 (ZA)" },
-];
 
 const inputClass =
   "w-full bg-transparent border-0 border-b border-charcoal/15 focus:border-primary focus:ring-0 font-[var(--font-serif)] text-base md:text-lg italic py-2 px-0 placeholder:text-charcoal/20 text-charcoal outline-none transition-colors";
@@ -80,7 +34,6 @@ export default function ContactFormModal({
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [countryCode, setCountryCode] = useState("+49");
   const [phone, setPhone] = useState("");
   const [level, setLevel] = useState("");
   const [interest, setInterest] = useState("");
@@ -90,11 +43,12 @@ export default function ContactFormModal({
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
+  const { fields, header } = contactFormContent;
+
   function resetForm() {
     setFirstName("");
     setLastName("");
     setEmail("");
-    setCountryCode("+49");
     setPhone("");
     setLevel("");
     setInterest("");
@@ -113,9 +67,7 @@ export default function ContactFormModal({
     setSubmitError(null);
     setSubmitting(true);
 
-    const fullPhone = phone.trim()
-      ? `${countryCode} ${phone.trim()}`
-      : "";
+    const fullPhone = phone.trim() || "";
 
     try {
       const res = await fetch("/api/contact", {
@@ -135,7 +87,7 @@ export default function ContactFormModal({
       const json = await res.json();
 
       if (!res.ok) {
-        setSubmitError(json.error || "Something went wrong");
+        setSubmitError(json.error || contactFormContent.genericError);
       } else {
         setSubmitSuccess(true);
         setTimeout(() => {
@@ -143,7 +95,7 @@ export default function ContactFormModal({
         }, 2500);
       }
     } catch {
-      setSubmitError("Network error. Please try again.");
+      setSubmitError(contactFormContent.networkError);
     } finally {
       setSubmitting(false);
     }
@@ -175,14 +127,14 @@ export default function ContactFormModal({
         <div className="bg-white shadow-2xl relative max-h-[90vh] overflow-y-auto sm:max-h-none sm:overflow-visible" style={{ scrollbarWidth: "thin", scrollbarColor: "#e2725b transparent" }}>
           {/* Handwriting accent */}
           <div className="absolute -top-5 -left-3 md:-left-5 font-handwriting text-primary text-xl md:text-2xl bg-warm-sand px-4 py-2 rotate-[-4deg] shadow-sm z-20">
-            Get in Touch...
+            {contactFormContent.handwritingAccent}
           </div>
 
           {/* Close button */}
           <button
             onClick={handleClose}
             className="absolute top-4 right-4 z-20 text-charcoal/30 hover:text-charcoal transition-colors cursor-pointer"
-            aria-label="Close"
+            aria-label={contactFormContent.closeAriaLabel}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -193,13 +145,13 @@ export default function ContactFormModal({
           {/* Header */}
           <div className="px-5 pt-12 pb-5 sm:px-8 sm:pt-14 sm:pb-6 md:px-12 md:pt-16 md:pb-8 border-b border-charcoal/5">
             <p className="text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
-              Start Your Journey
+              {header.tag}
             </p>
             <h2 className="font-[var(--font-serif)] text-2xl sm:text-3xl md:text-4xl italic font-bold text-charcoal leading-tight">
-              Start Your <br className="hidden sm:block" /> Journey
+              {header.heading.split(" ").slice(0, 2).join(" ")} <br className="hidden sm:block" /> {header.heading.split(" ").slice(2).join(" ")}
             </h2>
             <p className="font-[var(--font-serif)] text-base text-charcoal/50 italic mt-3 max-w-md">
-              Fill in the form below and we&apos;ll get back to you personally. No automated replies.
+              {header.description}
             </p>
           </div>
 
@@ -218,10 +170,10 @@ export default function ContactFormModal({
                   </svg>
                 </div>
                 <h3 className="font-[var(--font-serif)] text-2xl italic font-bold text-charcoal mb-3">
-                  Message sent.
+                  {contactFormContent.success.heading}
                 </h3>
                 <p className="text-charcoal/50 text-sm max-w-xs mx-auto">
-                  We&apos;ve received your message and will get back to you personally within a few hours.
+                  {contactFormContent.success.body}
                 </p>
               </div>
             ) : (
@@ -230,12 +182,12 @@ export default function ContactFormModal({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                   <div>
                     <label className={labelClass}>
-                      First Name (required)
+                      {fields.firstName.label}
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Johannes"
+                      placeholder={fields.firstName.placeholder}
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       maxLength={120}
@@ -243,10 +195,10 @@ export default function ContactFormModal({
                     />
                   </div>
                   <div>
-                    <label className={labelClass}>Last Name</label>
+                    <label className={labelClass}>{fields.lastName.label}</label>
                     <input
                       type="text"
-                      placeholder="e.g. M\u00FCller"
+                      placeholder={fields.lastName.placeholder}
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       maxLength={120}
@@ -258,12 +210,12 @@ export default function ContactFormModal({
                 {/* Email */}
                 <div>
                   <label className={labelClass}>
-                    Email Address (required)
+                    {fields.email.label}
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="hello@example.de"
+                    placeholder={fields.email.placeholder}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     maxLength={200}
@@ -272,40 +224,25 @@ export default function ContactFormModal({
                 </div>
 
                 {/* Phone */}
-                <div className="grid grid-cols-3 gap-4 sm:gap-8">
-                  <div className="col-span-1">
-                    <label className={labelClass}>Country Code</label>
-                    <select
-                      value={countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
-                      className={selectClass}
-                      style={chevronStyle}
-                    >
-                      {countryCodes.map((c) => (
-                        <option key={c.value} value={c.value}>
-                          {c.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="col-span-2">
-                    <label className={labelClass}>Phone / WhatsApp</label>
-                    <input
-                      type="tel"
-                      placeholder="171 1234567"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      maxLength={20}
-                      className={inputClass}
-                    />
-                  </div>
+                <div>
+                  <label className={labelClass}>{fields.phone.label}</label>
+                  <PhoneInput
+                    defaultCountry="de"
+                    value={phone}
+                    onChange={setPhone}
+                    inputClassName="phone-input-field"
+                    countrySelectorStyleProps={{
+                      buttonClassName: "phone-country-btn",
+                    }}
+                    className="phone-input-wrapper"
+                  />
                 </div>
 
                 {/* Level & Interest */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                   <div>
                     <label className={labelClass}>
-                      Current German Level
+                      {fields.level.label}
                     </label>
                     <select
                       value={level}
@@ -317,9 +254,9 @@ export default function ContactFormModal({
                       }}
                     >
                       <option value="" disabled>
-                        Select level
+                        {fields.level.placeholder}
                       </option>
-                      {germanLevels.map((l) => (
+                      {contactFormContent.germanLevels.map((l) => (
                         <option key={l} value={l} style={{ color: "#2d2d2d" }}>
                           {l}
                         </option>
@@ -328,7 +265,7 @@ export default function ContactFormModal({
                   </div>
                   <div>
                     <label className={labelClass}>
-                      I&apos;m interested in
+                      {fields.interest.label}
                     </label>
                     <select
                       value={interest}
@@ -340,9 +277,9 @@ export default function ContactFormModal({
                       }}
                     >
                       <option value="" disabled>
-                        Select course
+                        {fields.interest.placeholder}
                       </option>
-                      {interests.map((i) => (
+                      {contactFormContent.interests.map((i) => (
                         <option key={i} value={i} style={{ color: "#2d2d2d" }}>
                           {i}
                         </option>
@@ -353,9 +290,9 @@ export default function ContactFormModal({
 
                 {/* Message */}
                 <div>
-                  <label className={labelClass}>Your Message</label>
+                  <label className={labelClass}>{fields.message.label}</label>
                   <textarea
-                    placeholder="Tell us about your goals..."
+                    placeholder={fields.message.placeholder}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     maxLength={2000}
@@ -375,7 +312,7 @@ export default function ContactFormModal({
                     disabled={submitting}
                     className="bg-primary text-white w-full sm:w-auto px-8 sm:px-10 md:px-12 py-4 md:py-5 text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold hover:bg-charcoal transition-all duration-500 flex items-center justify-center sm:justify-start gap-4 group cursor-pointer disabled:opacity-60"
                   >
-                    {submitting ? "Sending..." : "Send Message"}
+                    {submitting ? contactFormContent.submit.sending : contactFormContent.submit.default}
                     {!submitting && (
                       <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -396,18 +333,18 @@ export default function ContactFormModal({
               </svg>
               <div>
                 <h3 className="font-[var(--font-serif)] text-base sm:text-lg md:text-xl font-bold italic text-charcoal">
-                  Want a faster reply?
+                  {contactFormContent.whatsapp.heading}
                 </h3>
                 <p className="text-charcoal/50 text-sm mt-1 leading-relaxed">
-                  Message us on WhatsApp. We typically respond within minutes.
+                  {contactFormContent.whatsapp.body}
                 </p>
                 <a
-                  href="https://wa.me/4915904836675"
+                  href={contactFormContent.whatsapp.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-primary border-b border-primary/20 pb-1 hover:border-primary transition-all mt-3"
                 >
-                  Open WhatsApp
+                  {contactFormContent.whatsapp.linkLabel}
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M7 17L17 7" />
                     <path d="M7 7h10v10" />
@@ -424,11 +361,11 @@ export default function ContactFormModal({
                 <rect width="20" height="16" x="2" y="4" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              <span className="font-[var(--font-serif)] italic text-sm">decodegerman@gmail.com</span>
+              <span className="font-[var(--font-serif)] italic text-sm">{contactFormContent.bottomContact.email}</span>
             </div>
             <div className="hidden sm:block text-charcoal/15">|</div>
             <div className="flex items-center gap-2">
-              <span className="font-[var(--font-serif)] italic text-sm">We speak: Deutsch, English, Hindi</span>
+              <span className="font-[var(--font-serif)] italic text-sm">{contactFormContent.bottomContact.languages}</span>
             </div>
           </div>
         </div>

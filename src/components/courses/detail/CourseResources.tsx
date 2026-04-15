@@ -1,3 +1,5 @@
+import { courseComponentStrings } from "@/lib/constants";
+
 interface Resource {
   title: string;
   description: string;
@@ -12,9 +14,9 @@ interface CourseResourcesProps {
 
 export default function CourseResources({ resources }: CourseResourcesProps) {
   return (
-    <section className="py-10 sm:py-14 md:py-24 lg:py-40 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
+    <section className="py-8 sm:py-10 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
       <h2 className="font-[var(--font-serif)] text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-8 md:mb-14 lg:mb-20 italic">
-        Curated <span className="not-italic">Resources</span>
+        {courseComponentStrings.resources.headingItalic} <span className="not-italic">{courseComponentStrings.resources.headingNormal}</span>
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
@@ -35,7 +37,7 @@ export default function CourseResources({ resources }: CourseResourcesProps) {
                       href={resource.link}
                       className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-primary border-b border-primary/20 pb-0.5 mt-4"
                     >
-                      {resource.linkLabel || "Learn More"}
+                      {resource.linkLabel || courseComponentStrings.resources.learnMore}
                     </a>
                   )}
                 </div>
@@ -56,11 +58,7 @@ export default function CourseResources({ resources }: CourseResourcesProps) {
               className={`${bgClass} p-6 sm:p-8 md:p-10 flex flex-col justify-between aspect-square group hover:shadow-xl transition-all duration-500 border border-stone-gray/10`}
             >
               <p className="uppercase text-[9px] tracking-[0.3em] font-bold text-charcoal/50">
-                {resource.type === "watch"
-                  ? "Watch"
-                  : resource.type === "listen"
-                  ? "Listen"
-                  : "Read"}
+                {courseComponentStrings.resources.typeLabels[resource.type] ?? resource.type}
               </p>
               <div>
                 <p className="font-[var(--font-serif)] text-xl sm:text-2xl md:text-3xl">

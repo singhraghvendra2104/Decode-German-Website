@@ -11,7 +11,7 @@ interface CourseModulesProps {
 
 export default function CourseModules({ modules, level }: CourseModulesProps) {
   return (
-    <section id="modules" className="py-12 md:py-20 lg:py-32 px-4 md:px-8">
+    <section id="modules" className="py-10 md:py-14 lg:py-20 px-4 md:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="max-w-2xl mb-8 md:mb-12 lg:mb-20">
           <span className="inline-block text-primary-alt font-[var(--font-serif-alt)] italic text-base md:text-xl mb-3 md:mb-4">

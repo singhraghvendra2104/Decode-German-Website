@@ -9,16 +9,16 @@ import HowStudentsJoin from "@/components/about/HowStudentsJoin";
 import TheTeam from "@/components/about/TheTeam";
 import OurJourney from "@/components/about/OurJourney";
 import AboutCTA from "@/components/about/AboutCTA";
+import { pageMetadata } from "@/lib/constants";
 
+const meta = pageMetadata.about;
 export const metadata: Metadata = {
-  title: "Our Story",
-  description:
-    "The story of Decode German - a boutique German language platform crafted for seekers, thinkers, and those brave enough to rebuild their lives in a new tongue.",
+  title: meta.title,
+  description: meta.description,
   openGraph: {
-    title: "Decode German - SPEAK, BELONG, THRIVE",
-    description:
-      "German language platform bridging the gap between fluency and identity.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Decode German - SPEAK, BELONG, THRIVE" }],
+    title: meta.ogTitle,
+    description: meta.ogDescription,
+    images: [{ url: meta.ogImage, width: 1200, height: 630, alt: meta.ogImageAlt }],
   },
 };
 

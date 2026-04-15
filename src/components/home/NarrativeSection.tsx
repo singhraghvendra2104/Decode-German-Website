@@ -1,36 +1,19 @@
+import { narrativeSectionContent } from "@/lib/constants";
+
 export default function NarrativeSection() {
-  const commitments = [
-    {
-      number: 1,
-      title: "You Are Not Just Another Student",
-      description:
-        "We take the time to know you, your goals, your pace, your challenges. This journey defines what comes next, and we stay fully focused on it.",
-    },
-    {
-      number: 2,
-      title: "Structured Follow-up",
-      description:
-        "Regular check-ins before class, after class, and between batches. If your pace changes, we respond immediately. If something needs attention, we step in right away.",
-    },
-    {
-      number: 3,
-      title: "We Target Exactly What You Need",
-      description:
-        "Working on a specific topic? You get a targeted micro-session. Only what you need, exactly where you need it. Real solutions, focused on your exact friction points.",
-    },
-  ];
+  const { handwriting, heading, headingAccent, commitments, closingQuote } = narrativeSectionContent;
 
   return (
-    <section className="py-14 md:py-24 lg:py-40 px-4 md:px-6 bg-white overflow-hidden">
+    <section className="py-10 md:py-16 lg:py-24 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16 lg:mb-24 relative">
           <div className="font-handwriting text-3xl text-primary mb-4">
-            Our Promise
+            {handwriting}
           </div>
           <h2 className="text-4xl md:text-6xl font-[var(--font-serif)] font-bold leading-tight">
-            The Decode{" "}
-            <span className="italic text-primary">Commitment</span>
+            {heading}{" "}
+            <span className="italic text-primary">{headingAccent}</span>
           </h2>
         </div>
 
@@ -78,7 +61,7 @@ export default function NarrativeSection() {
         {/* Handwriting line */}
         <div className="mt-10 md:mt-16 lg:mt-20 text-center">
           <p className="font-handwriting text-2xl md:text-4xl text-primary">
-            &ldquo;Your goals are our top priority.&rdquo;
+            &ldquo;{closingQuote}&rdquo;
           </p>
         </div>
       </div>

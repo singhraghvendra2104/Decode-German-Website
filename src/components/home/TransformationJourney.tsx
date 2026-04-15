@@ -10,7 +10,7 @@ export default function TransformationJourney() {
   ];
 
   return (
-    <section id="transformation" className="py-12 md:py-20 lg:py-32 px-4 md:px-6 bg-white overflow-hidden">
+    <section id="transformation" className="py-10 md:py-14 lg:py-20 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 lg:mb-24 gap-6 md:gap-8">

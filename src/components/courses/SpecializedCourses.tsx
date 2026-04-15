@@ -1,6 +1,6 @@
 "use client";
 
-import { specializedCourses } from "@/lib/constants";
+import { specializedCourses, courseComponentStrings } from "@/lib/constants";
 import { useDisclosure } from "@mantine/hooks";
 import ContactFormModal from "@/components/layout/ContactFormModal";
 
@@ -9,15 +9,15 @@ export default function SpecializedCourses() {
     useDisclosure(false);
 
   return (
-    <section className="py-14 md:py-20 lg:py-32 px-4 md:px-6 bg-white">
+    <section className="py-10 md:py-14 lg:py-20 px-4 md:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16 lg:mb-20">
           <span className="inline-block text-primary font-handwriting text-lg md:text-2xl mb-4">
-            Already Know Some German?
+            {courseComponentStrings.specialized.handwriting}
           </span>
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] font-bold">
-            Pick Up Where You Left Off
+            {courseComponentStrings.specialized.heading}
           </h2>
         </div>
 
@@ -57,7 +57,7 @@ export default function SpecializedCourses() {
                 onClick={openModal}
                 className="inline-flex items-center gap-2 mt-8 text-primary hover:text-primary/80 font-medium text-sm md:text-base transition-colors cursor-pointer"
               >
-                Enquire <span>→</span>
+                {courseComponentStrings.specialized.enquireButton} <span>→</span>
               </button>
             </div>
           ))}

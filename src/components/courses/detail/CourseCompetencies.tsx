@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { courseComponentStrings } from "@/lib/constants";
 
 interface Competency {
   title: string;
@@ -20,11 +21,11 @@ export default function CourseCompetencies({
   const c = competencies;
 
   return (
-    <section className="bg-warm-sand/30 py-10 sm:py-14 md:py-20 lg:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-warm-sand/30 py-8 sm:py-10 md:py-14 lg:py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto relative z-10">
         <h2 className="font-[var(--font-serif)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl mb-8 md:mb-14 lg:mb-24 text-center italic leading-tight">
-          What You&apos;ll Be{" "}
-          <span className="not-italic block md:inline">Able To Do</span>
+          {courseComponentStrings.competencies.headingStart}{" "}
+          <span className="not-italic block md:inline">{courseComponentStrings.competencies.headingEnd}</span>
         </h2>
 
         <div className="grid grid-cols-12 gap-y-10 sm:gap-y-14 md:gap-y-20 lg:gap-y-36">

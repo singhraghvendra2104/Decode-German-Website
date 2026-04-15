@@ -10,7 +10,7 @@ import CourseJourney from "@/components/courses/detail/CourseJourney";
 import CourseResources from "@/components/courses/detail/CourseResources";
 import CourseBeforeAfter from "@/components/courses/detail/CourseBeforeAfter";
 import CourseDetailCTA from "@/components/courses/detail/CourseDetailCTA";
-import { courseDetailPages } from "@/lib/constants";
+import { courseDetailPages, pageMetadata } from "@/lib/constants";
 
 type Params = Promise<{ id: string }>;
 
@@ -27,14 +27,14 @@ export async function generateMetadata({
   const course = courseDetailPages[id];
   if (!course) return {};
 
+  const og = pageMetadata.courseDetail;
   return {
     title: `${course.level}: ${course.title}`,
     description: course.heroDescription,
     openGraph: {
-      title: "Decode German - SPEAK, BELONG, THRIVE",
-      description:
-        "German language platform bridging the gap between fluency and identity.",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Decode German - SPEAK, BELONG, THRIVE" }],
+      title: og.ogTitle,
+      description: og.ogDescription,
+      images: [{ url: og.ogImage, width: 1200, height: 630, alt: og.ogImageAlt }],
     },
   };
 }

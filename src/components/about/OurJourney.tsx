@@ -1,59 +1,11 @@
+import { ourJourneyContent } from "@/lib/constants";
+
 export default function OurJourney() {
-  const timeline = [
-    {
-      year: "2020",
-      title: "The beginning",
-      description: "Decode German founded. First A1 batch starts online. One teacher, a small group of students, and a commitment to do things differently.",
-      isLeft: true,
-      isPrimary: true,
-    },
-    {
-      year: "2021",
-      title: "Expanding levels",
-      description: "A2 and B1 courses launched. First native German speakers join the teaching team.",
-      isLeft: false,
-      isPrimary: false,
-    },
-    {
-      year: "2022",
-      title: "100+ students milestone",
-      description: "Exam preparation courses launched - Goethe-Zertifikat, TestDaF, and TELC. Still growing entirely through student recommendations.",
-      isLeft: true,
-      isPrimary: true,
-    },
-    {
-      year: "2023",
-      title: "B2 level and revision courses",
-      description: "B2 added to complete the A1–B2 journey. Revision courses introduced. Team grows to 4.",
-      isLeft: false,
-      isPrimary: false,
-    },
-    {
-      year: "2024",
-      title: "400+ students - company registered",
-      description: "SKiD Decode Deutsch Language Institute Pvt Ltd formally registered. Entrance test system implemented for all levels above A1.",
-      isLeft: true,
-      isPrimary: true,
-    },
-    {
-      year: "2025",
-      title: "800+ students - Scaling excellence",
-      description: "Expanded team, advanced curriculum, and personalized learning technology. Commitment to maintaining quality while reaching more students.",
-      isLeft: false,
-      isPrimary: false,
-    },
-    {
-      year: "2026",
-      title: " Speaking courses launched",
-      description: "New tracking systems, same educational soul. Building the next generation of confident German speakers.",
-      isLeft: true,
-      isPrimary: true,
-    },
-  ];
+  const { heading, timeline } = ourJourneyContent;
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-20 lg:py-32">
-      <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-6 md:mb-8 text-center">Our Journey</h2>
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14 lg:py-20">
+      <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-6 md:mb-8 text-center">{heading}</h2>
 
       {/* Desktop Timeline */}
       <div className="hidden md:block relative space-y-12 before:content-[''] before:absolute before:left-1/2 before:top-0 before:bottom-0 before:w-px before:bg-on-surface/10 before:-translate-x-1/2">

@@ -11,6 +11,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { supabase, type Review } from "@/lib/supabase";
+import { testimonialsContent } from "@/lib/constants";
 
 function QuoteIcon({ className }: { className?: string }) {
   return (
@@ -128,7 +129,7 @@ function ReviewCard({
         </div>
         <div className="min-w-0">
           <h4 className={nameClass}>{review.name}</h4>
-          {review.verified && <p className={verifiedClass}>Verified Student</p>}
+          {review.verified && <p className={verifiedClass}>{testimonialsContent.verifiedLabel}</p>}
         </div>
       </div>
     </div>
@@ -223,7 +224,7 @@ export default function Testimonials() {
       });
       const json = await res.json();
       if (!res.ok) {
-        setSubmitError(json.error || "Something went wrong");
+        setSubmitError(json.error || testimonialsContent.modal.genericError);
       } else {
         setSubmitSuccess(true);
         setFormName("");
@@ -236,22 +237,22 @@ export default function Testimonials() {
         }, 1800);
       }
     } catch {
-      setSubmitError("Network error. Please try again.");
+      setSubmitError(testimonialsContent.modal.networkError);
     } finally {
       setSubmitting(false);
     }
   }
 
   return (
-    <section className="py-12 md:py-20 lg:py-32 bg-accent overflow-hidden">
+    <section className="py-10 md:py-14 lg:py-20 bg-accent overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16 lg:mb-20 relative px-4 md:px-6">
           <h2 className="text-5xl md:text-7xl font-[var(--font-serif)] font-bold opacity-10 absolute left-0 right-0 -translate-y-8 md:-translate-y-12 select-none pointer-events-none hidden md:block">
-            TESTIMONIALS
+            {testimonialsContent.backgroundHeading}
           </h2>
           <h2 className="text-3xl md:text-5xl font-[var(--font-serif)] font-bold relative z-10">
-            Voices of Transformation
+            {testimonialsContent.heading}
           </h2>
           <div className="mt-8 relative z-10">
             <Button
@@ -261,24 +262,24 @@ export default function Testimonials() {
               variant="filled"
               color="dark"
             >
-              + Add Your Review
+              {testimonialsContent.addReviewButton}
             </Button>
           </div>
         </div>
 
         {loading && (
-          <p className="text-center text-gray-500">Loading reviews…</p>
+          <p className="text-center text-gray-500">{testimonialsContent.loading}</p>
         )}
 
         {error && (
           <p className="text-center text-red-600 mb-8 px-4">
-            Failed to load reviews: {error}
+            {testimonialsContent.errorPrefix} {error}
           </p>
         )}
 
         {!loading && !error && reviews.length === 0 && (
           <p className="text-center text-gray-500">
-            No reviews yet. Be the first to share your story.
+            {testimonialsContent.empty}
           </p>
         )}
 
@@ -296,40 +297,40 @@ export default function Testimonials() {
       <Modal
         opened={modalOpened}
         onClose={closeModal}
-        title="Share your experience"
+        title={testimonialsContent.modal.title}
         centered
         size="md"
         radius="md"
       >
         {submitSuccess ? (
-          <Notification color="green" withCloseButton={false} title="Thank you!">
-            Your review has been submitted and will appear after approval.
+          <Notification color="green" withCloseButton={false} title={testimonialsContent.modal.successTitle}>
+            {testimonialsContent.modal.successBody}
           </Notification>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <TextInput
-              label="Your name"
-              placeholder="Jane Doe"
+              label={testimonialsContent.modal.nameLabel}
+              placeholder={testimonialsContent.modal.namePlaceholder}
               required
               value={formName}
               onChange={(e) => setFormName(e.currentTarget.value)}
               maxLength={120}
             />
             <TextInput
-              label="Email (optional)"
-              placeholder="jane@example.com"
+              label={testimonialsContent.modal.emailLabel}
+              placeholder={testimonialsContent.modal.emailPlaceholder}
               type="email"
               value={formEmail}
               onChange={(e) => setFormEmail(e.currentTarget.value)}
               maxLength={200}
             />
             <div>
-              <label className="block text-sm font-medium mb-1">Rating</label>
+              <label className="block text-sm font-medium mb-1">{testimonialsContent.modal.ratingLabel}</label>
               <Rating value={formRating} onChange={setFormRating} size="lg" />
             </div>
             <Textarea
-              label="Your review"
-              placeholder="Tell us about your experience with Decode German…"
+              label={testimonialsContent.modal.reviewLabel}
+              placeholder={testimonialsContent.modal.reviewPlaceholder}
               required
               minRows={4}
               autosize
@@ -342,10 +343,10 @@ export default function Testimonials() {
             )}
             <div className="flex justify-end gap-3 pt-2">
               <Button variant="subtle" color="gray" onClick={closeModal} type="button">
-                Cancel
+                {testimonialsContent.modal.cancelButton}
               </Button>
               <Button type="submit" loading={submitting} color="dark">
-                Submit Review
+                {testimonialsContent.modal.submitButton}
               </Button>
             </div>
           </form>

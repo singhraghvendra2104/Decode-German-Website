@@ -1,3 +1,5 @@
+import { courseComponentStrings } from "@/lib/constants";
+
 interface JourneyBlock {
   number: string;
   weeks: string;
@@ -14,7 +16,7 @@ interface CourseJourneyProps {
 
 export default function CourseJourney({ level, blocks }: CourseJourneyProps) {
   return (
-    <section id="journey" className="bg-ivory py-10 sm:py-14 md:py-24 lg:py-40 relative overflow-hidden">
+    <section id="journey" className="bg-ivory py-8 sm:py-10 md:py-16 lg:py-24 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-8 md:mb-14 lg:mb-24">
@@ -22,7 +24,7 @@ export default function CourseJourney({ level, blocks }: CourseJourneyProps) {
             The <span className="not-italic">{level} Journey</span>
           </h2>
           <p className="text-sm sm:text-base text-stone-gray max-w-md mx-auto px-4">
-            A curated path through the fundamentals of German life and language.
+            {courseComponentStrings.journey.description}
           </p>
         </div>
 
