@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/ImageWithSkeleton";
 import { useDisclosure } from "@mantine/hooks";
 import ContactFormModal from "@/components/layout/ContactFormModal";
 

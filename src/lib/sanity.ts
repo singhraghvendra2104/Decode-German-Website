@@ -33,7 +33,6 @@ export interface SanityImage {
 }
 
 // Matches the `post` document type in your Sanity Studio
-// with additional optional fields for the resources page
 export interface Post {
   _id: string;
   _type: "post";
@@ -41,8 +40,8 @@ export interface Post {
   slug: { current: string };
   publishedAt: string;
   image?: SanityImage;
-  body?: unknown[];
-  // Additional fields added to the post schema for the resources page
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  body?: any[];
   category?: "grammar" | "youtube" | "life-in-germany" | "community" | "resource";
   excerpt?: string;
   youtubeUrl?: string;
@@ -131,7 +130,8 @@ export const PINNED_POSTS_QUERY = `*[_type == "post" && isPinned == true] | orde
   youtubeUrl,
   publishedAt,
   isPinned,
-  pinnedLabel
+  pinnedLabel,
+  body
 }`;
 
 // Fetches all posts for the archive feed (pinned posts also appear here)
@@ -143,7 +143,8 @@ export const ALL_POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | or
   excerpt,
   image,
   youtubeUrl,
-  publishedAt
+  publishedAt,
+  body
 }`;
 
 // Fetches downloads

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/ImageWithSkeleton";
 import { weightOfSilence } from "@/lib/constants";
 
 export default function WeightOfSilence() {

@@ -12,6 +12,7 @@
     "@mantine/carousel": "^8.3.14",
     "@mantine/core": "^8.3.14",
     "@mantine/hooks": "^8.3.14",
+    "@portabletext/react": "^6.0.3",
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^5.20.0",
     "@supabase/supabase-js": "^2.103.0",
