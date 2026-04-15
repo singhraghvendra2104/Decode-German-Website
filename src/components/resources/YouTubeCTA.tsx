@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/ImageWithSkeleton";
 
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCrWQrQOWzRSt86XrS6C-D2Q";
 

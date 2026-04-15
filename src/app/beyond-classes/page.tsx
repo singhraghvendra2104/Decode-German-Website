@@ -17,11 +17,11 @@ import {
 import type { Post, Download } from "@/lib/sanity";
 
 export const metadata: Metadata = {
-  title: "Resources | Decode German",
+  title: "Beyond the Classes | Decode German",
   description:
     "Explore our curated library of tips, cultural guides, and deep-dive videos designed to take you from textbook German to real-world fluency.",
   openGraph: {
-    title: "Resources | Decode German",
+    title: "Beyond the Classes | Decode German",
     description:
       "Language is lived, not just learned. Tips, guides, and videos for real-world German fluency.",
   },

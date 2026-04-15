@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/ImageWithSkeleton";
 import { courseComponentStrings } from "@/lib/constants";
 
 interface Competency {

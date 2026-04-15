@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import Image from "@/components/ui/ImageWithSkeleton";
 import { heroSlides, heroCta, heroSectionContent } from "@/lib/constants";
 
 export default function HeroSection() {

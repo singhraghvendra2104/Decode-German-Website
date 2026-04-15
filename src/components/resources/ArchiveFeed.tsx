@@ -1,11 +1,19 @@
 "use client";
 
-import { useState, useRef } from "react";
-import Image from "next/image";
+import { useState, useRef, useCallback } from "react";
+import Image from "@/components/ui/ImageWithSkeleton";
 import { Carousel } from "@mantine/carousel";
 import type { EmblaCarouselType } from "embla-carousel";
 import { urlFor } from "@/lib/sanity";
 import type { Post } from "@/lib/sanity";
+import ArticleDrawer from "./ArticleDrawer";
+
+function extractYouTubeId(url: string): string | null {
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([^&?/]+)/
+  );
+  return match?.[1] ?? null;
+}
 
 interface Props {
   resources: Post[];
@@ -42,40 +50,138 @@ function ctaLabel(category: string) {
   return "Read Story";
 }
 
-function ArticleCard({ resource }: { resource: Post }) {
+function YouTubeCard({
+  resource,
+  onOpen,
+}: {
+  resource: Post;
+  onOpen: (post: Post) => void;
+}) {
+  const [playing, setPlaying] = useState(false);
+  const videoId = resource.youtubeUrl
+    ? extractYouTubeId(resource.youtubeUrl)
+    : null;
+
+  const handlePlay = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (videoId) setPlaying(true);
+    },
+    [videoId]
+  );
+
   return (
     <article className="group h-full">
+      <div className="bg-[#e8e3d9] p-2.5 md:p-3 mb-4 md:mb-6 transition-all duration-300 md:group-hover:-translate-y-2">
+        <div className="aspect-[3/2] relative overflow-hidden bg-[#2d2a26]">
+          {playing && videoId ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+              title={resource.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          ) : (
+            <>
+              {resource.image && (
+                <Image
+                  src={urlFor(resource.image).width(600).height(400).url()}
+                  alt={resource.image.alt || resource.title}
+                  fill
+                  className="object-cover opacity-80"
+                />
+              )}
+              <button
+                onClick={handlePlay}
+                className="absolute inset-0 flex items-center justify-center cursor-pointer"
+              >
+                <svg
+                  className="w-12 md:w-14 h-12 md:h-14 text-white drop-shadow-lg hover:scale-110 transition-transform"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+                </svg>
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+      <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-primary mb-2 md:mb-3 font-semibold">
+        <span>{categoryLabel(resource.category || "resource")}</span>
+        <span>{formatDate(resource.publishedAt)}</span>
+      </div>
+      <h3 className="text-xl md:text-2xl font-[var(--font-serif)] italic leading-tight md:group-hover:text-primary transition-colors">
+        {resource.title}
+      </h3>
+      <div className="flex items-center gap-4 mt-3 md:mt-4">
+        {resource.youtubeUrl && (
+          <a
+            href={resource.youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-xs uppercase tracking-widest font-bold text-primary hover:opacity-80 transition-opacity"
+          >
+            Watch on YouTube
+            <svg className="w-3.5 h-3.5 ml-1.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+            </svg>
+          </a>
+        )}
+        <button
+          onClick={() => onOpen(resource)}
+          className="inline-flex items-center text-xs uppercase tracking-widest font-bold hover:text-primary transition-colors cursor-pointer"
+        >
+          Read More
+          <svg className="w-3.5 h-3.5 ml-1.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+          </svg>
+        </button>
+      </div>
+    </article>
+  );
+}
+
+function ArticleCard({
+  resource,
+  onOpen,
+}: {
+  resource: Post;
+  onOpen: (post: Post) => void;
+}) {
+  if (resource.category === "youtube") {
+    return <YouTubeCard resource={resource} onOpen={onOpen} />;
+  }
+
+  return (
+    <article className="group h-full cursor-pointer" onClick={() => onOpen(resource)}>
       {resource.image && (
-        <div className="overflow-hidden mb-4 md:mb-6">
-          <Image
-            src={urlFor(resource.image).width(600).height(400).url()}
-            alt={resource.image.alt || resource.title}
-            width={600}
-            height={400}
-            className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+        <div className="bg-[#e8e3d9] p-2.5 md:p-3 mb-4 md:mb-6 transition-all duration-300 md:group-hover:-translate-y-2">
+          <div className="overflow-hidden">
+            <Image
+              src={urlFor(resource.image).width(600).height(400).url()}
+              alt={resource.image.alt || resource.title}
+              width={600}
+              height={400}
+              className="w-full aspect-[3/2] object-cover transition-transform duration-700 md:group-hover:scale-105"
+            />
+          </div>
         </div>
       )}
       <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-primary mb-2 md:mb-3 font-semibold">
         <span>{categoryLabel(resource.category || "resource")}</span>
         <span>{formatDate(resource.publishedAt)}</span>
       </div>
-      <h3 className="text-xl md:text-2xl font-[var(--font-serif)] italic leading-tight group-hover:text-primary transition-colors">
+      <h3 className="text-xl md:text-2xl font-[var(--font-serif)] italic leading-tight md:group-hover:text-primary transition-colors">
         {resource.title}
       </h3>
-      <a
-        href={
-          resource.slug?.current
-            ? `/resources/${resource.slug.current}`
-            : "#"
-        }
-        className="mt-3 md:mt-4 inline-flex items-center text-xs uppercase tracking-widest font-bold group-hover:pl-2 transition-all"
-      >
-        {ctaLabel(resource.category || "resource")}{" "}
+      <span className="mt-3 md:mt-4 inline-flex items-center text-xs uppercase tracking-widest font-bold md:group-hover:pl-2 transition-all">
+        Read Story{" "}
         <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
         </svg>
-      </a>
+      </span>
     </article>
   );
 }
@@ -84,6 +190,7 @@ export default function ArchiveFeed({ resources }: Props) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentSlide, setCurrentSlide] = useState(0);
   const emblaRef = useRef<EmblaCarouselType | null>(null);
+  const [drawerPost, setDrawerPost] = useState<Post | null>(null);
 
   const filtered =
     activeCategory === "all"
@@ -137,12 +244,11 @@ export default function ArchiveFeed({ resources }: Props) {
           >
             {filtered.map((resource) => (
               <Carousel.Slide key={resource._id}>
-                <ArticleCard resource={resource} />
+                <ArticleCard resource={resource} onOpen={setDrawerPost} />
               </Carousel.Slide>
             ))}
           </Carousel>
 
-          {/* Navigation */}
           {totalSlides > 3 && (
             <div className="flex items-center justify-between mt-8 md:mt-12">
               <div className="flex items-center gap-3">
@@ -184,6 +290,12 @@ export default function ArchiveFeed({ resources }: Props) {
           No resources found in this category yet.
         </p>
       )}
+
+      <ArticleDrawer
+        post={drawerPost}
+        opened={!!drawerPost}
+        onClose={() => setDrawerPost(null)}
+      />
     </section>
   );
 }
