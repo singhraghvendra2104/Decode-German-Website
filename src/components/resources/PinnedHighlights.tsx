@@ -42,14 +42,21 @@ function PinnedYouTube({
             />
           ) : (
             <>
-              {resource.image && (
+              {resource.image ? (
                 <Image
                   src={urlFor(resource.image).width(600).height(340).url()}
                   alt={resource.image.alt || resource.title}
                   fill
                   className="object-cover opacity-80"
                 />
-              )}
+              ) : resource.youtubeThumbnail ? (
+                <Image
+                  src={resource.youtubeThumbnail}
+                  alt={resource.title}
+                  fill
+                  className="object-cover opacity-80"
+                />
+              ) : null}
               <button
                 onClick={() => {
                   if (videoId) setPlaying(true);

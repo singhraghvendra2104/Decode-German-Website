@@ -61,7 +61,7 @@ export default function ArticleDrawer({ post, opened, onClose }: Props) {
     >
       {post && (
         <div data-lenis-prevent className="h-full overflow-y-auto [scrollbar-width:thin] [scrollbar-color:rgba(0,0,0,0.3)_transparent] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black/30 [&::-webkit-scrollbar-thumb]:rounded">
-          {post.image && (
+          {post.image ? (
             <div className="w-full aspect-[2/1] relative overflow-hidden">
               <Image
                 src={urlFor(post.image).width(900).height(450).url()}
@@ -70,7 +70,16 @@ export default function ArticleDrawer({ post, opened, onClose }: Props) {
                 className="object-cover"
               />
             </div>
-          )}
+          ) : post.youtubeThumbnail ? (
+            <div className="w-full aspect-[2/1] relative overflow-hidden">
+              <Image
+                src={post.youtubeThumbnail}
+                alt={post.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ) : null}
 
           <div className="px-5 md:px-8 py-5 md:py-6">
             <div className="flex items-center gap-3 mb-4">

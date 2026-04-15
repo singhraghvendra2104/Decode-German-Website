@@ -47,6 +47,7 @@ export interface Post {
   youtubeUrl?: string;
   isPinned?: boolean;
   pinnedLabel?: string;
+  youtubeThumbnail?: string;
 }
 
 export interface Download {
