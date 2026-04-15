@@ -84,14 +84,21 @@ function YouTubeCard({
             />
           ) : (
             <>
-              {resource.image && (
+              {resource.image ? (
                 <Image
                   src={urlFor(resource.image).width(600).height(400).url()}
                   alt={resource.image.alt || resource.title}
                   fill
                   className="object-cover opacity-80"
                 />
-              )}
+              ) : resource.youtubeThumbnail ? (
+                <Image
+                  src={resource.youtubeThumbnail}
+                  alt={resource.title}
+                  fill
+                  className="object-cover opacity-80"
+                />
+              ) : null}
               <button
                 onClick={handlePlay}
                 className="absolute inset-0 flex items-center justify-center cursor-pointer"

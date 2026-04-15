@@ -16,6 +16,8 @@ import {
 } from "@/lib/sanity";
 import type { Post, Download } from "@/lib/sanity";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "Beyond the Classes | Decode German",
   description:
@@ -26,6 +28,59 @@ export const metadata: Metadata = {
       "Language is lived, not just learned. Tips, guides, and videos for real-world German fluency.",
   },
 };
+
+function extractYouTubeId(url: string): string | null {
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([^&?/]+)/
+  );
+  return match?.[1] ?? null;
+}
+
+interface YouTubeOEmbed {
+  title: string;
+  thumbnail_url: string;
+}
+
+async function fetchYouTubeMeta(url: string): Promise<YouTubeOEmbed | null> {
+  try {
+    const res = await fetch(
+      `https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`,
+      { next: { revalidate: 86400 } }
+    );
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
+async function enrichYouTubePosts(posts: Post[]): Promise<Post[]> {
+  return Promise.all(
+    posts.map(async (post) => {
+      if (post.category !== "youtube" || !post.youtubeUrl) return post;
+
+      const videoId = extractYouTubeId(post.youtubeUrl);
+      if (!videoId) return post;
+
+      const needsTitle = !post.title || post.title.trim() === "";
+      const needsImage = !post.image;
+
+      if (!needsTitle && !needsImage) {
+        return { ...post, youtubeThumbnail: undefined };
+      }
+
+      const meta = needsTitle ? await fetchYouTubeMeta(post.youtubeUrl) : null;
+
+      return {
+        ...post,
+        title: needsTitle && meta?.title ? meta.title : post.title,
+        youtubeThumbnail: needsImage
+          ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+          : undefined,
+      };
+    })
+  );
+}
 
 // Fallback data when Sanity is not configured or has no content yet
 const fallbackPinned: Post[] = [
@@ -153,9 +208,14 @@ async function getResourcesData() {
       client.fetch<Download[]>(DOWNLOADS_QUERY),
     ]);
 
+    const [enrichedPinned, enrichedResources] = await Promise.all([
+      enrichYouTubePosts(pinnedResources?.length ? pinnedResources : fallbackPinned),
+      enrichYouTubePosts(resources?.length ? resources : fallbackResources),
+    ]);
+
     return {
-      pinnedResources: pinnedResources?.length ? pinnedResources : fallbackPinned,
-      resources: resources?.length ? resources : fallbackResources,
+      pinnedResources: enrichedPinned,
+      resources: enrichedResources,
       downloads: downloads?.length ? downloads : fallbackDownloads,
     };
   } catch {
