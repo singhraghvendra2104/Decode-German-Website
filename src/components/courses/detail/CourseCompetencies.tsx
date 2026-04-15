@@ -21,7 +21,7 @@ export default function CourseCompetencies({
   const c = competencies;
 
   return (
-    <section className="bg-warm-sand/30 py-10 sm:py-14 md:py-20 lg:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-warm-sand/30 py-8 sm:py-10 md:py-14 lg:py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto relative z-10">
         <h2 className="font-[var(--font-serif)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl mb-8 md:mb-14 lg:mb-24 text-center italic leading-tight">
           {courseComponentStrings.competencies.headingStart}{" "}

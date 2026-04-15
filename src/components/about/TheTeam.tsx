@@ -4,7 +4,7 @@ export default function TheTeam() {
   const { heading, description, founder, academicAdvisor, members } = theTeamContent;
 
   return (
-    <section className="bg-surface-container py-14 md:py-20 lg:py-32">
+    <section className="bg-surface-container py-10 md:py-14 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="mb-10 md:mb-16 lg:mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-4">{heading}</h2>

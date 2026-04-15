@@ -4,7 +4,7 @@ export default function NarrativeSection() {
   const { handwriting, heading, headingAccent, commitments, closingQuote } = narrativeSectionContent;
 
   return (
-    <section className="py-14 md:py-24 lg:py-40 px-4 md:px-6 bg-white overflow-hidden">
+    <section className="py-10 md:py-16 lg:py-24 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16 lg:mb-24 relative">

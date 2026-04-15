@@ -34,7 +34,7 @@ export default function CourseDetailHero({
     useDisclosure(false);
 
   return (
-    <section className="relative px-4 sm:px-6 md:px-12 py-8 sm:py-12 md:py-20 lg:py-32 flex flex-col md:flex-row items-center md:items-start gap-8 sm:gap-12 md:gap-20 lg:gap-32 max-w-[1400px] mx-auto">
+    <section className="relative px-4 sm:px-6 md:px-12 py-8 sm:py-10 md:py-14 lg:py-20 flex flex-col md:flex-row items-center md:items-start gap-8 sm:gap-10 md:gap-16 lg:gap-24 max-w-[1400px] mx-auto">
       {/* Text Side */}
       <div className="w-full md:w-1/2 space-y-6 sm:space-y-8 md:space-y-10">
         <div className="inline-block">

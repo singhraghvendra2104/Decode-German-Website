@@ -4,7 +4,7 @@ export default function HowStudentsJoin() {
   const { beginners, higherLevels } = howStudentsJoinContent;
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 lg:py-32 border-t border-black/5">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14 lg:py-20 border-t border-black/5">
       <div className="space-y-8 md:space-y-12 lg:space-y-16">
         <div className="space-y-4">
           <h2 className="text-4xl md:text-5xl font-[var(--font-serif)]">{howStudentsJoinContent.heading}</h2>

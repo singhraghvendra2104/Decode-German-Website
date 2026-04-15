@@ -13,7 +13,7 @@ export default function CourseBeforeAfter({
   nextLevel,
 }: CourseBeforeAfterProps) {
   return (
-    <section className="bg-warm-sand/20 py-10 sm:py-14 md:py-20 lg:py-32 px-4 sm:px-6 md:px-12 border-y border-stone-gray/10">
+    <section className="bg-warm-sand/20 py-8 sm:py-10 md:py-14 lg:py-20 px-4 sm:px-6 md:px-12 border-y border-stone-gray/10">
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-stone-gray/20">
         <div className="md:w-1/2 p-6 sm:p-8 lg:p-20 space-y-6 sm:space-y-8">
           <h3 className="font-[var(--font-serif)] text-2xl sm:text-3xl md:text-4xl italic">

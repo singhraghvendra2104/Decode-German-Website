@@ -13,7 +13,7 @@ interface CourseMethodProps {
 
 export default function CourseMethod({ steps, benefits = [] }: CourseMethodProps) {
   return (
-    <section className="py-10 sm:py-14 md:py-24 lg:py-40 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
+    <section className="py-8 sm:py-10 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
       <div className="flex flex-col md:flex-row gap-12 sm:gap-16 md:gap-24">
         {/* Sticky Sidebar */}
         <div className="md:w-1/3">

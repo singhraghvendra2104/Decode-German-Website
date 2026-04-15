@@ -14,7 +14,7 @@ interface CourseResourcesProps {
 
 export default function CourseResources({ resources }: CourseResourcesProps) {
   return (
-    <section className="py-10 sm:py-14 md:py-24 lg:py-40 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
+    <section className="py-8 sm:py-10 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto">
       <h2 className="font-[var(--font-serif)] text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-8 md:mb-14 lg:mb-20 italic">
         {courseComponentStrings.resources.headingItalic} <span className="not-italic">{courseComponentStrings.resources.headingNormal}</span>
       </h2>

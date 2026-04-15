@@ -9,7 +9,7 @@ export default function SpecializedCourses() {
     useDisclosure(false);
 
   return (
-    <section className="py-14 md:py-20 lg:py-32 px-4 md:px-6 bg-white">
+    <section className="py-10 md:py-14 lg:py-20 px-4 md:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16 lg:mb-20">

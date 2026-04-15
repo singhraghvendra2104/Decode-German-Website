@@ -4,7 +4,7 @@ export default function OurJourney() {
   const { heading, timeline } = ourJourneyContent;
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-20 lg:py-32">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14 lg:py-20">
       <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-6 md:mb-8 text-center">{heading}</h2>
 
       {/* Desktop Timeline */}

@@ -3,7 +3,7 @@ import { weightOfSilence } from "@/lib/constants";
 
 export default function WeightOfSilence() {
   return (
-    <section className="py-14 md:py-24 lg:py-40 bg-paper-white relative overflow-hidden">
+    <section className="py-10 md:py-16 lg:py-24 bg-paper-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-warm-sand/20 -z-0 hidden md:block" />
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 md:gap-16 items-start">

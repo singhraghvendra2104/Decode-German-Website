@@ -2,7 +2,7 @@ import { whyWeExistContent } from "@/lib/constants";
 
 export default function WhyWeExist() {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-20 lg:py-32">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-14 lg:py-20">
       <div className="mb-8 md:mb-12 lg:mb-16">
         <h2 className="text-4xl md:text-5xl font-[var(--font-serif)] mb-4">{whyWeExistContent.heading}</h2>
         <p className="text-lg md:text-xl text-gray-500 max-w-2xl">

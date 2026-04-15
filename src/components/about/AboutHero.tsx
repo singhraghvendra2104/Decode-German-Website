@@ -2,7 +2,7 @@ import { aboutHeroContent } from "@/lib/constants";
 
 export default function AboutHero() {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 mb-14 md:mb-20 lg:mb-32 pt-16 md:pt-24 lg:pt-32">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 mb-10 md:mb-14 lg:mb-20 pt-16 md:pt-20 lg:pt-24">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
         <div className="md:col-span-7 space-y-6 md:space-y-8">
           <span className="text-[10px] uppercase tracking-[0.3em] text-primary font-bold">

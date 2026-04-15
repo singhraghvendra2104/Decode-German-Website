@@ -17,7 +17,7 @@ export default function MomentsOfDignity() {
   };
 
   return (
-    <section className="bg-warm-sand py-12 md:py-20 lg:py-32 overflow-hidden border-y border-stone-gray/10">
+    <section className="bg-warm-sand py-10 md:py-14 lg:py-20 overflow-hidden border-y border-stone-gray/10">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between mb-8 md:mb-12 lg:mb-20 gap-6">

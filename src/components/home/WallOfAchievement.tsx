@@ -153,7 +153,7 @@ export default function WallOfAchievement() {
   const doubled = [...polaroids, ...polaroids];
 
   return (
-    <section className="py-12 md:py-20 lg:py-32 px-4 md:px-6 bg-accent/30 overflow-hidden relative">
+    <section className="py-10 md:py-14 lg:py-20 px-4 md:px-6 bg-accent/30 overflow-hidden relative">
       <div className="max-w-[1300px] mx-auto">
         {/* Header */}
         <div className="text-center mb-8 md:mb-14">

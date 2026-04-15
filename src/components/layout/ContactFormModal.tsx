@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Modal } from "@mantine/core";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 import { contactFormContent } from "@/lib/constants";
 
 interface ContactFormModalProps {
@@ -32,7 +34,6 @@ export default function ContactFormModal({
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [countryCode, setCountryCode] = useState("+49");
   const [phone, setPhone] = useState("");
   const [level, setLevel] = useState("");
   const [interest, setInterest] = useState("");
@@ -48,7 +49,6 @@ export default function ContactFormModal({
     setFirstName("");
     setLastName("");
     setEmail("");
-    setCountryCode("+49");
     setPhone("");
     setLevel("");
     setInterest("");
@@ -67,9 +67,7 @@ export default function ContactFormModal({
     setSubmitError(null);
     setSubmitting(true);
 
-    const fullPhone = phone.trim()
-      ? `${countryCode} ${phone.trim()}`
-      : "";
+    const fullPhone = phone.trim() || "";
 
     try {
       const res = await fetch("/api/contact", {
@@ -226,33 +224,18 @@ export default function ContactFormModal({
                 </div>
 
                 {/* Phone */}
-                <div className="grid grid-cols-3 gap-4 sm:gap-8">
-                  <div className="col-span-1">
-                    <label className={labelClass}>{fields.countryCode.label}</label>
-                    <select
-                      value={countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
-                      className={selectClass}
-                      style={chevronStyle}
-                    >
-                      {contactFormContent.countryCodes.map((c) => (
-                        <option key={c.value} value={c.value}>
-                          {c.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="col-span-2">
-                    <label className={labelClass}>{fields.phone.label}</label>
-                    <input
-                      type="tel"
-                      placeholder={fields.phone.placeholder}
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      maxLength={20}
-                      className={inputClass}
-                    />
-                  </div>
+                <div>
+                  <label className={labelClass}>{fields.phone.label}</label>
+                  <PhoneInput
+                    defaultCountry="de"
+                    value={phone}
+                    onChange={setPhone}
+                    inputClassName="phone-input-field"
+                    countrySelectorStyleProps={{
+                      buttonClassName: "phone-country-btn",
+                    }}
+                    className="phone-input-wrapper"
+                  />
                 </div>
 
                 {/* Level & Interest */}
