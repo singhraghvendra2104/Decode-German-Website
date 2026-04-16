@@ -1,4 +1,6 @@
+import React from "react";
 import { defineField, defineType } from "sanity";
+import YouTubeUrlInput from "../components/YouTubeUrlInput";
 
 export const youtubeVideoType = defineType({
   name: "youtubeVideo",
@@ -9,14 +11,14 @@ export const youtubeVideoType = defineType({
       name: "youtubeUrl",
       title: "YouTube URL",
       type: "url",
-      description:
-        "Paste a YouTube link — the frontend will automatically fetch the title and thumbnail.",
+      description: "Paste a YouTube link — title and thumbnail will be fetched automatically.",
+      components: { input: YouTubeUrlInput },
     }),
     defineField({
       name: "title",
-      title: "Title (override)",
+      title: "Title",
       type: "string",
-      description: "Leave blank to auto-use the YouTube video title on the frontend.",
+      description: "Auto-filled from YouTube. Edit to override.",
     }),
     defineField({
       name: "slug",
@@ -35,7 +37,7 @@ export const youtubeVideoType = defineType({
       title: "Cover Image (override)",
       type: "image",
       options: { hotspot: true },
-      description: "Leave blank to auto-use the YouTube thumbnail on the frontend.",
+      description: "Leave blank to use the YouTube thumbnail on the frontend.",
     }),
     defineField({
       name: "category",
@@ -83,12 +85,33 @@ export const youtubeVideoType = defineType({
   ],
   preview: {
     select: { title: "title", url: "youtubeUrl", media: "image" },
-    prepare({ title, url, media }) {
+    prepare({ title, url }) {
+      const videoId = url ? extractVideoIdFromUrl(url) : null;
+      const thumbnailUrl = videoId
+        ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+        : undefined;
+
       return {
         title: title || url || "Untitled YouTube Video",
         subtitle: url || "",
-        media,
+        media: thumbnailUrl
+          ? React.createElement("img", {
+              src: thumbnailUrl,
+              style: { width: "100%", height: "100%", objectFit: "cover" },
+            })
+          : undefined,
       };
     },
   },
 });
+
+function extractVideoIdFromUrl(url: string): string | null {
+  try {
+    const u = new URL(url);
+    if (u.hostname === "youtu.be") return u.pathname.slice(1);
+    if (u.hostname.includes("youtube.com")) return u.searchParams.get("v");
+  } catch {
+    /* */
+  }
+  return null;
+}

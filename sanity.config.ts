@@ -5,6 +5,7 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { table } from "@sanity/table";
 import { schemaTypes } from "@/sanity/schemaTypes";
+import deskStructure from "@/sanity/deskStructure";
 
 export default defineConfig({
   name: "decode-german",
@@ -12,7 +13,11 @@ export default defineConfig({
   projectId: "haa68x1l",
   dataset: "production",
   basePath: "/studio",
-  plugins: [structureTool(), visionTool(), table()],
+  plugins: [
+    structureTool({ structure: deskStructure }),
+    visionTool(),
+    table(),
+  ],
   schema: {
     types: schemaTypes,
   },

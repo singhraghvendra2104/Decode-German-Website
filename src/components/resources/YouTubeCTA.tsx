@@ -21,7 +21,7 @@ export default function YouTubeCTA() {
         <div className="absolute inset-0 bg-primary/10" />
       </div>
       <div className="relative z-10 max-w-2xl px-6 md:px-12 lg:px-16">
-        <h2 className="text-3xl sm:text-4xl md:text-7xl font-[var(--font-serif)] italic font-bold mb-4 md:mb-8">
+        <h2 className="text-3xl sm:text-4xl md:text-7xl font-[var(--font-serif)] text-primary italic font-bold mb-4 md:mb-8">
           Watch &amp; Learn on YouTube
         </h2>
         <p className="text-sm md:text-xl mb-6 md:mb-12 opacity-80 font-handwriting text-black md:text-white">

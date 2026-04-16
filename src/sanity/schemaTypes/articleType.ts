@@ -1,4 +1,5 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
+import PasteTableInput from "../components/PasteTableInput";
 
 export const articleType = defineType({
   name: "article",
@@ -150,6 +151,7 @@ export const articleType = defineType({
           type: "object",
           name: "tableBlock",
           title: "Table",
+          components: { input: PasteTableInput },
           fields: [
             defineField({
               name: "caption",
