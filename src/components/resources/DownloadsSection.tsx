@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useCallback } from "react";
 import { Carousel } from "@mantine/carousel";
 import type { EmblaCarouselType } from "embla-carousel";
 import type { Download } from "@/lib/sanity";
@@ -92,9 +92,23 @@ function chunkPairs(arr: Download[]): Download[][] {
 export default function DownloadsSection({ downloads }: Props) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const emblaRef = useRef<EmblaCarouselType | null>(null);
 
   const categoryTabs = useMemo(() => buildCategoryTabs(downloads), [downloads]);
+
+  const activeCategoryLabel =
+    categoryTabs.find((c) => c.value === activeCategory)?.label || "All";
+
+  const handleCategoryChange = useCallback(
+    (value: string) => {
+      setActiveCategory(value);
+      setCurrentSlide(0);
+      setDropdownOpen(false);
+      emblaRef.current?.scrollTo(0);
+    },
+    []
+  );
 
   const filtered =
     activeCategory === "all"
@@ -116,19 +130,56 @@ export default function DownloadsSection({ downloads }: Props) {
               Downloadable PDFs and audio guides designed to supplement your
               self-study journey.
             </p>
-            <div className="mt-6 md:mt-12 flex lg:flex-col gap-3 lg:gap-0 lg:space-y-4 overflow-x-auto">
+            {/* Mobile: dropdown filter */}
+            <div className="mt-6 lg:hidden relative">
+              <button
+                onClick={() => setDropdownOpen((prev) => !prev)}
+                className="w-full flex items-center justify-between px-4 py-2.5 border border-gray-300 text-[11px] uppercase tracking-widest font-semibold bg-white"
+              >
+                <span>{activeCategoryLabel}</span>
+                <svg
+                  className={`w-4 h-4 ml-2 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+                </svg>
+              </button>
+              {dropdownOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-10"
+                    onClick={() => setDropdownOpen(false)}
+                  />
+                  <div className="absolute top-full left-0 right-0 z-20 bg-white border border-gray-300 border-t-0 shadow-lg">
+                    {categoryTabs.map((cat) => (
+                      <button
+                        key={cat.value}
+                        onClick={() => handleCategoryChange(cat.value)}
+                        className={`w-full text-left px-4 py-2.5 text-[11px] uppercase tracking-widest transition-colors ${
+                          activeCategory === cat.value
+                            ? "bg-primary text-white"
+                            : "text-gray-600 hover:bg-gray-50"
+                        }`}
+                      >
+                        {cat.label}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Desktop: sidebar filter tabs */}
+            <div className="mt-12 hidden lg:flex lg:flex-col lg:space-y-4">
               {categoryTabs.map((cat) => (
                 <button
                   key={cat.value}
-                  onClick={() => {
-                    setActiveCategory(cat.value);
-                    setCurrentSlide(0);
-                    emblaRef.current?.scrollTo(0);
-                  }}
-                  className={`whitespace-nowrap lg:w-full text-left uppercase text-[11px] tracking-[0.2em] lg:border-b border-gray-300 py-2 lg:py-3 px-3 lg:px-0 rounded lg:rounded-none transition-colors ${
+                  onClick={() => handleCategoryChange(cat.value)}
+                  className={`w-full text-left uppercase text-[11px] tracking-[0.2em] border-b border-gray-300 py-3 transition-colors ${
                     activeCategory === cat.value
-                      ? "text-primary font-bold bg-primary/10 lg:bg-transparent"
-                      : "hover:text-primary bg-white/50 lg:bg-transparent"
+                      ? "text-primary font-bold"
+                      : "hover:text-primary"
                   }`}
                 >
                   {cat.label}

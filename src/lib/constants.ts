@@ -1341,7 +1341,7 @@ export const theTeamContent = {
     imageAlt: "Prof. Dr. Vridhagiri Ganeshan",
     bio1: "Over 50 years teaching, researching, and writing about German language and culture, from Universität München to CIEFL Hyderabad to Emory University. Prof. Dr. Ganeshan earned his doctorate in Germanistik in 1975 and spent 32 years as Professor of German at CIEFL, training generations of language teachers across India. He served twice as Vice-Chancellor, taught at leading American universities, and was awarded the Jakob-und-Wilhelm-Grimm-Preis by Germany in 1990, one of the highest honours in German philology.",
     bio2: "His life's work, bridging the gap between the learners and genuine German fluency, is exactly the challenge Decode German is built around.",
-    quote: "Language is never just grammar. It is the bridge between who you are and who you are becoming in another culture.",
+    quote: "Language is the bridge between who you are and who you are becoming in another culture.",
     badges: [
       "Atlanta, USA",
       "Dr. Phil., München 1975",
