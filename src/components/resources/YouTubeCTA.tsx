@@ -4,21 +4,27 @@ const YOUTUBE_URL = "https://www.youtube.com/channel/UCrWQrQOWzRSt86XrS6C-D2Q";
 
 export default function YouTubeCTA() {
   return (
-    <section className="mb-10 md:mb-16 relative h-[280px] md:h-[380px] flex items-center justify-center overflow-hidden">
+    <section className="mb-10 md:mb-16 relative h-[280px] md:h-[380px] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/resources/youtube.png"
+          src="/resources/youtube1.png"
           alt=""
           fill
-          className="object-cover grayscale opacity-30"
+          className="object-cover grayscale opacity-30 hidden md:block"
+        />
+        <Image
+          src="/resources/youtube2.png"
+          alt=""
+          fill
+          className="object-cover grayscale opacity-30 md:hidden"
         />
         <div className="absolute inset-0 bg-primary/10" />
       </div>
-      <div className="relative z-10 text-center max-w-2xl px-4 md:px-6">
+      <div className="relative z-10 max-w-2xl px-6 md:px-12 lg:px-16">
         <h2 className="text-3xl sm:text-4xl md:text-7xl font-[var(--font-serif)] italic font-bold mb-4 md:mb-8">
           Watch &amp; Learn on YouTube
         </h2>
-        <p className="text-sm md:text-xl mb-6 md:mb-12 opacity-80">
+        <p className="text-sm md:text-xl mb-6 md:mb-12 opacity-80 font-handwriting text-black md:text-white">
           Weekly videos exploring language nuances, exam preparation, and German
           culture through a curated lens.
         </p>

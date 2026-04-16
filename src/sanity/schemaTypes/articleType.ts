@@ -1,42 +1,26 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
 
-const colorDecorator = {
-  name: "color",
-  title: "Color",
-  type: "object" as const,
-  fields: [
-    defineField({
-      name: "value",
-      title: "Color",
-      type: "string",
-    }),
-  ],
-};
-
-export const postType = defineType({
-  name: "post",
-  title: "Post",
+export const articleType = defineType({
+  name: "article",
+  title: "Article",
   type: "document",
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "string",
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
       options: { source: "title" },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "publishedAt",
       title: "Published At",
       type: "datetime",
       initialValue: () => new Date().toISOString(),
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "image",
@@ -47,17 +31,8 @@ export const postType = defineType({
     defineField({
       name: "category",
       title: "Category",
-      type: "string",
-      options: {
-        list: [
-          { title: "Grammar Tips", value: "grammar" },
-          { title: "YouTube", value: "youtube" },
-          { title: "Life in Germany", value: "life-in-germany" },
-          { title: "Community", value: "community" },
-          { title: "Resource", value: "resource" },
-        ],
-      },
-      validation: (rule) => rule.required(),
+      type: "reference",
+      to: [{ type: "category" }],
     }),
     defineField({
       name: "excerpt",
@@ -69,7 +44,7 @@ export const postType = defineType({
       name: "youtubeUrl",
       title: "YouTube URL",
       type: "url",
-      hidden: ({ document }) => document?.category !== "youtube",
+      description: "Optional — attach a YouTube video to this article.",
     }),
     defineField({
       name: "isPinned",
@@ -170,6 +145,29 @@ export const postType = defineType({
             { title: "Bullet", value: "bullet" },
             { title: "Numbered", value: "number" },
           ],
+        }),
+        defineArrayMember({
+          type: "object",
+          name: "tableBlock",
+          title: "Table",
+          fields: [
+            defineField({
+              name: "caption",
+              type: "string",
+              title: "Table Caption",
+            }),
+            defineField({
+              name: "table",
+              type: "table",
+              title: "Table",
+            }),
+          ],
+          preview: {
+            select: { caption: "caption" },
+            prepare({ caption }) {
+              return { title: `Table: ${caption || "..."}` };
+            },
+          },
         }),
         defineArrayMember({
           type: "object",

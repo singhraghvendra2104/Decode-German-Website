@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "@/components/ui/ImageWithSkeleton";
 import { Carousel } from "@mantine/carousel";
+import type { EmblaCarouselType } from "embla-carousel";
 import { urlFor } from "@/lib/sanity";
 import type { Post } from "@/lib/sanity";
 import ArticleDrawer from "./ArticleDrawer";
@@ -218,10 +219,24 @@ const PINNED_COMPONENTS: Record<
   "life-in-germany": PinnedUpdate,
 };
 
+function pickPinnedComponent(resource: Post) {
+  // YouTube videos always render with the inline-playable card, regardless of
+  // whether the editor set the "youtube" category on them.
+  if (resource._type === "youtubeVideo" || resource.youtubeUrl) {
+    return PinnedYouTube;
+  }
+  return PINNED_COMPONENTS[resource.category || ""] || PinnedUpdate;
+}
+
 export default function PinnedHighlights({ pinnedResources }: Props) {
   const [drawerPost, setDrawerPost] = useState<Post | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const emblaRef = useRef<EmblaCarouselType | null>(null);
 
   if (!pinnedResources.length) return null;
+
+  const needsSlider = pinnedResources.length > 3;
+  const total = pinnedResources.length;
 
   return (
     <section className="mb-10 md:mb-16">
@@ -234,8 +249,34 @@ export default function PinnedHighlights({ pinnedResources }: Props) {
             Essential starting points
           </p>
         </div>
+        {needsSlider && (
+          <div className="hidden md:flex items-center gap-3">
+            <span className="text-[11px] uppercase tracking-widest text-gray-400 font-semibold">
+              {String(currentSlide + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+            </span>
+            <button
+              onClick={() => emblaRef.current?.scrollPrev()}
+              disabled={currentSlide === 0}
+              className="w-10 h-10 border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors disabled:opacity-30 cursor-pointer"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+              </svg>
+            </button>
+            <button
+              onClick={() => emblaRef.current?.scrollNext()}
+              disabled={currentSlide >= total - 1}
+              className="w-10 h-10 border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors disabled:opacity-30 cursor-pointer"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
-      {/* Mobile: carousel */}
+
+      {/* Mobile: always carousel */}
       <div className="block md:hidden">
         <Carousel
           slideSize="85%"
@@ -244,8 +285,7 @@ export default function PinnedHighlights({ pinnedResources }: Props) {
           emblaOptions={{ align: "start", containScroll: "trimSnaps" }}
         >
           {pinnedResources.map((resource) => {
-            const Component =
-              PINNED_COMPONENTS[resource.category || ""] || PinnedUpdate;
+            const Component = pickPinnedComponent(resource);
             return (
               <Carousel.Slide key={resource._id}>
                 <Component resource={resource} onOpen={setDrawerPost} />
@@ -255,20 +295,43 @@ export default function PinnedHighlights({ pinnedResources }: Props) {
         </Carousel>
       </div>
 
-      {/* Desktop: grid */}
-      <div className="hidden md:grid md:grid-cols-3 gap-8">
-        {pinnedResources.map((resource) => {
-          const Component =
-            PINNED_COMPONENTS[resource.category || ""] || PinnedUpdate;
-          return (
-            <Component
-              key={resource._id}
-              resource={resource}
-              onOpen={setDrawerPost}
-            />
-          );
-        })}
-      </div>
+      {/* Desktop: grid if <=3, slider if >3 */}
+      {needsSlider ? (
+        <div className="hidden md:block">
+          <Carousel
+            getEmblaApi={(api) => {
+              emblaRef.current = api;
+            }}
+            onSlideChange={setCurrentSlide}
+            slideSize="33.333%"
+            slideGap="xl"
+            withControls={false}
+            emblaOptions={{ align: "start", containScroll: "trimSnaps", loop: false }}
+          >
+            {pinnedResources.map((resource) => {
+              const Component = pickPinnedComponent(resource);
+              return (
+                <Carousel.Slide key={resource._id}>
+                  <Component resource={resource} onOpen={setDrawerPost} />
+                </Carousel.Slide>
+              );
+            })}
+          </Carousel>
+        </div>
+      ) : (
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
+          {pinnedResources.map((resource) => {
+            const Component = pickPinnedComponent(resource);
+            return (
+              <Component
+                key={resource._id}
+                resource={resource}
+                onOpen={setDrawerPost}
+              />
+            );
+          })}
+        </div>
+      )}
 
       <ArticleDrawer
         post={drawerPost}

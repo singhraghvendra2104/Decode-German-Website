@@ -1,5 +1,11 @@
-import { postType } from "./postType";
+import { articleType } from "./articleType";
+import { categoryType } from "./categoryType";
+import { youtubeVideoType } from "./youtubeVideoType";
 import { downloadType } from "./downloadType";
-import { resourcesPageType } from "./resourcesPageType";
 
-export const schemaTypes = [postType, downloadType, resourcesPageType];
+export const schemaTypes = [
+  categoryType,
+  articleType,
+  youtubeVideoType,
+  downloadType,
+];

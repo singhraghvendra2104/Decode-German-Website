@@ -42,7 +42,7 @@ export default function ResourcesFinalCTA() {
               alt="Structured learning"
               width={600}
               height={450}
-              className="w-full aspect-[4/3] object-cover grayscale [@media(hover:hover)]:hover:grayscale-0 transition-all duration-700"
+              className="w-full aspect-[4/3] object-cover md:grayscale md:hover:grayscale-0 transition-all duration-1000"
             />
           </div>
           <div className="absolute -bottom-6 -right-6 font-handwriting text-primary text-3xl md:text-4xl rotate-12">

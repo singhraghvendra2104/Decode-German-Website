@@ -12,6 +12,9 @@ import {
   getSanityClient,
   PINNED_POSTS_QUERY,
   ALL_POSTS_QUERY,
+  PINNED_VIDEOS_QUERY,
+  ALL_VIDEOS_QUERY,
+  CATEGORIES_QUERY,
   DOWNLOADS_QUERY,
 } from "@/lib/sanity";
 import type { Post, Download } from "@/lib/sanity";
@@ -57,7 +60,7 @@ async function fetchYouTubeMeta(url: string): Promise<YouTubeOEmbed | null> {
 async function enrichYouTubePosts(posts: Post[]): Promise<Post[]> {
   return Promise.all(
     posts.map(async (post) => {
-      if (post.category !== "youtube" || !post.youtubeUrl) return post;
+      if (!post.youtubeUrl) return post;
 
       const videoId = extractYouTubeId(post.youtubeUrl);
       if (!videoId) return post;
@@ -86,7 +89,7 @@ async function enrichYouTubePosts(posts: Post[]): Promise<Post[]> {
 const fallbackPinned: Post[] = [
   {
     _id: "pinned-1",
-    _type: "post",
+    _type: "article",
     title: "German Pronunciation Basics",
     slug: { current: "german-pronunciation-basics" },
     category: "youtube",
@@ -97,7 +100,7 @@ const fallbackPinned: Post[] = [
   },
   {
     _id: "pinned-2",
-    _type: "post",
+    _type: "article",
     title: "Akkusativ oder Dativ?",
     slug: { current: "akkusativ-oder-dativ" },
     category: "grammar",
@@ -108,7 +111,7 @@ const fallbackPinned: Post[] = [
   },
   {
     _id: "pinned-3",
-    _type: "post",
+    _type: "article",
     title: "New A1 Batch Starting Soon",
     slug: { current: "new-a1-batch" },
     category: "community",
@@ -122,7 +125,7 @@ const fallbackPinned: Post[] = [
 const fallbackResources: Post[] = [
   {
     _id: "res-1",
-    _type: "post",
+    _type: "article",
     title: 'How to master the "Genitiv" case without crying',
     slug: { current: "master-genitiv-case" },
     category: "grammar",
@@ -132,7 +135,7 @@ const fallbackResources: Post[] = [
   },
   {
     _id: "res-2",
-    _type: "post",
+    _type: "youtubeVideo",
     title: "10 False Friends in German & English",
     slug: { current: "10-false-friends" },
     category: "youtube",
@@ -142,7 +145,7 @@ const fallbackResources: Post[] = [
   },
   {
     _id: "res-3",
-    _type: "post",
+    _type: "article",
     title: "Navigating the German 'Bürgeramt'",
     slug: { current: "navigating-buergeramt" },
     category: "life-in-germany",
@@ -161,6 +164,7 @@ const fallbackDownloads: Download[] = [
     fileType: "PDF",
     fileSize: "1.2 MB",
     category: "grammar-sheets",
+    categoryTitle: "Grammar Sheets",
   },
   {
     _id: "dl-2",
@@ -170,6 +174,7 @@ const fallbackDownloads: Download[] = [
     fileType: "PDF",
     fileSize: "3.5 MB",
     category: "vocabulary",
+    categoryTitle: "Vocabulary Guides",
   },
   {
     _id: "dl-3",
@@ -179,6 +184,7 @@ const fallbackDownloads: Download[] = [
     fileType: "MP3",
     fileSize: "15.0 MB",
     category: "audio-drills",
+    categoryTitle: "Audio Drills",
   },
   {
     _id: "dl-4",
@@ -188,8 +194,25 @@ const fallbackDownloads: Download[] = [
     fileType: "PDF",
     fileSize: "2.1 MB",
     category: "grammar-sheets",
+    categoryTitle: "Grammar Sheets",
   },
 ];
+
+interface SanityCategory {
+  _id: string;
+  title: string;
+  value: string;
+}
+
+function mergeSorted(a: Post[], b: Post[]): Post[] {
+  const combined = [...a, ...b];
+  combined.sort(
+    (x, y) =>
+      new Date(y.publishedAt || 0).getTime() -
+      new Date(x.publishedAt || 0).getTime()
+  );
+  return combined;
+}
 
 async function getResourcesData() {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
@@ -197,38 +220,52 @@ async function getResourcesData() {
       pinnedResources: fallbackPinned,
       resources: fallbackResources,
       downloads: fallbackDownloads,
+      categories: [] as SanityCategory[],
     };
   }
 
   try {
     const client = getSanityClient();
-    const [pinnedResources, resources, downloads] = await Promise.all([
-      client.fetch<Post[]>(PINNED_POSTS_QUERY),
-      client.fetch<Post[]>(ALL_POSTS_QUERY),
-      client.fetch<Download[]>(DOWNLOADS_QUERY),
-    ]);
+    const [pinnedArticles, articles, pinnedVideos, videos, downloads, categories] =
+      await Promise.all([
+        client.fetch<Post[]>(PINNED_POSTS_QUERY),
+        client.fetch<Post[]>(ALL_POSTS_QUERY),
+        client.fetch<Post[]>(PINNED_VIDEOS_QUERY),
+        client.fetch<Post[]>(ALL_VIDEOS_QUERY),
+        client.fetch<Download[]>(DOWNLOADS_QUERY),
+        client.fetch<SanityCategory[]>(CATEGORIES_QUERY),
+      ]);
+
+    const mergedPinned = mergeSorted(
+      pinnedArticles || [],
+      pinnedVideos || []
+    );
+    const mergedAll = mergeSorted(articles || [], videos || []);
 
     const [enrichedPinned, enrichedResources] = await Promise.all([
-      enrichYouTubePosts(pinnedResources?.length ? pinnedResources : fallbackPinned),
-      enrichYouTubePosts(resources?.length ? resources : fallbackResources),
+      enrichYouTubePosts(mergedPinned.length ? mergedPinned : fallbackPinned),
+      enrichYouTubePosts(mergedAll.length ? mergedAll : fallbackResources),
     ]);
 
     return {
       pinnedResources: enrichedPinned,
       resources: enrichedResources,
       downloads: downloads?.length ? downloads : fallbackDownloads,
+      categories: categories || [],
     };
   } catch {
     return {
       pinnedResources: fallbackPinned,
       resources: fallbackResources,
       downloads: fallbackDownloads,
+      categories: [] as SanityCategory[],
     };
   }
 }
 
 export default async function ResourcesPage() {
-  const { pinnedResources, resources, downloads } = await getResourcesData();
+  const { pinnedResources, resources, downloads, categories } =
+    await getResourcesData();
 
   return (
     <>
@@ -236,7 +273,7 @@ export default async function ResourcesPage() {
       <main className="max-w-screen-2xl mx-auto px-4 md:px-8 pt-20 md:pt-28 pb-10 md:pb-16">
         <ResourcesHero />
         <PinnedHighlights pinnedResources={pinnedResources} />
-        <ArchiveFeed resources={resources} />
+        <ArchiveFeed resources={resources} categories={categories} />
         <DownloadsSection downloads={downloads} />
         <YouTubeCTA />
         <ResourcesFinalCTA />

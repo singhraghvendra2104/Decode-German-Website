@@ -12,25 +12,6 @@ interface Props {
   onClose: () => void;
 }
 
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
-function categoryLabel(category: string) {
-  const map: Record<string, string> = {
-    grammar: "Grammar Tips",
-    youtube: "YouTube",
-    "life-in-germany": "Life in Germany",
-    community: "Community",
-    resource: "Resource",
-  };
-  return map[category] || category;
-}
-
 export default function ArticleDrawer({ post, opened, onClose }: Props) {
   return (
     <Drawer
@@ -82,25 +63,6 @@ export default function ArticleDrawer({ post, opened, onClose }: Props) {
           ) : null}
 
           <div className="px-5 md:px-8 py-5 md:py-6">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">
-                {categoryLabel(post.category || "resource")}
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.15em] text-gray-400">
-                {formatDate(post.publishedAt)}
-              </span>
-            </div>
-
-            <h2 className="text-2xl md:text-3xl font-[var(--font-serif)] italic font-bold mb-6 leading-tight">
-              {post.title}
-            </h2>
-
-            {post.excerpt && (
-              <p className="text-gray-500 mb-6 leading-relaxed border-l-2 border-primary pl-4 italic">
-                {post.excerpt}
-              </p>
-            )}
-
             {post.body && post.body.length > 0 ? (
               <ArticleBody body={post.body} />
             ) : (

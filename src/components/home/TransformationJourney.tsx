@@ -24,7 +24,7 @@ export default function TransformationJourney() {
               ))}
             </h2>
           </div>
-          <div className="max-w-xs text-right hidden md:block">
+          <div className="max-w-xs text-right">
             <p className="font-handwriting text-2xl text-gray-500">
               {transformationHeading.subtitle}
             </p>
@@ -47,20 +47,27 @@ export default function TransformationJourney() {
                 <h3 className="text-sm md:text-2xl font-bold mb-2 md:mb-4 uppercase tracking-tighter">
                   {step.title}
                 </h3>
-                <p className="text-center text-[10px] md:text-sm leading-relaxed opacity-80 group-hover:opacity-100 hidden sm:block">
+                <p className="text-center text-[10px] md:text-sm leading-relaxed opacity-80 group-hover:opacity-100">
                   {step.description}
                 </p>
               </div>
               {step.label && (
-                <div
-                  className={`absolute font-handwriting text-primary text-xl md:text-3xl pointer-events-none hidden md:block ${
-                    index === 0
-                      ? "bottom-6 -left-2 rotate-6"
-                      : "-top-8 -left-4 -rotate-12"
-                  }`}
-                >
-                  {step.label}
-                </div>
+                <>
+                  {/* Mobile: inline below card */}
+                  <div className="md:hidden font-handwriting text-primary text-xl text-center mt-3">
+                    {step.label}
+                  </div>
+                  {/* Desktop: absolute positioned */}
+                  <div
+                    className={`hidden md:block absolute font-handwriting text-primary text-3xl pointer-events-none ${
+                      index === 0
+                        ? "bottom-6 -left-2 rotate-6"
+                        : "-top-8 -left-4 -rotate-12"
+                    }`}
+                  >
+                    {step.label}
+                  </div>
+                </>
               )}
             </div>
           ))}

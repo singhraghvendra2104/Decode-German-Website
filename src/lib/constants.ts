@@ -1172,11 +1172,14 @@ export const footerLinks = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Courses", href: "/courses" },
+    { label: "Beyond Classes", href: "/beyond-classes" },
   ],
   legal: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Courses", href: "/courses" },
+    { label: "Beyond Classes", href: "/beyond-classes" },
+    { label: "Resources", href: "/resources" },
   ],
 };
 
