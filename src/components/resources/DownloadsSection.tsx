@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import { Carousel } from "@mantine/carousel";
 import type { EmblaCarouselType } from "embla-carousel";
 import type { Download } from "@/lib/sanity";
@@ -9,12 +9,23 @@ interface Props {
   downloads: Download[];
 }
 
-const DOWNLOAD_CATEGORIES = [
-  { label: "All", value: "all" },
-  { label: "Grammar Sheets", value: "grammar-sheets" },
-  { label: "Vocabulary Guides", value: "vocabulary" },
-  { label: "Audio Drills", value: "audio-drills" },
-] as const;
+/**
+ * Build the sidebar filter tabs from the categories that actually appear on
+ * the loaded downloads — editors create these in the Studio via the shared
+ * `category` document type, so we don't hardcode a list here.
+ */
+function buildCategoryTabs(downloads: Download[]) {
+  const seen = new Map<string, string>();
+  for (const d of downloads) {
+    if (d.category && !seen.has(d.category)) {
+      seen.set(d.category, d.categoryTitle || d.category);
+    }
+  }
+  return [
+    { label: "All", value: "all" },
+    ...Array.from(seen, ([value, label]) => ({ value, label })),
+  ];
+}
 
 function fileIcon(fileType: string) {
   if (
@@ -83,6 +94,8 @@ export default function DownloadsSection({ downloads }: Props) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const emblaRef = useRef<EmblaCarouselType | null>(null);
 
+  const categoryTabs = useMemo(() => buildCategoryTabs(downloads), [downloads]);
+
   const filtered =
     activeCategory === "all"
       ? downloads
@@ -104,7 +117,7 @@ export default function DownloadsSection({ downloads }: Props) {
               self-study journey.
             </p>
             <div className="mt-6 md:mt-12 flex lg:flex-col gap-3 lg:gap-0 lg:space-y-4 overflow-x-auto">
-              {DOWNLOAD_CATEGORIES.map((cat) => (
+              {categoryTabs.map((cat) => (
                 <button
                   key={cat.value}
                   onClick={() => {

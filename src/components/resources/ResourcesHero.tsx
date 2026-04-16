@@ -24,7 +24,7 @@ export default function ResourcesHero() {
             alt="Beyond the Classroom"
             width={600}
             height={600}
-            className="w-full aspect-square object-cover md:grayscale [@media(hover:hover)]:hover:grayscale-0 transition-all duration-700 mb-2 md:mb-4"
+            className="w-full aspect-square object-cover md:grayscale md:hover:grayscale-0 transition-all duration-1000 mb-2 md:mb-4"
           />
           <p className="font-handwriting text-base md:text-xl text-center text-gray-500">
             Street lights in Mitte, 2024

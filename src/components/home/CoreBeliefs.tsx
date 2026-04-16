@@ -1,26 +1,53 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "@/components/ui/ImageWithSkeleton";
 import { coreBeliefs } from "@/lib/constants";
 
 export default function CoreBeliefs() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const total = coreBeliefs.length;
 
   const nextSlide = useCallback(() => {
-    setActiveSlide((prev) => (prev + 1) % coreBeliefs.length);
-  }, []);
+    setActiveSlide((prev) => (prev + 1) % total);
+  }, [total]);
+
+  const prevSlide = useCallback(() => {
+    setActiveSlide((prev) => (prev - 1 + total) % total);
+  }, [total]);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 6000);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      touchEndX.current = e.changedTouches[0].clientX;
+      const diff = touchStartX.current - touchEndX.current;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+    },
+    [nextSlide, prevSlide]
+  );
+
   return (
     <section id="philosophy" className="py-10 md:py-14 lg:py-20 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-[1300px] mx-auto space-y-10 md:space-y-16 lg:space-y-24">
         {/* Carousel Slides */}
-        <div className="relative min-h-[800px] md:min-h-[550px] lg:min-h-[650px]">
+        <div
+          className="relative min-h-[800px] md:min-h-[550px] lg:min-h-[650px]"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {coreBeliefs.map((belief, index) => (
             <div
               key={belief.id}
@@ -93,20 +120,42 @@ export default function CoreBeliefs() {
           ))}
         </div>
 
-        {/* Dot Indicators */}
-        <div className="flex justify-center gap-4">
-          {coreBeliefs.map((belief, index) => (
+        {/* Navigation: dots left, arrows right */}
+        <div className="flex items-center justify-between">
+          <div className="flex gap-3">
+            {coreBeliefs.map((belief, index) => (
+              <button
+                key={belief.id}
+                onClick={() => setActiveSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === activeSlide
+                    ? "bg-primary w-8"
+                    : "bg-charcoal/20 hover:bg-charcoal/40 w-2"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2">
             <button
-              key={belief.id}
-              onClick={() => setActiveSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === activeSlide
-                  ? "bg-primary w-8"
-                  : "bg-charcoal/20 hover:bg-charcoal/40"
-              }`}
-            />
-          ))}
+              onClick={prevSlide}
+              className="w-10 h-10 md:w-12 md:h-12 border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors cursor-pointer"
+              aria-label="Previous slide"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 md:w-12 md:h-12 border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors cursor-pointer"
+              aria-label="Next slide"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

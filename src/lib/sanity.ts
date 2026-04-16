@@ -32,17 +32,24 @@ export interface SanityImage {
   alt?: string;
 }
 
-// Matches the `post` document type in your Sanity Studio
+export interface Category {
+  _id: string;
+  _type: "category";
+  title: string;
+  value: { current: string };
+}
+
+// Unified shape used by frontend components (articles + youtube videos)
 export interface Post {
   _id: string;
-  _type: "post";
+  _type: "article" | "youtubeVideo";
   title: string;
   slug: { current: string };
   publishedAt: string;
   image?: SanityImage;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body?: any[];
-  category?: "grammar" | "youtube" | "life-in-germany" | "community" | "resource";
+  category?: string; // resolved from reference
   excerpt?: string;
   youtubeUrl?: string;
   isPinned?: boolean;
@@ -58,74 +65,21 @@ export interface Download {
   fileType: string;
   fileSize: string;
   fileUrl?: string;
-  category: "grammar-sheets" | "vocabulary" | "audio-drills";
-}
-
-export interface ResourcesPageData {
-  hero: {
-    handwriting: string;
-    heading: string;
-    headingBreak: string;
-    description: string;
-    polaroidImage?: SanityImage;
-    polaroidCaption: string;
-  };
-  youtubeCta: {
-    heading: string;
-    description: string;
-    buttonText: string;
-    buttonUrl: string;
-    backgroundImage?: SanityImage;
-  };
-  finalCta: {
-    heading: string;
-    description: string;
-    primaryButtonText: string;
-    primaryButtonUrl: string;
-    secondaryButtonText: string;
-    secondaryButtonUrl: string;
-    polaroidImage?: SanityImage;
-    handwritingText: string;
-  };
+  /** Category slug, resolved from the `category` reference. */
+  category?: string;
+  /** Human-readable category title, resolved from the `category` reference. */
+  categoryTitle?: string;
 }
 
 // ─── Queries (aligned with Sanity Studio schemas) ───────────────────────────
 
-// Fetches the singleton resourcesPage document for hero/CTA content
-export const RESOURCES_PAGE_QUERY = `*[_type == "resourcesPage"][0]{
-  hero {
-    handwriting,
-    heading,
-    headingBreak,
-    description,
-    polaroidImage,
-    polaroidCaption
-  },
-  youtubeCta {
-    heading,
-    description,
-    buttonText,
-    buttonUrl,
-    backgroundImage
-  },
-  finalCta {
-    heading,
-    description,
-    primaryButtonText,
-    primaryButtonUrl,
-    secondaryButtonText,
-    secondaryButtonUrl,
-    polaroidImage,
-    handwritingText
-  }
-}`;
-
-// Fetches pinned posts for the highlights section
-export const PINNED_POSTS_QUERY = `*[_type == "post" && isPinned == true] | order(publishedAt desc)[0...3]{
+// Fetches pinned articles for the highlights section
+export const PINNED_POSTS_QUERY = `*[_type == "article" && isPinned == true] | order(publishedAt desc){
   _id,
+  _type,
   title,
   slug,
-  category,
+  "category": category->value.current,
   excerpt,
   image,
   youtubeUrl,
@@ -135,17 +89,55 @@ export const PINNED_POSTS_QUERY = `*[_type == "post" && isPinned == true] | orde
   body
 }`;
 
-// Fetches all posts for the archive feed (pinned posts also appear here)
-export const ALL_POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){
+// Fetches all articles for the archive feed
+export const ALL_POSTS_QUERY = `*[_type == "article" && defined(slug.current)] | order(publishedAt desc){
   _id,
+  _type,
   title,
   slug,
-  category,
+  "category": category->value.current,
   excerpt,
   image,
   youtubeUrl,
   publishedAt,
   body
+}`;
+
+// Fetches pinned YouTube videos for the highlights section
+export const PINNED_VIDEOS_QUERY = `*[_type == "youtubeVideo" && isPinned == true] | order(publishedAt desc){
+  _id,
+  _type,
+  title,
+  slug,
+  "category": category->value.current,
+  excerpt,
+  image,
+  youtubeUrl,
+  publishedAt,
+  isPinned,
+  pinnedLabel,
+  body
+}`;
+
+// Fetches all YouTube videos for the archive feed
+export const ALL_VIDEOS_QUERY = `*[_type == "youtubeVideo" && defined(youtubeUrl)] | order(publishedAt desc){
+  _id,
+  _type,
+  title,
+  slug,
+  "category": category->value.current,
+  excerpt,
+  image,
+  youtubeUrl,
+  publishedAt,
+  body
+}`;
+
+// Fetches all categories
+export const CATEGORIES_QUERY = `*[_type == "category"] | order(title asc){
+  _id,
+  title,
+  "value": value.current
 }`;
 
 // Fetches downloads
@@ -156,5 +148,6 @@ export const DOWNLOADS_QUERY = `*[_type == "download"] | order(level asc){
   fileType,
   fileSize,
   fileUrl,
-  category
+  "category": category->value.current,
+  "categoryTitle": category->title
 }`;

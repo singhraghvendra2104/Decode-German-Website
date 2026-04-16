@@ -152,6 +152,53 @@ const components: PortableTextComponents = {
         )}
       </div>
     ),
+    tableBlock: ({ value }) => {
+      const allRows: { cells: string[] }[] = value.table?.rows || [];
+      if (allRows.length === 0) return null;
+      const [headerRow, ...bodyRows] = allRows;
+      return (
+        <figure className="my-6 overflow-x-auto">
+          {value.caption && (
+            <figcaption className="text-sm text-gray-500 mb-2 font-semibold">
+              {value.caption}
+            </figcaption>
+          )}
+          <table className="w-full border-collapse text-sm rounded-lg overflow-hidden shadow-sm">
+            {headerRow && headerRow.cells?.length > 0 && (
+              <thead>
+                <tr>
+                  {headerRow.cells.map((h: string, i: number) => (
+                    <th
+                      key={i}
+                      className="bg-[#092226] text-white px-4 py-3 text-left text-xs uppercase tracking-wider font-bold"
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            )}
+            <tbody>
+              {bodyRows.map((row: { cells: string[] }, ri: number) => (
+                <tr
+                  key={ri}
+                  className={`transition-colors ${ri % 2 === 0 ? "bg-gray-50" : "bg-white"} hover:bg-primary/5`}
+                >
+                  {(row.cells || []).map((cell: string, ci: number) => (
+                    <td
+                      key={ci}
+                      className="px-4 py-2.5 border-b border-gray-100 leading-relaxed"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </figure>
+      );
+    },
     videoBlock: ({ value }) => {
       const videoId = value.url ? extractYouTubeId(value.url) : null;
       if (!videoId) return null;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 import Image from "@/components/ui/ImageWithSkeleton";
 import { Carousel } from "@mantine/carousel";
 import type { EmblaCarouselType } from "embla-carousel";
@@ -15,16 +15,23 @@ function extractYouTubeId(url: string): string | null {
   return match?.[1] ?? null;
 }
 
-interface Props {
-  resources: Post[];
+interface SanityCategory {
+  _id: string;
+  title: string;
+  value: string;
 }
 
-const CATEGORIES = [
-  { label: "All", value: "all" },
+interface Props {
+  resources: Post[];
+  categories?: SanityCategory[];
+}
+
+// Fallback categories when none come from Sanity
+const FALLBACK_CATEGORIES = [
   { label: "Grammar Tips", value: "grammar" },
   { label: "YouTube", value: "youtube" },
   { label: "Life in Germany", value: "life-in-germany" },
-] as const;
+];
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString("en-US", {
@@ -34,28 +41,19 @@ function formatDate(dateString: string) {
   });
 }
 
-function categoryLabel(category: string) {
-  const map: Record<string, string> = {
-    grammar: "Grammar Tips",
-    youtube: "YouTube",
-    "life-in-germany": "Life in Germany",
-    community: "Community",
-    resource: "Resource",
-  };
-  return map[category] || category;
-}
-
-function ctaLabel(category: string) {
-  if (category === "youtube") return "Watch Video";
-  return "Read Story";
+function categoryLabel(category: string, cats: { label: string; value: string }[]) {
+  const found = cats.find((c) => c.value === category);
+  return found?.label || category;
 }
 
 function YouTubeCard({
   resource,
   onOpen,
+  cats,
 }: {
   resource: Post;
   onOpen: (post: Post) => void;
+  cats: { label: string; value: string }[];
 }) {
   const [playing, setPlaying] = useState(false);
   const videoId = resource.youtubeUrl
@@ -116,7 +114,7 @@ function YouTubeCard({
         </div>
       </div>
       <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-primary mb-2 md:mb-3 font-semibold">
-        <span>{categoryLabel(resource.category || "resource")}</span>
+        <span>{categoryLabel(resource.category || "resource", cats)}</span>
         <span>{formatDate(resource.publishedAt)}</span>
       </div>
       <h3 className="text-xl md:text-2xl font-[var(--font-serif)] italic leading-tight md:group-hover:text-primary transition-colors">
@@ -153,12 +151,15 @@ function YouTubeCard({
 function ArticleCard({
   resource,
   onOpen,
+  cats,
 }: {
   resource: Post;
   onOpen: (post: Post) => void;
+  cats: { label: string; value: string }[];
 }) {
-  if (resource.category === "youtube") {
-    return <YouTubeCard resource={resource} onOpen={onOpen} />;
+  // Show YouTube card for youtubeVideo documents or articles with a youtubeUrl
+  if (resource._type === "youtubeVideo" || resource.youtubeUrl) {
+    return <YouTubeCard resource={resource} onOpen={onOpen} cats={cats} />;
   }
 
   return (
@@ -177,7 +178,7 @@ function ArticleCard({
         </div>
       )}
       <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-primary mb-2 md:mb-3 font-semibold">
-        <span>{categoryLabel(resource.category || "resource")}</span>
+        <span>{categoryLabel(resource.category || "resource", cats)}</span>
         <span>{formatDate(resource.publishedAt)}</span>
       </div>
       <h3 className="text-xl md:text-2xl font-[var(--font-serif)] italic leading-tight md:group-hover:text-primary transition-colors">
@@ -193,11 +194,26 @@ function ArticleCard({
   );
 }
 
-export default function ArchiveFeed({ resources }: Props) {
+export default function ArchiveFeed({ resources, categories = [] }: Props) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentSlide, setCurrentSlide] = useState(0);
   const emblaRef = useRef<EmblaCarouselType | null>(null);
   const [drawerPost, setDrawerPost] = useState<Post | null>(null);
+
+  // Build category tabs only from categories that are actually referenced by
+  // an article or YouTube video. Categories shared with other content types
+  // (e.g. downloads) shouldn't bleed into this section's filter list.
+  const cats = useMemo(() => {
+    const used = new Set(
+      resources.map((r) => r.category).filter((v): v is string => Boolean(v))
+    );
+    if (categories.length > 0) {
+      return categories
+        .filter((c) => used.has(c.value))
+        .map((c) => ({ label: c.title, value: c.value }));
+    }
+    return FALLBACK_CATEGORIES.filter((c) => used.has(c.value));
+  }, [categories, resources]);
 
   const filtered =
     activeCategory === "all"
@@ -217,7 +233,21 @@ export default function ArchiveFeed({ resources }: Props) {
           The Archive
         </h2>
         <div className="flex flex-wrap gap-2 md:gap-4">
-          {CATEGORIES.map((cat) => (
+          <button
+            onClick={() => {
+              setActiveCategory("all");
+              setCurrentSlide(0);
+              emblaRef.current?.scrollTo(0);
+            }}
+            className={`px-3 md:px-4 py-1 text-[10px] md:text-[11px] uppercase tracking-widest transition-colors ${
+              activeCategory === "all"
+                ? "bg-primary text-white"
+                : "text-gray-500 hover:text-primary"
+            }`}
+          >
+            All
+          </button>
+          {cats.map((cat) => (
             <button
               key={cat.value}
               onClick={() => {
@@ -251,7 +281,7 @@ export default function ArchiveFeed({ resources }: Props) {
           >
             {filtered.map((resource) => (
               <Carousel.Slide key={resource._id}>
-                <ArticleCard resource={resource} onOpen={setDrawerPost} />
+                <ArticleCard resource={resource} onOpen={setDrawerPost} cats={cats} />
               </Carousel.Slide>
             ))}
           </Carousel>
