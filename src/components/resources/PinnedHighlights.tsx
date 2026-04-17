@@ -111,13 +111,26 @@ function PinnedYouTube({
   );
 }
 
-function PinnedGrammar({
+function PinnedArticle({
   resource,
   onOpen,
 }: {
   resource: Post;
   onOpen: (post: Post) => void;
 }) {
+  const categoryLabel = resource.categoryTitle || resource.category;
+
+  const pinIcon = (
+    <svg
+      className="absolute top-3 left-3 w-7 h-7 md:w-9 md:h-9 text-primary drop-shadow-sm"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2l-2-2z" />
+    </svg>
+  );
+
   return (
     <div className="group cursor-pointer" onClick={() => onOpen(resource)}>
       <div className="bg-[#e8e3d9] p-3 md:p-4 mb-4 md:mb-6 transition-all duration-300 group-hover:-translate-y-2 -rotate-[0.8deg]">
@@ -130,102 +143,39 @@ function PinnedGrammar({
               className="object-cover"
             />
             <div className="absolute inset-0 bg-white/80 flex flex-col justify-center p-4">
-              <h4 className="font-[var(--font-serif)] italic text-2xl md:text-4xl mb-3 md:mb-4">
+              <h4 className="font-handwriting italic text-2xl md:text-4xl mb-3 md:mb-4">
                 {resource.title}
               </h4>
               <p className="text-sm leading-relaxed">{resource.excerpt}</p>
             </div>
+            {pinIcon}
           </div>
         ) : (
-          <div className="aspect-square bg-white p-4 flex flex-col justify-center border-t-8 border-primary">
+          <div className="aspect-square bg-white p-4 flex flex-col justify-center border-t-8 border-primary relative">
             <h4 className="font-[var(--font-serif)] italic text-2xl md:text-4xl mb-3 md:mb-4">
               {resource.title}
             </h4>
             <p className="text-sm leading-relaxed">{resource.excerpt}</p>
+            {pinIcon}
           </div>
         )}
       </div>
-      <span className="uppercase text-[10px] tracking-[0.3em] text-primary font-semibold">
-        {resource.pinnedLabel || "Grammar Insight"}
-      </span>
-      <h3 className="text-xl md:text-2xl font-[var(--font-serif)] italic mt-1 md:mt-2">
-        {resource.title}
-      </h3>
-      <p className="text-sm mt-1 md:mt-2 opacity-70">{resource.excerpt}</p>
+      {categoryLabel && (
+        <span className="uppercase text-[10px] tracking-[0.3em] text-primary font-semibold">
+          {categoryLabel}
+        </span>
+      )}
     </div>
   );
 }
-
-function PinnedUpdate({
-  resource,
-  onOpen,
-}: {
-  resource: Post;
-  onOpen: (post: Post) => void;
-}) {
-  return (
-    <div className="group cursor-pointer" onClick={() => onOpen(resource)}>
-      <div className="mb-4 md:mb-6 transition-all duration-300 group-hover:-translate-y-2 relative aspect-[4/3] md:aspect-square overflow-hidden">
-        {resource.image ? (
-          <>
-            <Image
-              src={urlFor(resource.image).width(600).height(600).url()}
-              alt={resource.image.alt || resource.title}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-[#2d2a26]/70" />
-          </>
-        ) : (
-          <div className="absolute inset-0 bg-[#2d2a26]" />
-        )}
-        <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
-          <svg
-            className="w-8 md:w-10 h-8 md:h-10 text-primary"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
-          </svg>
-          <div>
-            <h3 className="text-xl md:text-3xl font-[var(--font-serif)] italic text-white leading-tight">
-              {resource.title}
-            </h3>
-            <p className="text-white/60 text-xs tracking-widest mt-2 md:mt-4 uppercase">
-              {resource.excerpt}
-            </p>
-          </div>
-        </div>
-      </div>
-      <span className="uppercase text-[10px] tracking-[0.3em] text-primary font-semibold">
-        {resource.pinnedLabel || "Batch Updates"}
-      </span>
-      <h3 className="text-xl md:text-2xl font-[var(--font-serif)] italic mt-1 md:mt-2">
-        {resource.title}
-      </h3>
-      <p className="text-sm mt-1 md:mt-2 opacity-70">{resource.excerpt}</p>
-    </div>
-  );
-}
-
-const PINNED_COMPONENTS: Record<
-  string,
-  React.ComponentType<{ resource: Post; onOpen: (post: Post) => void }>
-> = {
-  youtube: PinnedYouTube,
-  grammar: PinnedGrammar,
-  community: PinnedUpdate,
-  resource: PinnedUpdate,
-  "life-in-germany": PinnedUpdate,
-};
 
 function pickPinnedComponent(resource: Post) {
-  // YouTube videos always render with the inline-playable card, regardless of
-  // whether the editor set the "youtube" category on them.
+  // YouTube videos keep the inline-playable card; everything else uses the
+  // unified article card.
   if (resource._type === "youtubeVideo" || resource.youtubeUrl) {
     return PinnedYouTube;
   }
-  return PINNED_COMPONENTS[resource.category || ""] || PinnedUpdate;
+  return PinnedArticle;
 }
 
 export default function PinnedHighlights({ pinnedResources }: Props) {
