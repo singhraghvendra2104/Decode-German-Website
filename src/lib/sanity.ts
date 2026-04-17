@@ -49,7 +49,8 @@ export interface Post {
   image?: SanityImage;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body?: any[];
-  category?: string; // resolved from reference
+  category?: string; // resolved from reference (slug value)
+  categoryTitle?: string; // resolved from reference (human-readable title)
   excerpt?: string;
   youtubeUrl?: string;
   isPinned?: boolean;
@@ -80,6 +81,7 @@ export const PINNED_POSTS_QUERY = `*[_type == "article" && isPinned == true] | o
   title,
   slug,
   "category": category->value.current,
+  "categoryTitle": category->title,
   excerpt,
   image,
   youtubeUrl,
@@ -110,6 +112,7 @@ export const PINNED_VIDEOS_QUERY = `*[_type == "youtubeVideo" && isPinned == tru
   title,
   slug,
   "category": category->value.current,
+  "categoryTitle": category->title,
   excerpt,
   image,
   youtubeUrl,
