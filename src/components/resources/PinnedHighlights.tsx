@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from "next/link";
 import Image from "@/components/ui/ImageWithSkeleton";
 import { Carousel } from "@mantine/carousel";
 import type { EmblaCarouselType } from "embla-carousel";
@@ -97,15 +98,27 @@ function PinnedYouTube({
             </svg>
           </a>
         )}
-        <button
-          onClick={() => onOpen(resource)}
-          className="inline-flex items-center text-[10px] uppercase tracking-widest font-bold hover:text-primary transition-colors cursor-pointer"
-        >
-          Read More
-          <svg className="w-3.5 h-3.5 ml-1.5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-          </svg>
-        </button>
+        {resource.slug?.current ? (
+          <Link
+            href={`/beyond-classes/${resource.slug.current}`}
+            className="inline-flex items-center text-[10px] uppercase tracking-widest font-bold hover:text-primary transition-colors"
+          >
+            Read More
+            <svg className="w-3.5 h-3.5 ml-1.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </Link>
+        ) : (
+          <button
+            onClick={() => onOpen(resource)}
+            className="inline-flex items-center text-[10px] uppercase tracking-widest font-bold hover:text-primary transition-colors cursor-pointer"
+          >
+            Read More
+            <svg className="w-3.5 h-3.5 ml-1.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </button>
+        )}
       </div>
     </div>
   );
@@ -119,6 +132,7 @@ function PinnedArticle({
   onOpen: (post: Post) => void;
 }) {
   const categoryLabel = resource.categoryTitle || resource.category;
+  const slug = resource.slug?.current;
 
   const pinIcon = (
     <svg
@@ -131,8 +145,8 @@ function PinnedArticle({
     </svg>
   );
 
-  return (
-    <div className="group cursor-pointer" onClick={() => onOpen(resource)}>
+  const cardContent = (
+    <>
       <div className="bg-[#e8e3d9] p-3 md:p-4 mb-4 md:mb-6 transition-all duration-300 group-hover:-translate-y-2 -rotate-[0.8deg]">
         {resource.image ? (
           <div className="aspect-square relative overflow-hidden border-t-8 border-primary">
@@ -165,6 +179,20 @@ function PinnedArticle({
           {categoryLabel}
         </span>
       )}
+    </>
+  );
+
+  if (slug) {
+    return (
+      <Link href={`/beyond-classes/${slug}`} className="group block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="group cursor-pointer" onClick={() => onOpen(resource)}>
+      {cardContent}
     </div>
   );
 }

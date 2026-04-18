@@ -3,12 +3,12 @@ export const siteConfig = {
   name: "Decode German",
   tagline: "Student focused language learning",
   description:
-    "Learn German A1-B2 with small batches, native speakers and teachers who cares.",
+    "Learn German A1–B2 in Dresden or online with small batches, native-level teachers, and a community of 1,000+ learners. Personal mentorship from beginner to fluent.",
   url: "https://www.decodegerman.com",
   email: "decodegerman@gmail.com",
   address: {
-    street: "Torstraße 124",
-    city: "10119 Berlin, Germany",
+    city: "Dresden",
+    country: "Germany",
   },
   whatsappNumber: "+4915904836675",
   phoneIndia: "+919871205947",
@@ -1175,11 +1175,10 @@ export const footerLinks = {
     { label: "Beyond Classes", href: "/beyond-classes" },
   ],
   legal: [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Courses", href: "/courses" },
-    { label: "Beyond Classes", href: "/beyond-classes" },
-    { label: "Resources", href: "/resources" },
+    { label: "Impressum", href: "/impressum" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms", href: "/terms" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
   ],
 };
 
@@ -1205,8 +1204,7 @@ export const footerContent = {
     addressLabel: "Address",
     phoneGermanyDisplay: "+49 15900 4836675",
     phoneIndiaDisplay: "+91 98712 05947",
-    // NOTE: This address differs from siteConfig.address (Berlin). Confirm which is correct.
-    displayAddress: "Village Tharet, Madhya Pradesh, India, 475673",
+    displayAddress: "Dresden, Germany",
   },
 };
 
@@ -1214,6 +1212,25 @@ export const footerContent = {
 export const headerContent = {
   mobileMenuAriaLabel: "Toggle navigation menu",
   logoAltSuffix: "logo",
+};
+
+// ─── Legal / Impressum / Datenschutz ─────────────────────────────────────────
+// Operator / Impressum details required by German TMG §5.
+// TODO: Confirm final values with Shalini before public launch.
+export const legalInfo = {
+  operatorName: "Shalini K. Dubey",
+  brandName: "Decode German",
+  companyName: "SkiD Decode Deutsch Language Institute Private Limited",
+  street: "", // TODO: Add Dresden street address once confirmed
+  postalCode: "", // TODO: Add Dresden postal code
+  city: "Dresden",
+  country: "Germany",
+  email: "decodegerman@gmail.com",
+  phone: "+49 159 004836675",
+  vatId: "", // TODO: Add Umsatzsteuer-ID once issued
+  taxNumber: "", // TODO: Add Steuernummer once issued
+  responsibleForContent: "Shalini K. Dubey",
+  lastUpdated: "April 2026",
 };
 
 // ─── WhatsApp Floating Button ────────────────────────────────────────────────
@@ -1350,6 +1367,10 @@ export const theTeamContent = {
       "50+ Years in Germanistik",
     ],
   },
+  // TODO (feedback 2026-04): Replace the current team headshots with real photos.
+  // The existing headshots read as AI-generated (hyperlit faces, generic office
+  // backdrops, identical lighting) and contradict Decode German's "personal
+  // relationships" brand promise. Even informal phone-camera shots are better.
   members: [
     {
       name: "Atalbihari Sharma",

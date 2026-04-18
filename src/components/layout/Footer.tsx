@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { siteConfig, footerLinks, footerDescription, socialLinks, footerContent } from "@/lib/constants";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 export default function Footer() {
   const socialIcons: Record<string, React.ReactNode> = {
@@ -111,7 +112,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="max-w-[1400px] mx-auto mt-12 md:mt-24 pt-8 md:pt-10 border-t border-accent flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
         <p>{siteConfig.copyright}</p>
-        <div className="flex gap-6 md:gap-10">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-10">
           {footerLinks.legal.map((link) => (
             <Link
               key={link.label}
@@ -121,6 +122,7 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
+          <CookieSettingsButton />
         </div>
       </div>
     </footer>

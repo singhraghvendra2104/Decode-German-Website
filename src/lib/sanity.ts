@@ -136,6 +136,28 @@ export const ALL_VIDEOS_QUERY = `*[_type == "youtubeVideo" && defined(youtubeUrl
   body
 }`;
 
+// Fetches a single article by slug for the article detail page
+export const ARTICLE_BY_SLUG_QUERY = `*[_type == "article" && slug.current == $slug][0]{
+  _id,
+  _type,
+  title,
+  slug,
+  "category": category->value.current,
+  "categoryTitle": category->title,
+  excerpt,
+  image,
+  youtubeUrl,
+  publishedAt,
+  isPinned,
+  pinnedLabel,
+  body
+}`;
+
+// Fetches all article slugs for generateStaticParams
+export const ARTICLE_SLUGS_QUERY = `*[_type == "article" && defined(slug.current)]{
+  "slug": slug.current
+}`;
+
 // Fetches all categories
 export const CATEGORIES_QUERY = `*[_type == "category"] | order(title asc){
   _id,
