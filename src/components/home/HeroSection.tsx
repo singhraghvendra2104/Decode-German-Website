@@ -46,38 +46,42 @@ export default function HeroSection() {
     >
       {/* Carousel Slides */}
       <div className="absolute inset-0 z-0">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
-              index === activeSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.alt}
-              fill
-              className="object-cover brightness-[0.4] contrast-[1.1]"
-              priority={index === 0}
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6">
-              {slide.handwriting && (
-                <span className="font-handwriting text-primary text-xl md:text-3xl mb-4 md:mb-6 block opacity-90">
-                  {slide.handwriting}
-                </span>
-              )}
-              <h1 className="font-[var(--font-serif)] text-ivory text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold max-w-4xl leading-[1.2] tracking-tight">
-                {slide.heading}{" "}
-                <span className="italic text-primary">
-                  {slide.headingAccent}
-                </span>{" "}
-                {slide.headingEnd}
-              </h1>
+        {heroSlides.map((slide, index) => {
+          const HeadingTag = index === 0 ? "h1" : "p";
+          return (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+                index === activeSlide ? "opacity-100" : "opacity-0"
+              }`}
+              aria-hidden={index !== activeSlide}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.alt}
+                fill
+                className="object-cover brightness-[0.4] contrast-[1.1]"
+                priority={index === 0}
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6">
+                {slide.handwriting && (
+                  <span className="font-handwriting text-primary text-xl md:text-3xl mb-4 md:mb-6 block opacity-90">
+                    {slide.handwriting}
+                  </span>
+                )}
+                <HeadingTag className="font-[var(--font-serif)] text-ivory text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold max-w-4xl leading-[1.2] tracking-tight">
+                  {slide.heading}{" "}
+                  <span className="italic text-primary">
+                    {slide.headingAccent}
+                  </span>{" "}
+                  {slide.headingEnd}
+                </HeadingTag>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Left/Right Navigation Arrows (desktop only, visible on hover) */}

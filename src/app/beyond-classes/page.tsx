@@ -22,7 +22,7 @@ import type { Post, Download } from "@/lib/sanity";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Beyond the Classes | Decode German",
+  title: "Beyond the Classes",
   description:
     "Explore our curated library of tips, cultural guides, and deep-dive videos designed to take you from textbook German to real-world fluency.",
   openGraph: {

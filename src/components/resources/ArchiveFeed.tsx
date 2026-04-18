@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback, useRef } from "react";
+import Link from "next/link";
 import Image from "@/components/ui/ImageWithSkeleton";
 import { urlFor } from "@/lib/sanity";
 import type { Post } from "@/lib/sanity";
@@ -140,19 +141,35 @@ function YouTubeCard({
             </svg>
           </a>
         )}
-        <button
-          onClick={() => onOpen(resource)}
-          className="inline-flex items-center text-xs uppercase tracking-widest font-bold hover:text-primary transition-colors cursor-pointer"
-        >
-          Read More
-          <svg
-            className="w-3.5 h-3.5 ml-1.5"
-            viewBox="0 0 24 24"
-            fill="currentColor"
+        {resource.slug?.current ? (
+          <Link
+            href={`/beyond-classes/${resource.slug.current}`}
+            className="inline-flex items-center text-xs uppercase tracking-widest font-bold hover:text-primary transition-colors"
           >
-            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-          </svg>
-        </button>
+            Read More
+            <svg
+              className="w-3.5 h-3.5 ml-1.5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </Link>
+        ) : (
+          <button
+            onClick={() => onOpen(resource)}
+            className="inline-flex items-center text-xs uppercase tracking-widest font-bold hover:text-primary transition-colors cursor-pointer"
+          >
+            Read More
+            <svg
+              className="w-3.5 h-3.5 ml-1.5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </button>
+        )}
       </div>
     </article>
   );
@@ -171,37 +188,73 @@ function ArticleCard({
     return <YouTubeCard resource={resource} onOpen={onOpen} cats={cats} />;
   }
 
+  const slug = resource.slug?.current;
+  const href = slug ? `/beyond-classes/${slug}` : null;
+
   return (
-    <article
-      className="group h-full cursor-pointer"
-      onClick={() => onOpen(resource)}
-    >
-      {resource.image && (
-        <div className="bg-[#e8e3d9] p-2.5 md:p-3 mb-4 md:mb-6 transition-all duration-300 md:group-hover:-translate-y-2">
-          <div className="overflow-hidden">
-            <Image
-              src={urlFor(resource.image).width(600).height(400).url()}
-              alt={resource.image.alt || resource.title}
-              width={600}
-              height={400}
-              className="w-full aspect-[3/2] object-cover transition-transform duration-700 md:group-hover:scale-105"
-            />
+    <article className="group h-full">
+      {href ? (
+        <Link href={href} className="block">
+          {resource.image && (
+            <div className="bg-[#e8e3d9] p-2.5 md:p-3 mb-4 md:mb-6 transition-all duration-300 md:group-hover:-translate-y-2">
+              <div className="overflow-hidden">
+                <Image
+                  src={urlFor(resource.image).width(600).height(400).url()}
+                  alt={resource.image.alt || resource.title}
+                  width={600}
+                  height={400}
+                  className="w-full aspect-[3/2] object-cover transition-transform duration-700 md:group-hover:scale-105"
+                />
+              </div>
+            </div>
+          )}
+          <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-primary mb-2 md:mb-3 font-semibold">
+            <span>{categoryLabel(resource.category || "resource", cats)}</span>
+            <span>{formatDate(resource.publishedAt)}</span>
           </div>
+          <h3 className="text-base md:text-2xl font-[var(--font-serif)] italic leading-tight md:group-hover:text-primary transition-colors">
+            {resource.title}
+          </h3>
+          <span className="mt-3 md:mt-4 inline-flex items-center text-xs uppercase tracking-widest font-bold md:group-hover:pl-2 transition-all">
+            Read Story{" "}
+            <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </span>
+        </Link>
+      ) : (
+        <div
+          className="cursor-pointer"
+          onClick={() => onOpen(resource)}
+        >
+          {resource.image && (
+            <div className="bg-[#e8e3d9] p-2.5 md:p-3 mb-4 md:mb-6 transition-all duration-300 md:group-hover:-translate-y-2">
+              <div className="overflow-hidden">
+                <Image
+                  src={urlFor(resource.image).width(600).height(400).url()}
+                  alt={resource.image.alt || resource.title}
+                  width={600}
+                  height={400}
+                  className="w-full aspect-[3/2] object-cover transition-transform duration-700 md:group-hover:scale-105"
+                />
+              </div>
+            </div>
+          )}
+          <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-primary mb-2 md:mb-3 font-semibold">
+            <span>{categoryLabel(resource.category || "resource", cats)}</span>
+            <span>{formatDate(resource.publishedAt)}</span>
+          </div>
+          <h3 className="text-base md:text-2xl font-[var(--font-serif)] italic leading-tight md:group-hover:text-primary transition-colors">
+            {resource.title}
+          </h3>
+          <span className="mt-3 md:mt-4 inline-flex items-center text-xs uppercase tracking-widest font-bold md:group-hover:pl-2 transition-all">
+            Read Story{" "}
+            <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </span>
         </div>
       )}
-      <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-primary mb-2 md:mb-3 font-semibold">
-        <span>{categoryLabel(resource.category || "resource", cats)}</span>
-        <span>{formatDate(resource.publishedAt)}</span>
-      </div>
-      <h3 className="text-base md:text-2xl font-[var(--font-serif)] italic leading-tight md:group-hover:text-primary transition-colors">
-        {resource.title}
-      </h3>
-      <span className="mt-3 md:mt-4 inline-flex items-center text-xs uppercase tracking-widest font-bold md:group-hover:pl-2 transition-all">
-        Read Story{" "}
-        <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-        </svg>
-      </span>
     </article>
   );
 }

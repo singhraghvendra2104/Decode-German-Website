@@ -72,8 +72,14 @@ function DownloadCard({ download }: { download: Download }) {
           Download
         </a>
       ) : (
-        <button className="mt-4 md:mt-8 border border-primary text-primary px-4 py-2 uppercase text-[11px] tracking-widest font-bold group-hover:bg-primary group-hover:text-white transition-colors cursor-pointer">
-          Download
+        <button
+          type="button"
+          disabled
+          aria-label="Download coming soon"
+          title="Coming soon"
+          className="mt-4 md:mt-8 border border-gray-300 text-gray-400 px-4 py-2 uppercase text-[11px] tracking-widest font-bold cursor-not-allowed"
+        >
+          Coming Soon
         </button>
       )}
     </div>

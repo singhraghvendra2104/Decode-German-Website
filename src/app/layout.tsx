@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { mantineTheme } from "@/lib/theme";
 import { siteConfig } from "@/lib/constants";
 import LenisProvider from "@/components/providers/LenisProvider";
+import CookieConsent from "@/components/layout/CookieConsent";
 import "./globals.css";
 
 const lexend = Lexend({
@@ -50,7 +51,10 @@ export const metadata: Metadata = {
     "German courses",
     "German for professionals",
     "German language school",
-    "Berlin language school",
+    "Dresden language school",
+    "online German language school",
+    "German lessons online",
+    "Deutsch lernen online",
     "German fluency",
     "German culture",
     "expat Germany",
@@ -64,8 +68,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: "Decode German - SPEAK, BELONG, THRIVE",
-    description:
-      "German language platform bridging the gap between fluency and identity.",
+    description: siteConfig.description,
     images: [
       {
         url: "/og-image.png",
@@ -76,10 +79,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Decode German - SPEAK, BELONG, THRIVE",
-    description:
-      "German language platform bridging the gap between fluency and identity.",
+    description: siteConfig.description,
     images: ["/og-image.png"],
   },
   icons: {
@@ -119,8 +121,7 @@ export default function RootLayout({
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
-      addressLocality: "Berlin",
+      addressLocality: siteConfig.address.city,
       addressCountry: "DE",
     },
   };
@@ -141,6 +142,7 @@ export default function RootLayout({
       <body className="antialiased">
         <MantineProvider theme={mantineTheme} forceColorScheme="light">
           <LenisProvider>{children}</LenisProvider>
+          <CookieConsent />
         </MantineProvider>
         <SpeedInsights />
         <Analytics />
