@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Impressum",
   description:
     "Legal notice (Impressum) for Decode German in accordance with §5 TMG.",
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function ImpressumPage() {
@@ -72,24 +72,6 @@ export default function ImpressumPage() {
               </a>
             </p>
           </div>
-
-          {(legalInfo.vatId || legalInfo.taxNumber) && (
-            <div>
-              <h2 className="text-xl font-bold uppercase tracking-widest text-charcoal mb-3">
-                Tax Identification
-              </h2>
-              {legalInfo.vatId && (
-                <p className="text-gray-700">
-                  VAT-ID (USt-IdNr.): {legalInfo.vatId}
-                </p>
-              )}
-              {legalInfo.taxNumber && (
-                <p className="text-gray-700">
-                  Tax Number (Steuernummer): {legalInfo.taxNumber}
-                </p>
-              )}
-            </div>
-          )}
 
           <div>
             <h2 className="text-xl font-bold uppercase tracking-widest text-charcoal mb-3">

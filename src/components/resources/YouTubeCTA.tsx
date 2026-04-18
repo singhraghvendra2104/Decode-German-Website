@@ -7,13 +7,13 @@ export default function YouTubeCTA() {
     <section className="mb-10 md:mb-16 relative h-[280px] md:h-[380px] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/resources/youtube1.png"
+          src="/resources/youtube1.webp"
           alt=""
           fill
           className="object-cover grayscale opacity-30 hidden md:block"
         />
         <Image
-          src="/resources/youtube2.png"
+          src="/resources/youtube2.webp"
           alt=""
           fill
           className="object-cover grayscale opacity-30 md:hidden"
