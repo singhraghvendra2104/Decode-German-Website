@@ -22,7 +22,7 @@ export default function CourseHero() {
         <div className="hidden lg:block relative">
           <div className="bg-white p-3 shadow-lg rotate-[1deg]">
             <Image
-              src="/courses/hero.jpg"
+              src="/courses/hero.webp"
               alt="Decode German courses"
               width={600}
               height={450}

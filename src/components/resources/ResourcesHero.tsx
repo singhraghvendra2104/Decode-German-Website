@@ -20,14 +20,14 @@ export default function ResourcesHero() {
       <div className="lg:col-span-5 relative">
         <div className="bg-white p-3 md:p-6 shadow-lg rotate-[1.2deg] border-b-[24px] md:border-b-[40px] border-white max-w-sm mx-auto lg:max-w-none">
           <Image
-            src="/resources/hero.jpg"
-            alt="Kölner Dom, Cologne"
+            src="/resources/hero.webp"
+            alt="Cologne Cathedral"
             width={600}
             height={600}
             className="w-full aspect-square object-cover md:grayscale md:hover:grayscale-0 transition-all duration-1000 mb-2 md:mb-4"
           />
           <p className="font-handwriting text-base md:text-xl text-center text-gray-500">
-            Kölner Dom, 2024
+            Cologne Cathedral
           </p>
         </div>
       </div>

@@ -38,7 +38,7 @@ export default function ResourcesFinalCTA() {
         <div className="hidden lg:block relative">
           <div className="bg-white p-4 shadow-lg rotate-[0.5deg]">
             <Image
-              src="/resources/bottom.png"
+              src="/resources/bottom.webp"
               alt="Structured learning"
               width={600}
               height={450}
