@@ -94,7 +94,7 @@ export default function TermsPage() {
           </h3>
           <p>
             If you do not pass the entrance test for your target level, you may
-            opt for a Crash Course — fast-paced, one-to-one sessions designed
+            opt for a Crash Course: fast-paced, one-to-one sessions designed
             to prepare you for the level. Once you pass the test, your place in
             the batch will be confirmed.
           </p>
@@ -121,77 +121,73 @@ export default function TermsPage() {
               Our Commitment
             </p>
             <p>
-              We stand behind the quality of our teaching. If you are not
-              satisfied within the first 15 days of a course, we will give you
-              a full refund — no questions asked. Beyond that, we offer a
-              structured re-enrolment pathway rather than refunds, so that your
-              learning investment is never lost.
+              We take full responsibility for the quality of our teaching. If
+              Decode German has not met its commitment to you at any point
+              during your current level, your fee is fully refundable. We ask
+              the same commitment in return: when you enrol, you occupy a seat
+              in a small, carefully structured batch. That seat cannot be given
+              to another student once the batch begins, which is why
+              student-initiated departures are non-refundable.
             </p>
           </div>
           <h3 className="font-semibold text-charcoal mt-4">
-            4.1 Satisfaction Guarantee — First 15 Days
+            4.1 Refund Due to Decode German
           </h3>
           <p>
-            If you are unsatisfied with the quality of teaching and wish to
-            leave within the first 15 days of your course start date, you are
-            entitled to a full refund of the course fee paid. To request a
-            refund under this clause, you must notify us in writing at{" "}
-            <a
-              href="mailto:decodegerman@gmail.com"
-              className="text-primary hover:underline"
-            >
-              decodegerman@gmail.com
-            </a>{" "}
-            within the 15-day window, stating the reason for your
-            dissatisfaction.
+            If you are unsatisfied with the quality of teaching, the course
+            structure, or due to the conduct of the institute, you are entitled
+            to a full refund of the course fee paid, at any point during your
+            current enrolled level.
           </p>
           <p>
-            Refunds under the satisfaction guarantee will be processed within 7
-            business days of the approved request.
-          </p>
-          <h3 className="font-semibold text-charcoal">
-            4.2 Personal Reasons — After 15 Days
-          </h3>
-          <p>
-            If you choose to leave the course after the 15-day satisfaction
-            period for personal reasons (including but not limited to: change
-            in schedule, relocation, personal circumstances, or lack of time),
-            no refund will be issued for the remaining course fee.
-          </p>
-          <p>
-            However, we recognise that life circumstances change. You will
-            retain the right to re-enrol in the same course level at any time
-            in the future at 50% of the standard course fee at the time of
-            re-enrolment. This right has no expiry date.
-          </p>
-          <p>
-            To use your re-enrolment right, contact us at{" "}
+            To request a refund, you must notify us in writing at{" "}
             <a
               href="mailto:decodegerman@gmail.com"
               className="text-primary hover:underline"
             >
               decodegerman@gmail.com
             </a>
-            . Re-enrolment is subject to batch availability and, if more than 6
-            months have passed, you may be asked to take a brief placement
-            check to confirm your current level.
+            , clearly stating the reason for your dissatisfaction. You must be
+            currently enrolled in the level for which you are requesting the
+            refund. Refunds are not available after a level has been completed.
+            Once approved, the full course fee will be returned within 7
+            business days via the original payment method.
           </p>
           <h3 className="font-semibold text-charcoal">
-            4.3 Batch Cancellation by Decode German
+            4.2 Student-Initiated Departure: No Refund
           </h3>
           <p>
-            In the unlikely event that a batch is cancelled by Decode German
-            (for example, due to insufficient enrolments or unforeseen
-            circumstances), enrolled students will receive a full refund of any
-            fees paid, or the option to transfer to the next available batch at
-            no additional cost.
+            If you choose to leave the course for reasons on your side,
+            including but not limited to change in personal schedule,
+            relocation, lack of time, personal circumstances, or a decision to
+            discontinue learning, no refund will be issued under any
+            circumstances.
           </p>
-          <h3 className="font-semibold text-charcoal">4.4 No Show</h3>
           <p>
-            If you do not attend class without prior notice and do not contact
-            us within 7 days of your first absence, your place in the batch may
-            be reallocated. The standard personal-reasons policy (clause 4.2)
-            will apply.
+            Decode German operates in small batches of 8–10 students. When you
+            enrol, you occupy a seat that cannot be offered to another student
+            once the batch has begun. By enrolling and signing the Student
+            Guidelines, you accept full responsibility for this commitment.
+          </p>
+          <h3 className="font-semibold text-charcoal">
+            4.3 Batch Transfer for Personal Reasons
+          </h3>
+          <p>
+            If you are unable to continue your current batch due to personal
+            reasons but wish to continue learning with Decode German in the
+            future, you may transfer to a future batch by paying 50% of the
+            standard course fee applicable at the time of transfer. This option
+            has no expiry date and is subject to batch availability at your
+            level.
+          </p>
+          <h3 className="font-semibold text-charcoal">
+            4.4 Batch Cancellation by Decode German
+          </h3>
+          <p>
+            In the unlikely event that a batch is cancelled by Decode German,
+            all enrolled students will receive a full refund of fees paid, or
+            the option to transfer to the next available batch at no additional
+            cost, whichever the student prefers.
           </p>
         </LegalSection>
 
@@ -241,7 +237,7 @@ export default function TermsPage() {
           <p>
             Decode German is built on a foundation of respect, commitment, and
             mutual support. We reserve the right to remove any student from a
-            batch — without refund — in cases of serious misconduct, including:
+            batch, without refund, in cases of serious misconduct, including:
           </p>
           <ul className="list-disc pl-6 space-y-1">
             <li>

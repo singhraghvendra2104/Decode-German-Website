@@ -31,7 +31,7 @@ export default function CookiePolicyPage() {
           <p>
             Cookies are small text files that are stored on your device
             (computer, phone, or tablet) when you visit a website. They help
-            websites remember information about your visit — for example, your
+            websites remember information about your visit, for example, your
             language preference or whether you have already seen a
             notification.
           </p>
@@ -48,7 +48,7 @@ export default function CookiePolicyPage() {
           </h3>
           <p>
             These cookies are essential for the website to function and cannot
-            be switched off. They are set in response to actions you take —
+            be switched off. They are set in response to actions you take,
             such as submitting a form. They do not store any personally
             identifiable information.
           </p>

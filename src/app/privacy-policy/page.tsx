@@ -10,7 +10,7 @@ import LegalPage, {
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Decode German Privacy Policy — how we handle your personal data, in English and German.",
+    "Decode German Privacy Policy: How we handle your personal data, in English and German.",
   robots: { index: true, follow: true },
 };
 
@@ -64,9 +64,10 @@ export default function PrivacyPolicyPage() {
 
         <LegalSection number={2} title="What Data We Collect and Why">
           <p>
-            We collect personal data only when you voluntarily provide it to us
-            — specifically when you submit an enquiry through our contact form
-            or reach out via WhatsApp or email. The data we collect includes:
+            We collect personal data only when you voluntarily provide it to
+            us, specifically when you submit an enquiry through our contact
+            form or reach out via WhatsApp or email. The data we collect
+            includes:
           </p>
           <ul className="list-disc pl-6 space-y-1">
             <li>First name and last name</li>
@@ -105,17 +106,17 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="list-disc pl-6 space-y-1">
             <li>
-              <strong>Article 6(1)(b)</strong> — Processing is necessary to
+              <strong>Article 6(1)(b):</strong> Processing is necessary to
               take steps at your request prior to entering into a contract
               (i.e., responding to your course enquiry).
             </li>
             <li>
-              <strong>Article 6(1)(f)</strong> — Processing is necessary for
+              <strong>Article 6(1)(f):</strong> Processing is necessary for
               our legitimate interest in communicating with prospective and
               enrolled students.
             </li>
             <li>
-              <strong>Article 6(1)(a)</strong> — Where you have given your
+              <strong>Article 6(1)(a):</strong> Where you have given your
               consent, for example by subscribing to updates.
             </li>
           </ul>
@@ -160,7 +161,7 @@ export default function PrivacyPolicyPage() {
             >
               policies.google.com/privacy
             </a>
-            . The legal basis for this processing is Article 6(1)(f) GDPR —
+            . The legal basis for this processing is Article 6(1)(f) GDPR:
             our legitimate interest in presenting a readable, well-designed
             website.
           </p>
@@ -183,7 +184,7 @@ export default function PrivacyPolicyPage() {
           <p>
             Our website does not use advertising or tracking cookies. We use
             only technically necessary cookies that are required for the
-            website to function — for example, to remember your language
+            website to function, for example, to remember your language
             preference or session state. These cookies do not collect personal
             data and do not require your consent under ePrivacy law.
           </p>
@@ -221,7 +222,7 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               IT service providers who host and maintain this website (Vercel,
-              Inc. — our hosting provider), who process data strictly on our
+              Inc., our hosting provider), who process data strictly on our
               behalf under contractual data processing agreements.
             </li>
             <li>
@@ -331,7 +332,7 @@ export default function PrivacyPolicyPage() {
               decodegerman@gmail.com
             </a>
             . We will respond within 30 days. You also have the right to lodge
-            a complaint with a supervisory authority — in Germany, this is the
+            a complaint with a supervisory authority. In Germany, this is the
             relevant Landesbeauftragte für Datenschutz in your state.
           </p>
           <GermanBlock title="Ihre Rechte gemäß DSGVO">
@@ -344,7 +345,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:
-              decodegerman@gmail.com — wir antworten innerhalb von 30 Tagen.
+              decodegerman@gmail.com. Wir antworten innerhalb von 30 Tagen.
               Sie haben außerdem das Recht, eine Beschwerde bei der zuständigen
               Datenschutzbehörde einzureichen.
             </p>
