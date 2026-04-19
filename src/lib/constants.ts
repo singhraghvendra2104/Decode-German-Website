@@ -1395,6 +1395,12 @@ export const theTeamContent = {
       image: "/about/team/aditya-mohan-ray.webp",
     },
     {
+      name: "Sumana Chakravarty",
+      role: "German Language Teacher",
+      description: "Simplifying German to build clarity, real understanding, and the confidence to communicate in everyday life.",
+      image: "/about/team/sumana-chakravarty.webp",
+    },
+    {
       name: "Tanya Wadhwa",
       role: "German Language Teacher",
       description: "Helping students speak German with clarity, confidence, and ease.",
