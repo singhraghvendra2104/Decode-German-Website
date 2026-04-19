@@ -1,9 +1,9 @@
 // ─── Site Metadata ───────────────────────────────────────────────────────────
 export const siteConfig = {
   name: "Decode German",
-  tagline: "Student focused language learning",
+  tagline: "SPEAK, BELONG, THRIVE",
   description:
-    "Learn German A1–B2 in Dresden or online with small batches, native-level teachers, and a community of 1,000+ learners. Personal mentorship from beginner to fluent.",
+    "German language platform bridging the gap between fluency and identity. A1-B2 Online German Language Courses. Taught in small batches, structured curriculum, Native German Sessions",
   url: "https://www.decodegerman.com",
   email: "decodegerman@gmail.com",
   address: {

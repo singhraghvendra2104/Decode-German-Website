@@ -209,12 +209,20 @@ function pickPinnedComponent(resource: Post) {
 export default function PinnedHighlights({ pinnedResources }: Props) {
   const [drawerPost, setDrawerPost] = useState<Post | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [snapCount, setSnapCount] = useState(0);
   const emblaRef = useRef<EmblaCarouselType | null>(null);
 
   if (!pinnedResources.length) return null;
 
   const needsSlider = pinnedResources.length > 3;
-  const total = pinnedResources.length;
+  const total = snapCount || pinnedResources.length;
+
+  const handleEmblaApi = (api: EmblaCarouselType | null) => {
+    emblaRef.current = api;
+    if (!api) return;
+    setSnapCount(api.scrollSnapList().length);
+    api.on("reInit", () => setSnapCount(api.scrollSnapList().length));
+  };
 
   return (
     <section className="mb-10 md:mb-16">
@@ -277,9 +285,7 @@ export default function PinnedHighlights({ pinnedResources }: Props) {
       {needsSlider ? (
         <div className="hidden md:block">
           <Carousel
-            getEmblaApi={(api) => {
-              emblaRef.current = api;
-            }}
+            getEmblaApi={handleEmblaApi}
             onSlideChange={setCurrentSlide}
             slideSize="33.333%"
             slideGap="xl"
