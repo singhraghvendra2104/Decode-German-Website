@@ -1559,7 +1559,7 @@ export const foundersNoteContent = {
   sectionTitle: "Message from the Founder",
   paragraphs: [
     { text: 'This is not a place for passive learning.<br />This is where you<em> show up - with consistency and intent.</em>' },
-    { text: "Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch, only students and their trust." },
+    { text: "Teaching was never a choice for me; it was always who I am. I started teaching in 2015, building everything from scratch, with students and their trust." },
     { text: "Since that day, there hasn't been a single day I haven't taught or thought about my students, their progress, their struggles, and their growth." },
     { text: "My life is my students.<br />I don't separate it. I don't balance it. I live for them.<br />There is no other goal, and there never has been.", bold: true },
     { text: "Over the years, I have seen students repeat levels again and again, going through A1 three or four times before reaching me, or returning to A1 even after B1 or B2, because their foundation was never truly built. Living in Germany without enough German means paying a price every single day, in every queue, every workplace, every conversation that slips away. Every time I see that, it stays with me. This is where I invest my life." },
