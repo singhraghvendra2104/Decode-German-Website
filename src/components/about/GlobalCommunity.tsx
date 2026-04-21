@@ -8,7 +8,7 @@ import { globalCommunityContent } from "@/lib/constants";
 
 const WIDTH = 1000;
 const HEIGHT = 500;
-const DRESDEN: [number, number] = [13.74, 51.05];
+const INDIA: [number, number] = [78.9629, 20.5937];
 
 type Pin = { name: string; x: number; y: number };
 type Arc = { name: string; d: string };
@@ -25,7 +25,7 @@ export default function GlobalCommunity() {
   const { eyebrow, heading, tagline, countries } = globalCommunityContent;
   const [active, setActive] = useState<string | null>(null);
 
-  const { landPath, graticulePath, spherePath, pins, dresden, arcs, stars } =
+  const { landPath, graticulePath, spherePath, pins, india, arcs, stars } =
     useMemo(() => {
       const projection = geoEqualEarth()
         .scale(180)
@@ -41,23 +41,26 @@ export default function GlobalCommunity() {
       const spherePath = path({ type: "Sphere" }) || "";
 
       const pins: Pin[] = countries
+        .filter((c) => c.name !== "India")
         .map((c) => {
           const p = projection([c.lon, c.lat]);
           return p ? { name: c.name, x: p[0], y: p[1] } : null;
         })
         .filter((x): x is Pin => x !== null);
 
-      const dresden = projection(DRESDEN);
+      const india = projection(INDIA);
 
-      const arcs: Arc[] = countries.map((c) => ({
-        name: c.name,
-        d:
-          path({
-            type: "LineString",
-            coordinates: [DRESDEN, [c.lon, c.lat]],
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          } as any) || "",
-      }));
+      const arcs: Arc[] = countries
+        .filter((c) => c.name !== "India")
+        .map((c) => ({
+          name: c.name,
+          d:
+            path({
+              type: "LineString",
+              coordinates: [INDIA, [c.lon, c.lat]],
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            } as any) || "",
+        }));
 
       const rand = seeded(17);
       const stars = Array.from({ length: 60 }, (_, i) => ({
@@ -70,10 +73,10 @@ export default function GlobalCommunity() {
         base: 0.25 + rand() * 0.5,
       }));
 
-      return { landPath, graticulePath, spherePath, pins, dresden, arcs, stars };
+      return { landPath, graticulePath, spherePath, pins, india, arcs, stars };
     }, [countries]);
 
-  if (!dresden) return null;
+  if (!india) return null;
 
   const activePin = active ? pins.find((p) => p.name === active) : null;
 
@@ -148,9 +151,9 @@ export default function GlobalCommunity() {
             <span className="text-[9px] uppercase tracking-[0.35em] text-[var(--color-primary)]/80">
               Origin
             </span>
-            <span className="italic text-[13px] leading-none">51.05° N 13.74° E</span>
+            <span className="italic text-[13px] leading-none">20.59° N 78.96° E</span>
             <span className="text-[9px] uppercase tracking-[0.3em] mt-0.5">
-              Dresden · DE
+              India · IN
             </span>
           </div>
 
@@ -160,7 +163,7 @@ export default function GlobalCommunity() {
             className="relative w-full h-auto block"
             preserveAspectRatio="xMidYMid meet"
             role="img"
-            aria-label={`World map showing ${countries.length} countries where Decode German students live, connected by arcs from Dresden`}
+            aria-label={`World map showing ${countries.length} countries where Decode German students live, connected by arcs from India`}
           >
             <defs>
               <pattern
@@ -395,9 +398,9 @@ export default function GlobalCommunity() {
               );
             })}
 
-            {/* Dresden origin */}
+            {/* India origin */}
             <g
-              transform={`translate(${dresden[0]}, ${dresden[1]})`}
+              transform={`translate(${india[0]}, ${india[1]})`}
               className="pointer-events-none"
             >
               <g>
@@ -456,7 +459,7 @@ export default function GlobalCommunity() {
                 letterSpacing="0.35em"
                 style={{ textTransform: "uppercase", fontWeight: 700 }}
               >
-                Dresden
+                India
               </text>
             </g>
           </svg>
