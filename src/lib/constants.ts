@@ -1347,23 +1347,6 @@ export const theTeamContent = {
     quote: "This is not a place where you take classes. This is a place where you commit. Where you build confidence, evolve, and transform.",
     badges: ["12+ Years Exp"],
   },
-  academicAdvisor: {
-    name: "Prof. Dr. Vridhagiri Ganeshan",
-    nameDisplay: "Prof. Dr. Vridhagiri\nGaneshan",
-    role: "Academic Advisor",
-    image: "/about/team/Founder3.webp",
-    imageAlt: "Prof. Dr. Vridhagiri Ganeshan",
-    bio1: "Over 50 years teaching, researching, and writing about German language and culture, from Universität München to CIEFL Hyderabad to Emory University. Prof. Dr. Ganeshan earned his doctorate in Germanistik in 1975 and spent 32 years as Professor of German at CIEFL, training generations of language teachers across India. He served twice as Vice-Chancellor, taught at leading American universities, and was awarded the Jakob-und-Wilhelm-Grimm-Preis by Germany in 1990, one of the highest honours in German philology.",
-    bio2: "His life's work, bridging the gap between the learners and genuine German fluency, is exactly the challenge Decode German is built around.",
-    quote: "Language is the bridge between who you are and who you are becoming in another culture.",
-    badges: [
-      "Atlanta, USA",
-      "Dr. Phil., München 1975",
-      "Grimm-Preis 1990",
-      "DAAD & Humboldt Fellow",
-      "50+ Years in Germanistik",
-    ],
-  },
   // TODO (feedback 2026-04): Replace the current team headshots with real photos.
   // The existing headshots read as AI-generated (hyperlit faces, generic office
   // backdrops, identical lighting) and contradict Decode German's "personal

@@ -9,6 +9,7 @@ import CoursesSection from "@/components/home/CoursesSection";
 import CoreBeliefs from "@/components/home/CoreBeliefs";
 import WallOfAchievement from "@/components/home/WallOfAchievement";
 import Testimonials from "@/components/home/Testimonials";
+import GlobalCommunity from "@/components/about/GlobalCommunity";
 import CTASection from "@/components/home/CTASection";
 import { pageMetadata } from "@/lib/constants";
 
@@ -35,6 +36,7 @@ export default function HomePage() {
         <CoursesSection />
         <WallOfAchievement />
         <Testimonials />
+        <GlobalCommunity />
         <CTASection />
       </main>
       <Footer />
