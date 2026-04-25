@@ -1,7 +1,7 @@
 import { theTeamContent } from "@/lib/constants";
 
 export default function TheTeam() {
-  const { heading, description, founder, academicAdvisor, members } = theTeamContent;
+  const { heading, description, founder, members } = theTeamContent;
 
   return (
     <section className="bg-surface-container py-10 md:py-14 lg:py-20">
@@ -49,46 +49,6 @@ export default function TheTeam() {
             </div>
           </div>
         </div>
-        {/* Academic Advisor Feature */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12 md:mb-16 lg:mb-24">
-          <div className="space-y-6 px-4 order-2 md:order-1">
-            <h3 className="text-4xl font-[var(--font-serif)]">
-              {academicAdvisor.nameDisplay.split("\n").map((line, i) => (
-                <span key={i}>
-                  {i > 0 && <br />}
-                  {line}
-                </span>
-              ))}
-            </h3>
-            <p className="text-primary uppercase tracking-[0.2em] font-bold text-xs">
-              {academicAdvisor.role}
-            </p>
-            <p className="text-lg leading-relaxed opacity-80">
-              {academicAdvisor.bio1}
-            </p>
-            <p className="text-lg leading-relaxed opacity-80">
-              {academicAdvisor.bio2}
-            </p>
-            <blockquote className="font-[var(--font-serif)] italic text-base leading-relaxed opacity-80 border-l-2 border-primary pl-4 py-2">
-              &ldquo;{academicAdvisor.quote}&rdquo;
-            </blockquote>
-            <div className="flex flex-wrap gap-3">
-              {academicAdvisor.badges.map((badge) => (
-                <span key={badge} className="px-4 py-1 bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest">
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="aspect-[4/5] bg-white overflow-hidden polaroid rotate-1 order-1 md:order-2">
-            <img
-              alt={academicAdvisor.imageAlt}
-              className="w-full h-full object-cover"
-              src={academicAdvisor.image}
-            />
-          </div>
-        </div>
-
         {/* Team Grid - Desktop */}
         <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10 md:gap-y-16">
           {members.map((member) => (

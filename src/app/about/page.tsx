@@ -8,7 +8,6 @@ import WhyWeExist from "@/components/about/WhyWeExist";
 import HowStudentsJoin from "@/components/about/HowStudentsJoin";
 import TheTeam from "@/components/about/TheTeam";
 import OurJourney from "@/components/about/OurJourney";
-import GlobalCommunity from "@/components/about/GlobalCommunity";
 import AboutCTA from "@/components/about/AboutCTA";
 import { pageMetadata } from "@/lib/constants";
 
@@ -34,7 +33,6 @@ export default function AboutPage() {
         <HowStudentsJoin />
         <TheTeam />
         <OurJourney />
-        <GlobalCommunity />
         <AboutCTA />
       </main>
       <Footer />
