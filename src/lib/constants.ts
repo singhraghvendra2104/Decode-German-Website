@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "German language platform bridging the gap between fluency and identity. A1-B2 Online German Language Courses. Taught in small batches, structured curriculum, Native German Sessions",
   url: "https://www.decodegerman.com",
-  email: "decodegerman@gmail.com",
+  email: "admissions@decodegerman.com",
   address: {
     city: "Dresden",
     country: "Germany",
@@ -1224,7 +1224,7 @@ export const legalInfo = {
   postalCode: "01109",
   city: "Dresden",
   country: "Germany",
-  email: "decodegerman@gmail.com",
+  email: "admissions@decodegerman.com",
   phone: "+49 159 004836675",
   responsibleForContent: "Shalini K. Dubey",
   lastUpdated: "April 2026",
@@ -1715,7 +1715,7 @@ export const contactFormContent = {
     href: "https://wa.me/4915904836675",
   },
   bottomContact: {
-    email: "decodegerman@gmail.com",
+    email: "admissions@decodegerman.com",
     languages: "We speak: Deutsch, English, Hindi",
   },
   germanLevels: [
