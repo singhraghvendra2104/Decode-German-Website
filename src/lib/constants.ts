@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "German language platform bridging the gap between fluency and identity. A1-B2 Online German Language Courses. Taught in small batches, structured curriculum, Native German Sessions",
   url: "https://www.decodegerman.com",
-  email: "decodegerman@gmail.com",
+  email: "admissions@decodegerman.com",
   address: {
     city: "Dresden",
     country: "Germany",
@@ -1224,7 +1224,7 @@ export const legalInfo = {
   postalCode: "01109",
   city: "Dresden",
   country: "Germany",
-  email: "decodegerman@gmail.com",
+  email: "admissions@decodegerman.com",
   phone: "+49 159 004836675",
   responsibleForContent: "Shalini K. Dubey",
   lastUpdated: "April 2026",
@@ -1501,6 +1501,7 @@ export const globalCommunityContent = {
     { name: "Ethiopia", lat: 9.1, lon: 40.5 },
     { name: "France", lat: 46.2, lon: 2.2 },
     { name: "Georgia", lat: 42.3, lon: 43.4 },
+    { name: "Germany", lat: 51.2, lon: 10.5 },
     { name: "Hungary", lat: 47.2, lon: 19.5 },
     { name: "India", lat: 20.6, lon: 78.9 },
     { name: "Iran", lat: 32.4, lon: 53.7 },
@@ -1523,6 +1524,7 @@ export const globalCommunityContent = {
     { name: "Saudi Arabia", lat: 23.9, lon: 45.1 },
     { name: "South Africa", lat: -30.6, lon: 22.9 },
     { name: "Spain", lat: 40.5, lon: -3.7 },
+    { name: "Sudan", lat: 12.9, lon: 30.2 },
     { name: "Sweden", lat: 60.1, lon: 18.6 },
     { name: "Switzerland", lat: 46.8, lon: 8.2 },
     { name: "Syria", lat: 34.8, lon: 38.0 },
@@ -1715,7 +1717,7 @@ export const contactFormContent = {
     href: "https://wa.me/4915904836675",
   },
   bottomContact: {
-    email: "decodegerman@gmail.com",
+    email: "admissions@decodegerman.com",
     languages: "We speak: Deutsch, English, Hindi",
   },
   germanLevels: [

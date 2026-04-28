@@ -203,10 +203,10 @@ export default function CookiePolicyPage() {
             <p>
               Email:{" "}
               <a
-                href="mailto:decodegerman@gmail.com"
+                href="mailto:admissions@decodegerman.com"
                 className="text-primary hover:underline"
               >
-                decodegerman@gmail.com
+                admissions@decodegerman.com
               </a>
             </p>
             <p>Phone: +49 15900 4836675 | +91 98712 05947</p>

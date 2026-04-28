@@ -40,7 +40,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: "Decode German Website <onboarding@resend.dev>",
-      to: "decodegerman@gmail.com",
+      to: "admissions@decodegerman.com",
       subject: `New Contact: ${fullName}`,
       replyTo: email.trim(),
       html: `

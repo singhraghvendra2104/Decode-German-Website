@@ -53,10 +53,10 @@ export default function TermsPage() {
             <li>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:decodegerman@gmail.com"
+                href="mailto:admissions@decodegerman.com"
                 className="text-primary hover:underline"
               >
-                decodegerman@gmail.com
+                admissions@decodegerman.com
               </a>
             </li>
             <li>
@@ -142,10 +142,10 @@ export default function TermsPage() {
           <p>
             To request a refund, you must notify us in writing at{" "}
             <a
-              href="mailto:decodegerman@gmail.com"
+              href="mailto:admissions@decodegerman.com"
               className="text-primary hover:underline"
             >
-              decodegerman@gmail.com
+              admissions@decodegerman.com
             </a>
             , clearly stating the reason for your dissatisfaction. You must be
             currently enrolled in the level for which you are requesting the
@@ -307,10 +307,10 @@ export default function TermsPage() {
             <p>
               Email:{" "}
               <a
-                href="mailto:decodegerman@gmail.com"
+                href="mailto:admissions@decodegerman.com"
                 className="text-primary hover:underline"
               >
-                decodegerman@gmail.com
+                admissions@decodegerman.com
               </a>
             </p>
             <p>Phone: +49 15900 4836675 | +91 98712 05947</p>

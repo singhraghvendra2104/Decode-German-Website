@@ -36,10 +36,10 @@ export default function PrivacyPolicyPage() {
             <li>
               Email:{" "}
               <a
-                href="mailto:decodegerman@gmail.com"
+                href="mailto:admissions@decodegerman.com"
                 className="text-primary hover:underline"
               >
-                decodegerman@gmail.com
+                admissions@decodegerman.com
               </a>
             </li>
             <li>
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
               Dubey, ansässig in Dresden, Deutschland, geleitet.
             </p>
             <p>
-              Kontakt: decodegerman@gmail.com | +49 15900 4836675 |
+              Kontakt: admissions@decodegerman.com | +49 15900 4836675 |
               www.decodegerman.com
             </p>
           </GermanBlock>
@@ -326,10 +326,10 @@ export default function PrivacyPolicyPage() {
           <p>
             To exercise any of these rights, please contact us at{" "}
             <a
-              href="mailto:decodegerman@gmail.com"
+              href="mailto:admissions@decodegerman.com"
               className="text-primary hover:underline"
             >
-              decodegerman@gmail.com
+              admissions@decodegerman.com
             </a>
             . We will respond within 30 days. You also have the right to lodge
             a complaint with a supervisory authority. In Germany, this is the
@@ -345,7 +345,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:
-              decodegerman@gmail.com. Wir antworten innerhalb von 30 Tagen.
+              admissions@decodegerman.com. Wir antworten innerhalb von 30 Tagen.
               Sie haben außerdem das Recht, eine Beschwerde bei der zuständigen
               Datenschutzbehörde einzureichen.
             </p>
@@ -359,10 +359,10 @@ export default function PrivacyPolicyPage() {
             believe a child has submitted data to us, please contact us
             immediately at{" "}
             <a
-              href="mailto:decodegerman@gmail.com"
+              href="mailto:admissions@decodegerman.com"
               className="text-primary hover:underline"
             >
-              decodegerman@gmail.com
+              admissions@decodegerman.com
             </a>{" "}
             and we will delete it promptly.
           </p>
@@ -371,7 +371,7 @@ export default function PrivacyPolicyPage() {
               Unsere Dienste richten sich an Personen ab 18 Jahren. Wir erheben
               wissentlich keine Daten von Minderjährigen. Sollten Sie
               vermuten, dass ein Kind Daten übermittelt hat, kontaktieren Sie
-              uns bitte umgehend unter decodegerman@gmail.com.
+              uns bitte umgehend unter admissions@decodegerman.com.
             </p>
           </GermanBlock>
         </LegalSection>
@@ -404,10 +404,10 @@ export default function PrivacyPolicyPage() {
             <p>
               Email:{" "}
               <a
-                href="mailto:decodegerman@gmail.com"
+                href="mailto:admissions@decodegerman.com"
                 className="text-primary hover:underline"
               >
-                decodegerman@gmail.com
+                admissions@decodegerman.com
               </a>
             </p>
             <p>Phone: +49 15900 4836675 | +91 98712 05947</p>
@@ -418,7 +418,7 @@ export default function PrivacyPolicyPage() {
               Shalini K. Dubey | SKID Decode Deutsch Language Institute Private
               Limited
             </p>
-            <p>E-Mail: decodegerman@gmail.com | Tel: +49 15900 4836675</p>
+            <p>E-Mail: admissions@decodegerman.com | Tel: +49 15900 4836675</p>
           </GermanBlock>
         </LegalSection>
       </LegalPage>
